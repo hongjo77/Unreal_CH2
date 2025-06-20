@@ -1,5 +1,4 @@
 ﻿#pragma once
-//Test Command
 #include <string>
 
 class Characters;
