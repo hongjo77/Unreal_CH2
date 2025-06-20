@@ -4,6 +4,7 @@
 #include <iostream>
 
 //Github Confirm
+//Github 확인
 
 Monster::Monster(const string& name, int health, int attack)
     : Name(name), Health(health), Attack(attack) {}
