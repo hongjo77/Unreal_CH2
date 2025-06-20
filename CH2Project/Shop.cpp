@@ -1,9 +1,9 @@
-#include "Shop.h"
+ï»¿#include "Shop.h"
 #include "HealthPotion.h"
 #include "AttackBoost.h"
 #include <iostream>
 
-// ¾ÆÀÌÅÛ ¸ñ·Ï »ı¼º
+// ì•„ì´í…œ ëª©ë¡ ìƒì„±
 Shop::Shop()
 {
     AvailableItems.push_back(new HealthPotion());
@@ -18,10 +18,10 @@ Shop::~Shop()
     }
 }
 
-// Áø¿­´ë Ãâ·Â
+// ì§„ì—´ëŒ€ ì¶œë ¥
 void Shop::DisplayItems() const
 {
-    cout << "±¸¸Å °¡´ÉÇÑ ¾ÆÀÌÅÛ:" << endl;
+    cout << "êµ¬ë§¤ ê°€ëŠ¥í•œ ì•„ì´í…œ:" << endl;
     for (size_t i = 0; i < AvailableItems.size(); i++)
     {
         string name = AvailableItems[i]->GetName();
@@ -29,35 +29,35 @@ void Shop::DisplayItems() const
         cout << (i + 1) << ". " << name;
         if (name == "Health Potion")
         {
-            cout << " (Ã¼·Â +50): ";
+            cout << " (ì²´ë ¥ +50): ";
         }
         else if (name == "Attack Boost")
         {
-            cout << " (°ø°İ·Â +10): ";
+            cout << " (ê³µê²©ë ¥ +10): ";
         }
-        cout << price << " °ñµå" << endl;
+        cout << price << " ê³¨ë“œ" << endl;
     }
 }
 
-// ¾ÆÀÌÅÛ ±¸¸Å
+// ì•„ì´í…œ êµ¬ë§¤
 void Shop::BuyItem(int index, Characters& player)
 {
-    // ÀÎµ¦½º È®ÀÎ
+    // ì¸ë±ìŠ¤ í™•ì¸
     if (index < 0 || index >= (int)AvailableItems.size())
     {
-        cout << "Àß¸øµÈ ÀÎµ¦½ºÀÔ´Ï´Ù." << endl;
+        cout << "ì˜ëª»ëœ ì¸ë±ìŠ¤ì…ë‹ˆë‹¤." << endl;
         return;
     }
 
     string name = AvailableItems[index]->GetName();
-    // ÈúÆ÷¼Ç ¼±ÅÃÇÏ¸é 10¿ø ¾Æ´Ï¸é (Attack boostÀÎ°æ¿ì) 15¿ø
+    // íí¬ì…˜ ì„ íƒí•˜ë©´ 10ì› ì•„ë‹ˆë©´ (Attack boostì¸ê²½ìš°) 15ì›
     int price = (name == "Health Potion") ? 10 : 15;
     if (player.GetGold() < price)
     {
-        cout << "°ñµå°¡ ºÎÁ·ÇÕ´Ï´Ù." << endl;
+        cout << "ê³¨ë“œê°€ ë¶€ì¡±í•©ë‹ˆë‹¤." << endl;
         return;
     }
-    // ¾ÆÀÌÅÛÀº »õ·Î »ı¼ºÇØ¼­ ÇÃ·¹ÀÌ¾î¿¡°Ô ³Ñ±è (»óÁ¡ÀÇ Áø¿­Ç°Àº ¿¹½Ã)
+    // ì•„ì´í…œì€ ìƒˆë¡œ ìƒì„±í•´ì„œ í”Œë ˆì´ì–´ì—ê²Œ ë„˜ê¹€ (ìƒì ì˜ ì§„ì—´í’ˆì€ ì˜ˆì‹œ)
     Item* item = nullptr;
     if (name == "Health Potion")
     {
@@ -70,28 +70,28 @@ void Shop::BuyItem(int index, Characters& player)
 
     player.SetGold(player.GetGold() - price);
     player.GetInventory().push_back(item);
-    cout << item->GetName() << "À»(¸¦) ±¸¸ÅÇß½À´Ï´Ù!" << endl;
+    cout << item->GetName() << "ì„(ë¥¼) êµ¬ë§¤í–ˆìŠµë‹ˆë‹¤!" << endl;
 }
 
-// ¾ÆÀÌÅÛ ÆÇ¸Å
+// ì•„ì´í…œ íŒë§¤
 void Shop::SellItem(int index, Characters& player)
 {
     auto& inv = player.GetInventory();
-    // ÀÎµ¦½º È®ÀÎ
+    // ì¸ë±ìŠ¤ í™•ì¸
     if (index < 0 || index >= (int)inv.size())
     {
-        cout << "Àß¸øµÈ ÀÎµ¦½ºÀÔ´Ï´Ù." << endl;
+        cout << "ì˜ëª»ëœ ì¸ë±ìŠ¤ì…ë‹ˆë‹¤." << endl;
         return;
     }
     string name = inv[index]->GetName();
-    // ÈúÆ÷¼Ç ¼±ÅÃÇÏ¸é 10¿ø ¾Æ´Ï¸é (Attack boostÀÎ°æ¿ì) 15¿ø
+    // íí¬ì…˜ ì„ íƒí•˜ë©´ 10ì› ì•„ë‹ˆë©´ (Attack boostì¸ê²½ìš°) 15ì›
     int price = (name == "Health Potion") ? 10 : 15;
-    // ¿ø·¡ °¡°İÀÇ 60%¸¸ Áö±Ş
+    // ì›ë˜ ê°€ê²©ì˜ 60%ë§Œ ì§€ê¸‰
     int sellPrice = static_cast<int>(price * 0.6);
 
     player.SetGold(player.GetGold() + sellPrice);
-    cout << inv[index]->GetName() << "À»(¸¦) ÆÇ¸ÅÇß½À´Ï´Ù. " << sellPrice << " °ñµå¸¦ ¹Ş¾Ò½À´Ï´Ù." << endl;
+    cout << inv[index]->GetName() << "ì„(ë¥¼) íŒë§¤í–ˆìŠµë‹ˆë‹¤. " << sellPrice << " ê³¨ë“œë¥¼ ë°›ì•˜ìŠµë‹ˆë‹¤." << endl;
     delete inv[index];
-    // ÇÃ·¹ÀÌ¾îÀÇ ÀÎº¥Åä¸®¿¡¼­µµ »èÁ¦
+    // í”Œë ˆì´ì–´ì˜ ì¸ë²¤í† ë¦¬ì—ì„œë„ ì‚­ì œ
     inv.erase(inv.begin() + index);
 }

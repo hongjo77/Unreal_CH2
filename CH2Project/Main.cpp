@@ -1,4 +1,4 @@
-#include "Characters.h"
+ï»¿#include "Characters.h"
 #include "GameManager.h"
 #include <iostream>
 #include <string>
@@ -11,50 +11,50 @@ int main()
     srand(static_cast<unsigned int>(time(nullptr)));
 
     string Name;
-    cout << "Ä³¸¯ÅÍ ÀÌ¸§À» ÀÔ·ÂÇÏ¼¼¿ä: ";
+    cout << "ìºë¦­í„° ì´ë¦„ì„ ì…ë ¥í•˜ì„¸ìš”: ";
     getline(cin, Name);
 
-    // Ä³¸¯ÅÍ ÀÎ½ºÅÏ½º »ı¼º
+    // ìºë¦­í„° ì¸ìŠ¤í„´ìŠ¤ ìƒì„±
     Characters* player = Characters::GetInstance(Name);
     GameManager manager;
 
-    // ÇÃ·¹ÀÌ¾î°¡ Á×Áö ¾Ê°Å³ª 10·¹º§ÀÌ ¾ÆÁ÷ ¾ÈµÈ °æ¿ì
+    // í”Œë ˆì´ì–´ê°€ ì£½ì§€ ì•Šê±°ë‚˜ 10ë ˆë²¨ì´ ì•„ì§ ì•ˆëœ ê²½ìš°
     while (player->GetHealth() > 0 && player->GetLevel() < 10)
     {
-        // ½ºÅ×ÀÌÅÍ½º Ãâ·Â
+        // ìŠ¤í…Œì´í„°ìŠ¤ ì¶œë ¥
         system("cls");
         player->DisplayStatus();
         cout << endl;
 
-        // Àû »ı¼º
+        // ì  ìƒì„±
         Monster* enemy = manager.GenerateMonster(player->GetLevel());
-        // ÀüÅõ ÁøÀÔ
+        // ì „íˆ¬ ì§„ì…
         manager.Battle(*player, *enemy);
         delete enemy;
 
-        // ÇÃ·¹ÀÌ¾î »ç¸Á
+        // í”Œë ˆì´ì–´ ì‚¬ë§
         if (player->GetHealth() <= 0)
         {
             break;
         }
-        // »óÁ¡ ¹æ¹®
+        // ìƒì  ë°©ë¬¸
         manager.VisitShop(*player);
     }
 
-    // 10·¹º§ÀÌ¸é º¸½ºÀü ÀÔÀå
+    // 10ë ˆë²¨ì´ë©´ ë³´ìŠ¤ì „ ì…ì¥
     if (player->GetLevel() >= 10)
     {
         system("cls");
         player->DisplayStatus();
         cout << endl;
 
-        // º¸½º »ı¼º
+        // ë³´ìŠ¤ ìƒì„±
         BossMonster* boss = manager.GenerateBossMonster(player->GetLevel());
-        // º¸½º ÀüÅõ
+        // ë³´ìŠ¤ ì „íˆ¬
         manager.Battle(*player, *boss);
         delete boss;
     }
 
-    cout << "°ÔÀÓÀÌ Á¾·áµÇ¾ú½À´Ï´Ù." << endl;
+    cout << "ê²Œì„ì´ ì¢…ë£Œë˜ì—ˆìŠµë‹ˆë‹¤." << endl;
     return 0;
 }

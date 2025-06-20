@@ -1,4 +1,4 @@
-#include "Orc.h"
+﻿#include "Orc.h"
 #include <iostream>
 
 Orc::Orc(int level)

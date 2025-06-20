@@ -1,4 +1,4 @@
-#include "Goblin.h"
+﻿#include "Goblin.h"
 #include <iostream>
 
 Goblin::Goblin(int level)

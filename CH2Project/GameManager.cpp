@@ -1,4 +1,4 @@
-#include "GameManager.h"
+ï»¿#include "GameManager.h"
 #include "Goblin.h"
 #include "Orc.h"
 #include "Troll.h"
@@ -9,7 +9,7 @@
 #include <cstdlib>
 #include <ctime>
 
-// º¸½º°¡ ¾Æ´Ñ Àû °¡Á®¿À±â
+// ë³´ìŠ¤ê°€ ì•„ë‹Œ ì  ê°€ì ¸ì˜¤ê¸°
 Monster* GameManager::GenerateMonster(int level) 
 {
     int type = rand() % 3;
@@ -21,72 +21,72 @@ Monster* GameManager::GenerateMonster(int level)
     default: return new Goblin(level);
     }
 }
-// º¸½º °¡Á®¿À±â
+// ë³´ìŠ¤ ê°€ì ¸ì˜¤ê¸°
 BossMonster* GameManager::GenerateBossMonster(int level)
 {
     return new BossMonster(level);
 }
 
-// ÇÃ·¹ÀÌ¾î¿Í ÀûÀÌ ½Î¿ì´Â ÇÔ¼ö
+// í”Œë ˆì´ì–´ì™€ ì ì´ ì‹¸ìš°ëŠ” í•¨ìˆ˜
 void GameManager::Battle(Characters& player, Monster& enemy)
 {
     if (enemy.IsBoss())
     {
-        cout << "º¸½º ¸ó½ºÅÍ " << enemy.GetName() << " µîÀå! Ã¼·Â: " << enemy.GetHealth() << ", °ø°İ·Â: " << enemy.GetAttack() << endl;
+        cout << "ë³´ìŠ¤ ëª¬ìŠ¤í„° " << enemy.GetName() << " ë“±ì¥! ì²´ë ¥: " << enemy.GetHealth() << ", ê³µê²©ë ¥: " << enemy.GetAttack() << endl;
     }
     else
     {
-        cout << "¸ó½ºÅÍ " << enemy.GetName() << " µîÀå! Ã¼·Â: " << enemy.GetHealth() << ", °ø°İ·Â: " << enemy.GetAttack() << endl;
+        cout << "ëª¬ìŠ¤í„° " << enemy.GetName() << " ë“±ì¥! ì²´ë ¥: " << enemy.GetHealth() << ", ê³µê²©ë ¥: " << enemy.GetAttack() << endl;
     }
         
-    // ÇÃ·¹ÀÌ¾î¿Í Àû ¸ğµÎ »ì¾ÆÀÖÀ» °æ¿ì
+    // í”Œë ˆì´ì–´ì™€ ì  ëª¨ë‘ ì‚´ì•„ìˆì„ ê²½ìš°
     while (player.GetHealth() > 0 && enemy.GetHealth() > 0)
     {
-        // 1. ¾ÆÀÌÅÛ »ç¿ë
+        // 1. ì•„ì´í…œ ì‚¬ìš©
         if (!player.GetInventory().empty())
         {
             int useItemChance = rand() % 100;
-            // 30% È®·ü
+            // 30% í™•ë¥ 
             if (useItemChance < 30)
             {
-                // °¡Áö°í ÀÖ´Â ¾ÆÀÌÅÛ Áß ·£´ı
+                // ê°€ì§€ê³  ìˆëŠ” ì•„ì´í…œ ì¤‘ ëœë¤
                 int itemIndex = rand() % player.GetInventory().size();
-                // ¾ÆÀÌÅÛ »ç¿ë
+                // ì•„ì´í…œ ì‚¬ìš©
                 player.GetInventory()[itemIndex]->Use(player);
-                // ¾ÆÀÌÅÛ »ç¿ë ÈÄ ÀÎº¥Åä¸®¿¡¼­ Á¦°Å
+                // ì•„ì´í…œ ì‚¬ìš© í›„ ì¸ë²¤í† ë¦¬ì—ì„œ ì œê±°
                 player.GetInventory().erase(player.GetInventory().begin() + itemIndex);
             }
         }
 
 
-        // 2. ÇÃ·¹ÀÌ¾î -> Àû °ø°İ
-        // ÀûÀÇ Ã¼·Â º¯È­¸¦ º¸¿©ÁÖ±â À§ÇÑ º¯¼ö ÀúÀå (¿¹: 50 -> 0)
+        // 2. í”Œë ˆì´ì–´ -> ì  ê³µê²©
+        // ì ì˜ ì²´ë ¥ ë³€í™”ë¥¼ ë³´ì—¬ì£¼ê¸° ìœ„í•œ ë³€ìˆ˜ ì €ì¥ (ì˜ˆ: 50 -> 0)
         int prevEnemyHealth = enemy.GetHealth();
-        // ÇÃ·¹ÀÌ¾î -> Àû °ø°İ
+        // í”Œë ˆì´ì–´ -> ì  ê³µê²©
         enemy.TakeDamage(player.GetAttack());
-        cout << player.GetName() << "°¡ " << enemy.GetName() << "À»(¸¦) °ø°İÇÕ´Ï´Ù! "
-            << enemy.GetName() << " Ã¼·Â: " << prevEnemyHealth << " ¡æ " << enemy.GetHealth() << endl;// ÀûÀÌ Á×¾úÀ» °æ¿ì
+        cout << player.GetName() << "ê°€ " << enemy.GetName() << "ì„(ë¥¼) ê³µê²©í•©ë‹ˆë‹¤! "
+            << enemy.GetName() << " ì²´ë ¥: " << prevEnemyHealth << " â†’ " << enemy.GetHealth() << endl;// ì ì´ ì£½ì—ˆì„ ê²½ìš°
         
         
-        // 3. ÀûÀÌ Á×¾úÀ» °æ¿ì
+        // 3. ì ì´ ì£½ì—ˆì„ ê²½ìš°
         if (enemy.GetHealth() <= 0)
         {
-            cout << enemy.GetName() << " Ã³Ä¡!" << endl;
-            // ÀûÀÌ º¸½ºÀÏ °æ¿ì
+            cout << enemy.GetName() << " ì²˜ì¹˜!" << endl;
+            // ì ì´ ë³´ìŠ¤ì¼ ê²½ìš°
             if (enemy.IsBoss())
             {
-                cout << "ÃàÇÏÇÕ´Ï´Ù! º¸½º " << enemy.GetName() << "À»(¸¦) Ã³Ä¡ÇÏ°í °ÔÀÓÀ» Å¬¸®¾îÇß½À´Ï´Ù!" << endl;
+                cout << "ì¶•í•˜í•©ë‹ˆë‹¤! ë³´ìŠ¤ " << enemy.GetName() << "ì„(ë¥¼) ì²˜ì¹˜í•˜ê³  ê²Œì„ì„ í´ë¦¬ì–´í–ˆìŠµë‹ˆë‹¤!" << endl;
             }
 
-            // ÀûÀ» ¹°¸®ÃÆÀ» ¶§ ¾ò´Â °ñµå
+            // ì ì„ ë¬¼ë¦¬ì³¤ì„ ë•Œ ì–»ëŠ” ê³¨ë“œ
             int goldReward = 10 + rand() % 11;
-            // ÇÃ·¹ÀÌ¾î °æÇèÄ¡ + 50 exp
+            // í”Œë ˆì´ì–´ ê²½í—˜ì¹˜ + 50 exp
             player.SetExperience(player.GetExperience() + 50);
-            // ÇÃ·¹ÀÌ¾î °ñµå + 10~20 °ñµå
+            // í”Œë ˆì´ì–´ ê³¨ë“œ + 10~20 ê³¨ë“œ
             player.SetGold(player.GetGold() + goldReward);
-            cout << player.GetName() << "°¡ 50 EXP¿Í " << goldReward << " °ñµå¸¦ È¹µæÇß½À´Ï´Ù. ÇöÀç EXP: " << player.GetExperience() << "/100, °ñµå: " << player.GetGold() << endl;
+            cout << player.GetName() << "ê°€ 50 EXPì™€ " << goldReward << " ê³¨ë“œë¥¼ íšë“í–ˆìŠµë‹ˆë‹¤. í˜„ì¬ EXP: " << player.GetExperience() << "/100, ê³¨ë“œ: " << player.GetGold() << endl;
             
-            // 4. 30% È®·ü·Î ¾ÆÀÌÅÛ µå¶ø
+            // 4. 30% í™•ë¥ ë¡œ ì•„ì´í…œ ë“œë
             int dropChance = rand() % 100;
             if (dropChance < 30)
             {
@@ -94,11 +94,11 @@ void GameManager::Battle(Characters& player, Monster& enemy)
                 if (droppedItem)
                 {
                     player.GetInventory().push_back(droppedItem);
-                    cout << droppedItem->GetName() << " ¾ÆÀÌÅÛÀ» È¹µæÇß½À´Ï´Ù!" << endl;
+                    cout << droppedItem->GetName() << " ì•„ì´í…œì„ íšë“í–ˆìŠµë‹ˆë‹¤!" << endl;
                 }
             }
 
-            // ÇÃ·¹ÀÌ¾îÀÇ °æÇèÄ¡°¡ 100ÀÌ»óÀÌ°í ·¹º§ÀÌ 10º¸´Ù ³·Àº °æ¿ì ·¹º§¾÷
+            // í”Œë ˆì´ì–´ì˜ ê²½í—˜ì¹˜ê°€ 100ì´ìƒì´ê³  ë ˆë²¨ì´ 10ë³´ë‹¤ ë‚®ì€ ê²½ìš° ë ˆë²¨ì—…
             while (player.GetExperience() >= 100 && player.GetLevel() < 10)
             {
                 player.LevelUp();
@@ -106,8 +106,8 @@ void GameManager::Battle(Characters& player, Monster& enemy)
             break;
         }
 
-        // 5. Àû -> ÇÃ·¹ÀÌ¾î °ø°İ
-        // ÇÃ·¹ÀÌ¾îÀÇ Ã¼·Â º¯È­¸¦ º¸¿©ÁÖ±â À§ÇÑ º¯¼ö ÀúÀå (¿¹: 50 -> 0)
+        // 5. ì  -> í”Œë ˆì´ì–´ ê³µê²©
+        // í”Œë ˆì´ì–´ì˜ ì²´ë ¥ ë³€í™”ë¥¼ ë³´ì—¬ì£¼ê¸° ìœ„í•œ ë³€ìˆ˜ ì €ì¥ (ì˜ˆ: 50 -> 0)
         int prevPlayerHealth = player.GetHealth();
         int newHealth = prevPlayerHealth - enemy.GetAttack();
 
@@ -116,45 +116,45 @@ void GameManager::Battle(Characters& player, Monster& enemy)
             newHealth = 0;
         }
         player.SetHealth(newHealth);
-        cout << enemy.GetName() << "ÀÌ " << player.GetName() << "¸¦ °ø°İÇÕ´Ï´Ù! "
-            << player.GetName() << " Ã¼·Â: " << prevPlayerHealth << " ¡æ " << player.GetHealth() << endl;
+        cout << enemy.GetName() << "ì´ " << player.GetName() << "ë¥¼ ê³µê²©í•©ë‹ˆë‹¤! "
+            << player.GetName() << " ì²´ë ¥: " << prevPlayerHealth << " â†’ " << player.GetHealth() << endl;
         cout << endl;
 
-        // ÇÃ·¹ÀÌ¾î°¡ Á×¾úÀ» °æ¿ì
+        // í”Œë ˆì´ì–´ê°€ ì£½ì—ˆì„ ê²½ìš°
         if (player.GetHealth() <= 0)
         {
-            cout << player.GetName() << "°¡ »ç¸ÁÇß½À´Ï´Ù. °ÔÀÓ ¿À¹ö!" << endl;
+            cout << player.GetName() << "ê°€ ì‚¬ë§í–ˆìŠµë‹ˆë‹¤. ê²Œì„ ì˜¤ë²„!" << endl;
             break;
         }
     }
 }
 
-// »óÁ¡ ¹æ¹®
+// ìƒì  ë°©ë¬¸
 void GameManager::VisitShop(Characters& player)
 {
     char shopChoice;
-    cout << "»óÁ¡À» ¹æ¹®ÇÏ½Ã°Ú½À´Ï±î? (Y/N): ";
+    cout << "ìƒì ì„ ë°©ë¬¸í•˜ì‹œê² ìŠµë‹ˆê¹Œ? (Y/N): ";
     cin >> shopChoice;
     cin.ignore(numeric_limits<streamsize>::max(), '\n');
     if (shopChoice != 'Y' && shopChoice != 'y')
     {
-        cout << "»óÁ¡À» ¹æ¹®ÇÏÁö ¾Ê½À´Ï´Ù." << endl;
+        cout << "ìƒì ì„ ë°©ë¬¸í•˜ì§€ ì•ŠìŠµë‹ˆë‹¤." << endl;
         return;
     }
-    // »óÁ¡ °è¼Ó ÀÌ¿ë
+    // ìƒì  ê³„ì† ì´ìš©
     while (true)
     {
         shopInstance.DisplayItems();
-        cout << "°ñµå: " << player.GetGold() << endl;
-        cout << "1. ¾ÆÀÌÅÛ ±¸¸Å  2. ¾ÆÀÌÅÛ ÆÇ¸Å  0. »óÁ¡ ³ª°¡±â" << endl;
-        cout << "¼±ÅÃ: ";
+        cout << "ê³¨ë“œ: " << player.GetGold() << endl;
+        cout << "1. ì•„ì´í…œ êµ¬ë§¤  2. ì•„ì´í…œ íŒë§¤  0. ìƒì  ë‚˜ê°€ê¸°" << endl;
+        cout << "ì„ íƒ: ";
         int menu = 0;
         cin >> menu;
         cin.ignore(numeric_limits<streamsize>::max(), '\n');
 
         if (menu == 1)
         {
-            cout << "±¸¸ÅÇÒ ¾ÆÀÌÅÛ ¹øÈ£¸¦ ¼±ÅÃÇÏ¼¼¿ä (0: Ãë¼Ò): ";
+            cout << "êµ¬ë§¤í•  ì•„ì´í…œ ë²ˆí˜¸ë¥¼ ì„ íƒí•˜ì„¸ìš” (0: ì·¨ì†Œ): ";
             int choice = 0;
             cin >> choice;
             cin.ignore(numeric_limits<streamsize>::max(), '\n');
@@ -167,7 +167,7 @@ void GameManager::VisitShop(Characters& player)
         else if (menu == 2)
         {
             player.ShowInventory();
-            cout << "ÆÇ¸ÅÇÒ ¾ÆÀÌÅÛ ¹øÈ£¸¦ ¼±ÅÃÇÏ¼¼¿ä (0: Ãë¼Ò): ";
+            cout << "íŒë§¤í•  ì•„ì´í…œ ë²ˆí˜¸ë¥¼ ì„ íƒí•˜ì„¸ìš” (0: ì·¨ì†Œ): ";
             int sellIdx = 0;
             cin >> sellIdx;
             cin.ignore(numeric_limits<streamsize>::max(), '\n');
@@ -179,17 +179,17 @@ void GameManager::VisitShop(Characters& player)
         }
         else if (menu == 0)
         {
-            cout << "»óÁ¡¿¡¼­ ³ª°©´Ï´Ù." << endl;
+            cout << "ìƒì ì—ì„œ ë‚˜ê°‘ë‹ˆë‹¤." << endl;
             break;
         }
         else
         {
-            cout << "Àß¸øµÈ ÀÔ·ÂÀÔ´Ï´Ù." << endl;
+            cout << "ì˜ëª»ëœ ì…ë ¥ì…ë‹ˆë‹¤." << endl;
         }
     }
 }
 
-// ÀÎº¥Åä¸® Ç¥½Ã
+// ì¸ë²¤í† ë¦¬ í‘œì‹œ
 void GameManager::DisplayInventory(Characters& player)
 {
     player.ShowInventory();

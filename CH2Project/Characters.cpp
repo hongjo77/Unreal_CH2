@@ -1,4 +1,4 @@
-#include "Characters.h"
+ï»¿#include "Characters.h"
 #include "Shop.h"
 #include <iostream>
 
@@ -7,7 +7,7 @@ Characters* Characters::Instance = nullptr;
 Characters::Characters(const string& inName)
     : Name(inName), Level(1), Health(200), MaxHealth(200), Attack(30), Experience(0), Gold(0)
 {
-    cout << "Ä³¸¯ÅÍ " << Name << " »ý¼º ¿Ï·á! ·¹º§: " << Level << ", Ã¼·Â: " << Health << ", °ø°Ý·Â: " << Attack << endl;
+    cout << "ìºë¦­í„° " << Name << " ìƒì„± ì™„ë£Œ! ë ˆë²¨: " << Level << ", ì²´ë ¥: " << Health << ", ê³µê²©ë ¥: " << Attack << endl;
     cout << endl;
 }
 
@@ -24,13 +24,13 @@ string Characters::GetName() const { return Name; }
 
 void Characters::DisplayStatus() const
 {
-    cout << "ÀÌ¸§: " << Name << " | ·¹º§: " << Level << " | Ã¼·Â: " << Health << "/" << MaxHealth
-        << " | °ø°Ý·Â: " << Attack << " | °æÇèÄ¡: " << Experience << " | °ñµå: " << Gold << endl;
+    cout << "ì´ë¦„: " << Name << " | ë ˆë²¨: " << Level << " | ì²´ë ¥: " << Health << "/" << MaxHealth
+        << " | ê³µê²©ë ¥: " << Attack << " | ê²½í—˜ì¹˜: " << Experience << " | ê³¨ë“œ: " << Gold << endl;
 }
 
 void Characters::LevelUp()
 {
-    // ÃÖ´ë ·¹º§ 10
+    // ìµœëŒ€ ë ˆë²¨ 10
     if (Level >= 10)
     {
         return;
@@ -40,25 +40,25 @@ void Characters::LevelUp()
     MaxHealth += Level * 20;
     Attack += Level * 5;
     Health = MaxHealth;
-    cout << "·¹º§¾÷! ÇöÀç ·¹º§: " << Level << " | Ã¼·Â: " << MaxHealth << " | °ø°Ý·Â: " << Attack << endl;
+    cout << "ë ˆë²¨ì—…! í˜„ìž¬ ë ˆë²¨: " << Level << " | ì²´ë ¥: " << MaxHealth << " | ê³µê²©ë ¥: " << Attack << endl;
 }
 
 void Characters::ShowInventory() const
 {
-    cout << "--- ÀÎº¥Åä¸® ---" << endl;
+    cout << "--- ì¸ë²¤í† ë¦¬ ---" << endl;
     if (Inventory.empty())
     {
-        cout << " (ºñ¾îÀÖÀ½)" << endl;
+        cout << " (ë¹„ì–´ìžˆìŒ)" << endl;
         return;
     }
-    // ÀÎº¥Åä¸® ¾ÆÀÌÅÛ ÀüºÎ Ãâ·Â
+    // ì¸ë²¤í† ë¦¬ ì•„ì´í…œ ì „ë¶€ ì¶œë ¥
     for (size_t i = 0; i < Inventory.size(); i++)
     {
         cout << (i + 1) << ". " << Inventory[i]->GetName() << endl;
     }
 }
 
-// ¸â¹ö º¯¼ö Getter Setter
+// ë©¤ë²„ ë³€ìˆ˜ Getter Setter
 int Characters::GetHealth() const { return Health; }
 void Characters::SetHealth(int newHealth) { Health = newHealth; }
 int Characters::GetMaxHealth() const { return MaxHealth; }
@@ -71,4 +71,4 @@ void Characters::SetExperience(int newExp) { Experience = newExp; }
 int Characters::GetGold() const { return Gold; }
 void Characters::SetGold(int newGold) { Gold = newGold; }
 vector<Item*>& Characters::GetInventory() { return Inventory; }
-//gitpushÅ×½ºÆ®
+//gitpushí…ŒìŠ¤íŠ¸

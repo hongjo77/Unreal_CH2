@@ -1,4 +1,4 @@
-#include "AttackBoost.h"
+ï»¿#include "AttackBoost.h"
 #include "Characters.h"
 #include <iostream>
 
@@ -6,9 +6,9 @@ AttackBoost::AttackBoost() : Item("Attack Boost") {}
 
 void AttackBoost::Use(Characters& target) 
 {
-    // °ø°İ·Â 10 Áõ°¡
+    // ê³µê²©ë ¥ 10 ì¦ê°€
     target.SetAttack(target.GetAttack() + 10);
-    cout << target.GetName() << "°¡ " << Name << "À» »ç¿ëÇß½À´Ï´Ù. " 
-        << target.GetName() << "°ø°İ·ÂÀÌ 10¸¸Å­ Áõ°¡ÇÏ¿´½À´Ï´Ù! ÇöÀç °ø°İ·Â: " 
+    cout << target.GetName() << "ê°€ " << Name << "ì„ ì‚¬ìš©í–ˆìŠµë‹ˆë‹¤. " 
+        << target.GetName() << "ê³µê²©ë ¥ì´ 10ë§Œí¼ ì¦ê°€í•˜ì˜€ìŠµë‹ˆë‹¤! í˜„ì¬ ê³µê²©ë ¥: " 
         << target.GetAttack() << endl;
 }

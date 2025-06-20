@@ -1,4 +1,4 @@
-#include "Monster.h"
+ï»¿#include "Monster.h"
 #include "HealthPotion.h"
 #include "AttackBoost.h"
 #include <iostream>
@@ -10,12 +10,12 @@ Monster::Monster(const string& name, int health, int attack)
 
 Monster::~Monster() {}
 
-// ¸â¹ö º¯¼ö Getter
+// ë©¤ë²„ ë³€ìˆ˜ Getter
 string Monster::GetName() const { return Name; }
 int Monster::GetHealth() const { return Health; }
 int Monster::GetAttack() const { return Attack; }
 
-// ÇÇ°İ
+// í”¼ê²©
 void Monster::TakeDamage(int damage)
 {
     Health -= damage;
@@ -25,7 +25,7 @@ void Monster::TakeDamage(int damage)
     }
 }
 
-// ¸ó½ºÅÍ°¡ ¾ÆÀÌÅÛÀ» µå¶ø
+// ëª¬ìŠ¤í„°ê°€ ì•„ì´í…œì„ ë“œë
 Item* Monster::DropItem() 
 {
     int itemType = rand() % 2;
@@ -33,15 +33,15 @@ Item* Monster::DropItem()
     if (itemType == 0)
     {
         dropped = new HealthPotion();
-        cout << Name << "ÀÌ(°¡) Ã¼·Â Æ÷¼ÇÀ» µå¶øÇß½À´Ï´Ù!" << endl;
+        cout << Name << "ì´(ê°€) ì²´ë ¥ í¬ì…˜ì„ ë“œëí–ˆìŠµë‹ˆë‹¤!" << endl;
     }
     else
     {
         dropped = new AttackBoost();
-        cout << Name << "ÀÌ(°¡) °ø°İ·Â ºÎ½ºÆ®¸¦ µå¶øÇß½À´Ï´Ù!" << endl;
+        cout << Name << "ì´(ê°€) ê³µê²©ë ¥ ë¶€ìŠ¤íŠ¸ë¥¼ ë“œëí–ˆìŠµë‹ˆë‹¤!" << endl;
     }
     return dropped;
 }
 
-// ±âº»ÀûÀ¸·Î ¸ğµç ÀûÀº º¸½º°¡ ¾Æ´Ô
+// ê¸°ë³¸ì ìœ¼ë¡œ ëª¨ë“  ì ì€ ë³´ìŠ¤ê°€ ì•„ë‹˜
 bool Monster::IsBoss() const { return false; }

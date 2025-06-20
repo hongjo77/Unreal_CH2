@@ -1,4 +1,4 @@
-#include "HealthPotion.h"
+ï»¿#include "HealthPotion.h"
 #include "Characters.h"
 #include <iostream>
 
@@ -6,14 +6,14 @@ HealthPotion::HealthPotion() : Item("Health Potion") {}
 
 void HealthPotion::Use(Characters& target)
 {
-    // 50¸¸Å­ È¸º¹
+    // 50ë§Œí¼ íšŒë³µ
     int newHealth = target.GetHealth() + 50;
-    // ÃÊ°ú È¸º¹½Ã ÃÖ´ë Ã¼·ÂÀ¸·Î ¼³Á¤
+    // ì´ˆê³¼ íšŒë³µì‹œ ìµœëŒ€ ì²´ë ¥ìœ¼ë¡œ ì„¤ì •
     if (newHealth > target.GetMaxHealth())
     {
         newHealth = target.GetMaxHealth();
     }
     target.SetHealth(newHealth);
-    cout << target.GetName() << "°¡ " << Name << "À» »ç¿ëÇß½À´Ï´Ù. "
-        << target.GetName() << " Ã¼·Â: " << target.GetHealth() << endl;
+    cout << target.GetName() << "ê°€ " << Name << "ì„ ì‚¬ìš©í–ˆìŠµë‹ˆë‹¤. "
+        << target.GetName() << " ì²´ë ¥: " << target.GetHealth() << endl;
 }

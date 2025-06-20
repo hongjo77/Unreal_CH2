@@ -1,4 +1,4 @@
-#include "BossMonster.h"
+ï»¿#include "BossMonster.h"
 #include <iostream>
 
 BossMonster::BossMonster(int level)
@@ -17,5 +17,5 @@ void BossMonster::TakeDamage(int damage)
     }
 }
 
-// º¸½ºÀÎÁö ¾Æ´ÑÁö È®ÀÎ
+// ë³´ìŠ¤ì¸ì§€ ì•„ë‹Œì§€ í™•ì¸
 bool BossMonster::IsBoss() const { return true; }
