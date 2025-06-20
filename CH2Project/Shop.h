@@ -16,4 +16,7 @@ public:
     void DisplayItems() const;
     void BuyItem(int index, Characters& player);
     void SellItem(int index, Characters& player);
+
+    //주석추가
+    //주석추가1
 };
