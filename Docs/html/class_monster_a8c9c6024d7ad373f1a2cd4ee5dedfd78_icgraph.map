@@ -1,0 +1,11 @@
+<map id="Monster::Monster" name="Monster::Monster">
+<area shape="rect" id="Node000001" title=" " alt="" coords="237,81,360,108"/>
+<area shape="rect" id="Node000002" href="$class_boss_monster.html#aef30dc963d9c3077ca4ee414aca8c694" title=" " alt="" coords="5,5,189,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="256,76,188,46,153,35,155,30,190,42,258,71"/>
+<area shape="rect" id="Node000003" href="$class_goblin.html#a9e93cac750755dc82dbdce99023b5db0" title=" " alt="" coords="45,56,149,83"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="221,88,149,78,150,73,222,82"/>
+<area shape="rect" id="Node000004" href="$class_orc.html#aeb59167c062de086f15d0e5647a30c0a" title=" " alt="" coords="61,107,133,133"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="222,107,134,118,133,113,221,102"/>
+<area shape="rect" id="Node000005" href="$class_troll.html#af797c653934d6bcff356f150c4d8bfa8" title=" " alt="" coords="57,157,137,184"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="258,118,190,148,138,164,136,159,188,143,256,113"/>
+</map>

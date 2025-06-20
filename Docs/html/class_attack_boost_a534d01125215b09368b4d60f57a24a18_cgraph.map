@@ -1,0 +1,9 @@
+<map id="AttackBoost::Use" name="AttackBoost::Use">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,56,131,83"/>
+<area shape="rect" id="Node000002" href="$class_characters.html#ae5bceda9eccca6be00f4eb70adbae181" title=" " alt="" coords="179,5,331,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="119,53,188,34,189,39,121,58"/>
+<area shape="rect" id="Node000003" href="$class_characters.html#a884e4c03002aacc3804adecf23292482" title=" " alt="" coords="180,56,330,83"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="131,67,165,67,165,72,131,72"/>
+<area shape="rect" id="Node000004" href="$class_characters.html#a2a9add7d82c6f69ebb72576d73bee206" title=" " alt="" coords="179,107,330,133"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="121,81,189,100,188,105,119,86"/>
+</map>

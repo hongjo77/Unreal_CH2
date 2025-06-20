@@ -1,0 +1,50 @@
+\doxysection{Characters.\+h}
+\hypertarget{_characters_8h_source}{}\label{_characters_8h_source}\index{Characters.h@{Characters.h}}
+\mbox{\hyperlink{_characters_8h}{이 파일의 문서화 페이지로 가기}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_item_8h}{Item.h}}"{}}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{keyword}{using\ namespace\ }std;}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_characters_ab04f788d89d6d3e47bd63dc109e72896}{Characters}}}
+\DoxyCodeLine{00009\ \{}
+\DoxyCodeLine{00010\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00011\ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{class_characters_ab04f788d89d6d3e47bd63dc109e72896}{Characters}}*\ Instance;}
+\DoxyCodeLine{00012\ \ \ \ \ \textcolor{keywordtype}{string}\ Name;}
+\DoxyCodeLine{00013\ \ \ \ \ \textcolor{keywordtype}{int}\ Level;}
+\DoxyCodeLine{00014\ \ \ \ \ \textcolor{keywordtype}{int}\ Health;}
+\DoxyCodeLine{00015\ \ \ \ \ \textcolor{keywordtype}{int}\ MaxHealth;}
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{keywordtype}{int}\ Attack;}
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keywordtype}{int}\ Experience;}
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keywordtype}{int}\ Gold;}
+\DoxyCodeLine{00019\ \ \ \ \ vector<Item*>\ Inventory;}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00022\ \ \ \ \ \mbox{\hyperlink{class_characters_ab04f788d89d6d3e47bd63dc109e72896}{Characters}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ inName);}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{class_characters_ab04f788d89d6d3e47bd63dc109e72896}{Characters}}*\ \mbox{\hyperlink{class_characters_a2382d1339fdf73ab8dd1d85b777b92b9}{GetInstance}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ inName\ =\ \textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_characters_a884e4c03002aacc3804adecf23292482}{GetName}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_characters_aa193ce965fc5f5bec0d4ee190acd25ea}{DisplayStatus}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_characters_a2496ae17e50f166f9acb151c11d73314}{LevelUp}}();}
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_characters_a4db23c91da2722b0ead9dcbb0ec75bab}{ShowInventory}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_characters_a1f6b79ef33c4eccdf5165b19562d4258}{GetHealth}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_characters_acf71dabdac969cc715182013b2a324d7}{SetHealth}}(\textcolor{keywordtype}{int}\ newHealth);}
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_characters_ab81aaa0098361cf070a2395618d30eab}{GetMaxHealth}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_characters_ae5bceda9eccca6be00f4eb70adbae181}{GetAttack}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_characters_a2a9add7d82c6f69ebb72576d73bee206}{SetAttack}}(\textcolor{keywordtype}{int}\ newAttack);}
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_characters_adcc06774bce828ee9259b44485aedbc2}{GetLevel}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_characters_a0b328c84e6746898785a8ab7d7200fef}{SetLevel}}(\textcolor{keywordtype}{int}\ newLevel);}
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_characters_ad9da8f9b3727fc62478af2142000b000}{GetExperience}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_characters_a02abf31609d28253aba5fd553d51629b}{SetExperience}}(\textcolor{keywordtype}{int}\ newExp);}
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_characters_ac7cf4e011a1f83f4fd2dd6cc27d2fc7e}{GetGold}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_characters_a6277ba6e439db076ec7fa58cff427335}{SetGold}}(\textcolor{keywordtype}{int}\ newGold);}
+\DoxyCodeLine{00043\ \ \ \ \ vector<Item*>\&\ \mbox{\hyperlink{class_characters_aa6fb49a51caa77938c62e05792fcff17}{GetInventory}}();}
+\DoxyCodeLine{00044\ \};}
+
+\end{DoxyCode}

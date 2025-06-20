@@ -1,0 +1,25 @@
+\doxysection{Shop.\+h}
+\hypertarget{_shop_8h_source}{}\label{_shop_8h_source}\index{Shop.h@{Shop.h}}
+\mbox{\hyperlink{_shop_8h}{이 파일의 문서화 페이지로 가기}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_item_8h}{Item.h}}"{}}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_characters_8h}{Characters.h}}"{}}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{keyword}{using\ namespace\ }std;}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_shop_a579ed9f949f7db3f90c22dfe10b25797}{Shop}}}
+\DoxyCodeLine{00009\ \{}
+\DoxyCodeLine{00010\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00011\ \ \ \ \ vector<Item*>\ AvailableItems;}
+\DoxyCodeLine{00012\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00013\ \ \ \ \ \mbox{\hyperlink{class_shop_a579ed9f949f7db3f90c22dfe10b25797}{Shop}}();}
+\DoxyCodeLine{00014\ \ \ \ \ \mbox{\hyperlink{class_shop_a36bf69bdc0da1b7258acc63a5fe89d40}{\string~Shop}}();}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_shop_afc60cfaf2afe944959598120838fb73f}{DisplayItems}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_shop_a6dc86a785aec3b4e6c6c2ad719ff1f94}{BuyItem}}(\textcolor{keywordtype}{int}\ index,\ \mbox{\hyperlink{class_characters}{Characters}}\&\ player);}
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_shop_afdebd734df841a41f9f8ecfaaf59335e}{SellItem}}(\textcolor{keywordtype}{int}\ index,\ \mbox{\hyperlink{class_characters}{Characters}}\&\ player);}
+\DoxyCodeLine{00019\ \};}
+
+\end{DoxyCode}

@@ -1,0 +1,32 @@
+\doxysection{Monster.\+h}
+\hypertarget{_monster_8h_source}{}\label{_monster_8h_source}\index{Monster.h@{Monster.h}}
+\mbox{\hyperlink{_monster_8h}{이 파일의 문서화 페이지로 가기}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_item_8h}{Item.h}}"{}}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <cstdlib>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <ctime>}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{keyword}{using\ namespace\ }std;}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_monster_a8c9c6024d7ad373f1a2cd4ee5dedfd78}{Monster}}}
+\DoxyCodeLine{00010\ \{}
+\DoxyCodeLine{00011\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00012\ \ \ \ \ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_monster_ae1df6536868a0520f8df5a1c73e8e6bb}{Name}};}
+\DoxyCodeLine{00013\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_monster_a233683dd12f861498c2dc97c4e24699c}{Health}};}
+\DoxyCodeLine{00014\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_monster_a8448ede8b4e9d2dca9ec98c2420606dc}{Attack}};}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00017\ \ \ \ \ \mbox{\hyperlink{class_monster_a8c9c6024d7ad373f1a2cd4ee5dedfd78}{Monster}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ name,\ \textcolor{keywordtype}{int}\ health,\ \textcolor{keywordtype}{int}\ attack);}
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_monster_a21619ba1759b910cd2fd50d858aab338}{\string~Monster}}();}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_monster_a7071b2d3fbf06db48888cf0792aff358}{GetName}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_monster_a2083a208cf409f4d35e1fe34e09d8e42}{GetHealth}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_monster_a794f6da1ba6594041441a44d1b28fa26}{GetAttack}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_monster_a709323e30e2ef726afc23793d7eec204}{TakeDamage}}(\textcolor{keywordtype}{int}\ damage);}
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_item}{Item}}*\ \mbox{\hyperlink{class_monster_a19aaa56f2e8245254416ebb2048c5d21}{DropItem}}();}
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_monster_ac6f0dd1d3632f1a2018013e9dbdd6ecc}{IsBoss}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00026\ \};}
+
+\end{DoxyCode}

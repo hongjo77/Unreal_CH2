@@ -1,0 +1,10 @@
+<map id="Characters::GetHealth" name="Characters::GetHealth">
+<area shape="rect" id="Node000001" title=" " alt="" coords="299,56,451,83"/>
+<area shape="rect" id="Node000002" href="$class_game_manager.html#a49b13f02f36be41415bd9dc60c55c2a1" title=" " alt="" coords="103,5,251,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="305,54,231,35,233,30,306,49"/>
+<area shape="rect" id="Node000003" href="$_main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,31,55,57"/>
+<area shape="poly" id="edge3_Node000001_Node000003" title=" " alt="" coords="283,65,55,48,55,43,284,60"/>
+<area shape="rect" id="Node000004" href="$class_health_potion.html#a0813aed3f5161b691aac4fe2198de1ac" title=" " alt="" coords="113,107,241,133"/>
+<area shape="poly" id="edge4_Node000001_Node000004" title=" " alt="" coords="306,90,233,109,231,103,305,85"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="88,37,56,42,55,37,87,32"/>
+</map>

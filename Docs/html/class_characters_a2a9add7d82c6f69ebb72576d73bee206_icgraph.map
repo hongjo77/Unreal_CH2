@@ -1,0 +1,5 @@
+<map id="Characters::SetAttack" name="Characters::SetAttack">
+<area shape="rect" id="Node000001" title=" " alt="" coords="179,5,330,32"/>
+<area shape="rect" id="Node000002" href="$class_attack_boost.html#a534d01125215b09368b4d60f57a24a18" title=" " alt="" coords="5,5,131,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="163,21,131,21,131,16,163,16"/>
+</map>

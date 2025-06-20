@@ -1,0 +1,116 @@
+\doxysection{Game\+Manager 클래스 참조}
+\hypertarget{class_game_manager}{}\label{class_game_manager}\index{GameManager@{GameManager}}
+
+
+{\ttfamily \#include $<$Game\+Manager.\+h$>$}
+
+\doxysubsubsection*{Public 멤버 함수}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_monster}{Monster}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_game_manager_a0164524342dd9edfe6eb23067dba84c5}{Generate\+Monster}} (int level)
+\item 
+\mbox{\hyperlink{class_boss_monster}{Boss\+Monster}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_game_manager_af84d568da0e6765df5d5d4ee600df6cc}{Generate\+Boss\+Monster}} (int level)
+\item 
+void \mbox{\hyperlink{class_game_manager_a49b13f02f36be41415bd9dc60c55c2a1}{Battle}} (\mbox{\hyperlink{class_characters}{Characters}} \&player, \mbox{\hyperlink{class_monster}{Monster}} \&enemy)
+\item 
+void \mbox{\hyperlink{class_game_manager_acdaa8e27fbee5fdf701ee8461a361039}{Visit\+Shop}} (\mbox{\hyperlink{class_characters}{Characters}} \&player)
+\item 
+void \mbox{\hyperlink{class_game_manager_ab917b9c4129c645f0076bb1081d2d33f}{Display\+Inventory}} (\mbox{\hyperlink{class_characters}{Characters}} \&player)
+\end{DoxyCompactItemize}
+
+
+\label{doc-func-members}
+\Hypertarget{class_game_manager_doc-func-members}
+\doxysubsection{멤버 함수 문서화}
+\Hypertarget{class_game_manager_a49b13f02f36be41415bd9dc60c55c2a1}\index{GameManager@{GameManager}!Battle@{Battle}}
+\index{Battle@{Battle}!GameManager@{GameManager}}
+\doxysubsubsection{\texorpdfstring{Battle()}{Battle()}}
+{\footnotesize\ttfamily \label{class_game_manager_a49b13f02f36be41415bd9dc60c55c2a1} 
+void Game\+Manager\+::\+Battle (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_characters}{Characters}} \&}]{player}{, }\item[{\mbox{\hyperlink{class_monster}{Monster}} \&}]{enemy}{}\end{DoxyParamCaption})}
+
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{class_game_manager_a49b13f02f36be41415bd9dc60c55c2a1_cgraph}
+\end{center}
+\end{figure}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=264pt]{class_game_manager_a49b13f02f36be41415bd9dc60c55c2a1_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_game_manager_ab917b9c4129c645f0076bb1081d2d33f}\index{GameManager@{GameManager}!DisplayInventory@{DisplayInventory}}
+\index{DisplayInventory@{DisplayInventory}!GameManager@{GameManager}}
+\doxysubsubsection{\texorpdfstring{DisplayInventory()}{DisplayInventory()}}
+{\footnotesize\ttfamily \label{class_game_manager_ab917b9c4129c645f0076bb1081d2d33f} 
+void Game\+Manager\+::\+Display\+Inventory (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_characters}{Characters}} \&}]{player}{}\end{DoxyParamCaption})}
+
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_game_manager_ab917b9c4129c645f0076bb1081d2d33f_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_game_manager_af84d568da0e6765df5d5d4ee600df6cc}\index{GameManager@{GameManager}!GenerateBossMonster@{GenerateBossMonster}}
+\index{GenerateBossMonster@{GenerateBossMonster}!GameManager@{GameManager}}
+\doxysubsubsection{\texorpdfstring{GenerateBossMonster()}{GenerateBossMonster()}}
+{\footnotesize\ttfamily \label{class_game_manager_af84d568da0e6765df5d5d4ee600df6cc} 
+\mbox{\hyperlink{class_boss_monster}{Boss\+Monster}} \texorpdfstring{$\ast$}{*} Game\+Manager\+::\+Generate\+Boss\+Monster (\begin{DoxyParamCaption}\item[{int}]{level}{}\end{DoxyParamCaption})}
+
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=301pt]{class_game_manager_af84d568da0e6765df5d5d4ee600df6cc_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_game_manager_a0164524342dd9edfe6eb23067dba84c5}\index{GameManager@{GameManager}!GenerateMonster@{GenerateMonster}}
+\index{GenerateMonster@{GenerateMonster}!GameManager@{GameManager}}
+\doxysubsubsection{\texorpdfstring{GenerateMonster()}{GenerateMonster()}}
+{\footnotesize\ttfamily \label{class_game_manager_a0164524342dd9edfe6eb23067dba84c5} 
+\mbox{\hyperlink{class_monster}{Monster}} \texorpdfstring{$\ast$}{*} Game\+Manager\+::\+Generate\+Monster (\begin{DoxyParamCaption}\item[{int}]{level}{}\end{DoxyParamCaption})}
+
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=314pt]{class_game_manager_a0164524342dd9edfe6eb23067dba84c5_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_game_manager_acdaa8e27fbee5fdf701ee8461a361039}\index{GameManager@{GameManager}!VisitShop@{VisitShop}}
+\index{VisitShop@{VisitShop}!GameManager@{GameManager}}
+\doxysubsubsection{\texorpdfstring{VisitShop()}{VisitShop()}}
+{\footnotesize\ttfamily \label{class_game_manager_acdaa8e27fbee5fdf701ee8461a361039} 
+void Game\+Manager\+::\+Visit\+Shop (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_characters}{Characters}} \&}]{player}{}\end{DoxyParamCaption})}
+
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_game_manager_acdaa8e27fbee5fdf701ee8461a361039_cgraph}
+\end{center}
+\end{figure}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=281pt]{class_game_manager_acdaa8e27fbee5fdf701ee8461a361039_icgraph}
+\end{center}
+\end{figure}
+
+
+이 클래스에 대한 문서화 페이지는 다음의 파일들로부터 생성되었습니다.\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_game_manager_8h}{Game\+Manager.\+h}}\item 
+\mbox{\hyperlink{_game_manager_8cpp}{Game\+Manager.\+cpp}}\end{DoxyCompactItemize}

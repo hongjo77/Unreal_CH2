@@ -1,0 +1,5 @@
+<map id="BossMonster::BossMonster" name="BossMonster::BossMonster">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,5,189,32"/>
+<area shape="rect" id="Node000002" href="$class_monster.html#a8c9c6024d7ad373f1a2cd4ee5dedfd78" title=" " alt="" coords="237,5,360,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="189,16,221,16,221,21,189,21"/>
+</map>
