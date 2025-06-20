@@ -71,3 +71,4 @@ void Characters::SetExperience(int newExp) { Experience = newExp; }
 int Characters::GetGold() const { return Gold; }
 void Characters::SetGold(int newGold) { Gold = newGold; }
 vector<Item*>& Characters::GetInventory() { return Inventory; }
+//gitpushÅ×½ºÆ®
