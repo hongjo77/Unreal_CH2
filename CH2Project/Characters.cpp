@@ -30,17 +30,17 @@ void Characters::DisplayStatus() const
 
 void Characters::LevelUp()
 {
-    // 최대 레벨 10
-    if (Level >= 10)
+    cout << "--- 인벤토리 ---" << endl;
+    if (Inventory.empty())
     {
+        cout << " (비어있음)" << endl;
         return;
     }
-    Experience -= 100;
-    Level++;
-    MaxHealth += Level * 20;
-    Attack += Level * 5;
-    Health = MaxHealth;
-    cout << "레벨업! 현재 레벨: " << Level << " | 체력: " << MaxHealth << " | 공격력: " << Attack << endl;
+    // 인벤토리 아이템 전부 출력
+    for (size_t i = 0; i < Inventory.size(); i++)
+    {
+        cout << (i + 1) << ". " << Inventory[i]->GetName() << endl;
+    }
 }
 
 void Characters::ShowInventory() const
