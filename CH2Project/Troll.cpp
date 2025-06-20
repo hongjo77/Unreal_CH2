@@ -1,6 +1,6 @@
 #include "Troll.h"
 #include <iostream>
-//test command
+
 Troll::Troll(int level)
     : Monster(
         "Troll",
