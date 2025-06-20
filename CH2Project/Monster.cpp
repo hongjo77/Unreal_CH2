@@ -3,7 +3,6 @@
 #include "AttackBoost.h"
 #include <iostream>
 
-//Github Confirm
 
 Monster::Monster(const string& name, int health, int attack)
     : Name(name), Health(health), Attack(attack) {}
