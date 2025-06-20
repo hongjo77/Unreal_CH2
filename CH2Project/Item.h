@@ -1,7 +1,7 @@
 #pragma once
 #include <string>
 
-class Characters; // 전방 선언
+class Characters;
 
 class Item
 {
