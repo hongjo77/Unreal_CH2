@@ -18,4 +18,5 @@ public:
     void SellItem(int index, Characters& player);
 
     //주석추가
+    //주석추가1
 };
