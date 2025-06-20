@@ -1,4 +1,4 @@
-﻿#include "GameManager.h"
+#include "GameManager.h"
 #include "Goblin.h"
 #include "Orc.h"
 #include "Troll.h"
@@ -8,6 +8,7 @@
 #include <iostream>
 #include <cstdlib>
 #include <ctime>
+// 게임 매니저 테스트
 
 // 보스가 아닌 적 가져오기
 Monster* GameManager::GenerateMonster(int level) 
