@@ -35,4 +35,4 @@
 x64/
 *.vcxproj.user
 Doxyfile
-
+.vscode
