@@ -72,3 +72,4 @@ int Characters::GetGold() const { return Gold; }
 void Characters::SetGold(int newGold) { Gold = newGold; }
 vector<Item*>& Characters::GetInventory() { return Inventory; }
 //gitpush테스트
+//testmerge
