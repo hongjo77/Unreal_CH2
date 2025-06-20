@@ -13,3 +13,5 @@ public:
     virtual std::string GetName() const { return Name; }
     virtual void Use(Characters& target) = 0;
 };
+
+//테스트 주석 재생성
