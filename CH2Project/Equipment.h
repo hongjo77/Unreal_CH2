@@ -18,8 +18,8 @@ public:
 	virtual ~Equipment() {}
 	//Getter Setter
 	virtual string GetName() const { return Name; }
-	virtual int SetEnLevel(int newEnLevel) { EnhancementLevel = newEnLevel; }
+	virtual void SetEnLevel(int newEnLevel) { EnhancementLevel = newEnLevel; }
 	virtual int GetEnLevel() { return EnhancementLevel; }
-	virtual int SetStat(int newStat) { Stat = newStat; }
+	virtual void SetStat(int newStat) { Stat = newStat; }
 	virtual int GetStat() { return Stat; }
 };
