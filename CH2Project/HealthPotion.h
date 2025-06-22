@@ -3,6 +3,7 @@
 
 using namespace std;
 
+//체력포션
 class HealthPotion : public Item
 {
 public:

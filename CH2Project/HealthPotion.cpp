@@ -2,6 +2,7 @@
 #include "Characters.h"
 #include <iostream>
 
+//체력포션 생성자 Name : Health Potion
 HealthPotion::HealthPotion() : Item("Health Potion") {}
 
 void HealthPotion::Use(Characters& target)

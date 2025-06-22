@@ -2,11 +2,12 @@
 #include "Characters.h"
 #include <iostream>
 
+//공격력 증가포션 생성자 Name : Attack Boost
 AttackBoost::AttackBoost() : Item("Attack Boost") {}
 
 void AttackBoost::Use(Characters& target) 
 {
-    // 공격력 10 증가
+    // 공격력 10 증가 
     target.SetAttack(target.GetAttack() + 10);
     cout << target.GetName() << "가 " << Name << "을 사용했습니다. " 
         << target.GetName() << "공격력이 10만큼 증가하였습니다! 현재 공격력: " 
