@@ -126,27 +126,36 @@
     <ClCompile Include="AttackBoost.cpp" />
     <ClCompile Include="BossMonster.cpp" />
     <ClCompile Include="Characters.cpp" />
+    <ClCompile Include="Chest.cpp" />
     <ClCompile Include="GameManager.cpp" />
     <ClCompile Include="Goblin.cpp" />
     <ClCompile Include="HealthPotion.cpp" />
+    <ClCompile Include="Helmet.cpp" />
+    <ClCompile Include="Leg.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="Monster.cpp" />
     <ClCompile Include="Orc.cpp" />
     <ClCompile Include="Shop.cpp" />
     <ClCompile Include="Troll.cpp" />
+    <ClCompile Include="Weapon.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AttackBoost.h" />
     <ClInclude Include="BossMonster.h" />
     <ClInclude Include="Characters.h" />
+    <ClInclude Include="Chest.h" />
+    <ClInclude Include="Equipment.h" />
     <ClInclude Include="GameManager.h" />
     <ClInclude Include="Goblin.h" />
     <ClInclude Include="HealthPotion.h" />
+    <ClInclude Include="Helmet.h" />
     <ClInclude Include="Item.h" />
+    <ClInclude Include="Leg.h" />
     <ClInclude Include="Monster.h" />
     <ClInclude Include="Orc.h" />
     <ClInclude Include="Shop.h" />
     <ClInclude Include="Troll.h" />
+    <ClInclude Include="Weapon.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

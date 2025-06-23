@@ -2,12 +2,17 @@
 #include "Shop.h"
 #include <iostream>
 #include <random>
+#include "Chest.h"
+#include "Weapon.h"
+#include "Leg.h"
+#include "Helmet.h"
 
 Characters* Characters::Instance = nullptr;
 
 Characters::Characters(const string& inName)
     : Name(inName), Level(1), Health(200), MaxHealth(200), Attack(30), Experience(0), Gold(0), MaxMana(100),CurrentMana(100)
 {
+    this->InitEquipment();
     cout << "캐릭터 " << Name << " 생성 완료! 레벨: " << Level << ", 체력: " << Health << ", 공격력: " << Attack << endl;
     cout << endl;
 }
@@ -72,6 +77,7 @@ int Characters::GetAttack()
 {
     //공격 타입 설정
     Characters::RandomSkill();
+    int Attack = this->Attack + this->weapon->GetStat();
 
     auto recoverMana = [this](int n)
         {   
@@ -118,6 +124,45 @@ int Characters::GetAttack()
         recoverMana(10);
         return Attack;
     }
+}
+
+void Characters::InitEquipment()
+{
+    this->chest = new Chest();
+    this->helmet = new Helmet();
+    this->weapon = new Weapon();
+    this->leg = new Leg();
+     
+}
+
+Characters::~Characters()
+{
+    // 장비 해제
+    delete weapon;
+    delete helmet;
+    delete chest;
+    delete leg;
+
+    // 인벤토리 해제
+    for (auto item : Inventory) {
+        delete item;
+    }
+    Inventory.clear();
+}
+
+int Characters::GetTotalArmorStat()
+{
+    //생성자로 항상 기본장비가 있기 때문에 체크 필요 x
+    int total = 0;
+    total = this->helmet->GetStat() + this->chest->GetStat() + this->leg->GetStat();
+    return total;
+ }
+
+vector<Equipment*> Characters::GetEquipments()
+{
+    vector<Equipment*> tmp;
+    tmp = { this->helmet,this->chest,this->leg };
+    return tmp;
 }
 
 // 멤버 변수 Getter Setter

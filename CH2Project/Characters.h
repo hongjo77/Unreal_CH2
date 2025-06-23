@@ -1,12 +1,14 @@
 ﻿#pragma once
 #include <string>
 #include <vector>
-#include "Item.h"
+#include "HealthPotion.h"
+#include "AttackBoost.h"
+#include "Equipment.h"
 
 using namespace std;
 
-// 무기 공격력 계산식 캐릭터 내부에서 구현할 것 
-// 사빈씨가 구현해준 무기 클래스 바탕으로 계산하기
+// 그리고 장착 인벤토리 넘겨주는 함수 구현해줘야 댐
+
 enum class AttackType
 {
     Normal,
@@ -22,13 +24,17 @@ private:
     int Level;
     int Health;
     int MaxHealth;
-    int Attack;// 무기 공격력 계산식 해야됨
+    int Attack;
     int Experience;
     int Gold;
     int MaxMana;
     int CurrentMana;
-    vector<Item*> Inventory;
+    Equipment* weapon;
+    Equipment* helmet;
+    Equipment* chest;
+    Equipment* leg;
 
+    vector<Item*> Inventory = {new HealthPotion(), new AttackBoost()};
     AttackType currentAttackType = AttackType::Normal;
 
 protected:
@@ -56,4 +62,12 @@ public:
     int GetAttack();
     //랜덤한 스킬 선택
     int RandomSkill();
+    //장비 초기화
+    void InitEquipment();
+    //장비들 delete 위한 소멸자
+    ~Characters();
+    // 장비 스탯 총합
+    int GetTotalArmorStat();
+    // 장비 목록 넘기기
+    vector<Equipment*> GetEquipments();
 };
