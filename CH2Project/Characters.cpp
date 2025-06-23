@@ -1,11 +1,12 @@
 ﻿#include "Characters.h"
 #include "Shop.h"
 #include <iostream>
+#include <random>
 
 Characters* Characters::Instance = nullptr;
 
 Characters::Characters(const string& inName)
-    : Name(inName), Level(1), Health(200), MaxHealth(200), Attack(30), Experience(0), Gold(0)
+    : Name(inName), Level(1), Health(200), MaxHealth(200), Attack(30), Experience(0), Gold(0), MaxMana(100),CurrentMana(100)
 {
     cout << "캐릭터 " << Name << " 생성 완료! 레벨: " << Level << ", 체력: " << Health << ", 공격력: " << Attack << endl;
     cout << endl;
@@ -58,11 +59,71 @@ void Characters::ShowInventory() const
     }
 }
 
+int Characters::RandomSkill()
+{
+    srand(time(NULL));
+
+    int type = rand() % 3;
+    currentAttackType = static_cast<AttackType>(type);
+    return type;
+}
+
+int Characters::GetAttack()
+{
+    //공격 타입 설정
+    Characters::RandomSkill();
+
+    auto recoverMana = [this](int n)
+        {   
+                CurrentMana += n;
+
+            if (CurrentMana > MaxMana)
+                CurrentMana = MaxMana;
+        };
+
+    switch (currentAttackType)
+    {
+    case AttackType::Normal:
+        recoverMana(10);
+        return Attack;
+    
+    case AttackType::Strike:
+        if (CurrentMana >= 20)
+        {
+            cout <<"플레이어가 Strike 스킬을 사용합니다." << endl;
+            CurrentMana -= 20;
+            return Attack + 20;
+        }
+        else
+        {
+            recoverMana(10);
+            return Attack;
+        }
+    
+    case AttackType::FireBall:
+        if (CurrentMana >= 50)
+        {
+            cout << "플레이어가 FireBall 스킬을 사용합니다." << endl;
+            CurrentMana -= 50;
+            return Attack + 40;
+        }
+
+        else
+        {
+            recoverMana(10);
+            return Attack;
+        }
+
+    default:
+        recoverMana(10);
+        return Attack;
+    }
+}
+
 // 멤버 변수 Getter Setter
 int Characters::GetHealth() const { return Health; }
 void Characters::SetHealth(int newHealth) { Health = newHealth; }
 int Characters::GetMaxHealth() const { return MaxHealth; }
-int Characters::GetAttack() const { return Attack; }
 void Characters::SetAttack(int newAttack) { Attack = newAttack; }
 int Characters::GetLevel() const { return Level; }
 void Characters::SetLevel(int newLevel) { Level = newLevel; }

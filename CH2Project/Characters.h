@@ -5,6 +5,15 @@
 
 using namespace std;
 
+// 무기 공격력 계산식 캐릭터 내부에서 구현할 것 
+// 사빈씨가 구현해준 무기 클래스 바탕으로 계산하기
+enum class AttackType
+{
+    Normal,
+    FireBall,
+    Strike
+};
+
 class Characters
 {
 private:
@@ -13,10 +22,14 @@ private:
     int Level;
     int Health;
     int MaxHealth;
-    int Attack;
+    int Attack;// 무기 공격력 계산식 해야됨
     int Experience;
     int Gold;
+    int MaxMana;
+    int CurrentMana;
     vector<Item*> Inventory;
+
+    AttackType currentAttackType = AttackType::Normal;
 
 protected:
     Characters(const string& inName);
@@ -32,7 +45,6 @@ public:
     int GetHealth() const;
     void SetHealth(int newHealth);
     int GetMaxHealth() const;
-    int GetAttack() const;
     void SetAttack(int newAttack);
     int GetLevel() const;
     void SetLevel(int newLevel);
@@ -41,4 +53,7 @@ public:
     int GetGold() const;
     void SetGold(int newGold);
     vector<Item*>& GetInventory();
+    int GetAttack();
+    //랜덤한 스킬 선택
+    int RandomSkill();
 };
