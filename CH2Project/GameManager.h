@@ -10,6 +10,7 @@ class GameManager
 {
 private:
     Shop shopInstance;
+    int BattleCount = 1;
 
 public:
     Monster* GenerateMonster(int level);

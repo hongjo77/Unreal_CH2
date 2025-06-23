@@ -7,5 +7,4 @@ class Goblin : public Monster
 {
 public:
     Goblin(int level);
-    void TakeDamage(int damage) override;
 };
