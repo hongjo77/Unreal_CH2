@@ -1,5 +1,6 @@
 ﻿#include "HealthPotion.h"
 #include "Characters.h"
+#include <iostream>
 
 // 체력포션 생성자 초기값 [ Name : Health Potion, Amount : 0 ]
 HealthPotion::HealthPotion() : Item("Health Potion", 0) {}

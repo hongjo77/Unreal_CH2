@@ -1,5 +1,6 @@
 ﻿#include "AttackBoost.h"
 #include "Characters.h"
+#include <iostream>
 
 //공격력 증가포션 생성자 Name : Attack Boost
 AttackBoost::AttackBoost() : Item("Attack Boost", 0) {}
