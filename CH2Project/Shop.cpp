@@ -1,10 +1,6 @@
 ﻿#include "Shop.h"
 #include "HealthPotion.h"
 #include "AttackBoost.h"
-//include "Helmet.h"
-//include "Chest.h"
-//include "Leg.h"
-//include "Weapon.h"
 #include <iostream>
 
 // 아이템 목록 생성
@@ -12,15 +8,6 @@ Shop::Shop()
 {
     AvailableItems.push_back(new HealthPotion());
     AvailableItems.push_back(new AttackBoost());
-
-    //추가!!!
-    /*
-    EquitList.push_back(new Helmet());
-    EquitList.push_back(new Chest());
-    EquitList.push_back(new Leg());
-    EquitList.push_back(new Weapon());
-    */
-
 }
 
 Shop::~Shop()
@@ -29,14 +16,6 @@ Shop::~Shop()
     {
         delete item;
     }
-
-    /*
-    for (auto Equit : EquitList)
-    {
-        delete Equit;
-    }
-    */
-
 }
 
 // 진열대 출력
@@ -78,8 +57,12 @@ void Shop::BuyItem(int index, Characters& player)
         cout << "골드가 부족합니다." << endl;
         return;
     }
+    
+    //as-is
+    /*
     // 아이템은 새로 생성해서 플레이어에게 넘김 (상점의 진열품은 예시)
     Item* item = nullptr;
+    
     if (name == "Health Potion")
     {
         item = new HealthPotion();
@@ -88,10 +71,18 @@ void Shop::BuyItem(int index, Characters& player)
     {
         item = new AttackBoost();
     }
-
-    player.SetGold(player.GetGold() - price);
     player.GetInventory().push_back(item);
     cout << item->GetName() << "을(를) 구매했습니다!" << endl;
+    */
+
+    //-----------------to be---------------
+    auto& inv = player.GetInventory();
+    inv[index]->SetAmount(inv[index]->GetAmount() + 1);
+
+    player.SetGold(player.GetGold() - price);
+    cout << inv[index]->GetName() << "을(를) 구매했습니다!" << endl;
+    //-----------------------------------------
+    
 }
 
 // 아이템 판매
@@ -112,9 +103,16 @@ void Shop::SellItem(int index, Characters& player)
 
     player.SetGold(player.GetGold() + sellPrice);
     cout << inv[index]->GetName() << "을(를) 판매했습니다. " << sellPrice << " 골드를 받았습니다." << endl;
+   
+    //as-is
+    /*
     delete inv[index];
     // 플레이어의 인벤토리에서도 삭제
     inv.erase(inv.begin() + index);
+    */
+    //-----------------to be---------------
+    inv[index]->SetAmount(inv[index]->GetAmount() - 1);
+    //-----------------------------------------
 }
 
 //장비강화 추가!!!
