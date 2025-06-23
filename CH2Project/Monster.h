@@ -1,6 +1,7 @@
 ﻿#pragma once
 #include <string>
 #include "Item.h"
+#include "Characters.h"
 #include <cstdlib>
 #include <ctime>
 
@@ -21,6 +22,9 @@ public:
     virtual int GetHealth() const;
     virtual int GetAttack() const;
     virtual void TakeDamage(int damage);
+    virtual void OnDeath(Characters& player);
     virtual Item* DropItem();
+    virtual void AttackPlayer(Characters& player);
     virtual bool IsBoss() const;
+    virtual bool IsGoldenGoblin() const;
 };
