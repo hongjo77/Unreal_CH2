@@ -7,8 +7,6 @@
 
 using namespace std;
 
-// 그리고 장착 인벤토리 넘겨주는 함수 구현해줘야 댐
-
 enum class AttackType
 {
     Normal,
