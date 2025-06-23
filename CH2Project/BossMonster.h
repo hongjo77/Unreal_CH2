@@ -7,6 +7,9 @@ class BossMonster : public Monster
 {
 public:
     BossMonster(int level);
-    void TakeDamage(int damage) override;
     bool IsBoss() const override;
+    void OnDeath(Characters& player) override;
+    void AttackPlayer(Characters& player) override;
+private:
+    int SkillAttack;
 };

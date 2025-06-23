@@ -1,24 +1,36 @@
-#include "GameManager.h"
+﻿#include "GameManager.h"
 #include "Goblin.h"
 #include "Orc.h"
 #include "Troll.h"
+#include "GoldenGoblin.h"
 #include "Shop.h"
 #include "HealthPotion.h"
 #include "AttackBoost.h"
 #include <iostream>
 #include <cstdlib>
 #include <ctime>
-// 게임 매니저 테스트
+
 
 // 보스가 아닌 적 가져오기
 Monster* GameManager::GenerateMonster(int level) 
 {
-    int type = rand() % 3;
+    int type = rand() % 10;
     switch (type)
     {
-    case 0: return new Goblin(level);
-    case 1: return new Orc(level);
-    case 2: return new Troll(level);
+    case 0:
+    case 1:
+    case 2:
+    case 3:
+        return new Goblin(level);
+    case 4:
+    case 5:
+    case 6: 
+        return new Orc(level);
+    case 7:
+    case 8: 
+        return new Troll(level);
+    case 9: 
+        return new GoldenGoblin(level);
     default: return new Goblin(level);
     }
 }
@@ -42,7 +54,17 @@ void GameManager::Battle(Characters& player, Monster& enemy)
         
     // 플레이어와 적 모두 살아있을 경우
     while (player.GetHealth() > 0 && enemy.GetHealth() > 0)
-    {
+    {   
+        if(enemy.IsGoldenGoblin() && BattleCount >= 5)
+        {
+            cout << enemy.GetName() << "이(가) 전투에서 도망쳤습니다!" << endl;
+            enemy.TakeDamage(enemy.GetHealth()); //체력 0으로 만들어 죽은 상태로 처리
+
+            //턴 초기화
+            BattleCount = 1;
+            break;
+        }
+
         // 1. 아이템 사용
         if (!player.GetInventory().empty())
         {
@@ -66,67 +88,42 @@ void GameManager::Battle(Characters& player, Monster& enemy)
         // 플레이어 -> 적 공격
         enemy.TakeDamage(player.GetAttack());
         cout << player.GetName() << "가 " << enemy.GetName() << "을(를) 공격합니다! "
-            << enemy.GetName() << " 체력: " << prevEnemyHealth << " → " << enemy.GetHealth() << endl;// 적이 죽었을 경우
+            << enemy.GetName() << " 체력: " << prevEnemyHealth << " → " << enemy.GetHealth() << endl;
         
         
         // 3. 적이 죽었을 경우
         if (enemy.GetHealth() <= 0)
         {
-            cout << enemy.GetName() << " 처치!" << endl;
-            // 적이 보스일 경우
-            if (enemy.IsBoss())
-            {
-                cout << "축하합니다! 보스 " << enemy.GetName() << "을(를) 처치하고 게임을 클리어했습니다!" << endl;
-            }
-
-            // 적을 물리쳤을 때 얻는 골드
-            int goldReward = 10 + rand() % 11;
-            // 플레이어 경험치 + 50 exp
-            player.SetExperience(player.GetExperience() + 50);
-            // 플레이어 골드 + 10~20 골드
-            player.SetGold(player.GetGold() + goldReward);
-            cout << player.GetName() << "가 50 EXP와 " << goldReward << " 골드를 획득했습니다. 현재 EXP: " << player.GetExperience() << "/100, 골드: " << player.GetGold() << endl;
-            
-            // 4. 30% 확률로 아이템 드랍
-            int dropChance = rand() % 100;
-            if (dropChance < 30)
-            {
-                Item* droppedItem = enemy.DropItem();
-                if (droppedItem)
-                {
-                    player.GetInventory().push_back(droppedItem);
-                    cout << droppedItem->GetName() << " 아이템을 획득했습니다!" << endl;
-                }
-            }
+            enemy.OnDeath(player);
 
             // 플레이어의 경험치가 100이상이고 레벨이 10보다 낮은 경우 레벨업
             while (player.GetExperience() >= 100 && player.GetLevel() < 10)
             {
                 player.LevelUp();
             }
+
+            //턴 초기화
+            BattleCount = 1;
             break;
         }
 
-        // 5. 적 -> 플레이어 공격
+        // 4. 적 -> 플레이어 공격
         // 플레이어의 체력 변화를 보여주기 위한 변수 저장 (예: 50 -> 0)
-        int prevPlayerHealth = player.GetHealth();
-        int newHealth = prevPlayerHealth - enemy.GetAttack();
-
-        if (newHealth < 0)
-        {
-            newHealth = 0;
-        }
-        player.SetHealth(newHealth);
-        cout << enemy.GetName() << "이 " << player.GetName() << "를 공격합니다! "
-            << player.GetName() << " 체력: " << prevPlayerHealth << " → " << player.GetHealth() << endl;
-        cout << endl;
+        enemy.AttackPlayer(player);
+        
 
         // 플레이어가 죽었을 경우
         if (player.GetHealth() <= 0)
         {
             cout << player.GetName() << "가 사망했습니다. 게임 오버!" << endl;
+
+            //턴 초기화
+            BattleCount = 1;
             break;
         }
+
+        //플레이어->적, 적->플레이어가 지나면 한 턴 증가
+        BattleCount++;
     }
 }
 
@@ -144,7 +141,7 @@ void GameManager::VisitShop(Characters& player)
     }
     // 상점 계속 이용
     while (true)
-    {
+    {   
         shopInstance.DisplayItems();
         cout << "골드: " << player.GetGold() << endl;
         cout << "1. 아이템 구매  2. 아이템 판매  0. 상점 나가기" << endl;
