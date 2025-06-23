@@ -1,4 +1,4 @@
-#include "GoldenGoblin.h"
+ï»¿#include "GoldenGoblin.h"
 #include <iostream>
 
 GoldenGoblin::GoldenGoblin(int level)
@@ -13,18 +13,18 @@ bool GoldenGoblin::IsGoldenGoblin() const { return true; }
 void GoldenGoblin::OnDeath(Characters& player) 
 {
 	cout << endl;
-	cout << Name << " Ã³Ä¡!" << endl;
+	cout << Name << " ì²˜ì¹˜!" << endl;
 
-	// ÀûÀ» ¹°¸®ÃÆÀ» ¶§ ¾ò´Â °ñµå
+	// ì ì„ ë¬¼ë¦¬ì³¤ì„ ë•Œ ì–»ëŠ” ê³¨ë“œ
 	int goldReward = 100 + rand() % 100;
-	// ÇÃ·¹ÀÌ¾î °æÇèÄ¡ + 50 exp
+	// í”Œë ˆì´ì–´ ê²½í—˜ì¹˜ + 50 exp
 	player.SetExperience(player.GetExperience() + 50);
-	// ÇÃ·¹ÀÌ¾î °ñµå + 100~200 °ñµå + ÈÉÄ£ µ·
+	// í”Œë ˆì´ì–´ ê³¨ë“œ + 100~200 ê³¨ë“œ + í›”ì¹œ ëˆ
 	player.SetGold(player.GetGold() + goldReward + StolenMoney);
-	cout << player.GetName() << "°¡ 50 EXP¿Í " << goldReward << " °ñµå¸¦ È¹µæÇß½À´Ï´Ù. ÇöÀç EXP: "
-		<< player.GetExperience() << "/100, °ñµå: " << player.GetGold() << endl;
+	cout << player.GetName() << "ê°€ 50 EXPì™€ " << goldReward << " ê³¨ë“œë¥¼ íšë“í–ˆìŠµë‹ˆë‹¤. í˜„ìž¬ EXP: "
+		<< player.GetExperience() << "/100, ê³¨ë“œ: " << player.GetGold() << endl;
 
-	// 30% È®·ü·Î ¾ÆÀÌÅÛ µå¶ø
+	// 30% í™•ë¥ ë¡œ ì•„ì´í…œ ë“œëž
 	int dropChance = rand() % 100;
 	if (dropChance < 30)
 	{
@@ -32,7 +32,7 @@ void GoldenGoblin::OnDeath(Characters& player)
 		if (droppedItem)
 		{
 			player.GetInventory().push_back(droppedItem);
-			cout << droppedItem->GetName() << " ¾ÆÀÌÅÛÀ» È¹µæÇß½À´Ï´Ù!" << endl;
+			cout << droppedItem->GetName() << " ì•„ì´í…œì„ íšë“í–ˆìŠµë‹ˆë‹¤!" << endl;
 		}
 	}
 }
@@ -52,15 +52,15 @@ void GoldenGoblin::AttackPlayer(Characters& player)
 
 	if (newHealth < 0) { newHealth = 0; }
 	player.SetHealth(newHealth);
-	cout << Name << "ÀÌ " << player.GetName() << "¸¦ °ø°ÝÇÕ´Ï´Ù! "
-		<< player.GetName() << " Ã¼·Â: " << prevPlayerHealth << " ¡æ " << player.GetHealth();
+	cout << Name << "ì´ " << player.GetName() << "ë¥¼ ê³µê²©í•©ë‹ˆë‹¤! "
+		<< player.GetName() << " ì²´ë ¥: " << prevPlayerHealth << " â†’ " << player.GetHealth();
 	if (prevGold > 0) 
 	{
-		cout << " °ñµå: " << prevGold << " -> " << player.GetGold() << endl;
+		cout << " ê³¨ë“œ: " << prevGold << " -> " << player.GetGold() << endl;
 	}
 	else 
 	{
-		cout << " °ñµå: "<< player.GetGold() << endl;
+		cout << " ê³¨ë“œ: "<< player.GetGold() << endl;
 	}
 	cout << endl;
 }
