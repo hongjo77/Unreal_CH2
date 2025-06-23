@@ -3,6 +3,7 @@
 
 using namespace std;
 
+//공격력 증가포션
 class AttackBoost : public Item
 {
 public:
