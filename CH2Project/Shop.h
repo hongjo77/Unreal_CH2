@@ -1,6 +1,7 @@
 ﻿#pragma once
 #include <vector>
 #include "Item.h"
+//#include "Equipment.h"
 #include "Characters.h"
 
 using namespace std;
@@ -9,6 +10,9 @@ class Shop
 {
 private:
     vector<Item*> AvailableItems;
+    
+    //추가!!!
+    //vector<Equipment*> EquitList;
 public:
     Shop();
     ~Shop();
@@ -17,6 +21,7 @@ public:
     void BuyItem(int index, Characters& player);
     void SellItem(int index, Characters& player);
 
-    //주석추가
-    //주석추가1
+    //장비강화 추가!!!
+    void EquipEnhance(int index, Characters& player);
+
 };

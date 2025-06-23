@@ -1,6 +1,10 @@
 ﻿#include "Shop.h"
 #include "HealthPotion.h"
 #include "AttackBoost.h"
+//include "Helmet.h"
+//include "Chest.h"
+//include "Leg.h"
+//include "Weapon.h"
 #include <iostream>
 
 // 아이템 목록 생성
@@ -8,6 +12,15 @@ Shop::Shop()
 {
     AvailableItems.push_back(new HealthPotion());
     AvailableItems.push_back(new AttackBoost());
+
+    //추가!!!
+    /*
+    EquitList.push_back(new Helmet());
+    EquitList.push_back(new Chest());
+    EquitList.push_back(new Leg());
+    EquitList.push_back(new Weapon());
+    */
+
 }
 
 Shop::~Shop()
@@ -16,6 +29,14 @@ Shop::~Shop()
     {
         delete item;
     }
+
+    /*
+    for (auto Equit : EquitList)
+    {
+        delete Equit;
+    }
+    */
+
 }
 
 // 진열대 출력
@@ -94,4 +115,11 @@ void Shop::SellItem(int index, Characters& player)
     delete inv[index];
     // 플레이어의 인벤토리에서도 삭제
     inv.erase(inv.begin() + index);
+}
+
+//장비강화 추가!!!
+void EquipEnhance(int index, Characters& player) {
+   
+    //player.get장비창[index]
+    
 }
