@@ -144,7 +144,7 @@ void GameManager::VisitShop(Characters& player)
     {   
         shopInstance.DisplayItems();
         cout << "골드: " << player.GetGold() << endl;
-        cout << "1. 아이템 구매  2. 아이템 판매  0. 상점 나가기" << endl;
+        cout << "1. 아이템 구매 2. 아이템 판매 0. 상점 나가기 " << endl;
         cout << "선택: ";
         int menu = 0;
         cin >> menu;
