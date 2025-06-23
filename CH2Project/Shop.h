@@ -19,6 +19,6 @@ public:
     void SellItem(int index, Characters& player);
 
     //장비강화 추가!!!
-    void EquipEnhance(int index, Characters& player);
+    void EquipEnhance(Characters& player);
 
 };

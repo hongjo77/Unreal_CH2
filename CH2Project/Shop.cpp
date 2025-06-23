@@ -115,9 +115,73 @@ void Shop::SellItem(int index, Characters& player)
     //-----------------------------------------
 }
 
-//장비강화 추가!!!
-void EquipEnhance(int index, Characters& player) {
-   
-    //player.get장비창[index]
-    
+void EnhanceLogic(Equipment& equip, Characters& player) {
+
+    //강화레벨에 따른 강화확률과 소모되는 돈
+    // 0 = 90, 5
+    // 1 = 75, 10
+    // 2 = 60, 15
+    // 3 = 45, 20
+    // 4 = 30, 30
+
+    //강화 확률
+    int probability = rand() % 90 - (equip.GetEnLevel() * 15);
+
+    //강화 시도 시 골드 소모
+    int useGold = (equip.GetEnLevel() + 1) * 5;
+
+    if (equip.GetEnLevel() <= 5) {
+        cout << "장비 강화가 끝난 장비입니다." << endl;
+        return;
+    }
+
+    if (player.GetGold() < useGold)
+    {
+        cout << "골드가 부족합니다." << endl;
+        return;
+    }
+    player.SetGold(player.GetGold() - useGold);
+
+    equip.SetEnLevel(equip.GetEnLevel() + 1);
+    equip.SetStat(equip.GetStat() + 5);
+
+}
+
+void Shop::EquipEnhance(Characters& player) {
+
+
+    //auto& EquipList = player.GetEquipments();
+    system("cls");
+    /*
+    while (true) {
+
+        cout << "============================================" << endl;
+        for (int i = 0; i < EquipList.size(); i++) {
+            cout << i + 1 << ". " << EquipList[i]->GetName() << "  강화레벨 : " << EquipList[i]->GetEnLevel() << endl;
+        }
+        cout << "============================================" << endl;
+        cout << "강화할 아이템을 선택하세요 (0: 취소) : ";
+
+        int equipIdx = 0;
+        cin >> equipIdx;
+        cin.ignore(numeric_limits<streamsize>::max(), '\n');
+
+        int useGold = (EquipList[equipIdx]->GetEnLevel() + 1) * 5;
+
+        if (EquipList[equipIdx]->GetEnLevel() <= 5) {
+            cout << "장비 강화가 끝난 장비입니다." << endl;
+            return;
+        }
+
+        if (player.GetGold() < useGold)
+        {
+            cout << "골드가 부족합니다." << endl;
+            return;
+        }
+        player.SetGold(player.GetGold() - useGold);
+
+        EquipList[equipIdx]->SetEnLevel(EquipList[equipIdx]->GetEnLevel() + 1);
+        EquipList[equipIdx]->SetStat(EquipList[equipIdx]->GetStat() + 5);
+    }
+    */
 }
