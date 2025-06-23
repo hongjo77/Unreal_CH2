@@ -129,6 +129,7 @@
     <ClCompile Include="Chest.cpp" />
     <ClCompile Include="GameManager.cpp" />
     <ClCompile Include="Goblin.cpp" />
+    <ClCompile Include="GoldenGoblin.cpp" />
     <ClCompile Include="HealthPotion.cpp" />
     <ClCompile Include="Helmet.cpp" />
     <ClCompile Include="Leg.cpp" />
@@ -147,6 +148,7 @@
     <ClInclude Include="Equipment.h" />
     <ClInclude Include="GameManager.h" />
     <ClInclude Include="Goblin.h" />
+    <ClInclude Include="GoldenGoblin.h" />
     <ClInclude Include="HealthPotion.h" />
     <ClInclude Include="Helmet.h" />
     <ClInclude Include="Item.h" />
