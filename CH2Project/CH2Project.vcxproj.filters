@@ -48,6 +48,9 @@
     <ClCompile Include="Main.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="GoldenGoblin.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Goblin.h">
@@ -81,6 +84,9 @@
       <Filter>헤더 파일</Filter>
     </ClInclude>
     <ClInclude Include="Troll.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="GoldenGoblin.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
   </ItemGroup>

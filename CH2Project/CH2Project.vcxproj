@@ -128,6 +128,7 @@
     <ClCompile Include="Characters.cpp" />
     <ClCompile Include="GameManager.cpp" />
     <ClCompile Include="Goblin.cpp" />
+    <ClCompile Include="GoldenGoblin.cpp" />
     <ClCompile Include="HealthPotion.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="Monster.cpp" />
@@ -141,6 +142,7 @@
     <ClInclude Include="Characters.h" />
     <ClInclude Include="GameManager.h" />
     <ClInclude Include="Goblin.h" />
+    <ClInclude Include="GoldenGoblin.h" />
     <ClInclude Include="HealthPotion.h" />
     <ClInclude Include="Item.h" />
     <ClInclude Include="Monster.h" />
