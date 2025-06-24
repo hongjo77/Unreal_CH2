@@ -52,19 +52,30 @@ void Shop::BuyItem(int index, Characters& player)
     }
 
     string name = AvailableItems[index]->GetName();
+    
+    cout << name << "을(를) 선택하셨습니다. 구매 개수 선택 (0: 취소) : ";
+    int count = 0;
+    cin >> count;
+    cin.ignore(numeric_limits<streamsize>::max(), '\n');
+
+    if (count == 0) {
+        cout << "아이템 구매를 취소하셨습니다.\n" << endl;
+        return;
+    }
+
     // 힐포션 선택하면 10원 아니면 (Attack boost인경우) 15원
     int price = (name == "Health Potion") ? 10 : 15;
-    if (player.GetGold() < price)
+    if (player.GetGold() < price * count)
     {
-        cout << "골드가 부족합니다." << endl;
+        cout << "골드가 부족합니다.\n" << endl;
         return;
     }
     
     auto& inv = player.GetInventory();
-    inv[index]->SetAmount(inv[index]->GetAmount() + 1);
+    inv[index]->SetAmount(inv[index]->GetAmount() + count);
 
-    player.SetGold(player.GetGold() - price);
-    cout << inv[index]->GetName() << "을(를) 구매했습니다!" << endl;
+    player.SetGold(player.GetGold() - (price * count));
+    cout << inv[index]->GetName() << "을(를) "<< count << "개 구매했습니다!\n" << endl;
     
 }
 
@@ -79,21 +90,41 @@ void Shop::SellItem(int index, Characters& player)
         return;
     }
     string name = inv[index]->GetName();
-    // 힐포션 선택하면 10원 아니면 (Attack boost인경우) 15원
-    int price = (name == "Health Potion") ? 10 : 15;
-    // 원래 가격의 60%만 지급
-    int sellPrice = static_cast<int>(price * 0.6);
-
+    cout << name << "을(를) 선택하셨습니다. (현재 소지 개수 : " << inv[index]->GetAmount() << ")" << endl;
     if (inv[index]->GetAmount() <= 0) {
-        cout << "더 이상 판매 할 수 없습니다." << endl;
+        cout << "판매 할 수 있는 수량이 없습니다.\n" << endl;
         return;
     }
 
-    player.SetGold(player.GetGold() + sellPrice);
-    cout << inv[index]->GetName() << "을(를) 판매했습니다. " << sellPrice << " 골드를 받았습니다." << endl;
+    while (true) {
 
-    inv[index]->SetAmount(inv[index]->GetAmount() - 1);
+        cout << "판매 개수 선택(0: 취소) : ";
+        int count = 0;
+        cin >> count;
+        cin.ignore(numeric_limits<streamsize>::max(), '\n');
 
+        if (count == 0) {
+            cout << "아이템 판매를 취소하셨습니다.\n" << endl;
+            return;
+        }
+
+        // 힐포션 선택하면 10원 아니면 (Attack boost인경우) 15원
+        int price = (name == "Health Potion") ? 10 : 15;
+        // 원래 가격의 60%만 지급
+        int sellPrice = static_cast<int>(price * 0.6);
+
+        if (inv[index]->GetAmount() < count) {
+            cout << "판매 가능한 개수를 넘었습니다.\n" << endl;
+            continue;
+        }
+
+        player.SetGold(player.GetGold() + (sellPrice * count));
+        cout << inv[index]->GetName() << "을(를) " << count << "개 판매했습니다. " << sellPrice * count << " 골드를 받았습니다.\n" << endl;
+
+        inv[index]->SetAmount(inv[index]->GetAmount() - count);
+        break;
+    }
+    
 }
 
 int EnhanceLogic(int EnLevel) {
@@ -126,7 +157,14 @@ void Shop::EquipEnhance(Characters& player) {
         cout << "현재 소지 금액 " << player.GetGold() << endl;
         cout << "============================================" << endl;
         for (int i = 0; i < EquipList.size(); i++) {
-            cout << i + 1 << ". " << EquipList[i]->GetName() << "  강화레벨 : " << EquipList[i]->GetEnLevel() << "  강화 소모 골드 : " << (EquipList[i]->GetEnLevel() + 1) * 5 << endl;
+            cout << i + 1 << ". " << EquipList[i]->GetName() << "  강화레벨 : " << EquipList[i]->GetEnLevel();
+            if (EquipList[i]->GetEnLevel() == 5) {
+                cout << "  강화 소모 골드 : -" << endl;
+            }
+            else {
+                cout << "  강화 소모 골드 : " << (EquipList[i]->GetEnLevel() + 1) * 5 << endl;
+            }
+            
         }
         cout << "============================================" << endl;
         cout << "강화할 아이템을 선택하세요 (0: 취소) : ";
@@ -169,7 +207,7 @@ void Shop::EquipEnhance(Characters& player) {
         if (probability < EnhanceLogic(EnLevel)) {
             cout << "\n강화에 성공하셨습니다! \n" << endl;
             EquipList[equipIdx - 1]->SetEnLevel(EnLevel + 1);
-            EquipList[equipIdx - 1]->SetStat(Stat + 5);
+            EquipList[equipIdx - 1]->SetStat(Stat + 7);
         }
         else {
             cout << "\n강화에 실패하셨습니다. \n" << endl;
