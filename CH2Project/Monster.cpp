@@ -1,6 +1,7 @@
 ﻿#include "Monster.h"
 #include "HealthPotion.h"
 #include "AttackBoost.h"
+#include "GameLog.h"
 #include <iostream>
 
 
@@ -22,6 +23,8 @@ void Monster::TakeDamage(int damage)
     {
         Health = 0;
     }
+	// 로그 추가
+	GameLog::instance->AttackDamageAchievement(damage);
 }
 
 void Monster::OnDeath(Characters& player) {
@@ -46,6 +49,8 @@ void Monster::OnDeath(Characters& player) {
         playerInventory[index]->SetAmount(playerInventory[index]->GetAmount() + 1);
         cout << player.GetName() << "이(가) " << playerInventory[index]->GetName() << "을(를) 1개 획득했습니다!" << endl;
     }
+	// 로그 추가
+	GameLog::instance->TakeDamageAchievement(goldReward);
 }
 
 // 몬스터가 아이템을 드랍
@@ -79,6 +84,8 @@ void Monster::AttackPlayer(Characters& player) {
     cout << Name << "이(가) " << player.GetName() << "를 공격합니다! "
         << player.GetName() << " 체력: " << prevPlayerHealth << " → " << player.GetHealth() << endl;
     cout << endl;
+	// 로그 추가
+	GameLog::instance->TakeDamageAchievement(-ArmorSubAttack);
 }
 
 // 기본적으로 모든 적은 보스, 특수 몬스터가 아님
