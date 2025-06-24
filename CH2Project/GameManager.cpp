@@ -149,9 +149,10 @@ void GameManager::VisitShop(Characters& player)
 		}
 	}
     // 상점 계속 이용
+	system("cls");
     while (true)
     {
-		system("cls");
+		
         shopInstance.DisplayItems();
         cout << "골드: " << player.GetGold() << endl;
         cout << "1. 아이템 구매 2. 아이템 판매 3. 장비 강화 0. 상점 나가기 " << endl;
