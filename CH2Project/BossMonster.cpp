@@ -4,7 +4,7 @@
 BossMonster::BossMonster(int level)
     : Monster(
         "Orc Shaman",
-        (rand() % (level * 50)) + (level * 200),
+        (rand() % (level * 50)) + (level * 100),
         (rand() % (level * 10)) + (level * 20)
     ), SkillAttack(rand() % (level * 10) + (level*50)){}
 
@@ -28,13 +28,13 @@ void BossMonster::AttackPlayer(Characters& player)
     int skillChance = rand() % 100;
     if (skillChance < 30)
     {
-        cout << Name << "이 강력한 기술로 " << player.GetName() << "를 공격합니다! ";
+        cout << Name << "이(가) 강력한 기술로 " << player.GetName() << "를 공격합니다! ";
         IsSkill = true;
         newHealth = prevPlayerHealth - SkillAttack;
     }
     else
     {
-        cout << Name << "이 " << player.GetName() << "를 공격합니다! ";
+        cout << Name << "이(가) " << player.GetName() << "를 공격합니다! ";
         newHealth = prevPlayerHealth - Attack;
     }
 
@@ -52,18 +52,28 @@ void BossMonster::AttackPlayer(Characters& player)
         int debuffChance = rand() % 100;
         if (debuffChance >= 0 && debuffChance < 20)
         {
-            int prevPlayerAttack = player.GetAttack();
-            int DroppedPlayerAttack = static_cast<int>(player.GetAttack() * 0.8);
+            int prevPlayerAttack = player.GetBaseAttack();
+            int DroppedPlayerAttack = static_cast<int>(player.GetBaseAttack() * 0.8);
             player.SetAttack(DroppedPlayerAttack);
-            cout << player.GetName() << "이 공격력 감소 디버프에 걸렸습니다! "
-                << player.GetName() << " 공격력: " << prevPlayerAttack << " → " << player.GetAttack() << endl;
-        }
-        /*
-        else if(debuffChance >=20 && debuffChance <=40)
-        {
 
+            cout << player.GetName() << "이(가) 공격력 감소 디버프에 걸렸습니다! "
+                << player.GetName() << " 공격력: " << prevPlayerAttack << " → " << player.GetBaseAttack() << endl;
         }
-        */
+        else if(debuffChance >=20 && debuffChance < 40)
+        {
+            int prevPlayerArmorStat = player.GetTotalArmorStat();
+            auto EquipList = player.GetEquipments();
+            for (auto& equip : EquipList) {
+                if (equip->GetStat() > 0) {
+                    equip->SetStat(equip->GetStat() - 5);
+                }
+                else {
+                    equip->SetStat(0);
+                }
+            }
+            cout << player.GetName() << "이(가) 방어력 감소 디버프에 걸렸습니다! "
+                << player.GetName() << "방어력: " << prevPlayerArmorStat << " → " << player.GetTotalArmorStat() << endl;
+        }
     }
     cout << endl;
 }
