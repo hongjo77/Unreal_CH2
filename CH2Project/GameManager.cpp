@@ -94,13 +94,13 @@ void GameManager::Battle(Characters& player, Monster& enemy)
         if (enemy.GetHealth() <= 0)
         {
             enemy.OnDeath(player);
-			GameLog::instance->KillAchievement(enemy.GetName());
+			GameLog::GetInstance()->KillAchievement(enemy.GetName());
 			
             // 플레이어의 경험치가 100이상이고 레벨이 10보다 낮은 경우 레벨업
             while (player.GetExperience() >= 100 && player.GetLevel() < 10)
             {
                 player.LevelUp();
-				GameLog::instance->LevelAchievement(player.GetLevel());
+				GameLog::GetInstance()->LevelAchievement(player.GetLevel());
             }
 
             //턴 초기화

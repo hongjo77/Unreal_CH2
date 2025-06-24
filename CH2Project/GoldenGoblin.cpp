@@ -35,7 +35,7 @@ void GoldenGoblin::OnDeath(Characters& player)
 		cout << player.GetName() << "이(가) " << playerInventory[index]->GetName() << "을(를) 1개 획득했습니다!" << endl;
 	}
 	// 로그 추가
-	GameLog::instance->GoldAchievement(goldReward);
+	GameLog::GetInstance()->GoldAchievement(goldReward);
 }
 
 void GoldenGoblin::AttackPlayer(Characters& player) 
@@ -72,5 +72,5 @@ void GoldenGoblin::AttackPlayer(Characters& player)
 	}
 	cout << endl;
 	// 로그 추가
-	GameLog::instance->TakeDamageAchievement(-ArmorSubAttack);
+	GameLog::GetInstance()->TakeDamageAchievement(-ArmorSubAttack);
 }

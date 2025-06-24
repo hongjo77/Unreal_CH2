@@ -24,7 +24,7 @@ void Monster::TakeDamage(int damage)
         Health = 0;
     }
 	// 로그 추가
-	GameLog::instance->AttackDamageAchievement(damage);
+	GameLog::GetInstance()->AttackDamageAchievement(damage);
 }
 
 void Monster::OnDeath(Characters& player) {
@@ -50,7 +50,7 @@ void Monster::OnDeath(Characters& player) {
         cout << player.GetName() << "이(가) " << playerInventory[index]->GetName() << "을(를) 1개 획득했습니다!" << endl;
     }
 	// 로그 추가
-	GameLog::instance->TakeDamageAchievement(goldReward);
+	GameLog::GetInstance()->TakeDamageAchievement(goldReward);
 }
 
 // 몬스터가 아이템을 드랍
@@ -85,7 +85,7 @@ void Monster::AttackPlayer(Characters& player) {
         << player.GetName() << " 체력: " << prevPlayerHealth << " → " << player.GetHealth() << endl;
     cout << endl;
 	// 로그 추가
-	GameLog::instance->TakeDamageAchievement(-ArmorSubAttack);
+	GameLog::GetInstance()->TakeDamageAchievement(-ArmorSubAttack);
 }
 
 // 기본적으로 모든 적은 보스, 특수 몬스터가 아님
