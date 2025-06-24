@@ -38,7 +38,14 @@ void GoldenGoblin::OnDeath(Characters& player)
 void GoldenGoblin::AttackPlayer(Characters& player) 
 {
 	int prevPlayerHealth = player.GetHealth();
-	int newHealth = prevPlayerHealth - Attack + player.GetTotalArmorStat();
+	int ArmorSubAttack = 0;
+	if (player.GetTotalArmorStat() - Attack > 0) {
+		ArmorSubAttack = 0;
+	}
+	else {
+		ArmorSubAttack = player.GetTotalArmorStat() - Attack;
+	}
+	int newHealth = prevPlayerHealth + ArmorSubAttack;
 	int prevGold = player.GetGold();
 	if (prevGold > 0) 
 	{
