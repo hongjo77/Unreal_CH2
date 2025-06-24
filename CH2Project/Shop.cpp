@@ -57,20 +57,13 @@ void Shop::BuyItem(int index, Characters& player)
         cout << "골드가 부족합니다." << endl;
         return;
     }
-    // 아이템은 새로 생성해서 플레이어에게 넘김 (상점의 진열품은 예시)
-    Item* item = nullptr;
-    if (name == "Health Potion")
-    {
-        item = new HealthPotion();
-    }
-    else if (name == "Attack Boost")
-    {
-        item = new AttackBoost();
-    }
+    
+    auto& inv = player.GetInventory();
+    inv[index]->SetAmount(inv[index]->GetAmount() + 1);
 
     player.SetGold(player.GetGold() - price);
-    player.GetInventory().push_back(item);
-    cout << item->GetName() << "을(를) 구매했습니다!" << endl;
+    cout << inv[index]->GetName() << "을(를) 구매했습니다!" << endl;
+    
 }
 
 // 아이템 판매
@@ -89,9 +82,55 @@ void Shop::SellItem(int index, Characters& player)
     // 원래 가격의 60%만 지급
     int sellPrice = static_cast<int>(price * 0.6);
 
+    if (inv[index]->GetAmount() <= 0) {
+        cout << "더 이상 판매 할 수 없습니다." << endl;
+        return;
+    }
+
     player.SetGold(player.GetGold() + sellPrice);
     cout << inv[index]->GetName() << "을(를) 판매했습니다. " << sellPrice << " 골드를 받았습니다." << endl;
-    delete inv[index];
-    // 플레이어의 인벤토리에서도 삭제
-    inv.erase(inv.begin() + index);
+
+    inv[index]->SetAmount(inv[index]->GetAmount() - 1);
+
+}
+
+void Shop::EquipEnhance(Characters& player) {
+
+
+    auto EquipList = player.GetEquipments();
+    system("cls");
+    
+    while (true) {
+        cout << "현재 소지 금액 " << player.GetGold() << endl;
+        cout << "============================================" << endl;
+        for (int i = 0; i < EquipList.size(); i++) {
+            cout << i + 1 << ". " << EquipList[i]->GetName() << "  강화레벨 : " << EquipList[i]->GetEnLevel() << endl;
+        }
+        cout << "============================================" << endl;
+        cout << "강화할 아이템을 선택하세요 (0: 취소) : ";
+
+        int equipIdx = 0;
+        cin >> equipIdx;
+        cin.ignore(numeric_limits<streamsize>::max(), '\n');
+
+        if (equipIdx == 0) return; 
+
+        if (EquipList[equipIdx - 1]->GetEnLevel() >= 5) {
+            cout << "장비 강화가 끝난 장비입니다." << endl;
+            return;
+        }
+
+        int useGold = (EquipList[equipIdx - 1]->GetEnLevel() + 1) * 5;
+
+        if (player.GetGold() < useGold)
+        {
+            cout << "골드가 부족합니다." << endl;
+            return;
+        }
+        player.SetGold(player.GetGold() - useGold);
+
+        EquipList[equipIdx - 1]->SetEnLevel(EquipList[equipIdx - 1]->GetEnLevel() + 1);
+        EquipList[equipIdx - 1]->SetStat(EquipList[equipIdx - 1]->GetStat() + 5);
+    }
+    
 }
