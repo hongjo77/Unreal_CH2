@@ -93,5 +93,5 @@ void BossMonster::AttackPlayer(Characters& player)
     }
     cout << endl;
 	// 로그 추가
-	GameLog::instance->TakeDamageAchievement(-ArmorSubAttack);
+	GameLog::GetInstance()->TakeDamageAchievement(-ArmorSubAttack);
 }

@@ -6,11 +6,16 @@
 
 class GameLog
 {
-public:
-    static GameLog* instance;
-    std::unordered_map<std::string, bool> achievements;
+private:
+	static GameLog* instance;
+	std::unordered_map<std::string, bool> achievements;
     std::vector<std::string> logs;
     std::unordered_map<std::string, int> statistics;
+
+	GameLog() = default;
+
+public:
+    static GameLog* GetInstance();
 
     void CheckAchievement(const std::string& achievementName);
     void AddLog(const std::string& logEntry);

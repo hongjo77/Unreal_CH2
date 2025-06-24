@@ -66,7 +66,7 @@ void Shop::BuyItem(int index, Characters& player)
 
     player.SetGold(player.GetGold() - price);
     cout << inv[index]->GetName() << "을(를) 구매했습니다!" << endl;
-    GameLog::instance->GoldAchievement(-price);
+    GameLog::GetInstance()->GoldAchievement(-price);
 }
 
 // 아이템 판매
@@ -158,7 +158,7 @@ void Shop::EquipEnhance(Characters& player) {
             continue;
         }
         player.SetGold(player.GetGold() - useGold);
-		GameLog::instance->GoldAchievement(-useGold);
+		GameLog::GetInstance()->GoldAchievement(-useGold);
 
         //확률
         int probability = rand() % 100;
@@ -172,7 +172,7 @@ void Shop::EquipEnhance(Characters& player) {
             cout << "\n강화에 성공하셨습니다! \n" << endl;
             EquipList[equipIdx - 1]->SetEnLevel(EnLevel + 1);
             EquipList[equipIdx - 1]->SetStat(Stat + 5);
-			GameLog::instance->EquipmentAchievement(
+			GameLog::GetInstance()->EquipmentAchievement(
 				EquipList[equipIdx - 1]->GetName(), 
 				EquipList[equipIdx - 1]->GetEnLevel(), 
 				0
@@ -180,7 +180,7 @@ void Shop::EquipEnhance(Characters& player) {
         }
         else {
             cout << "\n강화에 실패하셨습니다. \n" << endl;
-			GameLog::instance->EquipmentAchievement(
+			GameLog::GetInstance()->EquipmentAchievement(
 				EquipList[equipIdx - 1]->GetName(), 
 				EquipList[equipIdx - 1]->GetEnLevel(), 
 				1
@@ -190,7 +190,7 @@ void Shop::EquipEnhance(Characters& player) {
                 cout << "강화에 실패하여 강화 레벨이 하락하였습니다. \n" << endl;
                 EquipList[equipIdx - 1]->SetEnLevel(EnLevel - 1);
                 EquipList[equipIdx - 1]->SetStat(Stat - 5);
-				GameLog::instance->EquipmentAchievement(
+				GameLog::GetInstance()->EquipmentAchievement(
 				EquipList[equipIdx - 1]->GetName(), 
 				EquipList[equipIdx - 1]->GetEnLevel(), 
 				2

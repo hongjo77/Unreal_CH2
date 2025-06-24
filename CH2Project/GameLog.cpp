@@ -2,6 +2,15 @@
 
 GameLog* GameLog::instance = nullptr;
 
+GameLog* GameLog::GetInstance()
+{
+	if(!instance)
+	{
+		instance = new GameLog();
+		return instance;
+	}
+}
+
 void GameLog::CheckAchievement(const std::string& achievementName)
 {
     std::string msg = "[*** 업적 달성 ***] : " + achievementName;
