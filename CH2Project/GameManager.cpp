@@ -76,8 +76,6 @@ void GameManager::Battle(Characters& player, Monster& enemy)
                 int itemIndex = rand() % player.GetInventory().size();
                 // 아이템 사용
                 player.GetInventory()[itemIndex]->Use(player);
-                // 아이템 사용 후 인벤토리에서 제거
-                player.GetInventory().erase(player.GetInventory().begin() + itemIndex);
             }
         }
 
