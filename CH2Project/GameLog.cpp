@@ -7,8 +7,8 @@ GameLog* GameLog::GetInstance()
 	if(!instance)
 	{
 		instance = new GameLog();
-		return instance;
 	}
+	return instance;
 }
 
 void GameLog::CheckAchievement(const std::string& achievementName)
