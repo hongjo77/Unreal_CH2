@@ -1,4 +1,4 @@
-#include "GameManager.h"
+﻿#include "GameManager.h"
 #include "Goblin.h"
 #include "Orc.h"
 #include "Troll.h"

@@ -15,12 +15,12 @@ void GoldenGoblin::OnDeath(Characters& player)
 	cout << endl;
 	cout << Name << " 처치!" << endl;
 
-	// 적을 물리쳤을 때 얻는 골드
-	int goldReward = 100 + rand() % 100;
+	// 적을 물리쳤을 때 얻는 골드 (훔친 돈 포함)
+	int goldReward = (100 + rand() % 100) + StolenMoney;
 	// 플레이어 경험치 + 50 exp
 	player.SetExperience(player.GetExperience() + 50);
 	// 플레이어 골드 + 100~200 골드 + 훔친 돈
-	player.SetGold(player.GetGold() + goldReward + StolenMoney);
+	player.SetGold(player.GetGold() + goldReward);
 	cout << player.GetName() << "가 50 EXP와 " << goldReward << " 골드를 획득했습니다. 현재 EXP: "
 		<< player.GetExperience() << "/100, 골드: " << player.GetGold() << endl;
 
@@ -38,7 +38,7 @@ void GoldenGoblin::OnDeath(Characters& player)
 void GoldenGoblin::AttackPlayer(Characters& player) 
 {
 	int prevPlayerHealth = player.GetHealth();
-	int newHealth = prevPlayerHealth - Attack;
+	int newHealth = prevPlayerHealth - Attack + player.GetTotalArmorStat();
 	int prevGold = player.GetGold();
 	if (prevGold > 0) 
 	{

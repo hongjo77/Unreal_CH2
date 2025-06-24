@@ -1,6 +1,7 @@
-﻿
-#pragma once
+﻿#pragma once
 #include "Monster.h"
+#include <random> //mt19937, uniform_int_distribution
+#include <chrono> //시드용
 
 using namespace std;
 
@@ -13,4 +14,6 @@ public:
     void AttackPlayer(Characters& player) override;
 private:
     int SkillAttack;
+    mt19937 rng;
+    uniform_int_distribution<int> chanceDistribution;
 };

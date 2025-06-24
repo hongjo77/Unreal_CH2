@@ -4,9 +4,11 @@
 BossMonster::BossMonster(int level)
     : Monster(
         "Orc Shaman",
-        (rand() % (level * 50)) + (level * 100),
+        (rand() % (level * 50)) + (level * 200),
         (rand() % (level * 10)) + (level * 20)
-    ), SkillAttack(rand() % (level * 10) + (level*50)){}
+    ), SkillAttack(rand() % (level * 10) + (level*50)),
+rng(chrono::high_resolution_clock::now().time_since_epoch().count()),
+chanceDistribution(0,99){}
 
 // 보스인지 아닌지 확인
 bool BossMonster::IsBoss() const { return true; }
@@ -25,17 +27,17 @@ void BossMonster::AttackPlayer(Characters& player)
     int newHealth = 0;
 
     //30% 확률로 스킬 공격
-    int skillChance = rand() % 100;
+    int skillChance = chanceDistribution(rng);
     if (skillChance < 30)
     {
         cout << Name << "이(가) 강력한 기술로 " << player.GetName() << "를 공격합니다! ";
         IsSkill = true;
-        newHealth = prevPlayerHealth - SkillAttack;
+        newHealth = prevPlayerHealth - SkillAttack + player.GetTotalArmorStat();
     }
     else
     {
         cout << Name << "이(가) " << player.GetName() << "를 공격합니다! ";
-        newHealth = prevPlayerHealth - Attack;
+        newHealth = prevPlayerHealth - Attack + player.GetTotalArmorStat();
     }
 
     if (newHealth < 0)
@@ -49,7 +51,7 @@ void BossMonster::AttackPlayer(Characters& player)
     // 일반 공격 시 각각 20% 확률로 공격력 감소, 방어력 감소 디버프
     if (!IsSkill)
     {
-        int debuffChance = rand() % 100;
+        int debuffChance = chanceDistribution(rng);
         if (debuffChance >= 0 && debuffChance < 20)
         {
             int prevPlayerAttack = player.GetBaseAttack();
