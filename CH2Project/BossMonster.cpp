@@ -1,4 +1,5 @@
 ﻿#include "BossMonster.h"
+#include "GameLog.h"
 #include <iostream>
 
 BossMonster::BossMonster(int level)
@@ -91,4 +92,6 @@ void BossMonster::AttackPlayer(Characters& player)
         }
     }
     cout << endl;
+	// 로그 추가
+	GameLog::GetInstance()->TakeDamageAchievement(-ArmorSubAttack);
 }
