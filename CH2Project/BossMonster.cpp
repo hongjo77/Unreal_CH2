@@ -55,6 +55,7 @@ void BossMonster::AttackPlayer(Characters& player)
             int prevPlayerAttack = player.GetBaseAttack();
             int DroppedPlayerAttack = static_cast<int>(player.GetBaseAttack() * 0.8);
             player.SetAttack(DroppedPlayerAttack);
+
             cout << player.GetName() << "이(가) 공격력 감소 디버프에 걸렸습니다! "
                 << player.GetName() << " 공격력: " << prevPlayerAttack << " → " << player.GetBaseAttack() << endl;
         }

@@ -60,7 +60,7 @@ void Characters::ShowInventory() const
     // 인벤토리 아이템 전부 출력
     for (size_t i = 0; i < Inventory.size(); i++)
     {
-        cout << (i + 1) << ". " << Inventory[i]->GetName() << endl;
+        cout << (i + 1) << ". " << Inventory[i]->GetName() <<" 수량:"<<Inventory[i]->GetAmount() << endl;
     }
 }
 
@@ -161,7 +161,7 @@ int Characters::GetTotalArmorStat()
 vector<Equipment*> Characters::GetEquipments()
 {
     vector<Equipment*> tmp;
-    tmp = { this->helmet,this->chest,this->leg };
+    tmp = { this->weapon, this->helmet,this->chest,this->leg };
     return tmp;
 }
 
@@ -177,3 +177,4 @@ void Characters::SetExperience(int newExp) { Experience = newExp; }
 int Characters::GetGold() const { return Gold; }
 void Characters::SetGold(int newGold) { Gold = newGold; }
 vector<Item*>& Characters::GetInventory() { return Inventory; }
+int Characters::GetBaseAttack() { return Attack; }

@@ -50,6 +50,7 @@ public:
     void SetHealth(int newHealth);
     int GetMaxHealth() const;
     void SetAttack(int newAttack);
+    int GetBaseAttack();
     int GetLevel() const;
     void SetLevel(int newLevel);
     int GetExperience() const;
@@ -63,6 +64,7 @@ public:
     //장비 초기화
     void InitEquipment();
     //장비들 delete 위한 소멸자
+
     ~Characters();
     // 장비 스탯 총합
     int GetTotalArmorStat();
