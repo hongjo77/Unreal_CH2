@@ -69,7 +69,7 @@ void Monster::AttackPlayer(Characters& player) {
 
     if (newHealth < 0) { newHealth = 0; }
     player.SetHealth(newHealth);
-    cout << Name << "이 " << player.GetName() << "를 공격합니다! "
+    cout << Name << "이(가) " << player.GetName() << "를 공격합니다! "
         << player.GetName() << " 체력: " << prevPlayerHealth << " → " << player.GetHealth() << endl;
     cout << endl;
 }
