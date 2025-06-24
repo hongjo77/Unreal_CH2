@@ -214,38 +214,37 @@ void Shop::EquipEnhance(Characters& player) {
             cout << "\n강화에 성공하셨습니다! \n" << endl;
             EquipList[equipIdx - 1]->SetEnLevel(EnLevel + 1);
             EquipList[equipIdx - 1]->SetStat(Stat + 7);
-            
-			GameLog::GetInstance()->EquipmentAchievement(
-				EquipList[equipIdx - 1]->GetName(), 
-				EquipList[equipIdx - 1]->GetEnLevel(), 
-				0
-			);
+
+            GameLog::GetInstance()->EquipmentAchievement(
+                EquipList[equipIdx - 1]->GetName(),
+                EquipList[equipIdx - 1]->GetEnLevel(),
+                0
+            );
 
             system("pause");
         }
         else {
             cout << "\n강화에 실패하셨습니다. \n" << endl;
-			GameLog::GetInstance()->EquipmentAchievement(
-				EquipList[equipIdx - 1]->GetName(), 
-				EquipList[equipIdx - 1]->GetEnLevel(), 
-				1
-			);
-            
+            GameLog::GetInstance()->EquipmentAchievement(
+                EquipList[equipIdx - 1]->GetName(),
+                EquipList[equipIdx - 1]->GetEnLevel(),
+                1
+            );
+
             if (0 == rand() % 5) {
                 cout << "강화에 실패하여 강화 레벨이 하락하였습니다. \n" << endl;
                 EquipList[equipIdx - 1]->SetEnLevel(EnLevel - 1);
                 EquipList[equipIdx - 1]->SetStat(Stat - 5);
 
                 GameLog::GetInstance()->EquipmentAchievement(
-                    EquipList[equipIdx - 1]->GetName(), 
-                    EquipList[equipIdx - 1]->GetEnLevel(), 
-				2
-			    );
-            }      
+                    EquipList[equipIdx - 1]->GetName(),
+                    EquipList[equipIdx - 1]->GetEnLevel(),
+                    2
+                );
+            }
 
             system("pause");
-            }
+
         }
     }
-    
 }
