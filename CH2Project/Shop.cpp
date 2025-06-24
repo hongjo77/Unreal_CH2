@@ -169,6 +169,12 @@ void Shop::EquipEnhance(Characters& player) {
         }
         else {
             cout << "\n강화에 실패하셨습니다. \n" << endl;
+            
+            if (0 == rand() % 5) {
+                cout << "강화에 실패하여 강화 레벨이 하락하였습니다. \n" << endl;
+                EquipList[equipIdx - 1]->SetEnLevel(EnLevel - 1);
+                EquipList[equipIdx - 1]->SetStat(Stat - 5);
+            }
         }
     }
     
