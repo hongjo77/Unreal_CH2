@@ -1,4 +1,4 @@
-﻿#include "GameManager.h"
+#include "GameManager.h"
 #include "Goblin.h"
 #include "Orc.h"
 #include "Troll.h"
@@ -144,7 +144,7 @@ void GameManager::VisitShop(Characters& player)
     {   
         shopInstance.DisplayItems();
         cout << "골드: " << player.GetGold() << endl;
-        cout << "1. 아이템 구매 2. 아이템 판매 0. 상점 나가기 " << endl;
+        cout << "1. 아이템 구매 2. 아이템 판매 3. 장비 강화 0. 상점 나가기 " << endl;
         cout << "선택: ";
         int menu = 0;
         cin >> menu;
@@ -175,6 +175,10 @@ void GameManager::VisitShop(Characters& player)
             }
             shopInstance.SellItem(sellIdx - 1, player);
         }
+		else if (menu == 3)
+		{
+			shopInstance.EquipEnhance(player);
+		}
         else if (menu == 0)
         {
             cout << "상점에서 나갑니다." << endl;
