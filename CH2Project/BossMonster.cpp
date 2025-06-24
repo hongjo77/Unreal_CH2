@@ -55,15 +55,24 @@ void BossMonster::AttackPlayer(Characters& player)
             int prevPlayerAttack = player.GetBaseAttack();
             int DroppedPlayerAttack = static_cast<int>(player.GetBaseAttack() * 0.8);
             player.SetAttack(DroppedPlayerAttack);
-            cout << player.GetName() << "이 공격력 감소 디버프에 걸렸습니다! "
+            cout << player.GetName() << "이(가) 공격력 감소 디버프에 걸렸습니다! "
                 << player.GetName() << " 공격력: " << prevPlayerAttack << " → " << player.GetBaseAttack() << endl;
         }
-        /*
-        else if(debuffChance >=20 && debuffChance <=40)
+        else if(debuffChance >=20 && debuffChance < 40)
         {
-
+            int prevPlayerArmorStat = player.GetTotalArmorStat();
+            auto EquipList = player.GetEquipments();
+            for (auto& equip : EquipList) {
+                if (equip->GetStat() > 0) {
+                    equip->SetStat(equip->GetStat() - 5);
+                }
+                else {
+                    equip->SetStat(0);
+                }
+            }
+            cout << player.GetName() << "이(가) 방어력 감소 디버프에 걸렸습니다! "
+                << player.GetName() << "방어력: " << prevPlayerArmorStat << " → " << player.GetTotalArmorStat() << endl;
         }
-        */
     }
     cout << endl;
 }
