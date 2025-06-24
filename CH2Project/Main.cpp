@@ -15,10 +15,6 @@ int main()
     cout << "캐릭터 이름을 입력하세요: ";
     getline(cin, Name);
 
-	// 로그 인스턴스 생성
-	GameLog gameLog;
-	GameLog::instance = &gameLog;
-
     // 캐릭터 인스턴스 생성
     Characters* player = Characters::GetInstance(Name);
     GameManager manager;
@@ -70,15 +66,15 @@ int main()
 
         if (logChoice == 1)
         {
-            GameLog::instance->PrintLogs();
+            GameLog::GetInstance()->PrintLogs();
         }
         else if (logChoice == 2)
         {
-            GameLog::instance->PrintStatistics();
+            GameLog::GetInstance()->PrintStatistics();
         }
 		else if (logChoice == 3)
         {
-            GameLog::instance->PrintAchievement();
+            GameLog::GetInstance()->PrintAchievement();
         }
         else if (logChoice == 0)
         {
