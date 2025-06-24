@@ -1,4 +1,4 @@
-#include "GameManager.h"
+﻿#include "GameManager.h"
 #include "Goblin.h"
 #include "Orc.h"
 #include "Troll.h"
@@ -85,7 +85,7 @@ void GameManager::Battle(Characters& player, Monster& enemy)
         int prevEnemyHealth = enemy.GetHealth();
         // 플레이어 -> 적 공격
         enemy.TakeDamage(player.GetAttack());
-        cout << player.GetName() << "가 " << enemy.GetName() << "을(를) 공격합니다! "
+        cout << player.GetName() << "이(가) " << enemy.GetName() << "을(를) 공격합니다! "
             << enemy.GetName() << " 체력: " << prevEnemyHealth << " → " << enemy.GetHealth() << endl;
         
         

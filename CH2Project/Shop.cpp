@@ -136,6 +136,10 @@ void Shop::EquipEnhance(Characters& player) {
         cin.ignore(numeric_limits<streamsize>::max(), '\n');
 
         if (equipIdx == 0) return;
+        if (equipIdx > EquipList.size()) {
+            cout << "잘못된 입력입니다." << endl;
+            continue;
+        }
 
         int EnLevel = EquipList[equipIdx - 1]->GetEnLevel();
         int Stat = EquipList[equipIdx - 1]->GetStat();
