@@ -1,4 +1,5 @@
 ﻿#include "GoldenGoblin.h"
+#include "GameLog.h"
 #include <iostream>
 
 GoldenGoblin::GoldenGoblin(int level)
@@ -33,6 +34,8 @@ void GoldenGoblin::OnDeath(Characters& player)
 		playerInventory[index]->SetAmount(playerInventory[index]->GetAmount() + 1);
 		cout << player.GetName() << "이(가) " << playerInventory[index]->GetName() << "을(를) 1개 획득했습니다!" << endl;
 	}
+	// 로그 추가
+	GameLog::instance->GoldAchievement(goldReward);
 }
 
 void GoldenGoblin::AttackPlayer(Characters& player) 
@@ -68,4 +71,6 @@ void GoldenGoblin::AttackPlayer(Characters& player)
 		cout << " 골드: "<< player.GetGold() << endl;
 	}
 	cout << endl;
+	// 로그 추가
+	GameLog::instance->TakeDamageAchievement(-ArmorSubAttack);
 }

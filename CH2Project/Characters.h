@@ -32,7 +32,7 @@ private:
     Equipment* chest;
     Equipment* leg;
 
-    vector<Item*> Inventory = {new HealthPotion(), new AttackBoost()};
+    vector<Item*> Inventory;
     AttackType currentAttackType = AttackType::Normal;
 
 protected:

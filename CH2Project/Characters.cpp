@@ -13,6 +13,7 @@ Characters::Characters(const string& inName)
     : Name(inName), Level(1), Health(200), MaxHealth(200), Attack(30), Experience(0), Gold(0), MaxMana(100),CurrentMana(100)
 {
     this->InitEquipment();
+    this->Inventory = {new HealthPotion(), new AttackBoost()};
     cout << "캐릭터 " << Name << " 생성 완료! 레벨: " << Level << ", 체력: " << Health << ", 공격력: " << Attack << endl;
     cout << endl;
 }
