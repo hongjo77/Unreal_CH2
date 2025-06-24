@@ -25,6 +25,7 @@ void BossMonster::AttackPlayer(Characters& player)
     int prevPlayerHealth = player.GetHealth();
     bool IsSkill = false; //스킬 사용 여부
     int newHealth = 0;
+    int ArmorSubAttack = 0;
 
     //30% 확률로 스킬 공격
     int skillChance = chanceDistribution(rng);
@@ -32,12 +33,24 @@ void BossMonster::AttackPlayer(Characters& player)
     {
         cout << Name << "이(가) 강력한 기술로 " << player.GetName() << "를 공격합니다! ";
         IsSkill = true;
-        newHealth = prevPlayerHealth - SkillAttack + player.GetTotalArmorStat();
+        if (player.GetTotalArmorStat() - SkillAttack > 0) {
+            ArmorSubAttack = 0;
+        }
+        else {
+            ArmorSubAttack = player.GetTotalArmorStat() - SkillAttack;
+        }
+        newHealth = prevPlayerHealth + ArmorSubAttack;
     }
     else
     {
         cout << Name << "이(가) " << player.GetName() << "를 공격합니다! ";
-        newHealth = prevPlayerHealth - Attack + player.GetTotalArmorStat();
+        if (player.GetTotalArmorStat() - Attack > 0) {
+            ArmorSubAttack = 0;
+        }
+        else {
+            ArmorSubAttack = player.GetTotalArmorStat() - Attack;
+        }
+        newHealth = prevPlayerHealth + ArmorSubAttack;
     }
 
     if (newHealth < 0)

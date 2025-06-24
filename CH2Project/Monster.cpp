@@ -65,7 +65,14 @@ int Monster::DropItem()
 
 void Monster::AttackPlayer(Characters& player) {
     int prevPlayerHealth = player.GetHealth();
-    int newHealth = prevPlayerHealth - Attack + player.GetTotalArmorStat();
+    int ArmorSubAttack = 0;
+    if (player.GetTotalArmorStat() - Attack > 0) {
+        ArmorSubAttack = 0;
+    }
+    else {
+        ArmorSubAttack = player.GetTotalArmorStat() - Attack;
+    }
+    int newHealth = prevPlayerHealth + ArmorSubAttack;
 
     if (newHealth < 0) { newHealth = 0; }
     player.SetHealth(newHealth);
