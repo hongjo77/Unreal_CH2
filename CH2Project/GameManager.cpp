@@ -129,17 +129,29 @@ void GameManager::Battle(Characters& player, Monster& enemy)
 void GameManager::VisitShop(Characters& player)
 {
     char shopChoice;
-    cout << "상점을 방문하시겠습니까? (Y/N): ";
-    cin >> shopChoice;
-    cin.ignore(numeric_limits<streamsize>::max(), '\n');
-    if (shopChoice != 'Y' && shopChoice != 'y')
-    {
-        cout << "상점을 방문하지 않습니다." << endl;
-        return;
-    }
+	while(true)
+	{
+		cout << "상점을 방문하시겠습니까? (Y/N): ";
+		cin >> shopChoice;
+		cin.ignore(numeric_limits<streamsize>::max(),'\n');
+		if(shopChoice == 'Y' || shopChoice == 'y')
+		{
+			break;
+		}
+		else if(shopChoice == 'N' || shopChoice == 'n')
+		{
+			cout << "상점을 방문하지 않습니다." << endl;
+			return;
+		}
+		else
+		{
+			cout << "잘못된 입력입니다 Y 혹은 N을 입력해주세요." << endl;
+		}
+	}
     // 상점 계속 이용
     while (true)
-    {   
+    {
+		system("cls");
         shopInstance.DisplayItems();
         cout << "골드: " << player.GetGold() << endl;
         cout << "1. 아이템 구매 2. 아이템 판매 3. 장비 강화 0. 상점 나가기 " << endl;
