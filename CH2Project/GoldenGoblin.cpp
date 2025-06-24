@@ -28,12 +28,10 @@ void GoldenGoblin::OnDeath(Characters& player)
 	int dropChance = rand() % 100;
 	if (dropChance < 30)
 	{
-		Item* droppedItem = DropItem();
-		if (droppedItem)
-		{
-			player.GetInventory().push_back(droppedItem);
-			cout << droppedItem->GetName() << " 아이템을 획득했습니다!" << endl;
-		}
+		int index = DropItem();
+		auto& playerInventory = player.GetInventory();
+		playerInventory[index]->SetAmount(playerInventory[index]->GetAmount() + 1);
+		cout << player.GetName() << "이(가) " << playerInventory[index]->GetName() << "을(를) 1개 획득했습니다!" << endl;
 	}
 }
 

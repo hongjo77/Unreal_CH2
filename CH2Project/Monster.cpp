@@ -41,31 +41,26 @@ void Monster::OnDeath(Characters& player) {
     int dropChance = rand() % 100;
     if (dropChance < 30)
     {
-        Item* droppedItem = DropItem();
-        if (droppedItem)
-        {
-            player.GetInventory().push_back(droppedItem);
-            cout << droppedItem->GetName() << " 아이템을 획득했습니다!" << endl;
-        }
+        int index = DropItem();
+        auto& playerInventory = player.GetInventory();
+        playerInventory[index]->SetAmount(playerInventory[index]->GetAmount() + 1);
+        cout << player.GetName() << "이(가) " << playerInventory[index]->GetName() << "을(를) 1개 획득했습니다!" << endl;
     }
 }
 
 // 몬스터가 아이템을 드랍
-Item* Monster::DropItem() 
+int Monster::DropItem() 
 {
     int itemType = rand() % 2;
-    Item* dropped = nullptr;
     if (itemType == 0)
     {
-        dropped = new HealthPotion();
         cout << Name << "이(가) 체력 포션을 드랍했습니다!" << endl;
     }
     else
     {
-        dropped = new AttackBoost();
         cout << Name << "이(가) 공격력 부스트를 드랍했습니다!" << endl;
     }
-    return dropped;
+    return itemType;
 }
 
 void Monster::AttackPlayer(Characters& player) {

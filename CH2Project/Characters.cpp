@@ -161,7 +161,7 @@ int Characters::GetTotalArmorStat()
 vector<Equipment*> Characters::GetEquipments()
 {
     vector<Equipment*> tmp;
-    tmp = { this->helmet,this->chest,this->leg };
+    tmp = { this->weapon, this->helmet,this->chest,this->leg };
     return tmp;
 }
 
@@ -177,3 +177,4 @@ void Characters::SetExperience(int newExp) { Experience = newExp; }
 int Characters::GetGold() const { return Gold; }
 void Characters::SetGold(int newGold) { Gold = newGold; }
 vector<Item*>& Characters::GetInventory() { return Inventory; }
+int Characters::GetBaseAttack() { return Attack; }
