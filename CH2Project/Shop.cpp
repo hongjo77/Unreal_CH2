@@ -151,9 +151,9 @@ void Shop::EquipEnhance(Characters& player) {
 
 
     auto EquipList = player.GetEquipments();
-    system("cls");
     
     while (true) {
+        system("cls");
         cout << "현재 소지 금액 " << player.GetGold() << endl;
         cout << "============================================" << endl;
         for (int i = 0; i < EquipList.size(); i++) {
@@ -176,6 +176,7 @@ void Shop::EquipEnhance(Characters& player) {
         if (equipIdx == 0) return;
         if (equipIdx > EquipList.size()) {
             cout << "잘못된 입력입니다." << endl;
+            system("pause");
             continue;
         }
 
@@ -184,6 +185,7 @@ void Shop::EquipEnhance(Characters& player) {
 
         if (EnLevel >= 5) {
             cout << "장비 강화가 끝난 장비입니다. \n" << endl;
+            system("pause");
             continue;
         }
 
@@ -192,6 +194,7 @@ void Shop::EquipEnhance(Characters& player) {
         if (player.GetGold() < useGold)
         {
             cout << "골드가 부족합니다. \n" << endl;
+            system("pause");
             continue;
         }
         player.SetGold(player.GetGold() - useGold);
@@ -208,6 +211,7 @@ void Shop::EquipEnhance(Characters& player) {
             cout << "\n강화에 성공하셨습니다! \n" << endl;
             EquipList[equipIdx - 1]->SetEnLevel(EnLevel + 1);
             EquipList[equipIdx - 1]->SetStat(Stat + 7);
+            system("pause");
         }
         else {
             cout << "\n강화에 실패하셨습니다. \n" << endl;
@@ -216,7 +220,8 @@ void Shop::EquipEnhance(Characters& player) {
                 cout << "강화에 실패하여 강화 레벨이 하락하였습니다. \n" << endl;
                 EquipList[equipIdx - 1]->SetEnLevel(EnLevel - 1);
                 EquipList[equipIdx - 1]->SetStat(Stat - 5);
-            }
+            }      
+            system("pause");
         }
     }
     
