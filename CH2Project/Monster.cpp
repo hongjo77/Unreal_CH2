@@ -59,11 +59,11 @@ int Monster::DropItem()
     int itemType = rand() % 2;
     if (itemType == 0)
     {
-        cout << Name << "이(가) 체력 포션을 드랍했습니다!" << endl;
+        cout << Name << "이(가) Health Potion을(를) 드랍했습니다!" << endl;
     }
     else
     {
-        cout << Name << "이(가) 공격력 부스트를 드랍했습니다!" << endl;
+        cout << Name << "이(가) Attack Boost을(를) 드랍했습니다!" << endl;
     }
     return itemType;
 }
