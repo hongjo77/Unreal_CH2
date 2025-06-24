@@ -18,9 +18,11 @@ public:
     bool IsAchieved(const std::string& achievementName);
     void PrintLogs();
     void PrintStatistics();
+	void PrintAchievement();
     void KillAchievement(const std::string& monsterName);
     void GoldAchievement(int amount);
     void TakeDamageAchievement(int amount);
     void AttackDamageAchievement(int amount);
     void LevelAchievement(int level);
+	void EquipmentAchievement(const std::string& equipmentName, int level, int result);
 };

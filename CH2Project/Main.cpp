@@ -62,7 +62,7 @@ int main()
 
 	while (true)
     {
-        cout << "1. 로그 출력 2. 통계 출력 0. 게임 종료" << endl;
+        cout << "1. 로그 출력 2. 통계 출력 3. 업적 출력 0. 게임 종료" << endl;
         cout << "선택: ";
         int logChoice = 0;
         cin >> logChoice;
@@ -75,6 +75,10 @@ int main()
         else if (logChoice == 2)
         {
             GameLog::instance->PrintStatistics();
+        }
+		else if (logChoice == 3)
+        {
+            GameLog::instance->PrintAchievement();
         }
         else if (logChoice == 0)
         {
