@@ -1,7 +1,9 @@
-﻿#include "Shop.h"
+﻿#define NOMINMAX
+#include "Shop.h"
 #include "HealthPotion.h"
 #include "AttackBoost.h"
 #include <iostream>
+#include <Windows.h>
 
 // 아이템 목록 생성
 Shop::Shop()
@@ -94,6 +96,26 @@ void Shop::SellItem(int index, Characters& player)
 
 }
 
+int EnhanceLogic(int EnLevel) {
+    if (EnLevel == 0) {
+        return 90;
+    }
+    else if (EnLevel == 1) {
+        return 75;
+    }
+    else if (EnLevel == 2) {
+        return 60;
+    }
+    else if (EnLevel == 3) {
+        return 45;
+    }
+    else if (EnLevel == 4) {
+        return 30;
+    }
+
+    return 0;
+}
+
 void Shop::EquipEnhance(Characters& player) {
 
 
@@ -104,7 +126,7 @@ void Shop::EquipEnhance(Characters& player) {
         cout << "현재 소지 금액 " << player.GetGold() << endl;
         cout << "============================================" << endl;
         for (int i = 0; i < EquipList.size(); i++) {
-            cout << i + 1 << ". " << EquipList[i]->GetName() << "  강화레벨 : " << EquipList[i]->GetEnLevel() << endl;
+            cout << i + 1 << ". " << EquipList[i]->GetName() << "  강화레벨 : " << EquipList[i]->GetEnLevel() << "  강화 소모 골드 : " << (EquipList[i]->GetEnLevel() + 1) * 5 << endl;
         }
         cout << "============================================" << endl;
         cout << "강화할 아이템을 선택하세요 (0: 취소) : ";
@@ -113,24 +135,41 @@ void Shop::EquipEnhance(Characters& player) {
         cin >> equipIdx;
         cin.ignore(numeric_limits<streamsize>::max(), '\n');
 
-        if (equipIdx == 0) return; 
+        if (equipIdx == 0) return;
 
-        if (EquipList[equipIdx - 1]->GetEnLevel() >= 5) {
-            cout << "장비 강화가 끝난 장비입니다." << endl;
-            return;
+        int EnLevel = EquipList[equipIdx - 1]->GetEnLevel();
+        int Stat = EquipList[equipIdx - 1]->GetStat();
+
+        if (EnLevel >= 5) {
+            cout << "장비 강화가 끝난 장비입니다. \n" << endl;
+            continue;
         }
 
-        int useGold = (EquipList[equipIdx - 1]->GetEnLevel() + 1) * 5;
+        int useGold = (EnLevel + 1) * 5;
 
         if (player.GetGold() < useGold)
         {
-            cout << "골드가 부족합니다." << endl;
-            return;
+            cout << "골드가 부족합니다. \n" << endl;
+            continue;
         }
         player.SetGold(player.GetGold() - useGold);
 
-        EquipList[equipIdx - 1]->SetEnLevel(EquipList[equipIdx - 1]->GetEnLevel() + 1);
-        EquipList[equipIdx - 1]->SetStat(EquipList[equipIdx - 1]->GetStat() + 5);
+        //확률
+        int probability = rand() % 100;
+
+        for (int i = 3; i > 0; i--) {
+            cout << "땅";
+            Sleep(500);
+        }
+
+        if (probability < EnhanceLogic(EnLevel)) {
+            cout << "\n강화에 성공하셨습니다! \n" << endl;
+            EquipList[equipIdx - 1]->SetEnLevel(EnLevel + 1);
+            EquipList[equipIdx - 1]->SetStat(Stat + 5);
+        }
+        else {
+            cout << "\n강화에 실패하셨습니다. \n" << endl;
+        }
     }
     
 }
