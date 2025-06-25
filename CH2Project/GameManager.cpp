@@ -56,7 +56,7 @@ void GameManager::Battle(Characters& player, Monster& enemy)
     // 플레이어와 적 모두 살아있을 경우
     while (player.GetHealth() > 0 && enemy.GetHealth() > 0)
     {   
-        if(enemy.IsGoldenGoblin() && BattleCount >= 5)
+        if(enemy.IsGoldenGoblin() && BattleCount >= 3)
         {
             cout << enemy.GetName() << "이(가) 전투에서 도망쳤습니다!" << endl;
             enemy.TakeDamage(enemy.GetHealth()); //체력 0으로 만들어 죽은 상태로 처리
