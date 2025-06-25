@@ -1,7 +1,7 @@
 #include "GameManager.h"
 #include "Goblin.h"
-#include "Orc.h"
-#include "Troll.h"
+#include "Bat.h"
+#include "Slime.h"
 #include "GoldenGoblin.h"
 #include "Shop.h"
 #include "HealthPotion.h"
@@ -26,10 +26,10 @@ Monster* GameManager::GenerateMonster(int level)
     case 4:
     case 5:
     case 6: 
-        return new Orc(level);
+        return new Bat(level);
     case 7:
     case 8: 
-        return new Troll(level);
+        return new Slime(level);
     case 9: 
         return new GoldenGoblin(level);
     default: return new Goblin(level);
@@ -44,6 +44,8 @@ BossMonster* GameManager::GenerateBossMonster(int level)
 // 플레이어와 적이 싸우는 함수
 void GameManager::Battle(Characters& player, Monster& enemy)
 {
+    enemy.TextArt();
+
     if (enemy.IsBoss())
     {
         cout << "보스 몬스터 " << enemy.GetName() << " 등장! 체력: " << enemy.GetHealth() << ", 공격력: " << enemy.GetAttack() << endl;

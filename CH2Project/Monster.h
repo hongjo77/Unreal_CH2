@@ -23,6 +23,7 @@ public:
     virtual string GetName() const;
     virtual int GetHealth() const;
     virtual int GetAttack() const;
+    virtual void TextArt() const = 0;
     virtual void TakeDamage(int damage);
     virtual void OnDeath(Characters& player);
     virtual int DropItem();
