@@ -178,6 +178,7 @@ void GameManager::VisitShop(Characters& player)
             cin.ignore(numeric_limits<streamsize>::max(), '\n');
             if (choice == 0)
             {
+				system("cls");
                 continue;
             }
 			system("cls");
@@ -192,6 +193,7 @@ void GameManager::VisitShop(Characters& player)
             cin.ignore(numeric_limits<streamsize>::max(), '\n');
             if (sellIdx == 0)
             {
+				system("cls");
                 continue;
             }
 			system("cls");
@@ -200,6 +202,7 @@ void GameManager::VisitShop(Characters& player)
 		else if (menu == 3)
 		{
 			shopInstance.EquipEnhance(player);
+			system("cls");
 		}
         else if (menu == 0)
         {
@@ -208,6 +211,7 @@ void GameManager::VisitShop(Characters& player)
         }
         else
         {
+			system("cls");
             cout << "잘못된 입력입니다." << endl;
         }
     }
