@@ -1,9 +1,18 @@
 ﻿#pragma once
 #include <string>
 #include <vector>
-#include "Item.h"
+#include "HealthPotion.h"
+#include "AttackBoost.h"
+#include "Equipment.h"
 
 using namespace std;
+
+enum class AttackType
+{
+    Normal,
+    FireBall,
+    Strike
+};
 
 class Characters
 {
@@ -16,7 +25,15 @@ private:
     int Attack;
     int Experience;
     int Gold;
+    int MaxMana;
+    int CurrentMana;
+    Equipment* weapon;
+    Equipment* helmet;
+    Equipment* chest;
+    Equipment* leg;
+
     vector<Item*> Inventory;
+    AttackType currentAttackType = AttackType::Normal;
 
 protected:
     Characters(const string& inName);
@@ -34,6 +51,7 @@ public:
     int GetMaxHealth() const;
     int GetAttack() const;
     void SetAttack(int newAttack);
+    int GetBaseAttack();
     int GetLevel() const;
     void SetLevel(int newLevel);
     int GetExperience() const;
@@ -41,4 +59,25 @@ public:
     int GetGold() const;
     void SetGold(int newGold);
     vector<Item*>& GetInventory();
+    // 랜덤하게 공격
+    int RandomAttack();
+    // 랜덤한 스킬 선택
+    int RandomSkill();
+    // 장비 초기화
+    void InitEquipment();
+    // 장비들 delete 위한 소멸자
+    ~Characters();
+    // 장비 스탯 총합
+    int GetTotalArmorStat() const;
+    // 장비 목록 넘기기
+    vector<Equipment*> GetEquipments();
+    // 마나 getter
+    int GetCurrentMana();
+    // 마나 setter
+    void SetCurrentMana(int value);
+    // 최대 마나 getter
+    int GetMaxMana();
+    // 최대 마나 setter
+    void SetMaxMana(int value);
+    AttackType GetAttackType();
 };

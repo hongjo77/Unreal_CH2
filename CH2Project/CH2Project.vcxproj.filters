@@ -36,16 +36,34 @@
     <ClCompile Include="Monster.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="Orc.cpp">
+    <ClCompile Include="Bat.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
     <ClCompile Include="Shop.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="Troll.cpp">
+    <ClCompile Include="Slime.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
     <ClCompile Include="Main.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Helmet.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Chest.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Leg.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Weapon.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="GoldenGoblin.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="GameLog.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
@@ -74,13 +92,37 @@
     <ClInclude Include="Monster.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
-    <ClInclude Include="Orc.h">
+    <ClInclude Include="Bat.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
     <ClInclude Include="Shop.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
-    <ClInclude Include="Troll.h">
+    <ClInclude Include="Slime.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Equipment.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Helmet.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Chest.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Leg.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Weapon.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="GoldenGoblin.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="GameLog.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Color.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
   </ItemGroup>

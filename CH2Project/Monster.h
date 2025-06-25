@@ -1,8 +1,11 @@
 ﻿#pragma once
 #include <string>
 #include "Item.h"
+#include "Characters.h"
+#include "Color.h"
 #include <cstdlib>
 #include <ctime>
+
 
 using namespace std;
 
@@ -20,7 +23,11 @@ public:
     virtual string GetName() const;
     virtual int GetHealth() const;
     virtual int GetAttack() const;
+    virtual void TextArt() const = 0;
     virtual void TakeDamage(int damage);
-    virtual Item* DropItem();
+    virtual void OnDeath(Characters& player);
+    virtual int DropItem();
+    virtual void AttackPlayer(Characters& player);
     virtual bool IsBoss() const;
+    virtual bool IsGoldenGoblin() const;
 };
