@@ -179,3 +179,8 @@ int Characters::GetGold() const { return Gold; }
 void Characters::SetGold(int newGold) { Gold = newGold; }
 vector<Item*>& Characters::GetInventory() { return Inventory; }
 int Characters::GetBaseAttack() { return Attack; }
+int Characters::GetCurrentMana() { return CurrentMana; }
+void Characters::SetCurrentMana(int value) { this->CurrentMana = value;}
+int Characters::GetMaxMana() { return MaxMana; }
+void Characters::SetMaxMana(int value) { this->MaxMana = value; }
+
