@@ -77,7 +77,7 @@ void Shop::BuyItem(int index, Characters& player)
 
     player.SetGold(player.GetGold() - (price * count));
     cout << inv[index]->GetName() << "을(를) "<< count << "개 구매했습니다!\n" << endl;
-    GameLog::GetInstance()->GoldAchievement(-price);
+    GameLog::GetInstance()->GoldAchievement(- (price * count));
     
 }
 
