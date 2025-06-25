@@ -68,7 +68,7 @@ void GameLog::PrintAchievement()
 void GameLog::KillAchievement(const std::string& monsterName)
 {
     statistics[monsterName + "_killed"]++;
-    //logs.push_back("Player killed a " + monsterName + ".");
+    logs.push_back("Player killed a " + monsterName + ".");
 
     if (monsterName == "Goblin" && statistics["Goblin_killed"] == 5)
     {
@@ -127,7 +127,7 @@ void GameLog::GoldAchievement(int amount)
 void GameLog::TakeDamageAchievement(int amount)
 {
     statistics["Damage_Taken"] += amount;
-    //logs.push_back("Player took " + std::to_string(amount) + " damage.");
+    logs.push_back("Player took " + std::to_string(amount) + " damage.");
 
     if (statistics["Damage_Taken"] >= 1000 && !IsAchieved("받은 데미지 1000 누적"))
     {
@@ -138,7 +138,7 @@ void GameLog::TakeDamageAchievement(int amount)
 void GameLog::AttackDamageAchievement(int amount)
 {
     statistics["Damage_Attack"] += amount;
-    //logs.push_back("Player attack " + std::to_string(amount) + " damage.");
+    logs.push_back("Player attack " + std::to_string(amount) + " damage.");
 
     if (statistics["Damage_Attack"] >= 1000 && !IsAchieved("준 데미지 1000 누적"))
     {
