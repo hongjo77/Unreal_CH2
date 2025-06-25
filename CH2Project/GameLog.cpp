@@ -148,7 +148,7 @@ void GameLog::AttackDamageAchievement(int amount)
 
 void GameLog::LevelAchievement(int level)
 {
-    logs.push_back(std::string(BLUE)+ std::to_string(level)+"레벨 달성!" + RESET);
+    logs.push_back(std::string(GREEN)+ std::to_string(level)+"레벨 달성!" + RESET);
     if (level >= 10 && !IsAchieved("레벨 10 달성"))
     {
         CheckAchievement("레벨 10 달성");

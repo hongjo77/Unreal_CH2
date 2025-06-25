@@ -1,4 +1,4 @@
-#include "GameManager.h"
+﻿#include "GameManager.h"
 #include "Goblin.h"
 #include "Bat.h"
 #include "Slime.h"
@@ -48,8 +48,8 @@ void GameManager::Battle(Characters& player, Monster& enemy)
 
     if (enemy.IsBoss())
     {
-        cout << "보스 몬스터 " << enemy.GetName() << " 등장! 체력: " << enemy.GetHealth() << ", 공격력: " << enemy.GetAttack() << endl;
-    }
+		cout << "보스 몬스터 " << enemy.GetName() << " 등장! 체력: " << enemy.GetHealth() << ", 공격력: " << enemy.GetAttack() << endl;
+	}
     else
     {
         cout << "몬스터 " << enemy.GetName() << " 등장! 체력: " << enemy.GetHealth() << ", 공격력: " << enemy.GetAttack() << endl;
