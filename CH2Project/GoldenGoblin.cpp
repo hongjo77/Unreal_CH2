@@ -14,7 +14,7 @@ bool GoldenGoblin::IsGoldenGoblin() const { return true; }
 void GoldenGoblin::OnDeath(Characters& player) 
 {
 	cout << endl;
-	cout << Name << " 처치!" << endl;
+	cout << COLOR_GREEN << Name << " 처치!" << COLOR_RESET << endl;
 
 	// 적을 물리쳤을 때 얻는 골드 (훔친 돈 포함)
 	int goldReward = (100 + rand() % 100) + StolenMoney;
@@ -22,8 +22,8 @@ void GoldenGoblin::OnDeath(Characters& player)
 	player.SetExperience(player.GetExperience() + 50);
 	// 플레이어 골드 + 100~200 골드 + 훔친 돈
 	player.SetGold(player.GetGold() + goldReward);
-	cout << player.GetName() << "가 50 EXP와 " << goldReward << " 골드를 획득했습니다. 현재 EXP: "
-		<< player.GetExperience() << "/100, 골드: " << player.GetGold() << endl;
+	cout << COLOR_GREEN << player.GetName() << "가 50 EXP와 " << goldReward << " 골드를 획득했습니다. 현재 EXP: "
+		<< player.GetExperience() << "/100, 골드: " << player.GetGold() << COLOR_RESET << endl;
 
 	// 30% 확률로 아이템 드랍
 	int dropChance = rand() % 100;
@@ -32,7 +32,7 @@ void GoldenGoblin::OnDeath(Characters& player)
 		int index = DropItem();
 		auto& playerInventory = player.GetInventory();
 		playerInventory[index]->SetAmount(playerInventory[index]->GetAmount() + 1);
-		cout << player.GetName() << "이(가) " << playerInventory[index]->GetName() << "을(를) 1개 획득했습니다!" << endl;
+		cout << COLOR_GREEN << player.GetName() << "이(가) " << playerInventory[index]->GetName() << "을(를) 1개 획득했습니다!" << COLOR_RESET << endl;
 	}
 	// 로그 추가
 	GameLog::GetInstance()->GoldAchievement(goldReward);
@@ -60,15 +60,15 @@ void GoldenGoblin::AttackPlayer(Characters& player)
 
 	if (newHealth < 0) { newHealth = 0; }
 	player.SetHealth(newHealth);
-	cout << Name << "이(가) " << player.GetName() << "를 공격합니다! "
-		<< player.GetName() << " 체력: " << prevPlayerHealth << " → " << player.GetHealth();
+	cout << COLOR_RED << Name << "이(가) " << player.GetName() << "를 공격합니다! "
+		<< player.GetName() << " 체력: " << prevPlayerHealth << " → " << player.GetHealth() << COLOR_RESET;
 	if (prevGold > 0) 
 	{
-		cout << " 골드: " << prevGold << " -> " << player.GetGold() << endl;
+		cout << COLOR_RED << " 골드: " << prevGold << " -> " << player.GetGold() << COLOR_RESET << endl;
 	}
 	else 
 	{
-		cout << " 골드: "<< player.GetGold() << endl;
+		cout << COLOR_RED << " 골드: "<< player.GetGold() << COLOR_RESET << endl;
 	}
 	cout << endl;
 	// 로그 추가
