@@ -5,7 +5,7 @@
 BossMonster::BossMonster(int level)
     : Monster(
         "Orc Shaman",
-        (rand() % (level * 50)) + (level * 200),
+        (rand() % (level * 50)) + (level * 100),
         (rand() % (level * 10)) + (level * 20)
     ), SkillAttack(rand() % (level * 10) + (level*50)),
 rng(chrono::high_resolution_clock::now().time_since_epoch().count()),
