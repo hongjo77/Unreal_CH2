@@ -12,6 +12,7 @@ public:
     bool IsBoss() const override;
     void OnDeath(Characters& player) override;
     void AttackPlayer(Characters& player) override;
+    void TextArt() const override;
 private:
     int SkillAttack;
     mt19937 rng;
