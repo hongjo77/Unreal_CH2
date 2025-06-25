@@ -64,6 +64,8 @@ void GameManager::Battle(Characters& player, Monster& enemy)
     {   
         if(enemy.IsGoldenGoblin() && BattleCount >= 3)
         {
+			oss.str("");
+			oss.clear();
             oss << enemy.GetName() << "이(가) 전투에서 도망쳤습니다!" << endl;
 			GameLog::GetInstance()->PrintAndLog(oss.str());
             enemy.TakeDamage(enemy.GetHealth()); //체력 0으로 만들어 죽은 상태로 처리
@@ -95,19 +97,27 @@ void GameManager::Battle(Characters& player, Monster& enemy)
         enemy.TakeDamage(player.RandomAttack());
         if (player.GetAttackType() == AttackType::Normal)
 		{
+			oss.str("");
+			oss.clear();
 			oss << player.GetName() << "이(가) " << enemy.GetName() << "를(을) 공격합니다." << endl;
 			GameLog::GetInstance()->PrintAndLog(oss.str());
 		}
         else if(player.GetAttackType()==AttackType::Strike)
 		{
+			oss.str("");
+			oss.clear();
 			oss << player.GetName() << "이(가) " << enemy.GetName() << "에게 Strike를 사용합니다." << endl;
 			GameLog::GetInstance()->PrintAndLog(oss.str());
 		}
         else
 		{
+			oss.str("");
+			oss.clear();
 			oss << player.GetName() << "이(가) " << enemy.GetName() << "에게 FireBall을 사용합니다." << endl;
 			GameLog::GetInstance()->PrintAndLog(oss.str());
 		}
+		oss.str("");
+		oss.clear();
 		oss << enemy.GetName() << " 체력: " << GREEN << prevEnemyHealth << RESET << " → " << RED << enemy.GetHealth()<<RESET << endl;
         GameLog::GetInstance()->PrintAndLog(oss.str());
         
@@ -137,6 +147,8 @@ void GameManager::Battle(Characters& player, Monster& enemy)
         // 플레이어가 죽었을 경우
         if (player.GetHealth() <= 0)
         {
+			oss.str("");
+			oss.clear();
             oss << player.GetName() << "가 사망했습니다. 게임 오버!" << endl;
 			GameLog::GetInstance()->PrintAndLog(oss.str());
 
@@ -230,6 +242,8 @@ void GameManager::VisitShop(Characters& player)
 		}
         else if (menu == 0)
         {
+			oss.str("");
+			oss.clear();
             oss << "상점에서 나갑니다." << endl;
 			GameLog::GetInstance()->PrintAndLog(oss.str());
             break;
