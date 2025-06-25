@@ -68,7 +68,7 @@ public:
     // 장비들 delete 위한 소멸자
     ~Characters();
     // 장비 스탯 총합
-    int GetTotalArmorStat();
+    int GetTotalArmorStat() const;
     // 장비 목록 넘기기
     vector<Equipment*> GetEquipments();
     // 마나 getter

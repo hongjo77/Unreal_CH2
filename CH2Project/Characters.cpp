@@ -6,6 +6,7 @@
 #include "Weapon.h"
 #include "Leg.h"
 #include "Helmet.h"
+#include <iomanip>
 
 Characters* Characters::Instance = nullptr;
 
@@ -29,11 +30,35 @@ Characters* Characters::GetInstance(const string& inName)
 
 string Characters::GetName() const { return Name; }
 
+//void Characters::DisplayStatus() const
+//{
+//    cout << "이름: " << Name << " | 레벨: " << Level << " | 체력: " << Health << "/" << MaxHealth << " | 방어력: " << GetTotalArmorStat()
+//        << " | 공격력: (" << Attack <<" + "<<this->weapon->GetStat()<<")" << " | 경험치: " << Experience << " | 골드: " << Gold << endl;
+//}
+
+
 void Characters::DisplayStatus() const
 {
-    cout << "이름: " << Name << " | 레벨: " << Level << " | 체력: " << Health << "/" << MaxHealth
-        << " | 공격력: " << Attack << " | 경험치: " << Experience << " | 골드: " << Gold << endl;
+    cout << "┌──────────────────────┬──────────────────────┐" << endl;
+
+    cout << "│ " << left << setw(20) << ("이름     : " + Name);
+    cout << " │ " << left << setw(20) << ("레벨     : " + to_string(Level)) << " │" << endl;
+
+    cout << "│ " << left << setw(20) << ("체력     : " + to_string(Health) + " / " + to_string(MaxHealth));
+    cout << " │ " << left << setw(20) << ("경험치   : " + to_string(Experience)) << " │" << endl;
+
+    cout << "│ " << left << setw(20) << ("공격력   : " + to_string(Attack) + " (+ " + to_string(weapon->GetStat()) + ")");
+    cout << " │ " << left << setw(20) << ("방어력   : " + to_string(GetTotalArmorStat())) << " │" << endl;
+
+    cout << "│ " << left << setw(20) << ("골드     : " + to_string(Gold) + "원 보유");
+  
+    cout << " │ " << left << setw(10) << Inventory[0]->GetName()<<" : "<<Inventory[0]->GetAmount() << "    │" << endl;
+    cout << "│ " << left << setw(10) << Inventory[1]->GetName() << " : " << Inventory[1]->GetAmount() << "     │";
+    cout << right << setw(24) << " │" << endl;
+    cout << "└──────────────────────┴──────────────────────┘" << endl;
 }
+
+
 
 void Characters::LevelUp()
 {
@@ -152,7 +177,7 @@ Characters::~Characters()
     Inventory.clear();
 }
 
-int Characters::GetTotalArmorStat()
+int Characters::GetTotalArmorStat()const 
 {
     //생성자로 항상 기본장비가 있기 때문에 체크 필요 x
     int total = 0;
