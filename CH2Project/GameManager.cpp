@@ -162,8 +162,14 @@ void GameManager::VisitShop(Characters& player)
         cout << "선택: ";
         int menu = 0;
         cin >> menu;
-        cin.ignore(numeric_limits<streamsize>::max(), '\n');
-
+		if(cin.fail())
+		{
+			cin.clear();
+			cin.ignore(numeric_limits<streamsize>::max(),'\n');
+			system("cls");
+			cout << "잘못된 입력입니다." << endl;
+			continue;
+		}
         if (menu == 1)
         {
             cout << "구매할 아이템 번호를 선택하세요 (0: 취소): ";
