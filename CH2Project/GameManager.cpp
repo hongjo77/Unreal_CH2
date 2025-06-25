@@ -1,4 +1,4 @@
-﻿#include "GameManager.h"
+#include "GameManager.h"
 #include "Goblin.h"
 #include "Orc.h"
 #include "Troll.h"
@@ -174,6 +174,7 @@ void GameManager::VisitShop(Characters& player)
             {
                 continue;
             }
+			system("cls");
             shopInstance.BuyItem(choice - 1, player);
         }
         else if (menu == 2)
@@ -187,6 +188,7 @@ void GameManager::VisitShop(Characters& player)
             {
                 continue;
             }
+			system("cls");
             shopInstance.SellItem(sellIdx - 1, player);
         }
 		else if (menu == 3)
