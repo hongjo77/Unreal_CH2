@@ -11,6 +11,25 @@ GoldenGoblin::GoldenGoblin(int level)
 
 bool GoldenGoblin::IsGoldenGoblin() const { return true; }
 
+void GoldenGoblin::TextArt() const {
+	string textart = R"(
+⠀⠀⠀⠀⠀⠀⠀⠀⢀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⡞⡄⠀⢀⡆⠀⣀⢤⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⢀⣤⣀⣠⠊⠑⠚⠁⠘⠊⠀⢸⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⢀⡠⠒⠉⠀⠀⠸⡤⠄⣀⣀⠀⠀⠀⢸⠑⠲⢄⠀⠀⠀⠀⡀
+⠀⡎⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠉⠉⠀⠀⠀⠀⢣⣤⠔⢪⠃
+⢸⡀⠰⠯⢶⡄⠀⠀⠀⠀⢀⢤⡖⢤⡀⠀⠀⡠⣺⠟⡟⡰⠃⠀
+⠈⢇⠀⠀⣠⠔⠊⠁⠀⠀⠈⠉⠀⠈⠉⠀⠚⣜⣡⣜⠎⠀⠀⠀
+⠀⠘⡦⠊⠀⠀⠀⠀⠀⢀⠄⠀⠀⣀⠀⠀⠀⢀⠜⠁⠀⠀⠀⠀
+⠀⢰⠃⠀⠀⢀⡠⠔⠊⠁⣀⠤⣲⠃⠀⢀⡴⠧⢤⣄⠀⠀⠀⠀
+⠀⠸⣀⠄⠲⣉⡀⠒⠋⠡⠘⠂⠁⢀⡴⠛⠐⠒⠁⠈⢇⠀⠀⠀
+⠀⠀⠀⠀⢀⠤⠛⢗⡀⠀⠀⢀⠼⠝⠒⠒⠤⣀⠀⠀⢸⠀⠀⠀
+⠀⠀⢀⠖⢁⡴⢢⠀⠉⠉⠈⠁⠐⡇⠒⠒⠤⡀⠑⢤⠃⠀⠀⠀
+⠀⠀⠈⠀⠊⠀⠸⡆⠀⠀⠀⠀⠀⠱⠤⠄⠒⠉⠒⠀⠓⠀⠀⠀
+)";
+	cout << textart << endl;
+}
+
 void GoldenGoblin::OnDeath(Characters& player) 
 {
 	cout << endl;

@@ -44,6 +44,8 @@ BossMonster* GameManager::GenerateBossMonster(int level)
 // 플레이어와 적이 싸우는 함수
 void GameManager::Battle(Characters& player, Monster& enemy)
 {
+    enemy.TextArt();
+
     if (enemy.IsBoss())
     {
         cout << "보스 몬스터 " << enemy.GetName() << " 등장! 체력: " << enemy.GetHealth() << ", 공격력: " << enemy.GetAttack() << endl;

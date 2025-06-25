@@ -7,4 +7,5 @@ class Goblin : public Monster
 {
 public:
     Goblin(int level);
+    void TextArt() const override;
 };

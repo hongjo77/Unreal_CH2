@@ -7,4 +7,5 @@ class Troll : public Monster
 {
 public:
     Troll(int level);
+    void TextArt() const override;
 };
