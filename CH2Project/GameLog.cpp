@@ -25,6 +25,12 @@ void GameLog::AddLog(const std::string& logEntry)
     logs.push_back(logEntry);
 }
 
+void GameLog::PrintAndLog(const std::string& msg)
+{
+    std::cout << msg;
+	AddLog(msg);
+}
+
 void GameLog::UpdateStat(const std::string& statName, int value)
 {
     statistics[statName] += value;
