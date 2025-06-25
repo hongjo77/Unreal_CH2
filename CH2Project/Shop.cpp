@@ -5,6 +5,9 @@
 #include "GameLog.h"
 #include <iostream>
 #include <Windows.h>
+#include <cstdlib>
+
+HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
 
 // 아이템 목록 생성
 Shop::Shop()
@@ -172,6 +175,7 @@ void Shop::EquipEnhance(Characters& player) {
     while (true) {
         system("cls");
         cout << "현재 소지 금액 " << player.GetGold() << endl;
+        SetConsoleTextAttribute(hConsole, 016);
         cout << "============================================" << endl;
         for (int i = 0; i < EquipList.size(); i++) {
             cout << i + 1 << ". " << EquipList[i]->GetName() << "  강화레벨 : " << EquipList[i]->GetEnLevel();
@@ -184,6 +188,7 @@ void Shop::EquipEnhance(Characters& player) {
             
         }
         cout << "============================================" << endl;
+        SetConsoleTextAttribute(hConsole, FOREGROUND_RED | FOREGROUND_GREEN | FOREGROUND_BLUE);
         cout << "강화할 아이템을 선택하세요 (0: 취소) : ";
 
         int equipIdx = 0;
@@ -228,13 +233,49 @@ void Shop::EquipEnhance(Characters& player) {
         //확률
         int probability = rand() % 100;
 
+        /*
         for (int i = 3; i > 0; i--) {
             cout << "땅";
             Sleep(500);
+        }*/
+        int count = 0;
+        while (count < 6) {
+            if (count % 2 == 0) {
+                system("cls");
+                cout << "_____________" << endl;
+                cout << "|            |" << endl;
+                cout << "|____________|" << endl;
+                cout << "     |  |        " << endl;
+                cout << "     |  |        " << endl;
+                cout << "     |  |        " << endl;
+                cout << "     |  |        " << endl;
+                cout << "     |__|        " << endl;
+
+                Sleep(300);
+                count++;
+            }
+            else {
+                system("cls");
+                cout << "             _____" << endl;
+                cout << "             |    |" << endl;
+                cout << "_____________|    |" << endl;
+                cout << "|____________     |" << endl;
+                cout << "             |    |" << endl;
+                cout << "             |____|" << endl;
+                SetConsoleTextAttribute(hConsole, FOREGROUND_RED | FOREGROUND_INTENSITY);
+                cout << "         +*\\*\\+*+*/+/+*" << endl;
+                cout << "           *\\*\\+*/+/+" << endl;
+                SetConsoleTextAttribute(hConsole, FOREGROUND_RED | FOREGROUND_GREEN | FOREGROUND_BLUE);
+
+                Sleep(300);
+                count++;
+            }
         }
 
         if (probability < EnhanceLogic(EnLevel)) {
+            SetConsoleTextAttribute(hConsole, FOREGROUND_GREEN | FOREGROUND_INTENSITY);
             cout << "\n강화에 성공하셨습니다! \n" << endl;
+            SetConsoleTextAttribute(hConsole, FOREGROUND_RED | FOREGROUND_GREEN | FOREGROUND_BLUE);
             EquipList[equipIdx - 1]->SetEnLevel(EnLevel + 1);
             EquipList[equipIdx - 1]->SetStat(Stat + 7);
 
@@ -247,7 +288,9 @@ void Shop::EquipEnhance(Characters& player) {
             system("pause");
         }
         else {
+            SetConsoleTextAttribute(hConsole, FOREGROUND_RED | FOREGROUND_INTENSITY);
             cout << "\n강화에 실패하셨습니다. \n" << endl;
+            SetConsoleTextAttribute(hConsole, FOREGROUND_RED | FOREGROUND_GREEN | FOREGROUND_BLUE);
             GameLog::GetInstance()->EquipmentAchievement(
                 EquipList[equipIdx - 1]->GetName(),
                 EquipList[equipIdx - 1]->GetEnLevel(),
@@ -255,7 +298,9 @@ void Shop::EquipEnhance(Characters& player) {
             );
 
             if (0 == rand() % 5) {
+                SetConsoleTextAttribute(hConsole, FOREGROUND_RED);
                 cout << "강화에 실패하여 강화 레벨이 하락하였습니다. \n" << endl;
+                SetConsoleTextAttribute(hConsole, FOREGROUND_RED | FOREGROUND_GREEN | FOREGROUND_BLUE);
                 EquipList[equipIdx - 1]->SetEnLevel(EnLevel - 1);
                 EquipList[equipIdx - 1]->SetStat(Stat - 5);
 
