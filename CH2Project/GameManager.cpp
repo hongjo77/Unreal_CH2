@@ -50,12 +50,12 @@ void GameManager::Battle(Characters& player, Monster& enemy)
 
     if (enemy.IsBoss())
     {
-		oss << "보스 몬스터 " << enemy.GetName() << " 등장! 체력: " << enemy.GetHealth() << ", 공격력: " << enemy.GetAttack() << endl;
+        oss << "보스 몬스터 " << enemy.GetName() << " 등장! 체력: " << RED << enemy.GetHealth()<< RESET << ", 공격력: " << RED << enemy.GetAttack() <<RESET << endl;
 		GameLog::GetInstance()->PrintAndLog(oss.str());
 	}
     else
     {
-        oss << "몬스터 " << enemy.GetName() << " 등장! 체력: " << enemy.GetHealth() << ", 공격력: " << enemy.GetAttack() << endl;
+        oss << "몬스터 " << enemy.GetName() << " 등장! 체력: " <<RED << enemy.GetHealth() << RESET << ", 공격력: " << RED << enemy.GetAttack() << RESET << endl;
 		GameLog::GetInstance()->PrintAndLog(oss.str());
 	}
         
@@ -108,7 +108,7 @@ void GameManager::Battle(Characters& player, Monster& enemy)
 			oss << player.GetName() << "이(가) " << enemy.GetName() << "에게 FireBall을 사용합니다." << endl;
 			GameLog::GetInstance()->PrintAndLog(oss.str());
 		}
-        oss<< enemy.GetName() << " 체력: " << prevEnemyHealth << " → " << enemy.GetHealth() << endl;
+		oss << enemy.GetName() << " 체력: " << GREEN << prevEnemyHealth << RESET << " → " << RED << enemy.GetHealth()<<RESET << endl;
         GameLog::GetInstance()->PrintAndLog(oss.str());
         
         // 3. 적이 죽었을 경우
