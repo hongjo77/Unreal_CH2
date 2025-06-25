@@ -57,7 +57,14 @@ void Shop::BuyItem(int index, Characters& player)
     cout << name << "을(를) 선택하셨습니다. 구매 개수 선택 (0: 취소) : ";
     int count = 0;
     cin >> count;
-    cin.ignore(numeric_limits<streamsize>::max(), '\n');
+    if (cin.fail()) {
+        cin.clear();
+        cin.ignore(numeric_limits<streamsize>::max(), '\n');
+        cout << "잘못된 입력입니다." << endl;
+    }
+    else {
+        cin.ignore(numeric_limits<streamsize>::max(), '\n');
+    }
 
     if (count == 0) {
         cout << "아이템 구매를 취소하셨습니다.\n" << endl;
@@ -103,7 +110,15 @@ void Shop::SellItem(int index, Characters& player)
         cout << "판매 개수 선택(0: 취소) : ";
         int count = 0;
         cin >> count;
-        cin.ignore(numeric_limits<streamsize>::max(), '\n');
+
+        if (cin.fail()) {
+            cin.clear();
+            cin.ignore(numeric_limits<streamsize>::max(), '\n');
+            cout << "잘못된 입력입니다." << endl;
+        }
+        else {
+            cin.ignore(numeric_limits<streamsize>::max(), '\n');
+        }
 
         if (count == 0) {
             cout << "아이템 판매를 취소하셨습니다.\n" << endl;
@@ -173,7 +188,15 @@ void Shop::EquipEnhance(Characters& player) {
 
         int equipIdx = 0;
         cin >> equipIdx;
-        cin.ignore(numeric_limits<streamsize>::max(), '\n');
+        
+        if (cin.fail()) {
+            cin.clear();
+            cin.ignore(numeric_limits<streamsize>::max(), '\n');
+            equipIdx = EquipList.size() + 1;
+        }
+        else {
+            cin.ignore(numeric_limits<streamsize>::max(), '\n');
+        }
 
         if (equipIdx == 0) return;
         if (equipIdx > EquipList.size()) {
