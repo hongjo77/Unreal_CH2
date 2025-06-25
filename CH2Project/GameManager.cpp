@@ -148,7 +148,7 @@ void GameManager::VisitShop(Characters& player)
 		}
 		else
 		{
-			cout << "잘못된 입력입니다 Y 혹은 N을 입력해주세요." << endl;
+			cout << COLOR_RED << "잘못된 입력입니다 Y 혹은 N을 입력해주세요." << COLOR_RESET << endl;
 		}
 	}
     // 상점 계속 이용
@@ -167,7 +167,7 @@ void GameManager::VisitShop(Characters& player)
 			cin.clear();
 			cin.ignore(numeric_limits<streamsize>::max(),'\n');
 			system("cls");
-			cout << "잘못된 입력입니다." << endl;
+			cout << COLOR_RED <<  "잘못된 입력입니다." << COLOR_RESET<< endl;
 			continue;
 		}
         if (menu == 1)
@@ -212,7 +212,7 @@ void GameManager::VisitShop(Characters& player)
         else
         {
 			system("cls");
-            cout << "잘못된 입력입니다." << endl;
+            cout << COLOR_RED << "잘못된 입력입니다." << COLOR_RESET<< endl;
         }
     }
 }
