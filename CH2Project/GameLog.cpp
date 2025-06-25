@@ -83,18 +83,18 @@ void GameLog::KillAchievement(const std::string& monsterName)
             CheckAchievement("고블린 5마리 처치");
         }
     }
-	if (monsterName == "Orc" && statistics["Orc_killed"] == 5)
+	if (monsterName == "Bat" && statistics["Bat_killed"] == 5)
     {
-        if (!IsAchieved("오크 5마리 처치"))
+        if (!IsAchieved("박쥐 5마리 처치"))
         {
-            CheckAchievement("오크 5마리 처치");
+            CheckAchievement("박쥐 5마리 처치");
         }
     }
-	if (monsterName == "Troll" && statistics["Troll_killed"] == 5)
+	if (monsterName == "Slime" && statistics["Slime_killed"] == 5)
     {
-        if (!IsAchieved("트롤 5마리 처치"))
+        if (!IsAchieved("슬라임 5마리 처치"))
         {
-            CheckAchievement("트롤 5마리 처치");
+            CheckAchievement("슬라임 5마리 처치");
         }
     }
 	if (monsterName == "Golden Goblin" && statistics["Golden Goblin_killed"] == 5)
