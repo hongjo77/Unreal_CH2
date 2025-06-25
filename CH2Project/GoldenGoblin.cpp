@@ -1,4 +1,5 @@
 ﻿#include "GoldenGoblin.h"
+#include "GameLog.h"
 #include <iostream>
 
 GoldenGoblin::GoldenGoblin(int level)
@@ -15,12 +16,12 @@ void GoldenGoblin::OnDeath(Characters& player)
 	cout << endl;
 	cout << Name << " 처치!" << endl;
 
-	// 적을 물리쳤을 때 얻는 골드
-	int goldReward = 100 + rand() % 100;
+	// 적을 물리쳤을 때 얻는 골드 (훔친 돈 포함)
+	int goldReward = (100 + rand() % 100) + StolenMoney;
 	// 플레이어 경험치 + 50 exp
 	player.SetExperience(player.GetExperience() + 50);
 	// 플레이어 골드 + 100~200 골드 + 훔친 돈
-	player.SetGold(player.GetGold() + goldReward + StolenMoney);
+	player.SetGold(player.GetGold() + goldReward);
 	cout << player.GetName() << "가 50 EXP와 " << goldReward << " 골드를 획득했습니다. 현재 EXP: "
 		<< player.GetExperience() << "/100, 골드: " << player.GetGold() << endl;
 
@@ -33,12 +34,21 @@ void GoldenGoblin::OnDeath(Characters& player)
 		playerInventory[index]->SetAmount(playerInventory[index]->GetAmount() + 1);
 		cout << player.GetName() << "이(가) " << playerInventory[index]->GetName() << "을(를) 1개 획득했습니다!" << endl;
 	}
+	// 로그 추가
+	GameLog::GetInstance()->GoldAchievement(goldReward);
 }
 
 void GoldenGoblin::AttackPlayer(Characters& player) 
 {
 	int prevPlayerHealth = player.GetHealth();
-	int newHealth = prevPlayerHealth - Attack;
+	int ArmorSubAttack = 0;
+	if (player.GetTotalArmorStat() - Attack > 0) {
+		ArmorSubAttack = 0;
+	}
+	else {
+		ArmorSubAttack = player.GetTotalArmorStat() - Attack;
+	}
+	int newHealth = prevPlayerHealth + ArmorSubAttack;
 	int prevGold = player.GetGold();
 	if (prevGold > 0) 
 	{
@@ -50,7 +60,7 @@ void GoldenGoblin::AttackPlayer(Characters& player)
 
 	if (newHealth < 0) { newHealth = 0; }
 	player.SetHealth(newHealth);
-	cout << Name << "이 " << player.GetName() << "를 공격합니다! "
+	cout << Name << "이(가) " << player.GetName() << "를 공격합니다! "
 		<< player.GetName() << " 체력: " << prevPlayerHealth << " → " << player.GetHealth();
 	if (prevGold > 0) 
 	{
@@ -61,4 +71,6 @@ void GoldenGoblin::AttackPlayer(Characters& player)
 		cout << " 골드: "<< player.GetGold() << endl;
 	}
 	cout << endl;
+	// 로그 추가
+	GameLog::GetInstance()->TakeDamageAchievement(-ArmorSubAttack);
 }

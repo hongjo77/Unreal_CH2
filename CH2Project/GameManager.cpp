@@ -1,4 +1,4 @@
-#include "GameManager.h"
+﻿#include "GameManager.h"
 #include "Goblin.h"
 #include "Orc.h"
 #include "Troll.h"
@@ -6,6 +6,7 @@
 #include "Shop.h"
 #include "HealthPotion.h"
 #include "AttackBoost.h"
+#include "GameLog.h"
 #include <iostream>
 #include <cstdlib>
 #include <ctime>
@@ -85,7 +86,7 @@ void GameManager::Battle(Characters& player, Monster& enemy)
         int prevEnemyHealth = enemy.GetHealth();
         // 플레이어 -> 적 공격
         enemy.TakeDamage(player.GetAttack());
-        cout << player.GetName() << "가 " << enemy.GetName() << "을(를) 공격합니다! "
+        cout << player.GetName() << "이(가) " << enemy.GetName() << "을(를) 공격합니다! "
             << enemy.GetName() << " 체력: " << prevEnemyHealth << " → " << enemy.GetHealth() << endl;
         
         
@@ -93,11 +94,13 @@ void GameManager::Battle(Characters& player, Monster& enemy)
         if (enemy.GetHealth() <= 0)
         {
             enemy.OnDeath(player);
-
+			GameLog::GetInstance()->KillAchievement(enemy.GetName());
+			
             // 플레이어의 경험치가 100이상이고 레벨이 10보다 낮은 경우 레벨업
             while (player.GetExperience() >= 100 && player.GetLevel() < 10)
             {
                 player.LevelUp();
+				GameLog::GetInstance()->LevelAchievement(player.GetLevel());
             }
 
             //턴 초기화

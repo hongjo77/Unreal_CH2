@@ -1,5 +1,6 @@
 ﻿#include "Characters.h"
 #include "GameManager.h"
+#include "GameLog.h"
 #include <iostream>
 #include <string>
 #include <ctime>
@@ -53,6 +54,36 @@ int main()
         // 보스 전투
         manager.Battle(*player, *boss);
         delete boss;
+    }
+
+	while (true)
+    {
+        cout << "1. 로그 출력 2. 통계 출력 3. 업적 출력 0. 게임 종료" << endl;
+        cout << "선택: ";
+        int logChoice = 0;
+        cin >> logChoice;
+        cin.ignore(numeric_limits<streamsize>::max(), '\n');
+
+        if (logChoice == 1)
+        {
+            GameLog::GetInstance()->PrintLogs();
+        }
+        else if (logChoice == 2)
+        {
+            GameLog::GetInstance()->PrintStatistics();
+        }
+		else if (logChoice == 3)
+        {
+            GameLog::GetInstance()->PrintAchievement();
+        }
+        else if (logChoice == 0)
+        {
+            break;
+        }
+        else
+        {
+            cout << "잘못된 입력입니다." << endl;
+        }
     }
 
     cout << "게임이 종료되었습니다." << endl;
