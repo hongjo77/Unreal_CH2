@@ -74,7 +74,7 @@ int Characters::RandomSkill()
     return type;
 }
 
-int Characters::GetAttack()
+int Characters::RandomAttack()
 {
     //공격 타입 설정
     Characters::RandomSkill();
@@ -97,20 +97,19 @@ int Characters::GetAttack()
     case AttackType::Strike:
         if (CurrentMana >= 20)
         {
-            cout <<"플레이어가 Strike 스킬을 사용합니다." << endl;
             CurrentMana -= 20;
             return Attack + 20;
         }
         else
         {
             recoverMana(10);
+            this->currentAttackType = AttackType::Normal;
             return Attack;
         }
     
     case AttackType::FireBall:
         if (CurrentMana >= 50)
         {
-            cout << "플레이어가 FireBall 스킬을 사용합니다." << endl;
             CurrentMana -= 50;
             return Attack + 40;
         }
@@ -118,11 +117,13 @@ int Characters::GetAttack()
         else
         {
             recoverMana(10);
+            this->currentAttackType = AttackType::Normal;
             return Attack;
         }
 
     default:
         recoverMana(10);
+        this->currentAttackType = AttackType::Normal;
         return Attack;
     }
 }
@@ -170,6 +171,7 @@ vector<Equipment*> Characters::GetEquipments()
 int Characters::GetHealth() const { return Health; }
 void Characters::SetHealth(int newHealth) { Health = newHealth; }
 int Characters::GetMaxHealth() const { return MaxHealth; }
+int Characters::GetAttack()const { return Attack; }
 void Characters::SetAttack(int newAttack) { Attack = newAttack; }
 int Characters::GetLevel() const { return Level; }
 void Characters::SetLevel(int newLevel) { Level = newLevel; }
@@ -183,4 +185,5 @@ int Characters::GetCurrentMana() { return CurrentMana; }
 void Characters::SetCurrentMana(int value) { this->CurrentMana = value;}
 int Characters::GetMaxMana() { return MaxMana; }
 void Characters::SetMaxMana(int value) { this->MaxMana = value; }
+AttackType Characters::GetAttackType() { return this->currentAttackType; }
 

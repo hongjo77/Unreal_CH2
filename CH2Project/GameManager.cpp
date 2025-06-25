@@ -85,9 +85,14 @@ void GameManager::Battle(Characters& player, Monster& enemy)
         // 적의 체력 변화를 보여주기 위한 변수 저장 (예: 50 -> 0)
         int prevEnemyHealth = enemy.GetHealth();
         // 플레이어 -> 적 공격
-        enemy.TakeDamage(player.GetAttack());
-        cout << player.GetName() << "이(가) " << enemy.GetName() << "을(를) 공격합니다! "
-            << enemy.GetName() << " 체력: " << prevEnemyHealth << " → " << enemy.GetHealth() << endl;
+        enemy.TakeDamage(player.RandomAttack());
+        if (player.GetAttackType() == AttackType::Normal)
+            cout << player.GetName() << "이(가) " << enemy.GetName() << "를(을) 공격합니다." << endl;
+        else if(player.GetAttackType()==AttackType::Strike)
+            cout << player.GetName() << "이(가) " << enemy.GetName() << "에게 Strike를 사용합니다." << endl;
+        else
+            cout << player.GetName() << "이(가) " << enemy.GetName() << "에게 FireBall을 사용합니다." << endl;
+        cout<< enemy.GetName() << " 체력: " << prevEnemyHealth << " → " << enemy.GetHealth() << endl;
         
         
         // 3. 적이 죽었을 경우
