@@ -1,4 +1,4 @@
-﻿#include "GameManager.h"
+#include "GameManager.h"
 #include "Goblin.h"
 #include "Orc.h"
 #include "Troll.h"
@@ -87,9 +87,14 @@ void GameManager::Battle(Characters& player, Monster& enemy)
         // 적의 체력 변화를 보여주기 위한 변수 저장 (예: 50 -> 0)
         int prevEnemyHealth = enemy.GetHealth();
         // 플레이어 -> 적 공격
-        enemy.TakeDamage(player.GetAttack());
-        cout << player.GetName() << "이(가) " << enemy.GetName() << "을(를) 공격합니다! "
-            << enemy.GetName() << " 체력: " << prevEnemyHealth << " → " << enemy.GetHealth() << endl;
+        enemy.TakeDamage(player.RandomAttack());
+        if (player.GetAttackType() == AttackType::Normal)
+            cout << player.GetName() << "이(가) " << enemy.GetName() << "를(을) 공격합니다." << endl;
+        else if(player.GetAttackType()==AttackType::Strike)
+            cout << player.GetName() << "이(가) " << enemy.GetName() << "에게 Strike를 사용합니다." << endl;
+        else
+            cout << player.GetName() << "이(가) " << enemy.GetName() << "에게 FireBall을 사용합니다." << endl;
+        cout<< enemy.GetName() << " 체력: " << prevEnemyHealth << " → " << enemy.GetHealth() << endl;
         
         
         // 3. 적이 죽었을 경우
@@ -134,25 +139,44 @@ void GameManager::Battle(Characters& player, Monster& enemy)
 void GameManager::VisitShop(Characters& player)
 {
     char shopChoice;
-    cout << "상점을 방문하시겠습니까? (Y/N): ";
-    cin >> shopChoice;
-    cin.ignore(numeric_limits<streamsize>::max(), '\n');
-    if (shopChoice != 'Y' && shopChoice != 'y')
-    {
-        cout << "상점을 방문하지 않습니다." << endl;
-        return;
-    }
+	while(true)
+	{
+		cout << "상점을 방문하시겠습니까? (Y/N): ";
+		cin >> shopChoice;
+		cin.ignore(numeric_limits<streamsize>::max(),'\n');
+		if(shopChoice == 'Y' || shopChoice == 'y')
+		{
+			break;
+		}
+		else if(shopChoice == 'N' || shopChoice == 'n')
+		{
+			cout << "상점을 방문하지 않습니다." << endl;
+			return;
+		}
+		else
+		{
+			cout << COLOR_RED << "잘못된 입력입니다 Y 혹은 N을 입력해주세요." << COLOR_RESET << endl;
+		}
+	}
     // 상점 계속 이용
+	system("cls");
     while (true)
-    {   
+    {
+		
         shopInstance.DisplayItems();
         cout << "골드: " << player.GetGold() << endl;
         cout << "1. 아이템 구매 2. 아이템 판매 3. 장비 강화 0. 상점 나가기 " << endl;
         cout << "선택: ";
         int menu = 0;
         cin >> menu;
-        cin.ignore(numeric_limits<streamsize>::max(), '\n');
-
+		if(cin.fail())
+		{
+			cin.clear();
+			cin.ignore(numeric_limits<streamsize>::max(),'\n');
+			system("cls");
+			cout << COLOR_RED <<  "잘못된 입력입니다." << COLOR_RESET<< endl;
+			continue;
+		}
         if (menu == 1)
         {
             cout << "구매할 아이템 번호를 선택하세요 (0: 취소): ";
@@ -161,8 +185,10 @@ void GameManager::VisitShop(Characters& player)
             cin.ignore(numeric_limits<streamsize>::max(), '\n');
             if (choice == 0)
             {
+				system("cls");
                 continue;
             }
+			system("cls");
             shopInstance.BuyItem(choice - 1, player);
         }
         else if (menu == 2)
@@ -174,13 +200,16 @@ void GameManager::VisitShop(Characters& player)
             cin.ignore(numeric_limits<streamsize>::max(), '\n');
             if (sellIdx == 0)
             {
+				system("cls");
                 continue;
             }
+			system("cls");
             shopInstance.SellItem(sellIdx - 1, player);
         }
 		else if (menu == 3)
 		{
 			shopInstance.EquipEnhance(player);
+			system("cls");
 		}
         else if (menu == 0)
         {
@@ -189,7 +218,8 @@ void GameManager::VisitShop(Characters& player)
         }
         else
         {
-            cout << "잘못된 입력입니다." << endl;
+			system("cls");
+            cout << COLOR_RED << "잘못된 입력입니다." << COLOR_RESET<< endl;
         }
     }
 }

@@ -49,6 +49,7 @@ public:
     int GetHealth() const;
     void SetHealth(int newHealth);
     int GetMaxHealth() const;
+    int GetAttack() const;
     void SetAttack(int newAttack);
     int GetBaseAttack();
     int GetLevel() const;
@@ -58,15 +59,16 @@ public:
     int GetGold() const;
     void SetGold(int newGold);
     vector<Item*>& GetInventory();
-    int GetAttack();
-    //랜덤한 스킬 선택
+    // 랜덤하게 공격
+    int RandomAttack();
+    // 랜덤한 스킬 선택
     int RandomSkill();
-    //장비 초기화
+    // 장비 초기화
     void InitEquipment();
-    //장비들 delete 위한 소멸자
+    // 장비들 delete 위한 소멸자
     ~Characters();
     // 장비 스탯 총합
-    int GetTotalArmorStat();
+    int GetTotalArmorStat() const;
     // 장비 목록 넘기기
     vector<Equipment*> GetEquipments();
     // 마나 getter
@@ -77,4 +79,5 @@ public:
     int GetMaxMana();
     // 최대 마나 setter
     void SetMaxMana(int value);
+    AttackType GetAttackType();
 };
