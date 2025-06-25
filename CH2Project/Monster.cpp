@@ -29,7 +29,7 @@ void Monster::TakeDamage(int damage)
 
 void Monster::OnDeath(Characters& player) {
     cout << endl;
-    cout << COLOR_GREEN << Name << " 처치!" << COLOR_RESET << endl;
+    cout << Name << GREEN << " 처치!" << RESET << endl;
 
     // 적을 물리쳤을 때 얻는 골드
     int goldReward = 10 + rand() % 11;
@@ -37,8 +37,8 @@ void Monster::OnDeath(Characters& player) {
     player.SetExperience(player.GetExperience() + 50);
     // 플레이어 골드 + 10~20 골드
     player.SetGold(player.GetGold() + goldReward);
-    cout << COLOR_GREEN << player.GetName() << "가 50 EXP와 " << goldReward << " 골드를 획득했습니다. 현재 EXP: " 
-        << player.GetExperience() << "/100, 골드: " << player.GetGold() << COLOR_RESET << endl;
+    cout << player.GetName() << "가"<<GREEN<<"50 EXP"<<RESET <<"와 " <<GREEN << goldReward << " 골드"<<RESET<<"를 획득했습니다.현재 EXP : " 
+        << player.GetExperience() << "/100, 골드: " << player.GetGold() << endl;
 
     // 30% 확률로 아이템 드랍
     int dropChance = rand() % 100;
@@ -47,7 +47,7 @@ void Monster::OnDeath(Characters& player) {
         int index = DropItem();
         auto& playerInventory = player.GetInventory();
         playerInventory[index]->SetAmount(playerInventory[index]->GetAmount() + 1);
-        cout << COLOR_GREEN << player.GetName() << "이(가) " << playerInventory[index]->GetName() << "을(를) 1개 획득했습니다!" << COLOR_RESET << endl;
+        cout << player.GetName() << "이(가) " << GREEN << playerInventory[index]->GetName() << RESET <<"을(를) 1개 획득했습니다!" << endl;
     }
 	// 로그 추가
 	GameLog::GetInstance()->TakeDamageAchievement(goldReward);
@@ -59,11 +59,11 @@ int Monster::DropItem()
     int itemType = rand() % 2;
     if (itemType == 0)
     {
-        cout << COLOR_GREEN << Name << "이(가) Health Potion을(를) 드랍했습니다!" << COLOR_RESET << endl;
+        cout <<  Name << "이(가)" <<GREEN<< " Health Potion" <<RESET <<"을(를) 드랍했습니다!" <<  endl;
     }
     else
     {
-        cout << COLOR_GREEN << Name << "이(가) Attack Boost을(를) 드랍했습니다!" << COLOR_RESET << endl;
+        cout <<  Name << "이(가)" <<GREEN<<" Attack Boost" <<RESET<<"을(를) 드랍했습니다!" <<  endl;
     }
     return itemType;
 }
@@ -81,8 +81,8 @@ void Monster::AttackPlayer(Characters& player) {
 
     if (newHealth < 0) { newHealth = 0; }
     player.SetHealth(newHealth);
-    cout << COLOR_RED << Name << "이(가) " << player.GetName() << "를 공격합니다! "
-        << player.GetName() << " 체력: " << prevPlayerHealth << " → " << player.GetHealth() << COLOR_RESET << endl;
+    cout << Name << "이(가) " << player.GetName() << "를 공격합니다! "
+        << player.GetName() << " 체력: " << GREEN << prevPlayerHealth << RESET << " → " << RED<< player.GetHealth() << RESET << endl;
     cout << endl;
 	// 로그 추가
 	GameLog::GetInstance()->TakeDamageAchievement(-ArmorSubAttack);
