@@ -1,4 +1,4 @@
-#include "GameManager.h"
+﻿#include "GameManager.h"
 #include "Goblin.h"
 #include "Bat.h"
 #include "Slime.h"
@@ -10,6 +10,7 @@
 #include <iostream>
 #include <cstdlib>
 #include <ctime>
+#include <sstream>
 
 
 // 보스가 아닌 적 가져오기
@@ -44,23 +45,29 @@ BossMonster* GameManager::GenerateBossMonster(int level)
 // 플레이어와 적이 싸우는 함수
 void GameManager::Battle(Characters& player, Monster& enemy)
 {
+	std::ostringstream oss;
     enemy.TextArt();
 
     if (enemy.IsBoss())
     {
-        cout << "보스 몬스터 " << enemy.GetName() << " 등장! 체력: " << RED << enemy.GetHealth()<< RESET << ", 공격력: " << RED << enemy.GetAttack() <<RESET << endl;
-    }
+        oss << "보스 몬스터 " << enemy.GetName() << " 등장! 체력: " << RED << enemy.GetHealth()<< RESET << ", 공격력: " << RED << enemy.GetAttack() <<RESET << endl;
+		GameLog::GetInstance()->PrintAndLog(oss.str());
+	}
     else
     {
-        cout << "몬스터 " << enemy.GetName() << " 등장! 체력: " <<RED << enemy.GetHealth() << RESET << ", 공격력: " << RED << enemy.GetAttack() << RESET << endl;
-    }
+        oss << "몬스터 " << enemy.GetName() << " 등장! 체력: " <<RED << enemy.GetHealth() << RESET << ", 공격력: " << RED << enemy.GetAttack() << RESET << endl;
+		GameLog::GetInstance()->PrintAndLog(oss.str());
+	}
         
     // 플레이어와 적 모두 살아있을 경우
     while (player.GetHealth() > 0 && enemy.GetHealth() > 0)
     {   
         if(enemy.IsGoldenGoblin() && BattleCount >= 3)
         {
-            cout << enemy.GetName() << "이(가) 전투에서 도망쳤습니다!" << endl;
+			oss.str("");
+			oss.clear();
+            oss << enemy.GetName() << "이(가) 전투에서 도망쳤습니다!" << endl;
+			GameLog::GetInstance()->PrintAndLog(oss.str());
             enemy.TakeDamage(enemy.GetHealth()); //체력 0으로 만들어 죽은 상태로 처리
 
             //턴 초기화
@@ -89,13 +96,30 @@ void GameManager::Battle(Characters& player, Monster& enemy)
         // 플레이어 -> 적 공격
         enemy.TakeDamage(player.RandomAttack());
         if (player.GetAttackType() == AttackType::Normal)
-            cout << player.GetName() << "이(가) " << enemy.GetName() << "를(을) 공격합니다." << endl;
+		{
+			oss.str("");
+			oss.clear();
+			oss << player.GetName() << "이(가) " << enemy.GetName() << "를(을) 공격합니다." << endl;
+			GameLog::GetInstance()->PrintAndLog(oss.str());
+		}
         else if(player.GetAttackType()==AttackType::Strike)
-            cout << player.GetName() << "이(가) " << enemy.GetName() << "에게 Strike를 사용합니다." << endl;
+		{
+			oss.str("");
+			oss.clear();
+			oss << player.GetName() << "이(가) " << enemy.GetName() << "에게 Strike를 사용합니다." << endl;
+			GameLog::GetInstance()->PrintAndLog(oss.str());
+		}
         else
-            cout << player.GetName() << "이(가) " << enemy.GetName() << "에게 FireBall을 사용합니다." << endl;
-        cout<< enemy.GetName() << " 체력: " << GREEN << prevEnemyHealth << RESET << " → " << RED << enemy.GetHealth()<<RESET << endl;
-        
+		{
+			oss.str("");
+			oss.clear();
+			oss << player.GetName() << "이(가) " << enemy.GetName() << "에게 FireBall을 사용합니다." << endl;
+			GameLog::GetInstance()->PrintAndLog(oss.str());
+		}
+		oss.str("");
+		oss.clear();
+		oss << enemy.GetName() << " 체력: " << GREEN << prevEnemyHealth << RESET << " → " << RED << enemy.GetHealth()<<RESET << endl;
+        GameLog::GetInstance()->PrintAndLog(oss.str());
         
         // 3. 적이 죽었을 경우
         if (enemy.GetHealth() <= 0)
@@ -123,7 +147,10 @@ void GameManager::Battle(Characters& player, Monster& enemy)
         // 플레이어가 죽었을 경우
         if (player.GetHealth() <= 0)
         {
-            cout << player.GetName() << "가 사망했습니다. 게임 오버!" << endl;
+			oss.str("");
+			oss.clear();
+            oss << player.GetName() << "가 사망했습니다. 게임 오버!" << endl;
+			GameLog::GetInstance()->PrintAndLog(oss.str());
 
             //턴 초기화
             BattleCount = 1;
@@ -138,6 +165,7 @@ void GameManager::Battle(Characters& player, Monster& enemy)
 // 상점 방문
 void GameManager::VisitShop(Characters& player)
 {
+	std::ostringstream oss;
     string shopChoice;
 	while(true)
 	{
@@ -159,6 +187,7 @@ void GameManager::VisitShop(Characters& player)
 		}
 	}
     // 상점 계속 이용
+	GameLog::GetInstance()->AddLog("상점에 방문하였습니다.");
 	system("cls");
     while (true)
     {
@@ -213,7 +242,10 @@ void GameManager::VisitShop(Characters& player)
 		}
         else if (menu == 0)
         {
-            cout << "상점에서 나갑니다." << endl;
+			oss.str("");
+			oss.clear();
+            oss << "상점에서 나갑니다." << endl;
+			GameLog::GetInstance()->PrintAndLog(oss.str());
             break;
         }
         else
