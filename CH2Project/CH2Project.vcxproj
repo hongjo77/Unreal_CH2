@@ -146,6 +146,7 @@
     <ClInclude Include="BossMonster.h" />
     <ClInclude Include="Characters.h" />
     <ClInclude Include="Chest.h" />
+    <ClInclude Include="Color.h" />
     <ClInclude Include="Equipment.h" />
     <ClInclude Include="GameLog.h" />
     <ClInclude Include="GameManager.h" />
