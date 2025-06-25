@@ -290,7 +290,7 @@ void Shop::EquipEnhance(Characters& player) {
                 1
             );
 
-            if (0 == rand() % 5) {
+            if (0 == rand() % 5 && EquipList[equipIdx - 1]->GetEnLevel() != 0) {
                 cout << RED << "강화에 실패하여 강화 레벨이 하락하였습니다. \n" << RESET << endl;
                 EquipList[equipIdx - 1]->SetEnLevel(EnLevel - 1);
                 EquipList[equipIdx - 1]->SetStat(Stat - 5);
