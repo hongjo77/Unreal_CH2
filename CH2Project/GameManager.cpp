@@ -48,11 +48,11 @@ void GameManager::Battle(Characters& player, Monster& enemy)
 
     if (enemy.IsBoss())
     {
-        cout << "보스 몬스터 " << enemy.GetName() << " 등장! 체력: " << enemy.GetHealth() << ", 공격력: " << enemy.GetAttack() << endl;
+        cout << "보스 몬스터 " << enemy.GetName() << " 등장! 체력: " << RED << enemy.GetHealth()<< RESET << ", 공격력: " << RED << enemy.GetAttack() <<RESET << endl;
     }
     else
     {
-        cout << "몬스터 " << enemy.GetName() << " 등장! 체력: " << enemy.GetHealth() << ", 공격력: " << enemy.GetAttack() << endl;
+        cout << "몬스터 " << enemy.GetName() << " 등장! 체력: " <<RED << enemy.GetHealth() << RESET << ", 공격력: " << RED << enemy.GetAttack() << RESET << endl;
     }
         
     // 플레이어와 적 모두 살아있을 경우
@@ -94,7 +94,7 @@ void GameManager::Battle(Characters& player, Monster& enemy)
             cout << player.GetName() << "이(가) " << enemy.GetName() << "에게 Strike를 사용합니다." << endl;
         else
             cout << player.GetName() << "이(가) " << enemy.GetName() << "에게 FireBall을 사용합니다." << endl;
-        cout<< enemy.GetName() << " 체력: " << prevEnemyHealth << " → " << enemy.GetHealth() << endl;
+        cout<< enemy.GetName() << " 체력: " << GREEN << prevEnemyHealth << RESET << " → " << RED << enemy.GetHealth()<<RESET << endl;
         
         
         // 3. 적이 죽었을 경우
