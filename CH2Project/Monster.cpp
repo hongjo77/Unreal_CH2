@@ -46,6 +46,7 @@ void Monster::OnDeath(Characters& player) {
     oss << player.GetName() << "가"<<GREEN<<"50 EXP"<<RESET <<"와 " <<GREEN << goldReward << " 골드"<<RESET<<"를 획득했습니다.현재 EXP : " 
         << player.GetExperience() << "/100, 골드: " << player.GetGold() << endl;
 	GameLog::GetInstance()->PrintAndLog(oss.str());
+	GameLog::GetInstance()->GoldAchievement(goldReward);
 
     // 30% 확률로 아이템 드랍
     int dropChance = rand() % 100;
