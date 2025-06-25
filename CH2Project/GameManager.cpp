@@ -138,17 +138,17 @@ void GameManager::Battle(Characters& player, Monster& enemy)
 // 상점 방문
 void GameManager::VisitShop(Characters& player)
 {
-    char shopChoice;
+    string shopChoice;
 	while(true)
 	{
 		cout << "상점을 방문하시겠습니까? (Y/N): ";
 		cin >> shopChoice;
 		cin.ignore(numeric_limits<streamsize>::max(),'\n');
-		if(shopChoice == 'Y' || shopChoice == 'y')
+		if(shopChoice == "Y" || shopChoice == "y")
 		{
 			break;
 		}
-		else if(shopChoice == 'N' || shopChoice == 'n')
+		else if(shopChoice == "N" || shopChoice == "n")
 		{
 			cout << "상점을 방문하지 않습니다." << endl;
 			return;
