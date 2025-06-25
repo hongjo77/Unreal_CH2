@@ -3,9 +3,9 @@
 
 using namespace std;
 
-class Orc : public Monster
+class Slime : public Monster
 {
 public:
-    Orc(int level);
+    Slime (int level);
     void TextArt() const override;
 };

@@ -3,9 +3,9 @@
 
 using namespace std;
 
-class Troll : public Monster
+class Bat : public Monster
 {
 public:
-    Troll(int level);
+    Bat(int level);
     void TextArt() const override;
 };

@@ -137,9 +137,9 @@
     <ClCompile Include="Leg.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="Monster.cpp" />
-    <ClCompile Include="Orc.cpp" />
+    <ClCompile Include="Bat.cpp" />
     <ClCompile Include="Shop.cpp" />
-    <ClCompile Include="Troll.cpp" />
+    <ClCompile Include="Slime.cpp" />
     <ClCompile Include="Weapon.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -158,9 +158,9 @@
     <ClInclude Include="Item.h" />
     <ClInclude Include="Leg.h" />
     <ClInclude Include="Monster.h" />
-    <ClInclude Include="Orc.h" />
+    <ClInclude Include="Bat.h" />
     <ClInclude Include="Shop.h" />
-    <ClInclude Include="Troll.h" />
+    <ClInclude Include="Slime.h" />
     <ClInclude Include="Weapon.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
