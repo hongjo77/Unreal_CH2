@@ -1,4 +1,5 @@
 ﻿#include "GameLog.h"
+#include "Color.h"
 
 GameLog* GameLog::instance = nullptr;
 
@@ -13,7 +14,7 @@ GameLog* GameLog::GetInstance()
 
 void GameLog::CheckAchievement(const std::string& achievementName)
 {
-    std::string msg = "[*** 업적 달성 ***] : " + achievementName;
+    std::string msg = std::string(YELLOW)+"[*** 업적 달성 ***] : " + achievementName + RESET;
     std::cout << msg << std::endl;
     logs.push_back(msg);
     achievements[achievementName] = true;
@@ -37,7 +38,7 @@ bool GameLog::IsAchieved(const std::string& achievementName)
 void GameLog::PrintLogs()
 {
     system("cls");
-    std::cout << "=== 게임 로그 ===" << std::endl;
+    std::cout << GREEN << "=== 게임 로그 ===" << RESET << std::endl;
     for (const auto& log : logs)
     {
         std::cout << log << std::endl;
@@ -47,7 +48,7 @@ void GameLog::PrintLogs()
 void GameLog::PrintStatistics()
 {
     system("cls");
-    std::cout << "=== 통계 ===" << std::endl;
+    std::cout << GREEN << "=== 통계 ===" << RESET << std::endl;
     for (const auto& stat : statistics)
     {
         std::cout << stat.first << ": " << stat.second << std::endl;
@@ -57,10 +58,10 @@ void GameLog::PrintStatistics()
 void GameLog::PrintAchievement()
 {
 	system("cls");
-    std::cout << "=== 업적 목록 ===" << std::endl;
+    std::cout << GREEN << "=== 업적 목록 ===" << RESET << std::endl;
     for (const auto& ach : achievements)
     {
-        std::cout << "[*** 업적 달성 ***] : " << ach.first << std::endl;
+        std::cout << YELLOW <<  "[*** 업적 달성 ***] : " << ach.first << RESET << std::endl;
     }
 }
 
@@ -104,7 +105,7 @@ void GameLog::GoldAchievement(int amount)
     if (amount > 0)
     {
         statistics["Gold_Gained"] += amount;
-        logs.push_back("Player gained " + std::to_string(amount) + " gold.");
+        logs.push_back(std::string(YELLOW) + "플레이어가 " + std::to_string(amount) + "골드를 획득했습니다." + RESET);
 
         if (statistics["Gold_Gained"] >= 500 && !IsAchieved("500 골드 획득"))
         {
@@ -114,7 +115,7 @@ void GameLog::GoldAchievement(int amount)
     else if (amount < 0)
     {
         statistics["Gold_Spent"] += -amount;
-        logs.push_back("Player spent " + std::to_string(-amount) + " gold.");
+        logs.push_back(std::string(YELLOW) +"플레이어가 " + std::to_string(-amount) + "골드를 사용했습니다."+ RESET);
 
         if (statistics["Gold_Spent"] >= 500 && !IsAchieved("500 골드 사용"))
         {
@@ -147,7 +148,7 @@ void GameLog::AttackDamageAchievement(int amount)
 
 void GameLog::LevelAchievement(int level)
 {
-    logs.push_back("Player level up to " + std::to_string(level));
+    logs.push_back(std::string(BLUE)+ std::to_string(level)+"레벨 달성!" + RESET);
     if (level >= 10 && !IsAchieved("레벨 10 달성"))
     {
         CheckAchievement("레벨 10 달성");
@@ -160,17 +161,17 @@ void GameLog::EquipmentAchievement(const std::string& equipmentName, int level, 
 
 	if(result==0)
 	{
-		logs.push_back(equipmentName + " upgrade successful.");
+		logs.push_back(std::string(GREEN)+equipmentName + " 강화에 성공하셨습니다!"+ RESET);
 		statistics["upgrade success"]++;
 	}
 	else if(result==1)
 	{
-		logs.push_back(equipmentName + " upgrade failed.");
+		logs.push_back(std::string(RED)+equipmentName + " 강화에 실패하셨습니다"+ RESET);
 		statistics["upgrade fail"]++;
 	}
 	else
 	{
-		logs.push_back(equipmentName + " downgrade.");
+		logs.push_back(std::string(RED)+equipmentName + " downgrade."+ RESET);
 		statistics["downgrade"]++;
 	}
     
