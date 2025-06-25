@@ -17,8 +17,8 @@ bool BossMonster::IsBoss() const { return true; }
 void BossMonster::OnDeath(Characters& player) 
 {
     cout << endl;
-    cout << COLOR_GREEN << Name << " 처치!" << COLOR_RESET << endl;
-    cout << COLOR_GREEN << "축하합니다! 보스 " << Name << "을(를) 처치하고 게임을 클리어했습니다!" << COLOR_RESET << endl;
+    cout << Name << GREEN << " 처치!" << RESET << endl;
+    cout << GREEN << "축하합니다! 보스 " << Name << "을(를) 처치하고 게임을 클리어했습니다!" << RESET << endl;
 }
 
 void BossMonster::AttackPlayer(Characters& player) 
@@ -32,7 +32,7 @@ void BossMonster::AttackPlayer(Characters& player)
     int skillChance = chanceDistribution(rng);
     if (skillChance < 30)
     {
-        cout << COLOR_RED << Name << "이(가) 강력한 기술로 " << player.GetName() << "를 공격합니다! " << COLOR_RESET;
+        cout << Name << "이(가) 강력한 기술로 " << player.GetName() << "를 공격합니다! ";
         IsSkill = true;
         if (player.GetTotalArmorStat() - SkillAttack > 0) {
             ArmorSubAttack = 0;
@@ -44,7 +44,7 @@ void BossMonster::AttackPlayer(Characters& player)
     }
     else
     {
-        cout << COLOR_RED << Name << "이(가) " << player.GetName() << "를 공격합니다! "<< COLOR_RESET;
+        cout << Name << "이(가) " << player.GetName() << "를 공격합니다! ";
         if (player.GetTotalArmorStat() - Attack > 0) {
             ArmorSubAttack = 0;
         }
@@ -60,7 +60,7 @@ void BossMonster::AttackPlayer(Characters& player)
     }
     player.SetHealth(newHealth);
 
-    cout<< COLOR_RED << player.GetName() << " 체력: " << prevPlayerHealth << " → " << player.GetHealth() << COLOR_RESET << endl;
+    cout<< player.GetName() << " 체력: " << GREEN << prevPlayerHealth << RESET << " → " << RED << player.GetHealth() << RESET << endl;
 
     // 일반 공격 시 각각 20% 확률로 공격력 감소, 방어력 감소 디버프
     if (!IsSkill)
@@ -72,8 +72,8 @@ void BossMonster::AttackPlayer(Characters& player)
             int DroppedPlayerAttack = static_cast<int>(player.GetBaseAttack() * 0.8);
             player.SetAttack(DroppedPlayerAttack);
 
-            cout << COLOR_RED << player.GetName() << "이(가) 공격력 감소 디버프에 걸렸습니다! "
-                << player.GetName() << " 공격력: " << prevPlayerAttack << " → " << player.GetBaseAttack() << COLOR_RESET << endl;
+            cout << player.GetName() << "이(가) 공격력 감소 디버프에 걸렸습니다! "
+                << player.GetName() << " 공격력: " << GREEN << prevPlayerAttack << RESET << " → " << RED << player.GetBaseAttack() << RESET << endl;
         }
         else if(debuffChance >=20 && debuffChance < 40)
         {
@@ -87,8 +87,8 @@ void BossMonster::AttackPlayer(Characters& player)
                     equip->SetStat(0);
                 }
             }
-            cout << COLOR_RED << player.GetName() << "이(가) 방어력 감소 디버프에 걸렸습니다! "
-                << player.GetName() << "방어력: " << prevPlayerArmorStat << " → " << player.GetTotalArmorStat() << COLOR_RESET << endl;
+            cout << player.GetName() << "이(가) 방어력 감소 디버프에 걸렸습니다! "
+                << player.GetName() << "방어력: " << GREEN << prevPlayerArmorStat << RESET << " → " << RED << player.GetTotalArmorStat() << RESET << endl;
         }
     }
     cout << endl;
