@@ -6,6 +6,7 @@
 #include "Weapon.h"
 #include "Leg.h"
 #include "Helmet.h"
+#include <iomanip>
 
 Characters* Characters::Instance = nullptr;
 
@@ -29,11 +30,35 @@ Characters* Characters::GetInstance(const string& inName)
 
 string Characters::GetName() const { return Name; }
 
+//void Characters::DisplayStatus() const
+//{
+//    cout << "이름: " << Name << " | 레벨: " << Level << " | 체력: " << Health << "/" << MaxHealth << " | 방어력: " << GetTotalArmorStat()
+//        << " | 공격력: (" << Attack <<" + "<<this->weapon->GetStat()<<")" << " | 경험치: " << Experience << " | 골드: " << Gold << endl;
+//}
+
+
 void Characters::DisplayStatus() const
 {
-    cout << "이름: " << Name << " | 레벨: " << Level << " | 체력: " << Health << "/" << MaxHealth
-        << " | 공격력: " << Attack << " | 경험치: " << Experience << " | 골드: " << Gold << endl;
+    cout << "┌──────────────────────┬──────────────────────┐" << endl;
+
+    cout << "│ " << left << setw(20) << ("이름     : " + Name);
+    cout << " │ " << left << setw(20) << ("레벨     : " + to_string(Level)) << " │" << endl;
+
+    cout << "│ " << left << setw(20) << ("체력     : " + to_string(Health) + " / " + to_string(MaxHealth));
+    cout << " │ " << left << setw(20) << ("경험치   : " + to_string(Experience)) << " │" << endl;
+
+    cout << "│ " << left << setw(20) << ("공격력   : " + to_string(Attack) + " (+ " + to_string(weapon->GetStat()) + ")");
+    cout << " │ " << left << setw(20) << ("방어력   : " + to_string(GetTotalArmorStat())) << " │" << endl;
+
+    cout << "│ " << left << setw(20) << ("골드     : " + to_string(Gold) + "원 보유");
+  
+    cout << " │ " << left << setw(10) << Inventory[0]->GetName()<<" : "<<Inventory[0]->GetAmount() << "    │" << endl;
+    cout << "│ " << left << setw(10) << Inventory[1]->GetName() << " : " << Inventory[1]->GetAmount() << "     │";
+    cout << right << setw(24) << " │" << endl;
+    cout << "└──────────────────────┴──────────────────────┘" << endl;
 }
+
+
 
 void Characters::LevelUp()
 {
@@ -74,7 +99,7 @@ int Characters::RandomSkill()
     return type;
 }
 
-int Characters::GetAttack()
+int Characters::RandomAttack()
 {
     //공격 타입 설정
     Characters::RandomSkill();
@@ -97,20 +122,19 @@ int Characters::GetAttack()
     case AttackType::Strike:
         if (CurrentMana >= 20)
         {
-            cout <<"플레이어가 Strike 스킬을 사용합니다." << endl;
             CurrentMana -= 20;
             return Attack + 20;
         }
         else
         {
             recoverMana(10);
+            this->currentAttackType = AttackType::Normal;
             return Attack;
         }
     
     case AttackType::FireBall:
         if (CurrentMana >= 50)
         {
-            cout << "플레이어가 FireBall 스킬을 사용합니다." << endl;
             CurrentMana -= 50;
             return Attack + 40;
         }
@@ -118,11 +142,13 @@ int Characters::GetAttack()
         else
         {
             recoverMana(10);
+            this->currentAttackType = AttackType::Normal;
             return Attack;
         }
 
     default:
         recoverMana(10);
+        this->currentAttackType = AttackType::Normal;
         return Attack;
     }
 }
@@ -151,7 +177,7 @@ Characters::~Characters()
     Inventory.clear();
 }
 
-int Characters::GetTotalArmorStat()
+int Characters::GetTotalArmorStat()const 
 {
     //생성자로 항상 기본장비가 있기 때문에 체크 필요 x
     int total = 0;
@@ -170,6 +196,7 @@ vector<Equipment*> Characters::GetEquipments()
 int Characters::GetHealth() const { return Health; }
 void Characters::SetHealth(int newHealth) { Health = newHealth; }
 int Characters::GetMaxHealth() const { return MaxHealth; }
+int Characters::GetAttack()const { return Attack; }
 void Characters::SetAttack(int newAttack) { Attack = newAttack; }
 int Characters::GetLevel() const { return Level; }
 void Characters::SetLevel(int newLevel) { Level = newLevel; }
@@ -183,4 +210,5 @@ int Characters::GetCurrentMana() { return CurrentMana; }
 void Characters::SetCurrentMana(int value) { this->CurrentMana = value;}
 int Characters::GetMaxMana() { return MaxMana; }
 void Characters::SetMaxMana(int value) { this->MaxMana = value; }
+AttackType Characters::GetAttackType() { return this->currentAttackType; }
 
