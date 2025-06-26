@@ -72,9 +72,13 @@ C++ 콘솔창에서 진행되는 자동 턴제 RPG입니다.
 ## 📚 자료 및 문서
 
 - [기능명세서 페이지](https://teamsparta.notion.site/2182dc3ef51480f59a0ae5fb0ad2cc15?v=2182dc3ef51480d39847000cb7fca957)
+
 - [클래스 목록 페이지](https://hongjo77.github.io/Unreal_CH2/html/annotated.html)
+
 - [메인 흐름도](./docs/Unreal_CH2_5조_MainFlowChart.drawio.pdf)
+
 - [전투 흐름도](./docs/Unreal_CH2_5조_BattleFlowChart.drawio.pdf)
+
 - [상점 흐름도](./docs/Unreal_CH2_5조_ShopFlowChart.drawio.pdf)
 
 ## 📁 폴더 구조
