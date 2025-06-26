@@ -1,0 +1,5 @@
+<map id="Bat::Bat" name="Bat::Bat">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,5,75,32"/>
+<area shape="rect" id="Node000002" href="$class_monster.html#a8c9c6024d7ad373f1a2cd4ee5dedfd78" title=" " alt="" coords="123,5,246,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="75,16,107,16,107,21,75,21"/>
+</map>

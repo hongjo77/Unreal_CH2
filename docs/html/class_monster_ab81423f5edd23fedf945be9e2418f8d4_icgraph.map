@@ -1,0 +1,11 @@
+<map id="Monster::DropItem" name="Monster::DropItem">
+<area shape="rect" id="Node000001" title=" " alt="" coords="529,31,660,57"/>
+<area shape="rect" id="Node000002" href="$class_golden_goblin.html#ab5da9dbee44be6b49ffcc289d3254aa9" title=" " alt="" coords="299,5,481,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="513,37,481,33,482,27,514,31"/>
+<area shape="rect" id="Node000003" href="$class_monster.html#a9c6a5aad86d230562434e062c932db2f" title=" " alt="" coords="326,56,454,83"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="514,57,455,64,455,59,514,51"/>
+<area shape="rect" id="Node000004" href="$class_game_manager.html#a49b13f02f36be41415bd9dc60c55c2a1" title=" " alt="" coords="103,56,251,83"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="310,72,251,72,251,67,310,67"/>
+<area shape="rect" id="Node000005" href="$_main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,56,55,83"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="87,72,55,72,55,67,87,67"/>
+</map>

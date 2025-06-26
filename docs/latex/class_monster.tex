@@ -11,7 +11,7 @@ Monster에 대한 상속 다이어그램 \+:
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=318pt]{class_monster__inherit__graph}
+\includegraphics[width=350pt]{class_monster__inherit__graph}
 \end{center}
 \end{figure}
 \doxysubsubsection*{Public 멤버 함수}
@@ -27,11 +27,19 @@ virtual int \mbox{\hyperlink{class_monster_a2083a208cf409f4d35e1fe34e09d8e42}{Ge
 \item 
 virtual int \mbox{\hyperlink{class_monster_a794f6da1ba6594041441a44d1b28fa26}{Get\+Attack}} () const
 \item 
+virtual void \mbox{\hyperlink{class_monster_a8e1bd5c8dde9c379e52708be0a8f2429}{Text\+Art}} () const =0
+\item 
 virtual void \mbox{\hyperlink{class_monster_a709323e30e2ef726afc23793d7eec204}{Take\+Damage}} (int damage)
 \item 
-virtual \mbox{\hyperlink{class_item}{Item}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_monster_a19aaa56f2e8245254416ebb2048c5d21}{Drop\+Item}} ()
+virtual void \mbox{\hyperlink{class_monster_a9c6a5aad86d230562434e062c932db2f}{On\+Death}} (\mbox{\hyperlink{class_characters}{Characters}} \&player)
+\item 
+virtual int \mbox{\hyperlink{class_monster_ab81423f5edd23fedf945be9e2418f8d4}{Drop\+Item}} ()
+\item 
+virtual void \mbox{\hyperlink{class_monster_a23a5dd14b320162ff9e895c1bb8cf700}{Attack\+Player}} (\mbox{\hyperlink{class_characters}{Characters}} \&player)
 \item 
 virtual bool \mbox{\hyperlink{class_monster_ac6f0dd1d3632f1a2018013e9dbdd6ecc}{Is\+Boss}} () const
+\item 
+virtual bool \mbox{\hyperlink{class_monster_ab2b5614d8246fbbab20d5190cb510855}{Is\+Golden\+Goblin}} () const
 \end{DoxyCompactItemize}
 \doxysubsubsection*{Protected 속성}
 \begin{DoxyCompactItemize}
@@ -58,7 +66,7 @@ Monster\+::\+Monster (\begin{DoxyParamCaption}\item[{const string \&}]{name}{, }
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=346pt]{class_monster_a8c9c6024d7ad373f1a2cd4ee5dedfd78_icgraph}
+\includegraphics[width=348pt]{class_monster_a8c9c6024d7ad373f1a2cd4ee5dedfd78_icgraph}
 \end{center}
 \end{figure}
 \Hypertarget{class_monster_a21619ba1759b910cd2fd50d858aab338}\index{Monster@{Monster}!````~Monster@{\texorpdfstring{$\sim$}{\string~}Monster}}
@@ -72,18 +80,52 @@ Monster\+::\texorpdfstring{$\sim$}{\string~}\+Monster (\begin{DoxyParamCaption}{
 \label{doc-func-members}
 \Hypertarget{class_monster_doc-func-members}
 \doxysubsection{멤버 함수 문서화}
-\Hypertarget{class_monster_a19aaa56f2e8245254416ebb2048c5d21}\index{Monster@{Monster}!DropItem@{DropItem}}
-\index{DropItem@{DropItem}!Monster@{Monster}}
-\doxysubsubsection{\texorpdfstring{DropItem()}{DropItem()}}
-{\footnotesize\ttfamily \label{class_monster_a19aaa56f2e8245254416ebb2048c5d21} 
-\mbox{\hyperlink{class_item}{Item}} \texorpdfstring{$\ast$}{*} Monster\+::\+Drop\+Item (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+\Hypertarget{class_monster_a23a5dd14b320162ff9e895c1bb8cf700}\index{Monster@{Monster}!AttackPlayer@{AttackPlayer}}
+\index{AttackPlayer@{AttackPlayer}!Monster@{Monster}}
+\doxysubsubsection{\texorpdfstring{AttackPlayer()}{AttackPlayer()}}
+{\footnotesize\ttfamily \label{class_monster_a23a5dd14b320162ff9e895c1bb8cf700} 
+void Monster\+::\+Attack\+Player (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_characters}{Characters}} \&}]{player}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
 
+
+
+\mbox{\hyperlink{class_boss_monster_a391299071904a7b2827c30678d58b293}{Boss\+Monster}}, \mbox{\hyperlink{class_golden_goblin_ab5da9dbee44be6b49ffcc289d3254aa9}{Golden\+Goblin}}에서 재구현되었습니다.
+
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_monster_a23a5dd14b320162ff9e895c1bb8cf700_cgraph}
+\end{center}
+\end{figure}
 이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
 \nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{class_monster_a19aaa56f2e8245254416ebb2048c5d21_icgraph}
+\includegraphics[width=350pt]{class_monster_a23a5dd14b320162ff9e895c1bb8cf700_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_monster_ab81423f5edd23fedf945be9e2418f8d4}\index{Monster@{Monster}!DropItem@{DropItem}}
+\index{DropItem@{DropItem}!Monster@{Monster}}
+\doxysubsubsection{\texorpdfstring{DropItem()}{DropItem()}}
+{\footnotesize\ttfamily \label{class_monster_ab81423f5edd23fedf945be9e2418f8d4} 
+int Monster\+::\+Drop\+Item (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_monster_ab81423f5edd23fedf945be9e2418f8d4_cgraph}
+\end{center}
+\end{figure}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_monster_ab81423f5edd23fedf945be9e2418f8d4_icgraph}
 \end{center}
 \end{figure}
 \Hypertarget{class_monster_a794f6da1ba6594041441a44d1b28fa26}\index{Monster@{Monster}!GetAttack@{GetAttack}}
@@ -146,22 +188,88 @@ bool Monster\+::\+Is\+Boss (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) 
 \includegraphics[width=350pt]{class_monster_ac6f0dd1d3632f1a2018013e9dbdd6ecc_icgraph}
 \end{center}
 \end{figure}
-\Hypertarget{class_monster_a709323e30e2ef726afc23793d7eec204}\index{Monster@{Monster}!TakeDamage@{TakeDamage}}
-\index{TakeDamage@{TakeDamage}!Monster@{Monster}}
-\doxysubsubsection{\texorpdfstring{TakeDamage()}{TakeDamage()}}
-{\footnotesize\ttfamily \label{class_monster_a709323e30e2ef726afc23793d7eec204} 
-void Monster\+::\+Take\+Damage (\begin{DoxyParamCaption}\item[{int}]{damage}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+\Hypertarget{class_monster_ab2b5614d8246fbbab20d5190cb510855}\index{Monster@{Monster}!IsGoldenGoblin@{IsGoldenGoblin}}
+\index{IsGoldenGoblin@{IsGoldenGoblin}!Monster@{Monster}}
+\doxysubsubsection{\texorpdfstring{IsGoldenGoblin()}{IsGoldenGoblin()}}
+{\footnotesize\ttfamily \label{class_monster_ab2b5614d8246fbbab20d5190cb510855} 
+bool Monster\+::\+Is\+Golden\+Goblin (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
 
 
 
-\mbox{\hyperlink{class_boss_monster_a86ccfc672017d4e120c88617594ba761}{Boss\+Monster}}, \mbox{\hyperlink{class_goblin_a71bce84bdbe8f9227fd72d89652aba7c}{Goblin}}, \mbox{\hyperlink{class_orc_a60efe89a0161200fbd08d7a3a657f2f4}{Orc}}, \mbox{\hyperlink{class_troll_a065e62cbe6cf0dc440932d39dbc3c685}{Troll}}에서 재구현되었습니다.
+\mbox{\hyperlink{class_golden_goblin_a3b18ca9d1f808c590c53e8a26ef467c6}{Golden\+Goblin}}에서 재구현되었습니다.
 
 이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
 \nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
+\includegraphics[width=350pt]{class_monster_ab2b5614d8246fbbab20d5190cb510855_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_monster_a9c6a5aad86d230562434e062c932db2f}\index{Monster@{Monster}!OnDeath@{OnDeath}}
+\index{OnDeath@{OnDeath}!Monster@{Monster}}
+\doxysubsubsection{\texorpdfstring{OnDeath()}{OnDeath()}}
+{\footnotesize\ttfamily \label{class_monster_a9c6a5aad86d230562434e062c932db2f} 
+void Monster\+::\+On\+Death (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_characters}{Characters}} \&}]{player}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+\mbox{\hyperlink{class_boss_monster_a00a02210856ef56601c033d357c423b3}{Boss\+Monster}}, \mbox{\hyperlink{class_golden_goblin_ad7bc3f8134fd6baec62d182366af2e36}{Golden\+Goblin}}에서 재구현되었습니다.
+
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_monster_a9c6a5aad86d230562434e062c932db2f_cgraph}
+\end{center}
+\end{figure}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_monster_a9c6a5aad86d230562434e062c932db2f_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_monster_a709323e30e2ef726afc23793d7eec204}\index{Monster@{Monster}!TakeDamage@{TakeDamage}}
+\index{TakeDamage@{TakeDamage}!Monster@{Monster}}
+\doxysubsubsection{\texorpdfstring{TakeDamage()}{TakeDamage()}}
+{\footnotesize\ttfamily \label{class_monster_a709323e30e2ef726afc23793d7eec204} 
+void Monster\+::\+Take\+Damage (\begin{DoxyParamCaption}\item[{int}]{damage}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_monster_a709323e30e2ef726afc23793d7eec204_cgraph}
+\end{center}
+\end{figure}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
 \includegraphics[width=350pt]{class_monster_a709323e30e2ef726afc23793d7eec204_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_monster_a8e1bd5c8dde9c379e52708be0a8f2429}\index{Monster@{Monster}!TextArt@{TextArt}}
+\index{TextArt@{TextArt}!Monster@{Monster}}
+\doxysubsubsection{\texorpdfstring{TextArt()}{TextArt()}}
+{\footnotesize\ttfamily \label{class_monster_a8e1bd5c8dde9c379e52708be0a8f2429} 
+virtual void Monster\+::\+Text\+Art (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+\mbox{\hyperlink{class_bat_aeff9ac9904032caa05972d58b2e40b29}{Bat}}, \mbox{\hyperlink{class_boss_monster_ae91f4a75abc37f06a3f6a957b9cec877}{Boss\+Monster}}, \mbox{\hyperlink{class_goblin_a78e7d41b3c80944ddc503386c529e164}{Goblin}}, \mbox{\hyperlink{class_golden_goblin_a90dd5a35cf775acf46db56688bb669c5}{Golden\+Goblin}}, \mbox{\hyperlink{class_slime_adc5c71cf660d4ac7d5c5cebc7b8a2b79}{Slime}}에서 구현되었습니다.
+
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_monster_a8e1bd5c8dde9c379e52708be0a8f2429_icgraph}
 \end{center}
 \end{figure}
 

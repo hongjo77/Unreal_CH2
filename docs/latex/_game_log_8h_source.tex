@@ -1,0 +1,40 @@
+\doxysection{Game\+Log.\+h}
+\hypertarget{_game_log_8h_source}{}\label{_game_log_8h_source}\index{GameLog.h@{GameLog.h}}
+\mbox{\hyperlink{_game_log_8h}{이 파일의 문서화 페이지로 가기}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ <unordered\_map>}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{keyword}{class\ }GameLog}
+\DoxyCodeLine{00008\ \{}
+\DoxyCodeLine{00009\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00010\ \ \ \ \ \textcolor{keyword}{static}\ GameLog*\ instance;}
+\DoxyCodeLine{00011\ \ \ \ \ std::unordered\_map<std::string,\ bool>\ achievements;}
+\DoxyCodeLine{00012\ \ \ \ \ std::vector<std::string>\ logs;}
+\DoxyCodeLine{00013\ \ \ \ \ std::unordered\_map<std::string,\ int>\ statistics;}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \ \ \ \ GameLog()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keyword}{static}\ GameLog*\ \mbox{\hyperlink{class_game_log_a122d5e3170dca111d737bf9633e65fc4}{GetInstance}}();}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_game_log_a1e003860239f6ac3d11b8fa3ff7939ae}{CheckAchievement}}(\textcolor{keyword}{const}\ std::string\&\ achievementName);}
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_game_log_a4762226457c7641a86d1a8df16623b96}{AddLog}}(\textcolor{keyword}{const}\ std::string\&\ logEntry);}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_game_log_ab774dd34c5ee4427f0bd22d2cabf2d39}{PrintAndLog}}(\textcolor{keyword}{const}\ std::string\&\ msg);}
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_game_log_a6de641379c1e323be9eb8daa6a55ebb9}{UpdateStat}}(\textcolor{keyword}{const}\ std::string\&\ statName,\ \textcolor{keywordtype}{int}\ value);}
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_game_log_a119eccba7ed2b6cebe86b554bdac711c}{IsAchieved}}(\textcolor{keyword}{const}\ std::string\&\ achievementName);}
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_game_log_a33c603fa4a357f992f8d1cdfc7823632}{PrintLogs}}();}
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_game_log_a56a54fbb35551076bf7a7fc51cdfd93c}{PrintStatistics}}();}
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_game_log_a6bc4bbc617cf2ac19198cb64a14055b5}{PrintAchievement}}();}
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_game_log_abcf19ce535fe427e8a946e0051328214}{KillAchievement}}(\textcolor{keyword}{const}\ std::string\&\ monsterName);}
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_game_log_a8884d5c301ca0454a4c733b088b4d2a3}{GoldAchievement}}(\textcolor{keywordtype}{int}\ amount);}
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_game_log_a4aa4ce6d027e792565efb7fadf499b80}{TakeDamageAchievement}}(\textcolor{keywordtype}{int}\ amount);}
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_game_log_a4c91b78aba2dba0d70a445f869c22811}{AttackDamageAchievement}}(\textcolor{keywordtype}{int}\ amount);}
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_game_log_ad85cc27d2558e38e90580b974e7ec911}{LevelAchievement}}(\textcolor{keywordtype}{int}\ level);}
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_game_log_aab0ee936e8cfcb7247ae7d4241a49b54}{EquipmentAchievement}}(\textcolor{keyword}{const}\ std::string\&\ equipmentName,\ \textcolor{keywordtype}{int}\ level,\ \textcolor{keywordtype}{int}\ result);}
+\DoxyCodeLine{00034\ \};}
+
+\end{DoxyCode}

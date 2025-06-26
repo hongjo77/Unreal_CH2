@@ -1,0 +1,24 @@
+\doxysection{Golden\+Goblin.\+h}
+\hypertarget{_golden_goblin_8h_source}{}\label{_golden_goblin_8h_source}\index{GoldenGoblin.h@{GoldenGoblin.h}}
+\mbox{\hyperlink{_golden_goblin_8h}{이 파일의 문서화 페이지로 가기}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_monster_8h}{Monster.h}}"{}}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{keyword}{using\ namespace\ }std;}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_golden_goblin_a50cb98852870f97bd9eb29ff84c462d8}{GoldenGoblin}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_monster_a8c9c6024d7ad373f1a2cd4ee5dedfd78}{Monster}}\ }
+\DoxyCodeLine{00007\ \{}
+\DoxyCodeLine{00008\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00009\ \ \ \ \ \mbox{\hyperlink{class_golden_goblin_a50cb98852870f97bd9eb29ff84c462d8}{GoldenGoblin}}(\textcolor{keywordtype}{int}\ level);}
+\DoxyCodeLine{00010\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_golden_goblin_a3b18ca9d1f808c590c53e8a26ef467c6}{IsGoldenGoblin}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00011\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_golden_goblin_ad7bc3f8134fd6baec62d182366af2e36}{OnDeath}}(\mbox{\hyperlink{class_characters}{Characters}}\&\ player)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00012\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_golden_goblin_ab5da9dbee44be6b49ffcc289d3254aa9}{AttackPlayer}}(\mbox{\hyperlink{class_characters}{Characters}}\&\ player)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00013\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_golden_goblin_a90dd5a35cf775acf46db56688bb669c5}{TextArt}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{keywordtype}{int}\ GoldAttack;}
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keywordtype}{int}\ StolenMoney\ =\ 0;}
+\DoxyCodeLine{00018\ \};}
+
+\end{DoxyCode}

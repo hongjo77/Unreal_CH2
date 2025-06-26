@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['bossmonster_0',['BossMonster',['../class_boss_monster.html',1,'']]]
+  ['bat_0',['Bat',['../class_bat.html',1,'']]],
+  ['bossmonster_1',['BossMonster',['../class_boss_monster.html',1,'']]]
 ];

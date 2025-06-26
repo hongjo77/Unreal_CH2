@@ -1,9 +1,15 @@
 <map id="AttackBoost::Use" name="AttackBoost::Use">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,56,131,83"/>
-<area shape="rect" id="Node000002" href="$class_characters.html#ae5bceda9eccca6be00f4eb70adbae181" title=" " alt="" coords="179,5,331,32"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="119,53,188,34,189,39,121,58"/>
-<area shape="rect" id="Node000003" href="$class_characters.html#a884e4c03002aacc3804adecf23292482" title=" " alt="" coords="180,56,330,83"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="131,67,165,67,165,72,131,72"/>
-<area shape="rect" id="Node000004" href="$class_characters.html#a2a9add7d82c6f69ebb72576d73bee206" title=" " alt="" coords="179,107,330,133"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="121,81,189,100,188,105,119,86"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,107,131,133"/>
+<area shape="rect" id="Node000002" href="$class_characters.html#a3699f13806d9fbe37c88638b9ca39e24" title=" " alt="" coords="179,5,361,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="84,104,125,73,177,42,193,35,195,40,180,46,128,77,87,108"/>
+<area shape="rect" id="Node000003" href="$class_game_log.html#a122d5e3170dca111d737bf9633e65fc4" title=" " alt="" coords="192,56,348,83"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="124,103,198,84,200,90,125,109"/>
+<area shape="rect" id="Node000004" href="$class_characters.html#a884e4c03002aacc3804adecf23292482" title=" " alt="" coords="195,107,344,133"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="131,117,180,117,180,123,131,123"/>
+<area shape="rect" id="Node000005" href="$class_game_log.html#ab774dd34c5ee4427f0bd22d2cabf2d39" title=" " alt="" coords="192,157,348,184"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="125,131,200,150,198,156,124,137"/>
+<area shape="rect" id="Node000007" href="$class_characters.html#a2a9add7d82c6f69ebb72576d73bee206" title=" " alt="" coords="194,208,346,235"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="87,132,128,163,180,194,195,200,193,205,177,198,125,167,84,136"/>
+<area shape="rect" id="Node000006" href="$class_game_log.html#a4762226457c7641a86d1a8df16623b96" title=" " alt="" coords="409,157,538,184"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="348,168,394,168,394,173,348,173"/>
 </map>

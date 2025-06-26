@@ -1,0 +1,11 @@
+<map id="Monster::TakeDamage" name="Monster::TakeDamage">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,56,159,83"/>
+<area shape="rect" id="Node000002" href="$class_game_log.html#a4c91b78aba2dba0d70a445f869c22811" title=" " alt="" coords="207,31,455,57"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="159,59,191,56,192,61,159,64"/>
+<area shape="rect" id="Node000005" href="$class_game_log.html#a122d5e3170dca111d737bf9633e65fc4" title=" " alt="" coords="253,81,409,108"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="159,74,237,82,237,88,159,80"/>
+<area shape="rect" id="Node000003" href="$class_game_log.html#a1e003860239f6ac3d11b8fa3ff7939ae" title=" " alt="" coords="503,5,702,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="455,30,487,27,487,32,456,35"/>
+<area shape="rect" id="Node000004" href="$class_game_log.html#a119eccba7ed2b6cebe86b554bdac711c" title=" " alt="" coords="528,56,678,83"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="456,53,512,58,512,64,455,58"/>
+</map>

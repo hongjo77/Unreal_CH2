@@ -92,28 +92,59 @@ $(function(){initNavTree('_boss_monster_8cpp.html','',''); });
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &quot;<a class="el" href="_boss_monster_8h_source.html">BossMonster.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_game_log_8h_source.html">GameLog.h</a>&quot;</code><br />
 <code>#include &lt;iostream&gt;</code><br />
+<code>#include &lt;sstream&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
 BossMonster.cpp에 대한 include 의존 그래프</div>
 <div class="dyncontent">
 <div class="center"><img src="_boss_monster_8cpp__incl.png" border="0" usemap="#a_boss_monster_8cpp" loading="lazy" alt=""/></div>
 <map name="a_boss_monster_8cpp" id="a_boss_monster_8cpp">
-<area shape="rect" title=" " alt="" coords="102,5,226,32"/>
-<area shape="rect" href="_boss_monster_8h.html" title=" " alt="" coords="52,80,161,107"/>
-<area shape="poly" title=" " alt="" coords="156,34,128,69,124,66,152,31"/>
-<area shape="rect" title=" " alt="" coords="186,80,257,107"/>
-<area shape="poly" title=" " alt="" coords="176,31,204,66,200,69,172,34"/>
-<area shape="rect" href="_monster_8h.html" title=" " alt="" coords="67,155,146,181"/>
-<area shape="poly" title=" " alt="" coords="109,107,109,139,104,139,104,107"/>
-<area shape="rect" title=" " alt="" coords="5,304,59,331"/>
-<area shape="poly" title=" " alt="" coords="79,184,49,203,36,216,26,231,22,244,21,259,25,289,20,289,15,259,17,243,22,228,32,212,46,199,76,180"/>
-<area shape="rect" href="_item_8h.html" title=" " alt="" coords="36,229,94,256"/>
-<area shape="poly" title=" " alt="" coords="102,183,82,217,78,215,97,181"/>
-<area shape="rect" title=" " alt="" coords="118,229,178,256"/>
-<area shape="poly" title=" " alt="" coords="116,181,136,215,131,217,112,183"/>
-<area shape="rect" title=" " alt="" coords="201,229,255,256"/>
-<area shape="poly" title=" " alt="" coords="129,180,195,219,192,223,126,184"/>
-<area shape="poly" title=" " alt="" coords="62,258,47,291,42,289,57,255"/>
+<area shape="rect" title=" " alt="" coords="251,5,374,32"/>
+<area shape="rect" href="_boss_monster_8h.html" title=" " alt="" coords="304,80,414,107"/>
+<area shape="poly" title=" " alt="" coords="323,31,345,66,341,68,318,34"/>
+<area shape="rect" href="_game_log_8h.html" title=" " alt="" coords="142,80,230,107"/>
+<area shape="poly" title=" " alt="" coords="292,35,222,74,220,70,289,30"/>
+<area shape="rect" title=" " alt="" coords="227,155,299,181"/>
+<area shape="poly" title=" " alt="" coords="311,33,275,141,270,139,306,32"/>
+<area shape="rect" title=" " alt="" coords="438,80,507,107"/>
+<area shape="poly" title=" " alt="" coords="341,30,432,71,430,76,339,35"/>
+<area shape="rect" href="_monster_8h.html" title=" " alt="" coords="495,155,575,181"/>
+<area shape="poly" title=" " alt="" coords="391,105,491,146,489,151,389,110"/>
+<area shape="rect" title=" " alt="" coords="323,155,387,181"/>
+<area shape="poly" title=" " alt="" coords="361,107,359,139,354,139,356,107"/>
+<area shape="rect" title=" " alt="" coords="412,155,472,181"/>
+<area shape="poly" title=" " alt="" coords="375,105,418,142,414,146,372,109"/>
+<area shape="rect" title=" " alt="" coords="310,453,363,480"/>
+<area shape="poly" title=" " alt="" coords="562,180,589,200,612,228,624,256,628,280,624,304,614,332,594,363,568,389,538,410,505,428,438,451,379,463,378,458,436,446,503,423,535,406,565,385,590,360,609,329,619,303,622,280,618,257,607,231,586,203,559,184"/>
+<area shape="rect" href="_item_8h.html" title=" " alt="" coords="451,379,510,405"/>
+<area shape="poly" title=" " alt="" coords="553,180,573,201,590,228,600,257,604,281,601,305,589,332,577,349,560,362,525,381,523,376,558,358,573,345,585,329,596,304,599,281,594,258,585,230,569,204,549,184"/>
+<area shape="rect" href="_characters_8h.html" title=" " alt="" coords="231,229,327,256"/>
+<area shape="poly" title=" " alt="" coords="496,183,339,227,338,222,494,178"/>
+<area shape="rect" href="_color_8h.html" title=" " alt="" coords="351,229,415,256"/>
+<area shape="poly" title=" " alt="" coords="510,184,425,225,422,220,507,179"/>
+<area shape="rect" title=" " alt="" coords="439,229,498,256"/>
+<area shape="poly" title=" " alt="" coords="525,184,492,220,488,216,522,180"/>
+<area shape="rect" title=" " alt="" coords="522,229,575,256"/>
+<area shape="poly" title=" " alt="" coords="540,181,546,214,541,215,535,182"/>
+<area shape="poly" title=" " alt="" coords="457,408,377,448,374,443,454,403"/>
+<area shape="poly" title=" " alt="" coords="279,257,269,322,270,364,280,404,292,425,309,442,305,445,288,428,275,406,265,364,264,322,273,256"/>
+<area shape="rect" title=" " alt="" coords="157,304,214,331"/>
+<area shape="poly" title=" " alt="" coords="264,259,215,297,212,292,261,254"/>
+<area shape="rect" href="_health_potion_8h.html" title=" " alt="" coords="340,304,447,331"/>
+<area shape="poly" title=" " alt="" coords="301,254,362,293,359,298,298,259"/>
+<area shape="rect" href="_attack_boost_8h.html" title=" " alt="" coords="471,304,575,331"/>
+<area shape="poly" title=" " alt="" coords="322,254,467,297,465,302,321,259"/>
+<area shape="rect" href="_equipment_8h.html" title=" " alt="" coords="289,379,384,405"/>
+<area shape="poly" title=" " alt="" coords="286,256,329,363,324,365,282,257"/>
+<area shape="poly" title=" " alt="" coords="411,329,456,367,452,371,407,333"/>
+<area shape="poly" title=" " alt="" coords="518,333,498,367,493,364,513,330"/>
+<area shape="poly" title=" " alt="" coords="339,406,339,438,334,438,334,406"/>
+<area shape="poly" title=" " alt="" coords="142,104,85,121,57,136,33,157,18,176,11,195,8,241,8,319,11,340,17,360,27,377,40,392,75,417,117,435,164,448,212,456,294,463,294,468,211,462,163,453,116,440,72,422,36,396,23,380,12,362,5,341,3,319,3,241,6,193,13,174,29,153,54,132,83,116,140,99"/>
+<area shape="poly" title=" " alt="" coords="188,107,188,289,183,289,183,107"/>
+<area shape="rect" title=" " alt="" coords="43,155,153,181"/>
+<area shape="poly" title=" " alt="" coords="172,109,126,147,123,143,169,105"/>
+<area shape="poly" title=" " alt="" coords="201,105,241,142,237,146,197,109"/>
 </map>
 </div>
 </div></div><!-- contents -->

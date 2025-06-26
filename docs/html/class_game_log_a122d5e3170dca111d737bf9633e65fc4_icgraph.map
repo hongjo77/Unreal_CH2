@@ -1,0 +1,36 @@
+<map id="GameLog::GetInstance" name="GameLog::GetInstance">
+<area shape="rect" id="Node000001" title=" " alt="" coords="743,262,899,289"/>
+<area shape="rect" id="Node000002" href="$class_golden_goblin.html#ab5da9dbee44be6b49ffcc289d3254aa9" title=" " alt="" coords="321,110,503,137"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="800,251,756,198,727,172,694,151,647,135,598,125,549,120,504,119,504,114,550,115,599,119,649,129,696,147,730,168,760,195,804,248"/>
+<area shape="rect" id="Node000003" href="$class_monster.html#a23a5dd14b320162ff9e895c1bb8cf700" title=" " alt="" coords="336,262,488,289"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="727,278,488,278,488,273,727,273"/>
+<area shape="rect" id="Node000004" href="$class_game_manager.html#a49b13f02f36be41415bd9dc60c55c2a1" title=" " alt="" coords="114,212,262,238"/>
+<area shape="poly" id="edge5_Node000001_Node000004" title=" " alt="" coords="813,248,802,196,780,132,764,99,745,69,721,41,693,19,662,10,614,8,492,18,378,37,322,50,298,67,277,87,240,133,213,178,197,213,192,210,209,176,236,130,273,84,295,63,320,45,377,32,492,13,614,3,663,5,696,15,725,38,749,65,769,97,785,130,807,194,818,247"/>
+<area shape="rect" id="Node000005" href="$_main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,414,55,441"/>
+<area shape="poly" id="edge12_Node000001_Node000005" title=" " alt="" coords="805,304,761,357,730,384,696,405,605,436,510,455,415,464,322,465,236,461,160,453,55,435,55,430,160,447,236,455,322,460,414,459,510,450,604,431,694,400,727,380,757,354,801,300"/>
+<area shape="rect" id="Node000006" href="$class_shop.html#a6dc86a785aec3b4e6c6c2ad719ff1f94" title=" " alt="" coords="569,161,677,188"/>
+<area shape="poly" id="edge6_Node000001_Node000006" title=" " alt="" coords="782,257,693,209,655,191,658,186,696,204,784,252"/>
+<area shape="rect" id="Node000007" href="$class_monster.html#ab81423f5edd23fedf945be9e2418f8d4" title=" " alt="" coords="558,60,688,86"/>
+<area shape="poly" id="edge7_Node000001_Node000007" title=" " alt="" coords="803,250,759,180,728,141,693,107,663,89,666,85,696,103,732,138,764,177,808,247"/>
+<area shape="rect" id="Node000008" href="$class_monster.html#a9c6a5aad86d230562434e062c932db2f" title=" " alt="" coords="348,60,476,86"/>
+<area shape="poly" id="edge13_Node000001_Node000008" title=" " alt="" coords="811,248,798,202,775,146,741,92,719,69,693,50,662,36,629,29,595,27,560,30,496,44,445,62,444,57,495,39,560,25,595,22,630,24,664,31,696,45,722,65,745,89,780,144,803,200,816,246"/>
+<area shape="rect" id="Node000009" href="$class_shop.html#a7f08ff6cbf0296fd367607ccd033e1a2" title=" " alt="" coords="551,313,695,340"/>
+<area shape="poly" id="edge11_Node000001_Node000009" title=" " alt="" coords="752,296,679,315,677,310,750,291"/>
+<area shape="rect" id="Node000010" href="$class_shop.html#afdebd734df841a41f9f8ecfaaf59335e" title=" " alt="" coords="569,364,677,390"/>
+<area shape="poly" id="edge14_Node000001_Node000010" title=" " alt="" coords="788,300,745,327,696,354,668,366,666,361,694,349,742,323,786,296"/>
+<area shape="rect" id="Node000011" href="$class_monster.html#a709323e30e2ef726afc23793d7eec204" title=" " alt="" coords="336,212,489,238"/>
+<area shape="poly" id="edge15_Node000001_Node000011" title=" " alt="" coords="727,264,694,260,489,236,490,230,695,254,728,259"/>
+<area shape="rect" id="Node000012" href="$class_attack_boost.html#a534d01125215b09368b4d60f57a24a18" title=" " alt="" coords="560,465,686,492"/>
+<area shape="poly" id="edge17_Node000001_Node000012" title=" " alt="" coords="808,304,764,375,732,414,696,449,666,467,663,462,693,444,728,410,759,372,803,302"/>
+<area shape="rect" id="Node000013" href="$class_health_potion.html#a0813aed3f5161b691aac4fe2198de1ac" title=" " alt="" coords="559,516,687,542"/>
+<area shape="poly" id="edge18_Node000001_Node000013" title=" " alt="" coords="814,305,798,349,774,402,740,458,720,483,696,506,678,517,675,513,693,502,716,480,736,454,769,400,793,347,809,303"/>
+<area shape="rect" id="Node000014" href="$class_game_manager.html#acdaa8e27fbee5fdf701ee8461a361039" title=" " alt="" coords="103,516,273,542"/>
+<area shape="poly" id="edge19_Node000001_Node000014" title=" " alt="" coords="819,305,809,361,788,431,772,467,752,501,727,532,696,557,666,573,635,586,569,602,501,606,433,601,369,590,310,575,221,545,223,540,312,570,370,585,434,596,501,600,568,596,633,581,664,568,693,552,723,528,747,498,767,465,783,430,804,360,814,304"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="334,261,250,242,251,236,336,256"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="169,253,44,416,40,413,164,249"/>
+<area shape="poly" id="edge8_Node000007_Node000002" title=" " alt="" coords="550,93,471,112,470,107,549,88"/>
+<area shape="poly" id="edge9_Node000007_Node000008" title=" " alt="" coords="543,76,477,76,477,70,543,70"/>
+<area shape="poly" id="edge10_Node000008_Node000004" title=" " alt="" coords="335,95,322,101,284,127,250,158,202,213,198,210,246,155,281,123,320,96,332,90"/>
+<area shape="poly" id="edge16_Node000011_Node000004" title=" " alt="" coords="320,228,263,228,263,222,320,222"/>
+<area shape="poly" id="edge20_Node000014_Node000005" title=" " alt="" coords="152,509,51,444,54,439,154,505"/>
+</map>

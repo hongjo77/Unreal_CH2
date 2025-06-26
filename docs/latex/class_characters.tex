@@ -25,6 +25,8 @@ int \mbox{\hyperlink{class_characters_ae5bceda9eccca6be00f4eb70adbae181}{Get\+At
 \item 
 void \mbox{\hyperlink{class_characters_a2a9add7d82c6f69ebb72576d73bee206}{Set\+Attack}} (int new\+Attack)
 \item 
+int \mbox{\hyperlink{class_characters_a3699f13806d9fbe37c88638b9ca39e24}{Get\+Base\+Attack}} ()
+\item 
 int \mbox{\hyperlink{class_characters_adcc06774bce828ee9259b44485aedbc2}{Get\+Level}} () const
 \item 
 void \mbox{\hyperlink{class_characters_a0b328c84e6746898785a8ab7d7200fef}{Set\+Level}} (int new\+Level)
@@ -38,6 +40,28 @@ int \mbox{\hyperlink{class_characters_ac7cf4e011a1f83f4fd2dd6cc27d2fc7e}{Get\+Go
 void \mbox{\hyperlink{class_characters_a6277ba6e439db076ec7fa58cff427335}{Set\+Gold}} (int new\+Gold)
 \item 
 vector$<$ \mbox{\hyperlink{class_item}{Item}} \texorpdfstring{$\ast$}{*} $>$ \& \mbox{\hyperlink{class_characters_aa6fb49a51caa77938c62e05792fcff17}{Get\+Inventory}} ()
+\item 
+int \mbox{\hyperlink{class_characters_a11bddf31448b8f717d27437d8cb8f579}{Random\+Attack}} ()
+\item 
+int \mbox{\hyperlink{class_characters_a47fc90e979541c0506ebf6540d939c14}{Random\+Skill}} ()
+\item 
+void \mbox{\hyperlink{class_characters_aa3092eb46bf2ba7ef856e055d9974602}{Init\+Equipment}} ()
+\item 
+\mbox{\hyperlink{class_characters_a4aea85daea3f08b8b933e82cd42b3109}{\texorpdfstring{$\sim$}{\string~}\+Characters}} ()
+\item 
+int \mbox{\hyperlink{class_characters_a9acbf492e346aa9e87d073f261c7e835}{Get\+Total\+Armor\+Stat}} () const
+\item 
+vector$<$ \mbox{\hyperlink{class_equipment}{Equipment}} \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{class_characters_a26b98563600d598d12e1e3a0887e845c}{Get\+Equipments}} ()
+\item 
+int \mbox{\hyperlink{class_characters_af8b08b0b49de4154e8b0a7344bb8e853}{Get\+Current\+Mana}} ()
+\item 
+void \mbox{\hyperlink{class_characters_af1af478d35dcf049ff098b6cb73dcef3}{Set\+Current\+Mana}} (int value)
+\item 
+int \mbox{\hyperlink{class_characters_a3e60b88a23fb0adcd31d04a01f24f0f6}{Get\+Max\+Mana}} ()
+\item 
+void \mbox{\hyperlink{class_characters_ab94e0682746814b57c65fabdbb4bab47}{Set\+Max\+Mana}} (int value)
+\item 
+\mbox{\hyperlink{_characters_8h_a904b2f9c8f3951116c343784c59d6afe}{Attack\+Type}} \mbox{\hyperlink{class_characters_a56bcab7acde845f89b6f3637d8750bd2}{Get\+Attack\+Type}} ()
 \end{DoxyCompactItemize}
 \doxysubsubsection*{정적 Public 멤버 함수}
 \begin{DoxyCompactItemize}
@@ -60,6 +84,14 @@ static \mbox{\hyperlink{class_characters}{Characters}} \texorpdfstring{$\ast$}{*
 {\footnotesize\ttfamily \label{class_characters_ab04f788d89d6d3e47bd63dc109e72896} 
 Characters\+::\+Characters (\begin{DoxyParamCaption}\item[{const string \&}]{in\+Name}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
 
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_characters_ab04f788d89d6d3e47bd63dc109e72896_cgraph}
+\end{center}
+\end{figure}
 이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
 \nopagebreak
 \begin{figure}[H]
@@ -68,6 +100,12 @@ Characters\+::\+Characters (\begin{DoxyParamCaption}\item[{const string \&}]{in\
 \includegraphics[width=350pt]{class_characters_ab04f788d89d6d3e47bd63dc109e72896_icgraph}
 \end{center}
 \end{figure}
+\Hypertarget{class_characters_a4aea85daea3f08b8b933e82cd42b3109}\index{Characters@{Characters}!````~Characters@{\texorpdfstring{$\sim$}{\string~}Characters}}
+\index{````~Characters@{\texorpdfstring{$\sim$}{\string~}Characters}!Characters@{Characters}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}Characters()}{\string~Characters()}}
+{\footnotesize\ttfamily \label{class_characters_a4aea85daea3f08b8b933e82cd42b3109} 
+Characters\+::\texorpdfstring{$\sim$}{\string~}\+Characters (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
 
 
 \label{doc-func-members}
@@ -79,6 +117,14 @@ Characters\+::\+Characters (\begin{DoxyParamCaption}\item[{const string \&}]{in\
 {\footnotesize\ttfamily \label{class_characters_aa193ce965fc5f5bec0d4ee190acd25ea} 
 void Characters\+::\+Display\+Status (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
 
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_characters_aa193ce965fc5f5bec0d4ee190acd25ea_cgraph}
+\end{center}
+\end{figure}
 이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
 \nopagebreak
 \begin{figure}[H]
@@ -93,12 +139,52 @@ void Characters\+::\+Display\+Status (\begin{DoxyParamCaption}{}{}\end{DoxyParam
 {\footnotesize\ttfamily \label{class_characters_ae5bceda9eccca6be00f4eb70adbae181} 
 int Characters\+::\+Get\+Attack (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
 
+\Hypertarget{class_characters_a56bcab7acde845f89b6f3637d8750bd2}\index{Characters@{Characters}!GetAttackType@{GetAttackType}}
+\index{GetAttackType@{GetAttackType}!Characters@{Characters}}
+\doxysubsubsection{\texorpdfstring{GetAttackType()}{GetAttackType()}}
+{\footnotesize\ttfamily \label{class_characters_a56bcab7acde845f89b6f3637d8750bd2} 
+\mbox{\hyperlink{_characters_8h_a904b2f9c8f3951116c343784c59d6afe}{Attack\+Type}} Characters\+::\+Get\+Attack\+Type (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
 이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
 \nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{class_characters_ae5bceda9eccca6be00f4eb70adbae181_icgraph}
+\includegraphics[width=350pt]{class_characters_a56bcab7acde845f89b6f3637d8750bd2_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_characters_a3699f13806d9fbe37c88638b9ca39e24}\index{Characters@{Characters}!GetBaseAttack@{GetBaseAttack}}
+\index{GetBaseAttack@{GetBaseAttack}!Characters@{Characters}}
+\doxysubsubsection{\texorpdfstring{GetBaseAttack()}{GetBaseAttack()}}
+{\footnotesize\ttfamily \label{class_characters_a3699f13806d9fbe37c88638b9ca39e24} 
+int Characters\+::\+Get\+Base\+Attack (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=347pt]{class_characters_a3699f13806d9fbe37c88638b9ca39e24_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_characters_af8b08b0b49de4154e8b0a7344bb8e853}\index{Characters@{Characters}!GetCurrentMana@{GetCurrentMana}}
+\index{GetCurrentMana@{GetCurrentMana}!Characters@{Characters}}
+\doxysubsubsection{\texorpdfstring{GetCurrentMana()}{GetCurrentMana()}}
+{\footnotesize\ttfamily \label{class_characters_af8b08b0b49de4154e8b0a7344bb8e853} 
+int Characters\+::\+Get\+Current\+Mana (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_characters_a26b98563600d598d12e1e3a0887e845c}\index{Characters@{Characters}!GetEquipments@{GetEquipments}}
+\index{GetEquipments@{GetEquipments}!Characters@{Characters}}
+\doxysubsubsection{\texorpdfstring{GetEquipments()}{GetEquipments()}}
+{\footnotesize\ttfamily \label{class_characters_a26b98563600d598d12e1e3a0887e845c} 
+vector$<$ \mbox{\hyperlink{class_equipment}{Equipment}} \texorpdfstring{$\ast$}{*} $>$ Characters\+::\+Get\+Equipments (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_characters_a26b98563600d598d12e1e3a0887e845c_icgraph}
 \end{center}
 \end{figure}
 \Hypertarget{class_characters_ad9da8f9b3727fc62478af2142000b000}\index{Characters@{Characters}!GetExperience@{GetExperience}}
@@ -207,6 +293,12 @@ int Characters\+::\+Get\+Max\+Health (\begin{DoxyParamCaption}{}{}\end{DoxyParam
 \includegraphics[width=345pt]{class_characters_ab81aaa0098361cf070a2395618d30eab_icgraph}
 \end{center}
 \end{figure}
+\Hypertarget{class_characters_a3e60b88a23fb0adcd31d04a01f24f0f6}\index{Characters@{Characters}!GetMaxMana@{GetMaxMana}}
+\index{GetMaxMana@{GetMaxMana}!Characters@{Characters}}
+\doxysubsubsection{\texorpdfstring{GetMaxMana()}{GetMaxMana()}}
+{\footnotesize\ttfamily \label{class_characters_a3e60b88a23fb0adcd31d04a01f24f0f6} 
+int Characters\+::\+Get\+Max\+Mana (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
 \Hypertarget{class_characters_a884e4c03002aacc3804adecf23292482}\index{Characters@{Characters}!GetName@{GetName}}
 \index{GetName@{GetName}!Characters@{Characters}}
 \doxysubsubsection{\texorpdfstring{GetName()}{GetName()}}
@@ -219,6 +311,34 @@ string Characters\+::\+Get\+Name (\begin{DoxyParamCaption}{}{}\end{DoxyParamCapt
 \begin{center}
 \leavevmode
 \includegraphics[width=350pt]{class_characters_a884e4c03002aacc3804adecf23292482_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_characters_a9acbf492e346aa9e87d073f261c7e835}\index{Characters@{Characters}!GetTotalArmorStat@{GetTotalArmorStat}}
+\index{GetTotalArmorStat@{GetTotalArmorStat}!Characters@{Characters}}
+\doxysubsubsection{\texorpdfstring{GetTotalArmorStat()}{GetTotalArmorStat()}}
+{\footnotesize\ttfamily \label{class_characters_a9acbf492e346aa9e87d073f261c7e835} 
+int Characters\+::\+Get\+Total\+Armor\+Stat (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_characters_a9acbf492e346aa9e87d073f261c7e835_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_characters_aa3092eb46bf2ba7ef856e055d9974602}\index{Characters@{Characters}!InitEquipment@{InitEquipment}}
+\index{InitEquipment@{InitEquipment}!Characters@{Characters}}
+\doxysubsubsection{\texorpdfstring{InitEquipment()}{InitEquipment()}}
+{\footnotesize\ttfamily \label{class_characters_aa3092eb46bf2ba7ef856e055d9974602} 
+void Characters\+::\+Init\+Equipment (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_characters_aa3092eb46bf2ba7ef856e055d9974602_icgraph}
 \end{center}
 \end{figure}
 \Hypertarget{class_characters_a2496ae17e50f166f9acb151c11d73314}\index{Characters@{Characters}!LevelUp@{LevelUp}}
@@ -235,6 +355,42 @@ void Characters\+::\+Level\+Up (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaptio
 \includegraphics[width=350pt]{class_characters_a2496ae17e50f166f9acb151c11d73314_icgraph}
 \end{center}
 \end{figure}
+\Hypertarget{class_characters_a11bddf31448b8f717d27437d8cb8f579}\index{Characters@{Characters}!RandomAttack@{RandomAttack}}
+\index{RandomAttack@{RandomAttack}!Characters@{Characters}}
+\doxysubsubsection{\texorpdfstring{RandomAttack()}{RandomAttack()}}
+{\footnotesize\ttfamily \label{class_characters_a11bddf31448b8f717d27437d8cb8f579} 
+int Characters\+::\+Random\+Attack (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_characters_a11bddf31448b8f717d27437d8cb8f579_cgraph}
+\end{center}
+\end{figure}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_characters_a11bddf31448b8f717d27437d8cb8f579_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_characters_a47fc90e979541c0506ebf6540d939c14}\index{Characters@{Characters}!RandomSkill@{RandomSkill}}
+\index{RandomSkill@{RandomSkill}!Characters@{Characters}}
+\doxysubsubsection{\texorpdfstring{RandomSkill()}{RandomSkill()}}
+{\footnotesize\ttfamily \label{class_characters_a47fc90e979541c0506ebf6540d939c14} 
+int Characters\+::\+Random\+Skill (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_characters_a47fc90e979541c0506ebf6540d939c14_icgraph}
+\end{center}
+\end{figure}
 \Hypertarget{class_characters_a2a9add7d82c6f69ebb72576d73bee206}\index{Characters@{Characters}!SetAttack@{SetAttack}}
 \index{SetAttack@{SetAttack}!Characters@{Characters}}
 \doxysubsubsection{\texorpdfstring{SetAttack()}{SetAttack()}}
@@ -249,6 +405,12 @@ void Characters\+::\+Set\+Attack (\begin{DoxyParamCaption}\item[{int}]{new\+Atta
 \includegraphics[width=324pt]{class_characters_a2a9add7d82c6f69ebb72576d73bee206_icgraph}
 \end{center}
 \end{figure}
+\Hypertarget{class_characters_af1af478d35dcf049ff098b6cb73dcef3}\index{Characters@{Characters}!SetCurrentMana@{SetCurrentMana}}
+\index{SetCurrentMana@{SetCurrentMana}!Characters@{Characters}}
+\doxysubsubsection{\texorpdfstring{SetCurrentMana()}{SetCurrentMana()}}
+{\footnotesize\ttfamily \label{class_characters_af1af478d35dcf049ff098b6cb73dcef3} 
+void Characters\+::\+Set\+Current\+Mana (\begin{DoxyParamCaption}\item[{int}]{value}{}\end{DoxyParamCaption})}
+
 \Hypertarget{class_characters_a02abf31609d28253aba5fd553d51629b}\index{Characters@{Characters}!SetExperience@{SetExperience}}
 \index{SetExperience@{SetExperience}!Characters@{Characters}}
 \doxysubsubsection{\texorpdfstring{SetExperience()}{SetExperience()}}
@@ -296,6 +458,12 @@ void Characters\+::\+Set\+Health (\begin{DoxyParamCaption}\item[{int}]{new\+Heal
 \doxysubsubsection{\texorpdfstring{SetLevel()}{SetLevel()}}
 {\footnotesize\ttfamily \label{class_characters_a0b328c84e6746898785a8ab7d7200fef} 
 void Characters\+::\+Set\+Level (\begin{DoxyParamCaption}\item[{int}]{new\+Level}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_characters_ab94e0682746814b57c65fabdbb4bab47}\index{Characters@{Characters}!SetMaxMana@{SetMaxMana}}
+\index{SetMaxMana@{SetMaxMana}!Characters@{Characters}}
+\doxysubsubsection{\texorpdfstring{SetMaxMana()}{SetMaxMana()}}
+{\footnotesize\ttfamily \label{class_characters_ab94e0682746814b57c65fabdbb4bab47} 
+void Characters\+::\+Set\+Max\+Mana (\begin{DoxyParamCaption}\item[{int}]{value}{}\end{DoxyParamCaption})}
 
 \Hypertarget{class_characters_a4db23c91da2722b0ead9dcbb0ec75bab}\index{Characters@{Characters}!ShowInventory@{ShowInventory}}
 \index{ShowInventory@{ShowInventory}!Characters@{Characters}}

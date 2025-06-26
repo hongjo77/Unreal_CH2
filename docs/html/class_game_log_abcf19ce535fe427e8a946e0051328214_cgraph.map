@@ -1,0 +1,7 @@
+<map id="GameLog::KillAchievement" name="GameLog::KillAchievement">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,31,185,57"/>
+<area shape="rect" id="Node000002" href="$class_game_log.html#a1e003860239f6ac3d11b8fa3ff7939ae" title=" " alt="" coords="233,5,432,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="185,32,217,28,217,34,185,37"/>
+<area shape="rect" id="Node000003" href="$class_game_log.html#a119eccba7ed2b6cebe86b554bdac711c" title=" " alt="" coords="257,56,408,83"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="185,51,242,57,241,62,185,56"/>
+</map>

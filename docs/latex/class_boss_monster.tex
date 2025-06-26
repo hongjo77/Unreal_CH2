@@ -29,9 +29,13 @@ Boss\+Monster에 대한 협력 다이어그램\+:
 \item 
 \mbox{\hyperlink{class_boss_monster_aef30dc963d9c3077ca4ee414aca8c694}{Boss\+Monster}} (int level)
 \item 
-void \mbox{\hyperlink{class_boss_monster_a86ccfc672017d4e120c88617594ba761}{Take\+Damage}} (int damage) override
-\item 
 bool \mbox{\hyperlink{class_boss_monster_ad95a666b55d352f67818aa390ec64d91}{Is\+Boss}} () const override
+\item 
+void \mbox{\hyperlink{class_boss_monster_a00a02210856ef56601c033d357c423b3}{On\+Death}} (\mbox{\hyperlink{class_characters}{Characters}} \&player) override
+\item 
+void \mbox{\hyperlink{class_boss_monster_a391299071904a7b2827c30678d58b293}{Attack\+Player}} (\mbox{\hyperlink{class_characters}{Characters}} \&player) override
+\item 
+void \mbox{\hyperlink{class_boss_monster_ae91f4a75abc37f06a3f6a957b9cec877}{Text\+Art}} () const override
 \end{DoxyCompactItemize}
 \doxysubsection*{\mbox{\hyperlink{class_monster}{Monster}}(으)로부터 상속된 Public 멤버 함수}
 \begin{DoxyCompactItemize}
@@ -46,7 +50,11 @@ virtual int \mbox{\hyperlink{class_monster_a2083a208cf409f4d35e1fe34e09d8e42}{Ge
 \item 
 virtual int \mbox{\hyperlink{class_monster_a794f6da1ba6594041441a44d1b28fa26}{Get\+Attack}} () const
 \item 
-virtual \mbox{\hyperlink{class_item}{Item}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_monster_a19aaa56f2e8245254416ebb2048c5d21}{Drop\+Item}} ()
+virtual void \mbox{\hyperlink{class_monster_a709323e30e2ef726afc23793d7eec204}{Take\+Damage}} (int damage)
+\item 
+virtual int \mbox{\hyperlink{class_monster_ab81423f5edd23fedf945be9e2418f8d4}{Drop\+Item}} ()
+\item 
+virtual bool \mbox{\hyperlink{class_monster_ab2b5614d8246fbbab20d5190cb510855}{Is\+Golden\+Goblin}} () const
 \end{DoxyCompactItemize}
 \doxysubsubsection*{추가로 상속된 멤버들}
 \doxysubsection*{\mbox{\hyperlink{class_monster}{Monster}}(으)로부터 상속된 Protected 속성}
@@ -82,6 +90,16 @@ Boss\+Monster\+::\+Boss\+Monster (\begin{DoxyParamCaption}\item[{int}]{level}{}\
 \label{doc-func-members}
 \Hypertarget{class_boss_monster_doc-func-members}
 \doxysubsection{멤버 함수 문서화}
+\Hypertarget{class_boss_monster_a391299071904a7b2827c30678d58b293}\index{BossMonster@{BossMonster}!AttackPlayer@{AttackPlayer}}
+\index{AttackPlayer@{AttackPlayer}!BossMonster@{BossMonster}}
+\doxysubsubsection{\texorpdfstring{AttackPlayer()}{AttackPlayer()}}
+{\footnotesize\ttfamily \label{class_boss_monster_a391299071904a7b2827c30678d58b293} 
+void Boss\+Monster\+::\+Attack\+Player (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_characters}{Characters}} \&}]{player}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+\mbox{\hyperlink{class_monster_a23a5dd14b320162ff9e895c1bb8cf700}{Monster}}(으)로부터 재구현되었습니다.
+
 \Hypertarget{class_boss_monster_ad95a666b55d352f67818aa390ec64d91}\index{BossMonster@{BossMonster}!IsBoss@{IsBoss}}
 \index{IsBoss@{IsBoss}!BossMonster@{BossMonster}}
 \doxysubsubsection{\texorpdfstring{IsBoss()}{IsBoss()}}
@@ -92,15 +110,25 @@ bool Boss\+Monster\+::\+Is\+Boss (\begin{DoxyParamCaption}{}{}\end{DoxyParamCapt
 
 \mbox{\hyperlink{class_monster_ac6f0dd1d3632f1a2018013e9dbdd6ecc}{Monster}}(으)로부터 재구현되었습니다.
 
-\Hypertarget{class_boss_monster_a86ccfc672017d4e120c88617594ba761}\index{BossMonster@{BossMonster}!TakeDamage@{TakeDamage}}
-\index{TakeDamage@{TakeDamage}!BossMonster@{BossMonster}}
-\doxysubsubsection{\texorpdfstring{TakeDamage()}{TakeDamage()}}
-{\footnotesize\ttfamily \label{class_boss_monster_a86ccfc672017d4e120c88617594ba761} 
-void Boss\+Monster\+::\+Take\+Damage (\begin{DoxyParamCaption}\item[{int}]{damage}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+\Hypertarget{class_boss_monster_a00a02210856ef56601c033d357c423b3}\index{BossMonster@{BossMonster}!OnDeath@{OnDeath}}
+\index{OnDeath@{OnDeath}!BossMonster@{BossMonster}}
+\doxysubsubsection{\texorpdfstring{OnDeath()}{OnDeath()}}
+{\footnotesize\ttfamily \label{class_boss_monster_a00a02210856ef56601c033d357c423b3} 
+void Boss\+Monster\+::\+On\+Death (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_characters}{Characters}} \&}]{player}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
 
 
 
-\mbox{\hyperlink{class_monster_a709323e30e2ef726afc23793d7eec204}{Monster}}(으)로부터 재구현되었습니다.
+\mbox{\hyperlink{class_monster_a9c6a5aad86d230562434e062c932db2f}{Monster}}(으)로부터 재구현되었습니다.
+
+\Hypertarget{class_boss_monster_ae91f4a75abc37f06a3f6a957b9cec877}\index{BossMonster@{BossMonster}!TextArt@{TextArt}}
+\index{TextArt@{TextArt}!BossMonster@{BossMonster}}
+\doxysubsubsection{\texorpdfstring{TextArt()}{TextArt()}}
+{\footnotesize\ttfamily \label{class_boss_monster_ae91f4a75abc37f06a3f6a957b9cec877} 
+void Boss\+Monster\+::\+Text\+Art (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+\mbox{\hyperlink{class_monster_a8e1bd5c8dde9c379e52708be0a8f2429}{Monster}}를 구현.
 
 
 

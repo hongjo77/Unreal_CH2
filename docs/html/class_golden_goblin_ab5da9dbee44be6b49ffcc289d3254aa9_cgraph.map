@@ -1,0 +1,17 @@
+<map id="GoldenGoblin::AttackPlayer" name="GoldenGoblin::AttackPlayer">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,83,188,110"/>
+<area shape="rect" id="Node000002" href="$class_monster.html#ab81423f5edd23fedf945be9e2418f8d4" title=" " alt="" coords="255,33,385,59"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="158,80,242,61,244,66,159,85"/>
+<area shape="rect" id="Node000003" href="$class_game_log.html#a122d5e3170dca111d737bf9633e65fc4" title=" " alt="" coords="452,7,608,34"/>
+<area shape="poly" id="edge5_Node000001_Node000003" title=" " alt="" coords="114,81,166,47,200,30,235,18,286,8,339,4,436,6,436,12,339,9,287,14,236,23,202,35,169,52,117,85"/>
+<area shape="rect" id="Node000004" href="$class_game_log.html#ab774dd34c5ee4427f0bd22d2cabf2d39" title=" " alt="" coords="452,58,608,85"/>
+<area shape="poly" id="edge8_Node000001_Node000004" title=" " alt="" coords="188,89,436,74,437,79,188,94"/>
+<area shape="rect" id="Node000006" href="$class_characters.html#aa6fb49a51caa77938c62e05792fcff17" title=" " alt="" coords="236,134,404,161"/>
+<area shape="poly" id="edge6_Node000001_Node000006" title=" " alt="" coords="159,108,244,127,242,132,158,113"/>
+<area shape="rect" id="Node000007" href="$class_characters.html#a884e4c03002aacc3804adecf23292482" title=" " alt="" coords="245,185,394,211"/>
+<area shape="poly" id="edge7_Node000001_Node000007" title=" " alt="" coords="121,108,173,139,237,170,254,177,252,182,235,175,170,143,118,113"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="385,35,436,29,437,34,385,41"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="385,51,437,57,436,63,385,56"/>
+<area shape="rect" id="Node000005" href="$class_game_log.html#a4762226457c7641a86d1a8df16623b96" title=" " alt="" coords="656,58,786,85"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="609,69,641,69,641,74,609,74"/>
+</map>

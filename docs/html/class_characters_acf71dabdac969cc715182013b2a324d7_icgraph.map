@@ -1,9 +1,11 @@
 <map id="Characters::SetHealth" name="Characters::SetHealth">
-<area shape="rect" id="Node000001" title=" " alt="" coords="299,31,450,57"/>
-<area shape="rect" id="Node000002" href="$class_game_manager.html#a49b13f02f36be41415bd9dc60c55c2a1" title=" " alt="" coords="103,5,251,32"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="283,35,251,31,252,26,284,30"/>
-<area shape="rect" id="Node000004" href="$class_health_potion.html#a0813aed3f5161b691aac4fe2198de1ac" title=" " alt="" coords="113,56,241,83"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="284,58,241,64,241,59,283,53"/>
-<area shape="rect" id="Node000003" href="$_main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,5,55,32"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="87,21,55,21,55,16,87,16"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="498,31,650,57"/>
+<area shape="rect" id="Node000002" href="$class_monster.html#a23a5dd14b320162ff9e895c1bb8cf700" title=" " alt="" coords="299,5,450,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="482,35,450,31,451,26,483,30"/>
+<area shape="rect" id="Node000005" href="$class_health_potion.html#a0813aed3f5161b691aac4fe2198de1ac" title=" " alt="" coords="310,56,439,83"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="483,58,440,64,439,59,482,53"/>
+<area shape="rect" id="Node000003" href="$class_game_manager.html#a49b13f02f36be41415bd9dc60c55c2a1" title=" " alt="" coords="103,5,251,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="283,21,251,21,251,16,283,16"/>
+<area shape="rect" id="Node000004" href="$_main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,5,55,32"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="87,21,55,21,55,16,87,16"/>
 </map>
