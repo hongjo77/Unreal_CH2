@@ -12,14 +12,20 @@ C++ 콘솔창에서 진행되는 자동 턴제 텍스트 RPG입니다.
     <summary>원하는 이름과 함께 플레이어 캐릭터 생성</summary>
 
 ```c
-    cout << "캐릭터 이름을 입력하세요: ";
-		getline(cin, Name);
+	Characters::Characters(const string& inName)
+	    : Name(inName), Level(1), Health(200), MaxHealth(200), Attack(30), Experience(0), Gold(0), MaxMana(100),CurrentMana(100)
+	{
+```
 
-		// 이름이 비었거나 맨 앞이 공백이면 다시 입력
-		if (Name.empty() || Name[0] == ' ') {
-			cout << RED << "이름은 공백으로 시작할 수 없습니다. 다시 입력해주세요." << RESET << endl;
-			continue;
-		}
+```c
+	cout << "캐릭터 이름을 입력하세요: ";
+	getline(cin, Name);
+
+	// 이름이 비었거나 맨 앞이 공백이면 다시 입력
+	if (Name.empty() || Name[0] == ' ') {
+		cout << RED << "이름은 공백으로 시작할 수 없습니다. 다시 입력해주세요." << RESET << endl;
+		continue;
+	}
 		break;
 	}
 
@@ -27,9 +33,61 @@ C++ 콘솔창에서 진행되는 자동 턴제 텍스트 RPG입니다.
     Characters* player = Characters::GetInstance(Name);
 ```
 </details>
-- 캐릭터의 주요 스탯 표시
-- 레벨업 시 캐릭터의 체력, 공격력 증가
-- 인벤토리로 아이템 저장
+<details>
+	<summary>캐릭터의 주요 스탯 표시</summary>
+
+```c
+	void Characters::DisplayStatus() const
+	{
+		cout << "이름: " << Name << " | 레벨: " << Level << " | 체력: " << Health << "/" << MaxHealth << " | 방어력: " << GetTotalArmorStat()
+		<< " | 공격력: (" << Attack <<" + "<<this->weapon->GetStat()<<")" << " | 경험치: " << Experience << " | 골드: " << Gold << endl;
+	}
+```
+</details>
+<details>
+	<summary>레벨업 시 캐릭터의 체력, 공격력 증가</summary>
+
+```c
+	void Characters::LevelUp()
+	{
+	    // 최대 레벨 10
+	    if (Level >= 10)
+	    {
+	        return;
+	    }
+	    Experience -= 100;
+	    Level++;
+	    MaxHealth += Level * 20;
+	    Attack += Level * 5;
+	    Health = MaxHealth;
+	    cout << "레벨업! 현재 레벨: " << Level << " | 체력: " << MaxHealth << " | 공격력: " << Attack << endl;
+	}	
+```
+</details>
+<details>
+	<summary>인벤토리로 아이템 저장</summary>
+
+```c
+	Characters::Characters(const string& inName)
+	    : Name(inName), Level(1), Health(200), MaxHealth(200), Attack(30), Experience(0), Gold(0), MaxMana(100),CurrentMana(100)
+	{
+	    this->InitEquipment();
+	    this->Inventory = {new HealthPotion(), new AttackBoost()};
+	    cout << "캐릭터 " << Name << " 생성 완료! 레벨: " << Level << ", 체력: " << Health << ", 공격력: " << Attack << endl;
+	    cout << endl;
+	}
+```
+
+```c
+	// 체력포션 생성자 초기값 [ Name : Health Potion, Amount : 0 ]
+	HealthPotion::HealthPotion() : Item("Health Potion", 0) {}
+```
+
+```c
+	//공격력 증가포션 생성자 Name : Attack Boost
+	AttackBoost::AttackBoost() : Item("Attack Boost", 0) {}
+```
+</details>
 
 #### ◼ 전투 시스템
 
