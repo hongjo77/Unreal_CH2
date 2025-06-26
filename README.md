@@ -88,6 +88,7 @@ AttackBoost::AttackBoost() : Item("Attack Boost", 0) {}
 ```
 </details>
 
+
 #### ◼ 전투 시스템
 
 <details>
@@ -299,6 +300,24 @@ if (player->GetLevel() >= 10)
 }
 ```
 </details>
+
+
+#### ◼ 상점 시스템
+
+<details>
+	<summary>골드를 사용해 원하는 아이템과 수량을 자유롭게 구매 가능</summary>
+
+```c++
+
+```
+</details>
+<details>
+	<summary>인벤토리에 저장된 아이템을 수량을 정해서 판매 가능</summary>
+
+```c++
+
+```
+</details>
 <details>
 	<summary>----</summary>
 
@@ -307,10 +326,6 @@ if (player->GetLevel() >= 10)
 ```
 </details>
 
-#### ◼ 상점 시스템
-
-- 골드를 사용해 원하는 아이템과 수량을 자유롭게 구매 가능
-- 인벤토리에 저장된 아이템을 수량을 정해서 판매 가능
 
 ## ➕ 추가 기능
 
