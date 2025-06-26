@@ -739,6 +739,27 @@ else if (menu == 3)
 ![image](https://github.com/user-attachments/assets/bd20e588-e944-49e3-a866-929cdf96fea0)
 
 ```c++
+int EnhanceLogic(int EnLevel) {
+    if (EnLevel == 0) {
+        return 90;
+    }
+    else if (EnLevel == 1) {
+        return 75;
+    }
+    else if (EnLevel == 2) {
+        return 60;
+    }
+    else if (EnLevel == 3) {
+        return 45;
+    }
+    else if (EnLevel == 4) {
+        return 30;
+    }
+
+    return 0;
+}
+```
+```c++
 void Shop::EquipEnhance(Characters& player) {
 
 
