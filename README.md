@@ -11,6 +11,7 @@ C++ 콘솔창에서 진행되는 자동 턴제 텍스트 RPG입니다.
 <details>
     <summary>원하는 이름과 함께 플레이어 캐릭터 생성</summary>
 
+![image](https://github.com/user-attachments/assets/04b1baa6-6881-4e20-a4fc-77b9929fc221)
 ```c++
 Characters::Characters(const string& inName)
 	: Name(inName), Level(1), Health(200), MaxHealth(200), Attack(30), Experience(0), Gold(0), MaxMana(100),CurrentMana(100)
@@ -34,6 +35,8 @@ Characters* player = Characters::GetInstance(Name);
 </details>
 <details>
 	<summary>캐릭터의 주요 스탯 표시</summary>
+
+![image](https://github.com/user-attachments/assets/b2c0dd2e-00b6-4f20-a3b1-3072fe6884c2)
 
 ```c++
 void Characters::DisplayStatus() const
