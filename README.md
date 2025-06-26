@@ -63,13 +63,17 @@ C++ 콘솔창에서 진행되는 자동 턴제 RPG입니다.
 
 - 25.06.20 ~ 25.06.26
 
+## ⚙️ 개발 환경
+- **IDE :** Visual Studio 2022
+- **C++ 표준:** C++ 17 이상
+
 ## 📚 자료 및 문서
 
 - [기능명세서 페이지](https://teamsparta.notion.site/2182dc3ef51480f59a0ae5fb0ad2cc15?v=2182dc3ef51480d39847000cb7fca957)
 
 - [클래스 목록 페이지](https://hongjo77.github.io/Unreal_CH2/html/annotated.html)
 
-### 📁 폴더구조
+## 📁 폴더 구조
 
 ```
 CH2Project
@@ -112,11 +116,9 @@ CH2Project
 | 최희윤 | Monster 인터페이스 및 하위 클래스 구성                          | [Chy-on](https://github.com/Chy-on)                     |
 | 홍사빈 | Item, Equipment 인터페이스 및 하위 클래스 구성                  | [dioon0000](https://github.com/dioon0000)               |
 
-## ⚙️ 기술 스택
+## ✔️ 기술 스택
 
 <img src="https://img.shields.io/badge/c++-00599C?style=for-the-badge&logo=c%2B%2B&logoColor=white"> <img src="https://img.shields.io/badge/git-F05032?style=for-the-badge&logo=git&logoColor=white"> <img src="https://img.shields.io/badge/github-181717?style=for-the-badge&logo=github&logoColor=white">
-
-<img src="https://img.shields.io/badge/IDE-Visual_Studio-5C2D91?style=for-the-badge&logo=visualstudio&logoColor=white" alt="Visual Studio Badge">
 
 ## 🔗 관련 링크
 
