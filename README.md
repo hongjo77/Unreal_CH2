@@ -11,91 +11,301 @@ C++ 콘솔창에서 진행되는 자동 턴제 텍스트 RPG입니다.
 <details>
     <summary>원하는 이름과 함께 플레이어 캐릭터 생성</summary>
 
-```c
-	Characters::Characters(const string& inName)
-	    : Name(inName), Level(1), Health(200), MaxHealth(200), Attack(30), Experience(0), Gold(0), MaxMana(100),CurrentMana(100)
-	{
+```c++
+Characters::Characters(const string& inName)
+	: Name(inName), Level(1), Health(200), MaxHealth(200), Attack(30), Experience(0), Gold(0), MaxMana(100),CurrentMana(100)
+{
 ```
 
-```c
-	cout << "캐릭터 이름을 입력하세요: ";
-	getline(cin, Name);
-
+```c++
+cout << "캐릭터 이름을 입력하세요: ";
+getline(cin, Name);
 	// 이름이 비었거나 맨 앞이 공백이면 다시 입력
-	if (Name.empty() || Name[0] == ' ') {
-		cout << RED << "이름은 공백으로 시작할 수 없습니다. 다시 입력해주세요." << RESET << endl;
-		continue;
-	}
-		break;
-	}
+if (Name.empty() || Name[0] == ' ') {
+	cout << RED << "이름은 공백으로 시작할 수 없습니다. 다시 입력해주세요." << RESET << endl;
+	continue;
+}
+	break;
+}
 
-    // 캐릭터 인스턴스 생성
-    Characters* player = Characters::GetInstance(Name);
+// 캐릭터 인스턴스 생성
+Characters* player = Characters::GetInstance(Name);
 ```
 </details>
 <details>
 	<summary>캐릭터의 주요 스탯 표시</summary>
 
-```c
-	void Characters::DisplayStatus() const
-	{
-		cout << "이름: " << Name << " | 레벨: " << Level << " | 체력: " << Health << "/" << MaxHealth << " | 방어력: " << GetTotalArmorStat()
-		<< " | 공격력: (" << Attack <<" + "<<this->weapon->GetStat()<<")" << " | 경험치: " << Experience << " | 골드: " << Gold << endl;
-	}
+```c++
+void Characters::DisplayStatus() const
+{
+	cout << "이름: " << Name << " | 레벨: " << Level << " | 체력: " << Health << "/" << MaxHealth << " | 방어력: " << GetTotalArmorStat()
+	<< " | 공격력: (" << Attack <<" + "<<this->weapon->GetStat()<<")" << " | 경험치: " << Experience << " | 골드: " << Gold << endl;
+}
 ```
 </details>
 <details>
 	<summary>레벨업 시 캐릭터의 체력, 공격력 증가</summary>
 
-```c
-	void Characters::LevelUp()
-	{
-	    // 최대 레벨 10
-	    if (Level >= 10)
-	    {
-	        return;
-	    }
-	    Experience -= 100;
-	    Level++;
-	    MaxHealth += Level * 20;
-	    Attack += Level * 5;
-	    Health = MaxHealth;
-	    cout << "레벨업! 현재 레벨: " << Level << " | 체력: " << MaxHealth << " | 공격력: " << Attack << endl;
-	}	
+```c++
+void Characters::LevelUp()
+{
+    // 최대 레벨 10
+    if (Level >= 10)
+    {
+        return;
+    }
+    Experience -= 100;
+    Level++;
+    MaxHealth += Level * 20;
+    Attack += Level * 5;
+    Health = MaxHealth;
+    cout << "레벨업! 현재 레벨: " << Level << " | 체력: " << MaxHealth << " | 공격력: " << Attack << endl;
+}	
 ```
 </details>
 <details>
 	<summary>인벤토리로 아이템 저장</summary>
 
-```c
-	Characters::Characters(const string& inName)
-	    : Name(inName), Level(1), Health(200), MaxHealth(200), Attack(30), Experience(0), Gold(0), MaxMana(100),CurrentMana(100)
-	{
-	    this->InitEquipment();
-	    this->Inventory = {new HealthPotion(), new AttackBoost()};
-	    cout << "캐릭터 " << Name << " 생성 완료! 레벨: " << Level << ", 체력: " << Health << ", 공격력: " << Attack << endl;
-	    cout << endl;
-	}
+```c++
+Characters::Characters(const string& inName)
+: Name(inName), Level(1), Health(200), MaxHealth(200), Attack(30), Experience(0), Gold(0), MaxMana(100),CurrentMana(100)
+{
+	this->InitEquipment();
+	this->Inventory = {new HealthPotion(), new AttackBoost()};
+	cout << "캐릭터 " << Name << " 생성 완료! 레벨: " << Level << ", 체력: " << Health << ", 공격력: " << Attack << endl;
+	cout << endl;
+}
 ```
 
-```c
-	// 체력포션 생성자 초기값 [ Name : Health Potion, Amount : 0 ]
-	HealthPotion::HealthPotion() : Item("Health Potion", 0) {}
+```c++
+// 체력포션 생성자 초기값 [ Name : Health Potion, Amount : 0 ]
+HealthPotion::HealthPotion() : Item("Health Potion", 0) {}
 ```
 
-```c
-	//공격력 증가포션 생성자 Name : Attack Boost
-	AttackBoost::AttackBoost() : Item("Attack Boost", 0) {}
+```c++
+//공격력 증가포션 생성자 Name : Attack Boost
+AttackBoost::AttackBoost() : Item("Attack Boost", 0) {}
 ```
 </details>
 
 #### ◼ 전투 시스템
 
-- 몬스터는 랜덤하게 출몰, 낮은 확률로 특수 몬스터 출몰
-- 전투 중 아이템 사용이나 캐릭터 스킬 사용 등 자동 진행
-- 전투 승리 시 고정적인 경험치 획득과 유동적인 골드 획득
-- 몬스터 처치 시 낮은 확률로 아이템을 드랍
-- 10레벨 달성 시 보스 몬스터 출몰
+<details>
+	<summary>몬스터는 랜덤하게 출몰, 낮은 확률로 특수 몬스터 출몰</summary>
+
+```c++
+Monster* GameManager::GenerateMonster(int level) 
+{
+    int type = rand() % 10;
+    switch (type)
+    {
+    case 0:
+    case 1:
+    case 2:
+    case 3:
+        return new Goblin(level);
+    case 4:
+    case 5:
+    case 6: 
+        return new Bat(level);
+    case 7:
+    case 8: 
+        return new Slime(level);
+    case 9: 
+        return new GoldenGoblin(level);
+    default: return new Goblin(level);
+    }
+}
+```
+</details>
+<details>
+	<summary>전투 중 아이템 사용이나 캐릭터 스킬 사용 등 자동 진행</summary>
+
+```c++
+// 1. 아이템 사용
+if (!player.GetInventory().empty())
+{
+	int useItemChance = rand() % 100;
+	// 30% 확률
+	if (useItemChance < 30)
+	{
+		// 가지고 있는 아이템 중 랜덤
+		int itemIndex = rand() % player.GetInventory().size();
+		// 아이템 사용
+                player.GetInventory()[itemIndex]->Use(player);
+	}
+}
+```
+
+```c++
+int Characters::RandomAttack()
+{
+    //공격 타입 설정
+    Characters::RandomSkill();
+    int Attack = this->Attack + this->weapon->GetStat();
+
+    auto recoverMana = [this](int n)
+        {   
+                CurrentMana += n;
+
+            if (CurrentMana > MaxMana)
+                CurrentMana = MaxMana;
+        };
+
+    switch (currentAttackType)
+    {
+    case AttackType::Normal:
+        recoverMana(10);
+        return Attack;
+    
+    case AttackType::Strike:
+        if (CurrentMana >= 20)
+        {
+            CurrentMana -= 20;
+            return Attack + 20;
+        }
+        else
+        {
+            recoverMana(10);
+            this->currentAttackType = AttackType::Normal;
+            return Attack;
+        }
+    
+    case AttackType::FireBall:
+        if (CurrentMana >= 50)
+        {
+            CurrentMana -= 50;
+            return Attack + 40;
+        }
+
+        else
+        {
+            recoverMana(10);
+            this->currentAttackType = AttackType::Normal;
+            return Attack;
+        }
+
+    default:
+        recoverMana(10);
+        this->currentAttackType = AttackType::Normal;
+        return Attack;
+    }
+}
+```
+```c++
+std::ostringstream oss;
+
+enemy.TakeDamage(player.RandomAttack());
+if (player.GetAttackType() == AttackType::Normal)
+{
+	oss.str("");
+	oss.clear();
+	oss << player.GetName() << "이(가) " << enemy.GetName() << "를(을) 공격합니다." << endl;
+	GameLog::GetInstance()->PrintAndLog(oss.str());
+}
+else if(player.GetAttackType()==AttackType::Strike)
+{
+	oss.str("");
+	oss.clear();
+	oss << player.GetName() << "이(가) " << enemy.GetName() << "에게 Strike를 사용합니다." << endl;
+	GameLog::GetInstance()->PrintAndLog(oss.str());
+}
+else
+{
+	oss.str("");
+	oss.clear();
+	oss << player.GetName() << "이(가) " << enemy.GetName() << "에게 FireBall을 사용합니다." << endl;
+	GameLog::GetInstance()->PrintAndLog(oss.str());
+}
+oss.str("");
+oss.clear();
+```
+</details>
+<details>
+	<summary>전투 승리 시 고정적인 경험치 획득과 유동적인 골드 획득</summary>
+
+```c++
+void Monster::OnDeath(Characters& player) {
+    cout << endl;
+    cout << Name << " 처치!" << endl;
+
+    // 적을 물리쳤을 때 얻는 골드
+    int goldReward = 10 + rand() % 11;
+    // 플레이어 경험치 + 50 exp
+    player.SetExperience(player.GetExperience() + 50);
+    // 플레이어 골드 + 10~20 골드
+    player.SetGold(player.GetGold() + goldReward);
+    cout << player.GetName() << "가 50 EXP와 " << goldReward << " 골드를 획득했습니다. 현재 EXP: " 
+        << player.GetExperience() << "/100, 골드: " << player.GetGold() << endl;
+.
+.
+.
+}
+```
+</details>
+<details>
+	<summary>몬스터 처치 시 낮은 확률로 아이템을 드랍</summary>
+
+```c++
+void Monster::OnDeath(Characters& player) {
+.
+.
+.
+// 30% 확률로 아이템 드랍
+    int dropChance = rand() % 100;
+    if (dropChance < 30)
+    {
+        int index = DropItem();
+        auto& playerInventory = player.GetInventory();
+        playerInventory[index]->SetAmount(playerInventory[index]->GetAmount() + 1);
+        cout << player.GetName() << "이(가) " << playerInventory[index]->GetName() << "을(를) 1개 획득했습니다!" << endl;
+    }
+}
+```
+```c++
+// 몬스터가 아이템을 드랍
+int Monster::DropItem() 
+{
+    int itemType = rand() % 2;
+    if (itemType == 0)
+    {
+        cout << Name << "이(가) Health Potion을(를) 드랍했습니다!" << endl;
+    }
+    else
+    {
+        cout << Name << "이(가) Attack Boost을(를) 드랍했습니다!" << endl;
+    }
+    return itemType;
+}
+```
+</details>
+<details>
+	<summary>10레벨 달성 시 보스 몬스터 출몰</summary>
+
+```c++
+// 10레벨이면 보스전 입장
+if (player->GetLevel() >= 10)
+{
+	GameLog::GetInstance()->AddLog(std::string(BLUE)+"보스층"+RESET);
+        system("cls");
+        player->DisplayStatus();
+        cout << endl;
+
+        // 보스 생성
+        BossMonster* boss = manager.GenerateBossMonster(player->GetLevel());
+        // 보스 전투
+        manager.Battle(*player, *boss);
+        delete boss;
+}
+```
+</details>
+<details>
+	<summary>----</summary>
+
+```c++
+
+```
+</details>
 
 #### ◼ 상점 시스템
 
