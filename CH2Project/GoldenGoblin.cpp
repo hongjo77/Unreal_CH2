@@ -89,9 +89,10 @@ void GoldenGoblin::AttackPlayer(Characters& player)
 
 	if (newHealth < 0) { newHealth = 0; }
 	player.SetHealth(newHealth);
-	oss << Name << "이(가) " << player.GetName() << "를 공격합니다! "
-		<< player.GetName() << " 체력: " << GREEN << prevPlayerHealth << RESET << " → " << RED << player.GetHealth() << RESET;
+	oss << Name << "이(가) " << player.GetName() << "를 공격합니다." << endl;
+	oss	<< player.GetName() << " 체력: " << GREEN << prevPlayerHealth << RESET << " → " << RED << player.GetHealth() << RESET;
 	GameLog::GetInstance()->PrintAndLog(oss.str());
+	oss.str("");
 	if (prevGold > 0) 
 	{
 		oss << " 골드: " << GREEN << prevGold << RESET << " -> " << RED << player.GetGold() << RESET << endl;

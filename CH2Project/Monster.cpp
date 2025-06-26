@@ -96,8 +96,8 @@ void Monster::AttackPlayer(Characters& player) {
 
     if (newHealth < 0) { newHealth = 0; }
     player.SetHealth(newHealth);
-    oss << Name << "이(가) " << player.GetName() << "를 공격합니다! "
-        << player.GetName() << " 체력: " << GREEN << prevPlayerHealth << RESET << " → " << RED<< player.GetHealth() << RESET << endl;
+    oss << Name << "이(가) " << player.GetName() << "를 공격합니다." << endl;
+    oss << player.GetName() << " 체력: " << GREEN << prevPlayerHealth << RESET << " → " << RED<< player.GetHealth() << RESET << endl;
     GameLog::GetInstance()->PrintAndLog(oss.str());
 	cout << endl;
 	// 로그 추가

@@ -61,7 +61,7 @@ void BossMonster::AttackPlayer(Characters& player)
     int skillChance = chanceDistribution(rng);
     if (skillChance < 30)
     {
-        oss << Name << "이(가) 강력한 기술로 " << player.GetName() << "를 공격합니다! ";
+        oss << Name << "이(가) 강력한 기술로 " << player.GetName() << "를 공격합니다!"<<endl;
 		GameLog::GetInstance()->PrintAndLog(oss.str());
         IsSkill = true;
         if (player.GetTotalArmorStat() - SkillAttack > 0) {
@@ -74,7 +74,7 @@ void BossMonster::AttackPlayer(Characters& player)
     }
     else
     {
-        oss << Name << "이(가) " << player.GetName() << "를 공격합니다! ";
+        oss << Name << "이(가) " << player.GetName() << "를 공격합니다."<<endl;
 		GameLog::GetInstance()->PrintAndLog(oss.str());
         if (player.GetTotalArmorStat() - Attack > 0) {
             ArmorSubAttack = 0;
@@ -109,7 +109,7 @@ void BossMonster::AttackPlayer(Characters& player)
 			oss.str("");
 			oss.clear();
             oss << player.GetName() << "이(가) 공격력 감소 디버프에 걸렸습니다! "
-                << player.GetName() << " 공격력: " << GREEN << prevPlayerAttack << RESET << " → " << RED << player.GetBaseAttack() << RESET << endl;
+                << "(" << player.GetName() << " 공격력: " << GREEN << prevPlayerAttack << RESET << " → " << RED << player.GetBaseAttack() << RESET <<")"<< endl;
 			GameLog::GetInstance()->PrintAndLog(oss.str());
 		}
         else if(debuffChance >=20 && debuffChance < 40)
@@ -127,7 +127,7 @@ void BossMonster::AttackPlayer(Characters& player)
 			oss.str("");
 			oss.clear();
             oss << player.GetName() << "이(가) 방어력 감소 디버프에 걸렸습니다! "
-                << player.GetName() << " 방어력: " << GREEN << prevPlayerArmorStat << RESET << " → " << RED << player.GetTotalArmorStat() << RESET << endl;
+                << "("<< player.GetName() << " 방어력: " << GREEN << prevPlayerArmorStat << RESET << " → " << RED << player.GetTotalArmorStat() << RESET << ")" << endl;
 			GameLog::GetInstance()->PrintAndLog(oss.str());
 		}
     }

@@ -62,7 +62,7 @@ void GameManager::Battle(Characters& player, Monster& enemy)
     // 플레이어와 적 모두 살아있을 경우
     while (player.GetHealth() > 0 && enemy.GetHealth() > 0)
     {   
-        if(enemy.IsGoldenGoblin() && BattleCount >= 3)
+        if(enemy.IsGoldenGoblin() && BattleCount >= 4)
         {
 			oss.str("");
 			oss.clear();
