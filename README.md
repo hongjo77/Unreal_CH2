@@ -660,7 +660,15 @@ if (!IsSkill)
 <details>
 	<summary>무기 장비를 통해 공격력 상승</summary>
 
+
+![image](https://github.com/user-attachments/assets/a7b366eb-e800-4d64-80a2-ac7f751f641f)
+
 ```c++
+int Characters::RandomAttack()
+{
+    //공격 타입 설정
+    Characters::RandomSkill();
+    int Attack = this->Attack + this->weapon->GetStat();
 
 ```
 </details>
@@ -668,21 +676,202 @@ if (!IsSkill)
 	<summary>방어구 장비를 통해 방어도 상승</summary>
 
 ```c++
+int Characters::GetTotalArmorStat()const 
+{
+    //생성자로 항상 기본장비가 있기 때문에 체크 필요 x
+    int total = 0;
+    total = this->helmet->GetStat() + this->chest->GetStat() + this->leg->GetStat();
+    return total;
+ }
+```
+```c++
+void Monster::AttackPlayer(Characters& player) {
+	std:stringstream oss;
+    int prevPlayerHealth = player.GetHealth();
+    int ArmorSubAttack = 0;
+    if (player.GetTotalArmorStat() - Attack > 0) {
+        ArmorSubAttack = 0;
+    }
+    else {
+        ArmorSubAttack = player.GetTotalArmorStat() - Attack;
+    }
+    int newHealth = prevPlayerHealth + ArmorSubAttack;
 
+    if (newHealth < 0) { newHealth = 0; }
+    player.SetHealth(newHealth);
+    oss << Name << "이(가) " << player.GetName() << "를 공격합니다." << endl;
+    oss << player.GetName() << " 체력: " << GREEN << prevPlayerHealth << RESET << " → " << RED<< player.GetHealth() << RESET << endl;
+    GameLog::GetInstance()->PrintAndLog(oss.str());
+	cout << endl;
+	// 로그 추가
+	GameLog::GetInstance()->TakeDamageAchievement(-ArmorSubAttack);
+}
 ```
 </details>
 <details>
 	<summary>상점에서 장비를 강화하는 대장장이 기능 추가</summary>
 
-```c++
+![image](https://github.com/user-attachments/assets/fa9edc7b-1fbb-46b6-8dbe-051f2bcf621b)
 
+```c++
+shopInstance.DisplayItems();
+        cout << "골드: " << player.GetGold() << endl;
+        cout << "1. 아이템 구매 2. 아이템 판매 3. 장비 강화 0. 상점 나가기 " << endl;
+        cout << "선택: ";
+        int menu = 0;
+        cin >> menu;
+```
+```c++
+else if (menu == 3)
+{
+	shopInstance.EquipEnhance(player);
+	system("cls");
+}
 ```
 </details>
 <details>
 	<summary>강화 성공은 확률이 존재하며 실패 시 강화 수치 유지 or 하락</summary>
 
-```c++
+![image](https://github.com/user-attachments/assets/215c4689-289a-47fd-a940-76f6f60947ee)
+![image](https://github.com/user-attachments/assets/0ce863a2-4016-4c5e-b2a1-e14c78fe300b)
+![image](https://github.com/user-attachments/assets/b44ae707-28e4-4646-ad26-15cc6df4b0b2)
+![image](https://github.com/user-attachments/assets/bd20e588-e944-49e3-a866-929cdf96fea0)
 
+```c++
+void Shop::EquipEnhance(Characters& player) {
+
+
+    auto EquipList = player.GetEquipments();
+    
+    while (true) {
+        system("cls");
+        cout << "현재 소지 금액 " << player.GetGold() << endl;
+        cout << YELLOW << "============================================" <<  endl;
+        for (int i = 0; i < EquipList.size(); i++) {
+            cout << i + 1 << ". " << EquipList[i]->GetName() << "  강화레벨 : " << EquipList[i]->GetEnLevel();
+            if (EquipList[i]->GetEnLevel() == 5) {
+                cout << "  강화 소모 골드 : -" << endl;
+            }
+            else {
+                cout << "  강화 소모 골드 : " << (EquipList[i]->GetEnLevel() + 1) * 5 << endl;
+            }
+            
+        }
+        cout << "============================================" << RESET << endl;
+        cout << "강화할 아이템을 선택하세요 (0: 취소) : ";
+
+        int equipIdx = 0;
+        cin >> equipIdx;
+        
+        if (cin.fail()) {
+            cin.clear();
+            cin.ignore(numeric_limits<streamsize>::max(), '\n');
+            equipIdx = EquipList.size() + 1;
+        }
+        else {
+            cin.ignore(numeric_limits<streamsize>::max(), '\n');
+        }
+
+        if (equipIdx == 0) return;
+        if (equipIdx > EquipList.size()) {
+            cout << "잘못된 입력입니다." << endl;
+            system("pause");
+            continue;
+        }
+
+        int EnLevel = EquipList[equipIdx - 1]->GetEnLevel();
+        int Stat = EquipList[equipIdx - 1]->GetStat();
+
+        if (EnLevel >= 5) {
+            cout << "장비 강화가 끝난 장비입니다. \n" << endl;
+            system("pause");
+            continue;
+        }
+
+        int useGold = (EnLevel + 1) * 5;
+
+        if (player.GetGold() < useGold)
+        {
+            cout << "골드가 부족합니다. \n" << endl;
+            system("pause");
+            continue;
+        }
+        player.SetGold(player.GetGold() - useGold);
+		GameLog::GetInstance()->GoldAchievement(-useGold);
+
+        //확률
+        int probability = rand() % 100;
+
+        int count = 0;
+        while (count < 6) {
+            if (count % 2 == 0) {
+                system("cls");
+                cout << "_____________" << endl;
+                cout << "|            |" << endl;
+                cout << "|____________|" << endl;
+                cout << "     |  |        " << endl;
+                cout << "     |  |        " << endl;
+                cout << "     |  |        " << endl;
+                cout << "     |  |        " << endl;
+                cout << "     |__|        " << endl;
+
+                Sleep(300);
+                count++;
+            }
+            else {
+                system("cls");
+                cout << "             _____" << endl;
+                cout << "             |    |" << endl;
+                cout << "_____________|    |" << endl;
+                cout << "|____________|    |   땅~" << endl;
+                cout << "             |    |" << endl;
+                cout << "             |____|" << endl;
+                cout << "\x1b[91m""         +*\\*\\+*+*/+/+*" << RESET << endl;
+                cout << RED << "           *\\*\\+*/+/+" << RESET << endl;
+
+                Sleep(300);
+                count++;
+            }
+        }
+
+        if (probability < EnhanceLogic(EnLevel)) {
+            cout << GREEN << "\n강화에 성공하셨습니다! \n" << RESET << endl;
+            EquipList[equipIdx - 1]->SetEnLevel(EnLevel + 1);
+            EquipList[equipIdx - 1]->SetStat(Stat + 7);
+
+            GameLog::GetInstance()->EquipmentAchievement(
+                EquipList[equipIdx - 1]->GetName(),
+                EquipList[equipIdx - 1]->GetEnLevel(),
+                0
+            );
+
+            system("pause");
+        }
+        else {
+            cout << RED << "\n강화에 실패하셨습니다. \n" << RESET << endl;
+            GameLog::GetInstance()->EquipmentAchievement(
+                EquipList[equipIdx - 1]->GetName(),
+                EquipList[equipIdx - 1]->GetEnLevel(),
+                1
+            );
+
+            if (0 == rand() % 5 && EquipList[equipIdx - 1]->GetEnLevel() != 0) {
+                cout << RED << "강화에 실패하여 강화 레벨이 하락하였습니다. \n" << RESET << endl;
+                EquipList[equipIdx - 1]->SetEnLevel(EnLevel - 1);
+                EquipList[equipIdx - 1]->SetStat(Stat - 5);
+
+                GameLog::GetInstance()->EquipmentAchievement(
+                    EquipList[equipIdx - 1]->GetName(),
+                    EquipList[equipIdx - 1]->GetEnLevel(),
+                    2
+                );
+            }
+
+            system("pause");
+
+        }
+    }
+}
 ```
 </details>
 
