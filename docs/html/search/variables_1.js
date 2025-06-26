@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['health_0',['Health',['../class_monster.html#a233683dd12f861498c2dc97c4e24699c',1,'Monster']]]
+  ['enhancementlevel_0',['EnhancementLevel',['../class_equipment.html#a38d0e174dc04f3ea6d99a186fbaa9a21',1,'Equipment']]]
 ];

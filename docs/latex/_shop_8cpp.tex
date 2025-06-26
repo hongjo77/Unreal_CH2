@@ -3,7 +3,12 @@
 {\ttfamily \#include "{}Shop.\+h"{}}\newline
 {\ttfamily \#include "{}Health\+Potion.\+h"{}}\newline
 {\ttfamily \#include "{}Attack\+Boost.\+h"{}}\newline
+{\ttfamily \#include "{}Game\+Log.\+h"{}}\newline
+{\ttfamily \#include "{}Color.\+h"{}}\newline
 {\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$Windows.\+h$>$}\newline
+{\ttfamily \#include $<$cstdlib$>$}\newline
+{\ttfamily \#include $<$sstream$>$}\newline
 Shop.\+cpp에 대한 include 의존 그래프
 \nopagebreak
 \begin{figure}[H]
@@ -12,3 +17,59 @@ Shop.\+cpp에 대한 include 의존 그래프
 \includegraphics[width=350pt]{_shop_8cpp__incl}
 \end{center}
 \end{figure}
+\doxysubsubsection*{매크로}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{_shop_8cpp_a9f918755b601cf4bffca775992e6fb90}{NOMINMAX}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{함수}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{_shop_8cpp_a25f351c8b88dd32f6f2a910f69d2c826}{Enhance\+Logic}} (int En\+Level)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{변수}
+\begin{DoxyCompactItemize}
+\item 
+HANDLE \mbox{\hyperlink{_shop_8cpp_a36b9671cd6945563286390e4dc3316ab}{h\+Console}} = Get\+Std\+Handle(STD\+\_\+\+OUTPUT\+\_\+\+HANDLE)
+\end{DoxyCompactItemize}
+
+
+\label{doc-define-members}
+\Hypertarget{_shop_8cpp_doc-define-members}
+\doxysubsection{매크로 문서화}
+\Hypertarget{_shop_8cpp_a9f918755b601cf4bffca775992e6fb90}\index{Shop.cpp@{Shop.cpp}!NOMINMAX@{NOMINMAX}}
+\index{NOMINMAX@{NOMINMAX}!Shop.cpp@{Shop.cpp}}
+\doxysubsubsection{\texorpdfstring{NOMINMAX}{NOMINMAX}}
+{\footnotesize\ttfamily \label{_shop_8cpp_a9f918755b601cf4bffca775992e6fb90} 
+\#define NOMINMAX}
+
+
+
+\label{doc-func-members}
+\Hypertarget{_shop_8cpp_doc-func-members}
+\doxysubsection{함수 문서화}
+\Hypertarget{_shop_8cpp_a25f351c8b88dd32f6f2a910f69d2c826}\index{Shop.cpp@{Shop.cpp}!EnhanceLogic@{EnhanceLogic}}
+\index{EnhanceLogic@{EnhanceLogic}!Shop.cpp@{Shop.cpp}}
+\doxysubsubsection{\texorpdfstring{EnhanceLogic()}{EnhanceLogic()}}
+{\footnotesize\ttfamily \label{_shop_8cpp_a25f351c8b88dd32f6f2a910f69d2c826} 
+int Enhance\+Logic (\begin{DoxyParamCaption}\item[{int}]{En\+Level}{}\end{DoxyParamCaption})}
+
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=301pt]{_shop_8cpp_a25f351c8b88dd32f6f2a910f69d2c826_icgraph}
+\end{center}
+\end{figure}
+
+
+\label{doc-var-members}
+\Hypertarget{_shop_8cpp_doc-var-members}
+\doxysubsection{변수 문서화}
+\Hypertarget{_shop_8cpp_a36b9671cd6945563286390e4dc3316ab}\index{Shop.cpp@{Shop.cpp}!hConsole@{hConsole}}
+\index{hConsole@{hConsole}!Shop.cpp@{Shop.cpp}}
+\doxysubsubsection{\texorpdfstring{hConsole}{hConsole}}
+{\footnotesize\ttfamily \label{_shop_8cpp_a36b9671cd6945563286390e4dc3316ab} 
+HANDLE h\+Console = Get\+Std\+Handle(STD\+\_\+\+OUTPUT\+\_\+\+HANDLE)}
+

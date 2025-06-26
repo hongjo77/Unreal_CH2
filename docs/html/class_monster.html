@@ -88,7 +88,7 @@ $(function(){initNavTree('class_monster.html','','class_monster-members'); });
 </div>
 
 <div class="header">
-  <div class="headertitle"><div class="title">Monster 클래스 참조</div></div>
+  <div class="headertitle"><div class="title">Monster 클래스 참조<span class="mlabels"><span class="mlabel abstract">abstract</span></span></div></div>
 </div><!--header-->
 <div class="contents">
 
@@ -98,15 +98,17 @@ Monster에 대한 상속 다이어그램 : </div>
 <div class="dyncontent">
 <div class="center"><img src="class_monster__inherit__graph.png" border="0" usemap="#a_monster_inherit__map" loading="lazy" alt="Inheritance graph"/></div>
 <map name="a_monster_inherit__map" id="a_monster_inherit__map">
-<area shape="rect" title=" " alt="" coords="160,5,229,32"/>
-<area shape="rect" href="class_boss_monster.html" title=" " alt="" coords="5,80,104,107"/>
-<area shape="poly" title=" " alt="" coords="158,42,80,82,78,77,155,37"/>
-<area shape="rect" href="class_goblin.html" title=" " alt="" coords="128,80,186,107"/>
-<area shape="poly" title=" " alt="" coords="183,47,166,81,161,78,179,45"/>
-<area shape="rect" href="class_orc.html" title=" " alt="" coords="211,80,253,107"/>
-<area shape="poly" title=" " alt="" coords="210,45,228,78,223,81,206,47"/>
-<area shape="rect" href="class_troll.html" title=" " alt="" coords="277,80,323,107"/>
-<area shape="poly" title=" " alt="" coords="227,39,283,77,280,82,224,43"/>
+<area shape="rect" title=" " alt="" coords="188,5,256,32"/>
+<area shape="rect" href="class_bat.html" title=" " alt="" coords="5,80,47,107"/>
+<area shape="poly" title=" " alt="" coords="174,40,59,83,48,87,46,82,57,77,172,35"/>
+<area shape="rect" href="class_boss_monster.html" title=" " alt="" coords="70,80,168,107"/>
+<area shape="poly" title=" " alt="" coords="193,44,139,82,136,77,190,39"/>
+<area shape="rect" href="class_goblin.html" title=" " alt="" coords="193,80,251,107"/>
+<area shape="poly" title=" " alt="" coords="225,48,225,80,219,80,219,48"/>
+<area shape="rect" href="class_golden_goblin.html" title=" " alt="" coords="275,80,374,107"/>
+<area shape="poly" title=" " alt="" coords="254,39,308,77,305,82,251,44"/>
+<area shape="rect" href="class_slime.html" title=" " alt="" coords="399,80,453,107"/>
+<area shape="poly" title=" " alt="" coords="271,35,399,80,398,85,270,40"/>
 </map>
 <center><span class="legend">[<a target="top" href="graph_legend.html">범례</a>]</span></center></div>
 <table class="memberdecls">
@@ -117,9 +119,13 @@ Public 멤버 함수</h2></td></tr>
 <tr class="memitem:a7071b2d3fbf06db48888cf0792aff358" id="r_a7071b2d3fbf06db48888cf0792aff358"><td class="memItemLeft" align="right" valign="top">virtual string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7071b2d3fbf06db48888cf0792aff358">GetName</a> () const</td></tr>
 <tr class="memitem:a2083a208cf409f4d35e1fe34e09d8e42" id="r_a2083a208cf409f4d35e1fe34e09d8e42"><td class="memItemLeft" align="right" valign="top">virtual int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2083a208cf409f4d35e1fe34e09d8e42">GetHealth</a> () const</td></tr>
 <tr class="memitem:a794f6da1ba6594041441a44d1b28fa26" id="r_a794f6da1ba6594041441a44d1b28fa26"><td class="memItemLeft" align="right" valign="top">virtual int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a794f6da1ba6594041441a44d1b28fa26">GetAttack</a> () const</td></tr>
+<tr class="memitem:a8e1bd5c8dde9c379e52708be0a8f2429" id="r_a8e1bd5c8dde9c379e52708be0a8f2429"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8e1bd5c8dde9c379e52708be0a8f2429">TextArt</a> () const =0</td></tr>
 <tr class="memitem:a709323e30e2ef726afc23793d7eec204" id="r_a709323e30e2ef726afc23793d7eec204"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a709323e30e2ef726afc23793d7eec204">TakeDamage</a> (int damage)</td></tr>
-<tr class="memitem:a19aaa56f2e8245254416ebb2048c5d21" id="r_a19aaa56f2e8245254416ebb2048c5d21"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="class_item.html">Item</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a19aaa56f2e8245254416ebb2048c5d21">DropItem</a> ()</td></tr>
+<tr class="memitem:a9c6a5aad86d230562434e062c932db2f" id="r_a9c6a5aad86d230562434e062c932db2f"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9c6a5aad86d230562434e062c932db2f">OnDeath</a> (<a class="el" href="class_characters.html">Characters</a> &amp;player)</td></tr>
+<tr class="memitem:ab81423f5edd23fedf945be9e2418f8d4" id="r_ab81423f5edd23fedf945be9e2418f8d4"><td class="memItemLeft" align="right" valign="top">virtual int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab81423f5edd23fedf945be9e2418f8d4">DropItem</a> ()</td></tr>
+<tr class="memitem:a23a5dd14b320162ff9e895c1bb8cf700" id="r_a23a5dd14b320162ff9e895c1bb8cf700"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a23a5dd14b320162ff9e895c1bb8cf700">AttackPlayer</a> (<a class="el" href="class_characters.html">Characters</a> &amp;player)</td></tr>
 <tr class="memitem:ac6f0dd1d3632f1a2018013e9dbdd6ecc" id="r_ac6f0dd1d3632f1a2018013e9dbdd6ecc"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac6f0dd1d3632f1a2018013e9dbdd6ecc">IsBoss</a> () const</td></tr>
+<tr class="memitem:ab2b5614d8246fbbab20d5190cb510855" id="r_ab2b5614d8246fbbab20d5190cb510855"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab2b5614d8246fbbab20d5190cb510855">IsGoldenGoblin</a> () const</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pro-attribs" class="groupheader"><a id="pro-attribs" name="pro-attribs"></a>
 Protected 속성</h2></td></tr>
@@ -156,15 +162,17 @@ Protected 속성</h2></td></tr>
 <div class="dyncontent">
 <div class="center"><img src="class_monster_a8c9c6024d7ad373f1a2cd4ee5dedfd78_icgraph.png" border="0" usemap="#aclass_monster_a8c9c6024d7ad373f1a2cd4ee5dedfd78_icgraph" loading="lazy" alt=""/></div>
 <map name="aclass_monster_a8c9c6024d7ad373f1a2cd4ee5dedfd78_icgraph" id="aclass_monster_a8c9c6024d7ad373f1a2cd4ee5dedfd78_icgraph">
-<area shape="rect" title=" " alt="" coords="237,81,360,108"/>
-<area shape="rect" href="class_boss_monster.html#aef30dc963d9c3077ca4ee414aca8c694" title=" " alt="" coords="5,5,189,32"/>
-<area shape="poly" title=" " alt="" coords="256,76,188,46,153,35,155,30,190,42,258,71"/>
-<area shape="rect" href="class_goblin.html#a9e93cac750755dc82dbdce99023b5db0" title=" " alt="" coords="45,56,149,83"/>
-<area shape="poly" title=" " alt="" coords="221,88,149,78,150,73,222,82"/>
-<area shape="rect" href="class_orc.html#aeb59167c062de086f15d0e5647a30c0a" title=" " alt="" coords="61,107,133,133"/>
-<area shape="poly" title=" " alt="" coords="222,107,134,118,133,113,221,102"/>
-<area shape="rect" href="class_troll.html#af797c653934d6bcff356f150c4d8bfa8" title=" " alt="" coords="57,157,137,184"/>
-<area shape="poly" title=" " alt="" coords="258,118,190,148,138,164,136,159,188,143,256,113"/>
+<area shape="rect" title=" " alt="" coords="239,107,362,133"/>
+<area shape="rect" href="class_bat.html#a93339c3704a4344c448a0f920c4ef863" title=" " alt="" coords="63,5,133,32"/>
+<area shape="poly" title=" " alt="" coords="270,99,233,72,190,46,132,28,134,23,192,42,236,67,273,95"/>
+<area shape="rect" href="class_boss_monster.html#aef30dc963d9c3077ca4ee414aca8c694" title=" " alt="" coords="6,56,190,83"/>
+<area shape="poly" title=" " alt="" coords="228,105,154,86,155,81,230,100"/>
+<area shape="rect" href="class_goblin.html#a9e93cac750755dc82dbdce99023b5db0" title=" " alt="" coords="46,107,150,133"/>
+<area shape="poly" title=" " alt="" coords="223,123,150,123,150,117,223,117"/>
+<area shape="rect" href="class_golden_goblin.html#a50cb98852870f97bd9eb29ff84c462d8" title=" " alt="" coords="5,157,191,184"/>
+<area shape="poly" title=" " alt="" coords="230,140,155,159,154,154,228,135"/>
+<area shape="rect" href="class_slime.html#a67639b623f67ddfff888e6cb7a34f78f" title=" " alt="" coords="50,208,146,235"/>
+<area shape="poly" title=" " alt="" coords="273,145,236,173,192,198,147,214,145,209,190,194,233,168,270,141"/>
 </map>
 </div>
 
@@ -196,8 +204,8 @@ Protected 속성</h2></td></tr>
 </div>
 </div>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">멤버 함수 문서화</h2>
-<a id="a19aaa56f2e8245254416ebb2048c5d21" name="a19aaa56f2e8245254416ebb2048c5d21"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a19aaa56f2e8245254416ebb2048c5d21">&#9670;&#160;</a></span>DropItem()</h2>
+<a id="a23a5dd14b320162ff9e895c1bb8cf700" name="a23a5dd14b320162ff9e895c1bb8cf700"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a23a5dd14b320162ff9e895c1bb8cf700">&#9670;&#160;</a></span>AttackPlayer()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -206,7 +214,74 @@ Protected 속성</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="class_item.html">Item</a> * Monster::DropItem </td>
+          <td class="memname">void Monster::AttackPlayer </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_characters.html">Characters</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>player</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><a class="el" href="class_boss_monster.html#a391299071904a7b2827c30678d58b293">BossMonster</a>, <a class="el" href="class_golden_goblin.html#ab5da9dbee44be6b49ffcc289d3254aa9">GoldenGoblin</a>에서 재구현되었습니다.</p>
+<div class="dynheader">
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_monster_a23a5dd14b320162ff9e895c1bb8cf700_cgraph.png" border="0" usemap="#aclass_monster_a23a5dd14b320162ff9e895c1bb8cf700_cgraph" loading="lazy" alt=""/></div>
+<map name="aclass_monster_a23a5dd14b320162ff9e895c1bb8cf700_cgraph" id="aclass_monster_a23a5dd14b320162ff9e895c1bb8cf700_cgraph">
+<area shape="rect" title=" " alt="" coords="5,157,157,184"/>
+<area shape="rect" href="class_characters.html#a1f6b79ef33c4eccdf5165b19562d4258" title=" " alt="" coords="248,5,400,32"/>
+<area shape="poly" title=" " alt="" coords="89,155,133,100,166,68,203,42,232,30,234,35,206,46,169,72,137,103,93,159"/>
+<area shape="rect" href="class_game_log.html#a122d5e3170dca111d737bf9633e65fc4" title=" " alt="" coords="246,56,402,83"/>
+<area shape="poly" title=" " alt="" coords="99,154,145,123,204,92,230,83,232,88,206,97,148,128,102,159"/>
+<area shape="rect" href="class_characters.html#a884e4c03002aacc3804adecf23292482" title=" " alt="" coords="249,107,398,133"/>
+<area shape="poly" title=" " alt="" coords="148,154,241,134,242,140,149,159"/>
+<area shape="rect" href="class_characters.html#a9acbf492e346aa9e87d073f261c7e835" title=" " alt="" coords="223,157,424,184"/>
+<area shape="poly" title=" " alt="" coords="157,168,208,168,208,173,157,173"/>
+<area shape="rect" href="class_game_log.html#ab774dd34c5ee4427f0bd22d2cabf2d39" title=" " alt="" coords="246,208,402,235"/>
+<area shape="poly" title=" " alt="" coords="149,182,242,202,241,207,148,187"/>
+<area shape="rect" href="class_characters.html#acf71dabdac969cc715182013b2a324d7" title=" " alt="" coords="248,259,400,285"/>
+<area shape="poly" title=" " alt="" coords="102,182,148,214,206,244,234,254,232,259,204,249,145,218,99,187"/>
+<area shape="rect" href="class_game_log.html#a4aa4ce6d027e792565efb7fadf499b80" title=" " alt="" coords="205,309,443,336"/>
+<area shape="poly" title=" " alt="" coords="93,183,137,238,169,269,206,295,218,301,216,306,203,300,166,273,133,242,89,186"/>
+<area shape="rect" href="class_game_log.html#a4762226457c7641a86d1a8df16623b96" title=" " alt="" coords="526,208,655,235"/>
+<area shape="poly" title=" " alt="" coords="403,219,510,219,510,224,403,224"/>
+<area shape="rect" href="class_game_log.html#a1e003860239f6ac3d11b8fa3ff7939ae" title=" " alt="" coords="491,284,690,311"/>
+<area shape="poly" title=" " alt="" coords="443,309,475,306,476,311,444,314"/>
+<area shape="rect" href="class_game_log.html#a119eccba7ed2b6cebe86b554bdac711c" title=" " alt="" coords="516,335,666,361"/>
+<area shape="poly" title=" " alt="" coords="444,331,500,337,500,342,443,337"/>
+</map>
+</div>
+<div class="dynheader">
+이 함수를 호출하는 함수들에 대한 그래프입니다.:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_monster_a23a5dd14b320162ff9e895c1bb8cf700_icgraph.png" border="0" usemap="#aclass_monster_a23a5dd14b320162ff9e895c1bb8cf700_icgraph" loading="lazy" alt=""/></div>
+<map name="aclass_monster_a23a5dd14b320162ff9e895c1bb8cf700_icgraph" id="aclass_monster_a23a5dd14b320162ff9e895c1bb8cf700_icgraph">
+<area shape="rect" title=" " alt="" coords="299,5,450,32"/>
+<area shape="rect" href="class_game_manager.html#a49b13f02f36be41415bd9dc60c55c2a1" title=" " alt="" coords="103,5,251,32"/>
+<area shape="poly" title=" " alt="" coords="283,21,251,21,251,16,283,16"/>
+<area shape="rect" href="_main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,5,55,32"/>
+<area shape="poly" title=" " alt="" coords="87,21,55,21,55,16,87,16"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ab81423f5edd23fedf945be9e2418f8d4" name="ab81423f5edd23fedf945be9e2418f8d4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab81423f5edd23fedf945be9e2418f8d4">&#9670;&#160;</a></span>DropItem()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Monster::DropItem </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td></td>
@@ -219,15 +294,33 @@ Protected 속성</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <div class="dynheader">
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_monster_ab81423f5edd23fedf945be9e2418f8d4_cgraph.png" border="0" usemap="#aclass_monster_ab81423f5edd23fedf945be9e2418f8d4_cgraph" loading="lazy" alt=""/></div>
+<map name="aclass_monster_ab81423f5edd23fedf945be9e2418f8d4_cgraph" id="aclass_monster_ab81423f5edd23fedf945be9e2418f8d4_cgraph">
+<area shape="rect" title=" " alt="" coords="5,31,136,57"/>
+<area shape="rect" href="class_game_log.html#a122d5e3170dca111d737bf9633e65fc4" title=" " alt="" coords="184,5,340,32"/>
+<area shape="poly" title=" " alt="" coords="136,33,168,28,169,34,137,38"/>
+<area shape="rect" href="class_game_log.html#ab774dd34c5ee4427f0bd22d2cabf2d39" title=" " alt="" coords="184,56,340,83"/>
+<area shape="poly" title=" " alt="" coords="137,50,169,54,168,60,136,55"/>
+<area shape="rect" href="class_game_log.html#a4762226457c7641a86d1a8df16623b96" title=" " alt="" coords="388,56,517,83"/>
+<area shape="poly" title=" " alt="" coords="340,67,373,67,373,72,340,72"/>
+</map>
+</div>
+<div class="dynheader">
 이 함수를 호출하는 함수들에 대한 그래프입니다.:</div>
 <div class="dyncontent">
-<div class="center"><img src="class_monster_a19aaa56f2e8245254416ebb2048c5d21_icgraph.png" border="0" usemap="#aclass_monster_a19aaa56f2e8245254416ebb2048c5d21_icgraph" loading="lazy" alt=""/></div>
-<map name="aclass_monster_a19aaa56f2e8245254416ebb2048c5d21_icgraph" id="aclass_monster_a19aaa56f2e8245254416ebb2048c5d21_icgraph">
-<area shape="rect" title=" " alt="" coords="299,5,429,32"/>
-<area shape="rect" href="class_game_manager.html#a49b13f02f36be41415bd9dc60c55c2a1" title=" " alt="" coords="103,5,251,32"/>
-<area shape="poly" title=" " alt="" coords="283,21,252,21,252,16,283,16"/>
-<area shape="rect" href="_main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,5,55,32"/>
-<area shape="poly" title=" " alt="" coords="87,21,55,21,55,16,87,16"/>
+<div class="center"><img src="class_monster_ab81423f5edd23fedf945be9e2418f8d4_icgraph.png" border="0" usemap="#aclass_monster_ab81423f5edd23fedf945be9e2418f8d4_icgraph" loading="lazy" alt=""/></div>
+<map name="aclass_monster_ab81423f5edd23fedf945be9e2418f8d4_icgraph" id="aclass_monster_ab81423f5edd23fedf945be9e2418f8d4_icgraph">
+<area shape="rect" title=" " alt="" coords="529,31,660,57"/>
+<area shape="rect" href="class_golden_goblin.html#ab5da9dbee44be6b49ffcc289d3254aa9" title=" " alt="" coords="299,5,481,32"/>
+<area shape="poly" title=" " alt="" coords="513,37,481,33,482,27,514,31"/>
+<area shape="rect" href="class_monster.html#a9c6a5aad86d230562434e062c932db2f" title=" " alt="" coords="326,56,454,83"/>
+<area shape="poly" title=" " alt="" coords="514,57,455,64,455,59,514,51"/>
+<area shape="rect" href="class_game_manager.html#a49b13f02f36be41415bd9dc60c55c2a1" title=" " alt="" coords="103,56,251,83"/>
+<area shape="poly" title=" " alt="" coords="310,72,251,72,251,67,310,67"/>
+<area shape="rect" href="_main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,56,55,83"/>
+<area shape="poly" title=" " alt="" coords="87,72,55,72,55,67,87,67"/>
 </map>
 </div>
 
@@ -383,6 +476,124 @@ Protected 속성</h2></td></tr>
 
 </div>
 </div>
+<a id="ab2b5614d8246fbbab20d5190cb510855" name="ab2b5614d8246fbbab20d5190cb510855"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab2b5614d8246fbbab20d5190cb510855">&#9670;&#160;</a></span>IsGoldenGoblin()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Monster::IsGoldenGoblin </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><a class="el" href="class_golden_goblin.html#a3b18ca9d1f808c590c53e8a26ef467c6">GoldenGoblin</a>에서 재구현되었습니다.</p>
+<div class="dynheader">
+이 함수를 호출하는 함수들에 대한 그래프입니다.:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_monster_ab2b5614d8246fbbab20d5190cb510855_icgraph.png" border="0" usemap="#aclass_monster_ab2b5614d8246fbbab20d5190cb510855_icgraph" loading="lazy" alt=""/></div>
+<map name="aclass_monster_ab2b5614d8246fbbab20d5190cb510855_icgraph" id="aclass_monster_ab2b5614d8246fbbab20d5190cb510855_icgraph">
+<area shape="rect" title=" " alt="" coords="299,5,464,32"/>
+<area shape="rect" href="class_game_manager.html#a49b13f02f36be41415bd9dc60c55c2a1" title=" " alt="" coords="103,5,251,32"/>
+<area shape="poly" title=" " alt="" coords="284,21,252,21,252,16,284,16"/>
+<area shape="rect" href="_main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,5,55,32"/>
+<area shape="poly" title=" " alt="" coords="87,21,55,21,55,16,87,16"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a9c6a5aad86d230562434e062c932db2f" name="a9c6a5aad86d230562434e062c932db2f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9c6a5aad86d230562434e062c932db2f">&#9670;&#160;</a></span>OnDeath()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Monster::OnDeath </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_characters.html">Characters</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>player</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><a class="el" href="class_boss_monster.html#a00a02210856ef56601c033d357c423b3">BossMonster</a>, <a class="el" href="class_golden_goblin.html#ad7bc3f8134fd6baec62d182366af2e36">GoldenGoblin</a>에서 재구현되었습니다.</p>
+<div class="dynheader">
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_monster_a9c6a5aad86d230562434e062c932db2f_cgraph.png" border="0" usemap="#aclass_monster_a9c6a5aad86d230562434e062c932db2f_cgraph" loading="lazy" alt=""/></div>
+<map name="aclass_monster_a9c6a5aad86d230562434e062c932db2f_cgraph" id="aclass_monster_a9c6a5aad86d230562434e062c932db2f_cgraph">
+<area shape="rect" title=" " alt="" coords="5,265,134,292"/>
+<area shape="rect" href="class_monster.html#ab81423f5edd23fedf945be9e2418f8d4" title=" " alt="" coords="236,63,366,89"/>
+<area shape="poly" title=" " alt="" coords="73,264,87,231,110,188,141,144,180,106,220,86,222,91,183,110,145,147,114,191,92,233,78,266"/>
+<area shape="rect" href="class_game_log.html#a122d5e3170dca111d737bf9633e65fc4" title=" " alt="" coords="490,25,646,52"/>
+<area shape="poly" title=" " alt="" coords="70,264,79,220,98,160,112,128,130,98,153,71,180,48,219,28,260,15,303,7,346,3,430,7,501,19,500,24,429,13,346,9,304,12,261,20,221,33,183,53,157,75,135,101,117,131,103,162,84,222,75,265"/>
+<area shape="rect" href="class_game_log.html#ab774dd34c5ee4427f0bd22d2cabf2d39" title=" " alt="" coords="490,88,646,115"/>
+<area shape="poly" title=" " alt="" coords="76,263,115,207,145,175,180,150,234,132,309,119,474,103,474,109,310,124,235,137,183,154,148,179,119,210,81,266"/>
+<area shape="rect" href="class_characters.html#ad9da8f9b3727fc62478af2142000b000" title=" " alt="" coords="211,164,390,191"/>
+<area shape="poly" title=" " alt="" coords="85,263,126,231,181,200,200,193,202,198,183,205,129,236,88,267"/>
+<area shape="rect" href="class_characters.html#ac7cf4e011a1f83f4fd2dd6cc27d2fc7e" title=" " alt="" coords="230,215,372,241"/>
+<area shape="poly" title=" " alt="" coords="131,262,181,251,219,242,220,248,182,256,132,267"/>
+<area shape="rect" href="class_characters.html#aa6fb49a51caa77938c62e05792fcff17" title=" " alt="" coords="217,265,385,292"/>
+<area shape="poly" title=" " alt="" coords="134,276,201,276,201,281,134,281"/>
+<area shape="rect" href="class_characters.html#a884e4c03002aacc3804adecf23292482" title=" " alt="" coords="226,316,376,343"/>
+<area shape="poly" title=" " alt="" coords="132,290,182,301,220,310,219,315,181,307,131,295"/>
+<area shape="rect" href="class_game_log.html#a8884d5c301ca0454a4c733b088b4d2a3" title=" " alt="" coords="207,417,395,444"/>
+<area shape="poly" title=" " alt="" coords="81,291,120,346,149,377,183,403,194,409,191,413,180,408,145,381,116,350,76,294"/>
+<area shape="rect" href="class_characters.html#a02abf31609d28253aba5fd553d51629b" title=" " alt="" coords="212,468,390,495"/>
+<area shape="poly" title=" " alt="" coords="78,291,91,325,112,370,143,416,162,436,183,454,199,463,196,467,180,458,158,440,139,419,108,372,86,327,73,293"/>
+<area shape="rect" href="class_characters.html#a6277ba6e439db076ec7fa58cff427335" title=" " alt="" coords="231,519,371,545"/>
+<area shape="poly" title=" " alt="" coords="76,292,86,334,106,392,137,453,158,481,183,504,217,521,214,526,180,509,154,484,133,456,101,394,81,336,71,293"/>
+<area shape="rect" href="class_game_log.html#a4aa4ce6d027e792565efb7fadf499b80" title=" " alt="" coords="182,367,420,393"/>
+<area shape="poly" title=" " alt="" coords="88,290,129,322,183,352,202,359,200,364,181,357,126,326,85,295"/>
+<area shape="poly" title=" " alt="" coords="366,64,474,49,474,54,367,70"/>
+<area shape="poly" title=" " alt="" coords="367,79,474,90,474,95,366,85"/>
+<area shape="rect" href="class_game_log.html#a4762226457c7641a86d1a8df16623b96" title=" " alt="" coords="715,88,845,115"/>
+<area shape="poly" title=" " alt="" coords="646,99,700,99,700,104,646,104"/>
+<area shape="rect" href="class_game_log.html#a1e003860239f6ac3d11b8fa3ff7939ae" title=" " alt="" coords="468,367,667,393"/>
+<area shape="poly" title=" " alt="" coords="375,414,479,394,480,399,376,419"/>
+<area shape="rect" href="class_game_log.html#a119eccba7ed2b6cebe86b554bdac711c" title=" " alt="" coords="492,417,643,444"/>
+<area shape="poly" title=" " alt="" coords="395,428,477,428,477,433,395,433"/>
+<area shape="poly" title=" " alt="" coords="420,377,453,377,453,383,420,383"/>
+<area shape="poly" title=" " alt="" coords="376,391,480,411,479,417,375,397"/>
+</map>
+</div>
+<div class="dynheader">
+이 함수를 호출하는 함수들에 대한 그래프입니다.:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_monster_a9c6a5aad86d230562434e062c932db2f_icgraph.png" border="0" usemap="#aclass_monster_a9c6a5aad86d230562434e062c932db2f_icgraph" loading="lazy" alt=""/></div>
+<map name="aclass_monster_a9c6a5aad86d230562434e062c932db2f_icgraph" id="aclass_monster_a9c6a5aad86d230562434e062c932db2f_icgraph">
+<area shape="rect" title=" " alt="" coords="299,5,427,32"/>
+<area shape="rect" href="class_game_manager.html#a49b13f02f36be41415bd9dc60c55c2a1" title=" " alt="" coords="103,5,251,32"/>
+<area shape="poly" title=" " alt="" coords="283,21,252,21,252,16,283,16"/>
+<area shape="rect" href="_main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,5,55,32"/>
+<area shape="poly" title=" " alt="" coords="87,21,55,21,55,16,87,16"/>
+</map>
+</div>
+
+</div>
+</div>
 <a id="a709323e30e2ef726afc23793d7eec204" name="a709323e30e2ef726afc23793d7eec204"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a709323e30e2ef726afc23793d7eec204">&#9670;&#160;</a></span>TakeDamage()</h2>
 
@@ -405,8 +616,22 @@ Protected 속성</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-
-<p><a class="el" href="class_boss_monster.html#a86ccfc672017d4e120c88617594ba761">BossMonster</a>, <a class="el" href="class_goblin.html#a71bce84bdbe8f9227fd72d89652aba7c">Goblin</a>, <a class="el" href="class_orc.html#a60efe89a0161200fbd08d7a3a657f2f4">Orc</a>, <a class="el" href="class_troll.html#a065e62cbe6cf0dc440932d39dbc3c685">Troll</a>에서 재구현되었습니다.</p>
+<div class="dynheader">
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_monster_a709323e30e2ef726afc23793d7eec204_cgraph.png" border="0" usemap="#aclass_monster_a709323e30e2ef726afc23793d7eec204_cgraph" loading="lazy" alt=""/></div>
+<map name="aclass_monster_a709323e30e2ef726afc23793d7eec204_cgraph" id="aclass_monster_a709323e30e2ef726afc23793d7eec204_cgraph">
+<area shape="rect" title=" " alt="" coords="5,56,159,83"/>
+<area shape="rect" href="class_game_log.html#a4c91b78aba2dba0d70a445f869c22811" title=" " alt="" coords="207,31,455,57"/>
+<area shape="poly" title=" " alt="" coords="159,59,191,56,192,61,159,64"/>
+<area shape="rect" href="class_game_log.html#a122d5e3170dca111d737bf9633e65fc4" title=" " alt="" coords="253,81,409,108"/>
+<area shape="poly" title=" " alt="" coords="159,74,237,82,237,88,159,80"/>
+<area shape="rect" href="class_game_log.html#a1e003860239f6ac3d11b8fa3ff7939ae" title=" " alt="" coords="503,5,702,32"/>
+<area shape="poly" title=" " alt="" coords="455,30,487,27,487,32,456,35"/>
+<area shape="rect" href="class_game_log.html#a119eccba7ed2b6cebe86b554bdac711c" title=" " alt="" coords="528,56,678,83"/>
+<area shape="poly" title=" " alt="" coords="456,53,512,58,512,64,455,58"/>
+</map>
+</div>
 <div class="dynheader">
 이 함수를 호출하는 함수들에 대한 그래프입니다.:</div>
 <div class="dyncontent">
@@ -415,6 +640,45 @@ Protected 속성</h2></td></tr>
 <area shape="rect" title=" " alt="" coords="299,5,452,32"/>
 <area shape="rect" href="class_game_manager.html#a49b13f02f36be41415bd9dc60c55c2a1" title=" " alt="" coords="103,5,251,32"/>
 <area shape="poly" title=" " alt="" coords="283,21,251,21,251,16,283,16"/>
+<area shape="rect" href="_main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,5,55,32"/>
+<area shape="poly" title=" " alt="" coords="87,21,55,21,55,16,87,16"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a8e1bd5c8dde9c379e52708be0a8f2429" name="a8e1bd5c8dde9c379e52708be0a8f2429"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8e1bd5c8dde9c379e52708be0a8f2429">&#9670;&#160;</a></span>TextArt()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void Monster::TextArt </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel pure-virtual">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><a class="el" href="class_bat.html#aeff9ac9904032caa05972d58b2e40b29">Bat</a>, <a class="el" href="class_boss_monster.html#ae91f4a75abc37f06a3f6a957b9cec877">BossMonster</a>, <a class="el" href="class_goblin.html#a78e7d41b3c80944ddc503386c529e164">Goblin</a>, <a class="el" href="class_golden_goblin.html#a90dd5a35cf775acf46db56688bb669c5">GoldenGoblin</a>, <a class="el" href="class_slime.html#adc5c71cf660d4ac7d5c5cebc7b8a2b79">Slime</a>에서 구현되었습니다.</p>
+<div class="dynheader">
+이 함수를 호출하는 함수들에 대한 그래프입니다.:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_monster_a8e1bd5c8dde9c379e52708be0a8f2429_icgraph.png" border="0" usemap="#aclass_monster_a8e1bd5c8dde9c379e52708be0a8f2429_icgraph" loading="lazy" alt=""/></div>
+<map name="aclass_monster_a8e1bd5c8dde9c379e52708be0a8f2429_icgraph" id="aclass_monster_a8e1bd5c8dde9c379e52708be0a8f2429_icgraph">
+<area shape="rect" title=" " alt="" coords="299,5,417,32"/>
+<area shape="rect" href="class_game_manager.html#a49b13f02f36be41415bd9dc60c55c2a1" title=" " alt="" coords="103,5,251,32"/>
+<area shape="poly" title=" " alt="" coords="284,21,252,21,252,16,284,16"/>
 <area shape="rect" href="_main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,5,55,32"/>
 <area shape="poly" title=" " alt="" coords="87,21,55,21,55,16,87,16"/>
 </map>

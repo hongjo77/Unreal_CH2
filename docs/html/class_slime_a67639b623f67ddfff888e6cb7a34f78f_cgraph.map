@@ -1,0 +1,5 @@
+<map id="Slime::Slime" name="Slime::Slime">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,5,101,32"/>
+<area shape="rect" id="Node000002" href="$class_monster.html#a8c9c6024d7ad373f1a2cd4ee5dedfd78" title=" " alt="" coords="149,5,272,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="101,16,133,16,133,21,101,21"/>
+</map>

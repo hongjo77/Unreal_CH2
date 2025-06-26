@@ -5,46 +5,85 @@
 \DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
 \DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ <string>}}
 \DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <vector>}}
-\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_item_8h}{Item.h}}"{}}}
-\DoxyCodeLine{00005\ }
-\DoxyCodeLine{00006\ \textcolor{keyword}{using\ namespace\ }std;}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_health_potion_8h}{HealthPotion.h}}"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_attack_boost_8h}{AttackBoost.h}}"{}}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_equipment_8h}{Equipment.h}}"{}}}
 \DoxyCodeLine{00007\ }
-\DoxyCodeLine{00008\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_characters_ab04f788d89d6d3e47bd63dc109e72896}{Characters}}}
-\DoxyCodeLine{00009\ \{}
-\DoxyCodeLine{00010\ \textcolor{keyword}{private}:}
-\DoxyCodeLine{00011\ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{class_characters_ab04f788d89d6d3e47bd63dc109e72896}{Characters}}*\ Instance;}
-\DoxyCodeLine{00012\ \ \ \ \ \textcolor{keywordtype}{string}\ Name;}
-\DoxyCodeLine{00013\ \ \ \ \ \textcolor{keywordtype}{int}\ Level;}
-\DoxyCodeLine{00014\ \ \ \ \ \textcolor{keywordtype}{int}\ Health;}
-\DoxyCodeLine{00015\ \ \ \ \ \textcolor{keywordtype}{int}\ MaxHealth;}
-\DoxyCodeLine{00016\ \ \ \ \ \textcolor{keywordtype}{int}\ Attack;}
-\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keywordtype}{int}\ Experience;}
-\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keywordtype}{int}\ Gold;}
-\DoxyCodeLine{00019\ \ \ \ \ vector<Item*>\ Inventory;}
-\DoxyCodeLine{00020\ }
-\DoxyCodeLine{00021\ \textcolor{keyword}{protected}:}
-\DoxyCodeLine{00022\ \ \ \ \ \mbox{\hyperlink{class_characters_ab04f788d89d6d3e47bd63dc109e72896}{Characters}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ inName);}
-\DoxyCodeLine{00023\ }
-\DoxyCodeLine{00024\ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{class_characters_ab04f788d89d6d3e47bd63dc109e72896}{Characters}}*\ \mbox{\hyperlink{class_characters_a2382d1339fdf73ab8dd1d85b777b92b9}{GetInstance}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ inName\ =\ \textcolor{stringliteral}{"{}"{}});}
-\DoxyCodeLine{00026\ }
-\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_characters_a884e4c03002aacc3804adecf23292482}{GetName}}()\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_characters_aa193ce965fc5f5bec0d4ee190acd25ea}{DisplayStatus}}()\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_characters_a2496ae17e50f166f9acb151c11d73314}{LevelUp}}();}
-\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_characters_a4db23c91da2722b0ead9dcbb0ec75bab}{ShowInventory}}()\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00031\ }
-\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_characters_a1f6b79ef33c4eccdf5165b19562d4258}{GetHealth}}()\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_characters_acf71dabdac969cc715182013b2a324d7}{SetHealth}}(\textcolor{keywordtype}{int}\ newHealth);}
-\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_characters_ab81aaa0098361cf070a2395618d30eab}{GetMaxHealth}}()\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_characters_ae5bceda9eccca6be00f4eb70adbae181}{GetAttack}}()\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_characters_a2a9add7d82c6f69ebb72576d73bee206}{SetAttack}}(\textcolor{keywordtype}{int}\ newAttack);}
-\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_characters_adcc06774bce828ee9259b44485aedbc2}{GetLevel}}()\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_characters_a0b328c84e6746898785a8ab7d7200fef}{SetLevel}}(\textcolor{keywordtype}{int}\ newLevel);}
-\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_characters_ad9da8f9b3727fc62478af2142000b000}{GetExperience}}()\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_characters_a02abf31609d28253aba5fd553d51629b}{SetExperience}}(\textcolor{keywordtype}{int}\ newExp);}
-\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_characters_ac7cf4e011a1f83f4fd2dd6cc27d2fc7e}{GetGold}}()\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_characters_a6277ba6e439db076ec7fa58cff427335}{SetGold}}(\textcolor{keywordtype}{int}\ newGold);}
-\DoxyCodeLine{00043\ \ \ \ \ vector<Item*>\&\ \mbox{\hyperlink{class_characters_aa6fb49a51caa77938c62e05792fcff17}{GetInventory}}();}
-\DoxyCodeLine{00044\ \};}
+\DoxyCodeLine{00008\ \textcolor{keyword}{using\ namespace\ }std;}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{keyword}{enum\ class}\ \mbox{\hyperlink{_characters_8h_a904b2f9c8f3951116c343784c59d6afe}{AttackType}}}
+\DoxyCodeLine{00011\ \{}
+\DoxyCodeLine{00012\ \ \ \ \ \mbox{\hyperlink{_characters_8h_a904b2f9c8f3951116c343784c59d6afea960b44c579bc2f6818d2daaf9e4c16f0}{Normal}},}
+\DoxyCodeLine{00013\ \ \ \ \ \mbox{\hyperlink{_characters_8h_a904b2f9c8f3951116c343784c59d6afea1a66e8793e837ada3a21c83b40672d82}{FireBall}},}
+\DoxyCodeLine{00014\ \ \ \ \ \mbox{\hyperlink{_characters_8h_a904b2f9c8f3951116c343784c59d6afea861bb8830b30ae92120225676fe880bb}{Strike}}}
+\DoxyCodeLine{00015\ \};}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_characters_ab04f788d89d6d3e47bd63dc109e72896}{Characters}}}
+\DoxyCodeLine{00018\ \{}
+\DoxyCodeLine{00019\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{class_characters_ab04f788d89d6d3e47bd63dc109e72896}{Characters}}*\ Instance;}
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keywordtype}{string}\ Name;}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keywordtype}{int}\ Level;}
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keywordtype}{int}\ Health;}
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keywordtype}{int}\ MaxHealth;}
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keywordtype}{int}\ Attack;}
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keywordtype}{int}\ Experience;}
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keywordtype}{int}\ Gold;}
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keywordtype}{int}\ MaxMana;}
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keywordtype}{int}\ CurrentMana;}
+\DoxyCodeLine{00030\ \ \ \ \ \mbox{\hyperlink{class_equipment}{Equipment}}*\ weapon;}
+\DoxyCodeLine{00031\ \ \ \ \ \mbox{\hyperlink{class_equipment}{Equipment}}*\ helmet;}
+\DoxyCodeLine{00032\ \ \ \ \ \mbox{\hyperlink{class_equipment}{Equipment}}*\ chest;}
+\DoxyCodeLine{00033\ \ \ \ \ \mbox{\hyperlink{class_equipment}{Equipment}}*\ leg;}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \ \ \ \ vector<Item*>\ Inventory;}
+\DoxyCodeLine{00036\ \ \ \ \ \mbox{\hyperlink{_characters_8h_a904b2f9c8f3951116c343784c59d6afe}{AttackType}}\ currentAttackType\ =\ \mbox{\hyperlink{_characters_8h_a904b2f9c8f3951116c343784c59d6afea960b44c579bc2f6818d2daaf9e4c16f0}{AttackType::Normal}};}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00039\ \ \ \ \ \mbox{\hyperlink{class_characters_ab04f788d89d6d3e47bd63dc109e72896}{Characters}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ inName);}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{class_characters_ab04f788d89d6d3e47bd63dc109e72896}{Characters}}*\ \mbox{\hyperlink{class_characters_a2382d1339fdf73ab8dd1d85b777b92b9}{GetInstance}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ inName\ =\ \textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_characters_a884e4c03002aacc3804adecf23292482}{GetName}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_characters_aa193ce965fc5f5bec0d4ee190acd25ea}{DisplayStatus}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_characters_a2496ae17e50f166f9acb151c11d73314}{LevelUp}}();}
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_characters_a4db23c91da2722b0ead9dcbb0ec75bab}{ShowInventory}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_characters_a1f6b79ef33c4eccdf5165b19562d4258}{GetHealth}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_characters_acf71dabdac969cc715182013b2a324d7}{SetHealth}}(\textcolor{keywordtype}{int}\ newHealth);}
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_characters_ab81aaa0098361cf070a2395618d30eab}{GetMaxHealth}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_characters_ae5bceda9eccca6be00f4eb70adbae181}{GetAttack}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_characters_a2a9add7d82c6f69ebb72576d73bee206}{SetAttack}}(\textcolor{keywordtype}{int}\ newAttack);}
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_characters_a3699f13806d9fbe37c88638b9ca39e24}{GetBaseAttack}}();}
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_characters_adcc06774bce828ee9259b44485aedbc2}{GetLevel}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_characters_a0b328c84e6746898785a8ab7d7200fef}{SetLevel}}(\textcolor{keywordtype}{int}\ newLevel);}
+\DoxyCodeLine{00057\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_characters_ad9da8f9b3727fc62478af2142000b000}{GetExperience}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00058\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_characters_a02abf31609d28253aba5fd553d51629b}{SetExperience}}(\textcolor{keywordtype}{int}\ newExp);}
+\DoxyCodeLine{00059\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_characters_ac7cf4e011a1f83f4fd2dd6cc27d2fc7e}{GetGold}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00060\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_characters_a6277ba6e439db076ec7fa58cff427335}{SetGold}}(\textcolor{keywordtype}{int}\ newGold);}
+\DoxyCodeLine{00061\ \ \ \ \ vector<Item*>\&\ \mbox{\hyperlink{class_characters_aa6fb49a51caa77938c62e05792fcff17}{GetInventory}}();}
+\DoxyCodeLine{00062\ \ \ \ \ \textcolor{comment}{//\ 랜덤하게\ 공격}}
+\DoxyCodeLine{00063\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_characters_a11bddf31448b8f717d27437d8cb8f579}{RandomAttack}}();}
+\DoxyCodeLine{00064\ \ \ \ \ \textcolor{comment}{//\ 랜덤한\ 스킬\ 선택}}
+\DoxyCodeLine{00065\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_characters_a47fc90e979541c0506ebf6540d939c14}{RandomSkill}}();}
+\DoxyCodeLine{00066\ \ \ \ \ \textcolor{comment}{//\ 장비\ 초기화}}
+\DoxyCodeLine{00067\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_characters_aa3092eb46bf2ba7ef856e055d9974602}{InitEquipment}}();}
+\DoxyCodeLine{00068\ \ \ \ \ \textcolor{comment}{//\ 장비들\ delete\ 위한\ 소멸자}}
+\DoxyCodeLine{00069\ \ \ \ \ \mbox{\hyperlink{class_characters_a4aea85daea3f08b8b933e82cd42b3109}{\string~Characters}}();}
+\DoxyCodeLine{00070\ \ \ \ \ \textcolor{comment}{//\ 장비\ 스탯\ 총합}}
+\DoxyCodeLine{00071\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_characters_a9acbf492e346aa9e87d073f261c7e835}{GetTotalArmorStat}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00072\ \ \ \ \ \textcolor{comment}{//\ 장비\ 목록\ 넘기기}}
+\DoxyCodeLine{00073\ \ \ \ \ vector<Equipment*>\ \mbox{\hyperlink{class_characters_a26b98563600d598d12e1e3a0887e845c}{GetEquipments}}();}
+\DoxyCodeLine{00074\ \ \ \ \ \textcolor{comment}{//\ 마나\ getter}}
+\DoxyCodeLine{00075\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_characters_af8b08b0b49de4154e8b0a7344bb8e853}{GetCurrentMana}}();}
+\DoxyCodeLine{00076\ \ \ \ \ \textcolor{comment}{//\ 마나\ setter}}
+\DoxyCodeLine{00077\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_characters_af1af478d35dcf049ff098b6cb73dcef3}{SetCurrentMana}}(\textcolor{keywordtype}{int}\ value);}
+\DoxyCodeLine{00078\ \ \ \ \ \textcolor{comment}{//\ 최대\ 마나\ getter}}
+\DoxyCodeLine{00079\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_characters_a3e60b88a23fb0adcd31d04a01f24f0f6}{GetMaxMana}}();}
+\DoxyCodeLine{00080\ \ \ \ \ \textcolor{comment}{//\ 최대\ 마나\ setter}}
+\DoxyCodeLine{00081\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_characters_ab94e0682746814b57c65fabdbb4bab47}{SetMaxMana}}(\textcolor{keywordtype}{int}\ value);}
+\DoxyCodeLine{00082\ \ \ \ \ \mbox{\hyperlink{_characters_8h_a904b2f9c8f3951116c343784c59d6afe}{AttackType}}\ \mbox{\hyperlink{class_characters_a56bcab7acde845f89b6f3637d8750bd2}{GetAttackType}}();}
+\DoxyCodeLine{00083\ \};}
 
 \end{DoxyCode}

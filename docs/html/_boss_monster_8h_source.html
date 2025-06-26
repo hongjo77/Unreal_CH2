@@ -93,23 +93,34 @@ $(function(){initNavTree('_boss_monster_8h_source.html','',''); });
 <div class="contents">
 <a href="_boss_monster_8h.html">이 파일의 문서화 페이지로 가기</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#pragma once</span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#include &quot;<a class="code" href="_monster_8h.html">Monster.h</a>&quot;</span></div>
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="keyword">using namespace </span>std;</div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &lt;random&gt;</span> <span class="comment">//mt19937, uniform_int_distribution</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;chrono&gt;</span> <span class="comment">//시드용</span></div>
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
-<div class="foldopen" id="foldopen00006" data-start="{" data-end="};">
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno"><a class="line" href="class_boss_monster.html">    6</a></span><span class="keyword">class </span><a class="code hl_function" href="class_boss_monster.html#aef30dc963d9c3077ca4ee414aca8c694">BossMonster</a> : <span class="keyword">public</span> <a class="code hl_function" href="class_monster.html#a8c9c6024d7ad373f1a2cd4ee5dedfd78">Monster</a></div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>{</div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>    <a class="code hl_function" href="class_boss_monster.html#aef30dc963d9c3077ca4ee414aca8c694">BossMonster</a>(<span class="keywordtype">int</span> level);</div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_boss_monster.html#a86ccfc672017d4e120c88617594ba761">TakeDamage</a>(<span class="keywordtype">int</span> damage) <span class="keyword">override</span>;</div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="class_boss_monster.html#ad95a666b55d352f67818aa390ec64d91">IsBoss</a>() <span class="keyword">const override</span>;</div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>};</div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="keyword">using namespace </span>std;</div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
+<div class="foldopen" id="foldopen00008" data-start="{" data-end="};">
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno"><a class="line" href="class_boss_monster.html">    8</a></span><span class="keyword">class </span><a class="code hl_function" href="class_boss_monster.html#aef30dc963d9c3077ca4ee414aca8c694">BossMonster</a> : <span class="keyword">public</span> <a class="code hl_function" href="class_monster.html#a8c9c6024d7ad373f1a2cd4ee5dedfd78">Monster</a></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>{</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>    <a class="code hl_function" href="class_boss_monster.html#aef30dc963d9c3077ca4ee414aca8c694">BossMonster</a>(<span class="keywordtype">int</span> level);</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="class_boss_monster.html#ad95a666b55d352f67818aa390ec64d91">IsBoss</a>() <span class="keyword">const override</span>;</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_boss_monster.html#a00a02210856ef56601c033d357c423b3">OnDeath</a>(<a class="code hl_class" href="class_characters.html">Characters</a>&amp; player) <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_boss_monster.html#a391299071904a7b2827c30678d58b293">AttackPlayer</a>(<a class="code hl_class" href="class_characters.html">Characters</a>&amp; player) <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_boss_monster.html#ae91f4a75abc37f06a3f6a957b9cec877">TextArt</a>() <span class="keyword">const override</span>;</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    <span class="keywordtype">int</span> SkillAttack;</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    mt19937 rng;</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    uniform_int_distribution&lt;int&gt; chanceDistribution;</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>};</div>
 </div>
 <div class="ttc" id="a_monster_8h_html"><div class="ttname"><a href="_monster_8h.html">Monster.h</a></div></div>
-<div class="ttc" id="aclass_boss_monster_html_a86ccfc672017d4e120c88617594ba761"><div class="ttname"><a href="class_boss_monster.html#a86ccfc672017d4e120c88617594ba761">BossMonster::TakeDamage</a></div><div class="ttdeci">void TakeDamage(int damage) override</div><div class="ttdef"><b>Definition</b> BossMonster.cpp:11</div></div>
-<div class="ttc" id="aclass_boss_monster_html_ad95a666b55d352f67818aa390ec64d91"><div class="ttname"><a href="class_boss_monster.html#ad95a666b55d352f67818aa390ec64d91">BossMonster::IsBoss</a></div><div class="ttdeci">bool IsBoss() const override</div><div class="ttdef"><b>Definition</b> BossMonster.cpp:21</div></div>
-<div class="ttc" id="aclass_boss_monster_html_aef30dc963d9c3077ca4ee414aca8c694"><div class="ttname"><a href="class_boss_monster.html#aef30dc963d9c3077ca4ee414aca8c694">BossMonster::BossMonster</a></div><div class="ttdeci">BossMonster(int level)</div><div class="ttdef"><b>Definition</b> BossMonster.cpp:4</div></div>
-<div class="ttc" id="aclass_monster_html_a8c9c6024d7ad373f1a2cd4ee5dedfd78"><div class="ttname"><a href="class_monster.html#a8c9c6024d7ad373f1a2cd4ee5dedfd78">Monster::Monster</a></div><div class="ttdeci">Monster(const string &amp;name, int health, int attack)</div><div class="ttdef"><b>Definition</b> Monster.cpp:6</div></div>
+<div class="ttc" id="aclass_boss_monster_html_a00a02210856ef56601c033d357c423b3"><div class="ttname"><a href="class_boss_monster.html#a00a02210856ef56601c033d357c423b3">BossMonster::OnDeath</a></div><div class="ttdeci">void OnDeath(Characters &amp;player) override</div><div class="ttdef"><b>Definition</b> BossMonster.cpp:23</div></div>
+<div class="ttc" id="aclass_boss_monster_html_a391299071904a7b2827c30678d58b293"><div class="ttname"><a href="class_boss_monster.html#a391299071904a7b2827c30678d58b293">BossMonster::AttackPlayer</a></div><div class="ttdeci">void AttackPlayer(Characters &amp;player) override</div><div class="ttdef"><b>Definition</b> BossMonster.cpp:35</div></div>
+<div class="ttc" id="aclass_boss_monster_html_ad95a666b55d352f67818aa390ec64d91"><div class="ttname"><a href="class_boss_monster.html#ad95a666b55d352f67818aa390ec64d91">BossMonster::IsBoss</a></div><div class="ttdeci">bool IsBoss() const override</div><div class="ttdef"><b>Definition</b> BossMonster.cpp:16</div></div>
+<div class="ttc" id="aclass_boss_monster_html_ae91f4a75abc37f06a3f6a957b9cec877"><div class="ttname"><a href="class_boss_monster.html#ae91f4a75abc37f06a3f6a957b9cec877">BossMonster::TextArt</a></div><div class="ttdeci">void TextArt() const override</div><div class="ttdef"><b>Definition</b> BossMonster.cpp:18</div></div>
+<div class="ttc" id="aclass_boss_monster_html_aef30dc963d9c3077ca4ee414aca8c694"><div class="ttname"><a href="class_boss_monster.html#aef30dc963d9c3077ca4ee414aca8c694">BossMonster::BossMonster</a></div><div class="ttdeci">BossMonster(int level)</div><div class="ttdef"><b>Definition</b> BossMonster.cpp:6</div></div>
+<div class="ttc" id="aclass_characters_html"><div class="ttname"><a href="class_characters.html">Characters</a></div><div class="ttdef"><b>Definition</b> Characters.h:18</div></div>
+<div class="ttc" id="aclass_monster_html_a8c9c6024d7ad373f1a2cd4ee5dedfd78"><div class="ttname"><a href="class_monster.html#a8c9c6024d7ad373f1a2cd4ee5dedfd78">Monster::Monster</a></div><div class="ttdeci">Monster(const string &amp;name, int health, int attack)</div><div class="ttdef"><b>Definition</b> Monster.cpp:9</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 </div><!-- container -->

@@ -1,0 +1,13 @@
+<map id="그래픽컬한 클래스 계통도" name="그래픽컬한 클래스 계통도">
+<area shape="rect" id="Node000000" href="$class_monster.html" title=" " alt="" coords="5,107,74,133"/>
+<area shape="rect" id="Node000001" href="$class_bat.html" title=" " alt="" coords="151,5,192,32"/>
+<area shape="poly" id="edge7_Node000000_Node000001" title=" " alt="" coords="62,93,89,67,120,42,149,25,151,30,123,46,92,71,65,97"/>
+<area shape="rect" id="Node000002" href="$class_boss_monster.html" title=" " alt="" coords="122,56,220,83"/>
+<area shape="poly" id="edge8_Node000000_Node000002" title=" " alt="" coords="87,99,134,81,136,86,89,104"/>
+<area shape="rect" id="Node000003" href="$class_goblin.html" title=" " alt="" coords="142,107,200,133"/>
+<area shape="poly" id="edge9_Node000000_Node000003" title=" " alt="" coords="89,117,142,117,142,123,89,123"/>
+<area shape="rect" id="Node000004" href="$class_golden_goblin.html" title=" " alt="" coords="122,157,221,184"/>
+<area shape="poly" id="edge10_Node000000_Node000004" title=" " alt="" coords="89,136,136,154,134,159,87,141"/>
+<area shape="rect" id="Node000005" href="$class_slime.html" title=" " alt="" coords="144,208,198,235"/>
+<area shape="poly" id="edge11_Node000000_Node000005" title=" " alt="" coords="65,143,92,169,123,194,145,207,142,211,120,198,89,173,62,147"/>
+</map>

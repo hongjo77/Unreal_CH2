@@ -17,36 +17,42 @@ Item에 대한 상속 다이어그램 \+:
 \doxysubsubsection*{Public 멤버 함수}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{class_item_ac9fdd690ffb0ad0563fe4968de86a0a0}{Item}} (const std\+::string \&name)
+\mbox{\hyperlink{class_item_a001d145e114150c020f084e8717b7585}{Item}} (const std\+::string \&name, int amount)
 \item 
 virtual \mbox{\hyperlink{class_item_a33cc9c0bc556b5a33a9d0d58d37c602b}{\texorpdfstring{$\sim$}{\string~}\+Item}} ()
 \item 
+virtual void \mbox{\hyperlink{class_item_a282ccde42335eabde3f9bcdae54fcd33}{Use}} (\mbox{\hyperlink{class_characters}{Characters}} \&target)=0
+\item 
 virtual std\+::string \mbox{\hyperlink{class_item_a6de955f0399b5102dc03a3ff40209df5}{Get\+Name}} () const
 \item 
-virtual void \mbox{\hyperlink{class_item_a282ccde42335eabde3f9bcdae54fcd33}{Use}} (\mbox{\hyperlink{class_characters}{Characters}} \&target)=0
+virtual int \mbox{\hyperlink{class_item_a17188dc53e7d6858d59017daf5c9d387}{Get\+Amount}} ()
+\item 
+virtual void \mbox{\hyperlink{class_item_a7cf0e1aeeaf79a63e4f0e1fe7e4a4b01}{Set\+Amount}} (int new\+Amount)
 \end{DoxyCompactItemize}
 \doxysubsubsection*{Protected 속성}
 \begin{DoxyCompactItemize}
 \item 
 std\+::string \mbox{\hyperlink{class_item_afa90f8cb5a40f53a8ff8433d7c8060c3}{Name}}
+\item 
+int \mbox{\hyperlink{class_item_aad14be519566d88ed82b733cf011dba9}{Amount}}
 \end{DoxyCompactItemize}
 
 
 \label{doc-constructors}
 \Hypertarget{class_item_doc-constructors}
 \doxysubsection{생성자 \& 소멸자 문서화}
-\Hypertarget{class_item_ac9fdd690ffb0ad0563fe4968de86a0a0}\index{Item@{Item}!Item@{Item}}
+\Hypertarget{class_item_a001d145e114150c020f084e8717b7585}\index{Item@{Item}!Item@{Item}}
 \index{Item@{Item}!Item@{Item}}
 \doxysubsubsection{\texorpdfstring{Item()}{Item()}}
-{\footnotesize\ttfamily \label{class_item_ac9fdd690ffb0ad0563fe4968de86a0a0} 
-Item\+::\+Item (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily \label{class_item_a001d145e114150c020f084e8717b7585} 
+Item\+::\+Item (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name}{, }\item[{int}]{amount}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
 \nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=312pt]{class_item_ac9fdd690ffb0ad0563fe4968de86a0a0_icgraph}
+\includegraphics[width=312pt]{class_item_a001d145e114150c020f084e8717b7585_icgraph}
 \end{center}
 \end{figure}
 \Hypertarget{class_item_a33cc9c0bc556b5a33a9d0d58d37c602b}\index{Item@{Item}!````~Item@{\texorpdfstring{$\sim$}{\string~}Item}}
@@ -60,20 +66,24 @@ virtual Item\+::\texorpdfstring{$\sim$}{\string~}\+Item (\begin{DoxyParamCaption
 \label{doc-func-members}
 \Hypertarget{class_item_doc-func-members}
 \doxysubsection{멤버 함수 문서화}
+\Hypertarget{class_item_a17188dc53e7d6858d59017daf5c9d387}\index{Item@{Item}!GetAmount@{GetAmount}}
+\index{GetAmount@{GetAmount}!Item@{Item}}
+\doxysubsubsection{\texorpdfstring{GetAmount()}{GetAmount()}}
+{\footnotesize\ttfamily \label{class_item_a17188dc53e7d6858d59017daf5c9d387} 
+virtual int Item\+::\+Get\+Amount (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
 \Hypertarget{class_item_a6de955f0399b5102dc03a3ff40209df5}\index{Item@{Item}!GetName@{GetName}}
 \index{GetName@{GetName}!Item@{Item}}
 \doxysubsubsection{\texorpdfstring{GetName()}{GetName()}}
 {\footnotesize\ttfamily \label{class_item_a6de955f0399b5102dc03a3ff40209df5} 
 virtual std\+::string Item\+::\+Get\+Name (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
 
-이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
-\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=350pt]{class_item_a6de955f0399b5102dc03a3ff40209df5_icgraph}
-\end{center}
-\end{figure}
+\Hypertarget{class_item_a7cf0e1aeeaf79a63e4f0e1fe7e4a4b01}\index{Item@{Item}!SetAmount@{SetAmount}}
+\index{SetAmount@{SetAmount}!Item@{Item}}
+\doxysubsubsection{\texorpdfstring{SetAmount()}{SetAmount()}}
+{\footnotesize\ttfamily \label{class_item_a7cf0e1aeeaf79a63e4f0e1fe7e4a4b01} 
+virtual void Item\+::\+Set\+Amount (\begin{DoxyParamCaption}\item[{int}]{new\+Amount}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
 \Hypertarget{class_item_a282ccde42335eabde3f9bcdae54fcd33}\index{Item@{Item}!Use@{Use}}
 \index{Use@{Use}!Item@{Item}}
 \doxysubsubsection{\texorpdfstring{Use()}{Use()}}
@@ -89,6 +99,12 @@ virtual void Item\+::\+Use (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{clas
 \label{doc-variable-members}
 \Hypertarget{class_item_doc-variable-members}
 \doxysubsection{멤버 데이터 문서화}
+\Hypertarget{class_item_aad14be519566d88ed82b733cf011dba9}\index{Item@{Item}!Amount@{Amount}}
+\index{Amount@{Amount}!Item@{Item}}
+\doxysubsubsection{\texorpdfstring{Amount}{Amount}}
+{\footnotesize\ttfamily \label{class_item_aad14be519566d88ed82b733cf011dba9} 
+int Item\+::\+Amount\hspace{0.3cm}{\ttfamily [protected]}}
+
 \Hypertarget{class_item_afa90f8cb5a40f53a8ff8433d7c8060c3}\index{Item@{Item}!Name@{Name}}
 \index{Name@{Name}!Item@{Item}}
 \doxysubsubsection{\texorpdfstring{Name}{Name}}

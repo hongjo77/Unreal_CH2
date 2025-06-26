@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['item_0',['Item',['../class_item.html',1,'']]]
+  ['healthpotion_0',['HealthPotion',['../class_health_potion.html',1,'']]],
+  ['helmet_1',['Helmet',['../class_helmet.html',1,'']]]
 ];

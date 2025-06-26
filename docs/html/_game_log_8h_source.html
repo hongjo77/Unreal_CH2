@@ -1,0 +1,156 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ko">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.14.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>CH2: GameLog.h 소스 파일</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">CH2
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 다음에 의해 생성됨 :  Doxygen 1.14.0 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','검색',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('_game_log_8h_source.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">로딩중...</div>
+<div class="SRStatus" id="Searching">검색중...</div>
+<div class="SRStatus" id="NoMatches">일치하는것 없음</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">GameLog.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="_game_log_8h.html">이 파일의 문서화 페이지로 가기</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#pragma once</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#include &lt;unordered_map&gt;</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &lt;iostream&gt;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
+<div class="foldopen" id="foldopen00007" data-start="{" data-end="};">
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno"><a class="line" href="class_game_log.html">    7</a></span><span class="keyword">class </span>GameLog</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>{</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>    <span class="keyword">static</span> GameLog* instance;</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>    std::unordered_map&lt;std::string, bool&gt; achievements;</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>    std::vector&lt;std::string&gt; logs;</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>    std::unordered_map&lt;std::string, int&gt; statistics;</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    GameLog() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    <span class="keyword">static</span> GameLog* <a class="code hl_function" href="class_game_log.html#a122d5e3170dca111d737bf9633e65fc4">GetInstance</a>();</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> </div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_game_log.html#a1e003860239f6ac3d11b8fa3ff7939ae">CheckAchievement</a>(<span class="keyword">const</span> std::string&amp; achievementName);</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_game_log.html#a4762226457c7641a86d1a8df16623b96">AddLog</a>(<span class="keyword">const</span> std::string&amp; logEntry);</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_game_log.html#ab774dd34c5ee4427f0bd22d2cabf2d39">PrintAndLog</a>(<span class="keyword">const</span> std::string&amp; msg);</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_game_log.html#a6de641379c1e323be9eb8daa6a55ebb9">UpdateStat</a>(<span class="keyword">const</span> std::string&amp; statName, <span class="keywordtype">int</span> value);</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="class_game_log.html#a119eccba7ed2b6cebe86b554bdac711c">IsAchieved</a>(<span class="keyword">const</span> std::string&amp; achievementName);</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_game_log.html#a33c603fa4a357f992f8d1cdfc7823632">PrintLogs</a>();</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_game_log.html#a56a54fbb35551076bf7a7fc51cdfd93c">PrintStatistics</a>();</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_game_log.html#a6bc4bbc617cf2ac19198cb64a14055b5">PrintAchievement</a>();</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_game_log.html#abcf19ce535fe427e8a946e0051328214">KillAchievement</a>(<span class="keyword">const</span> std::string&amp; monsterName);</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_game_log.html#a8884d5c301ca0454a4c733b088b4d2a3">GoldAchievement</a>(<span class="keywordtype">int</span> amount);</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_game_log.html#a4aa4ce6d027e792565efb7fadf499b80">TakeDamageAchievement</a>(<span class="keywordtype">int</span> amount);</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_game_log.html#a4c91b78aba2dba0d70a445f869c22811">AttackDamageAchievement</a>(<span class="keywordtype">int</span> amount);</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_game_log.html#ad85cc27d2558e38e90580b974e7ec911">LevelAchievement</a>(<span class="keywordtype">int</span> level);</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_game_log.html#aab0ee936e8cfcb7247ae7d4241a49b54">EquipmentAchievement</a>(<span class="keyword">const</span> std::string&amp; equipmentName, <span class="keywordtype">int</span> level, <span class="keywordtype">int</span> result);</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>};</div>
+</div>
+<div class="ttc" id="aclass_game_log_html_a119eccba7ed2b6cebe86b554bdac711c"><div class="ttname"><a href="class_game_log.html#a119eccba7ed2b6cebe86b554bdac711c">GameLog::IsAchieved</a></div><div class="ttdeci">bool IsAchieved(const std::string &amp;achievementName)</div><div class="ttdef"><b>Definition</b> GameLog.cpp:39</div></div>
+<div class="ttc" id="aclass_game_log_html_a122d5e3170dca111d737bf9633e65fc4"><div class="ttname"><a href="class_game_log.html#a122d5e3170dca111d737bf9633e65fc4">GameLog::GetInstance</a></div><div class="ttdeci">static GameLog * GetInstance()</div><div class="ttdef"><b>Definition</b> GameLog.cpp:6</div></div>
+<div class="ttc" id="aclass_game_log_html_a1e003860239f6ac3d11b8fa3ff7939ae"><div class="ttname"><a href="class_game_log.html#a1e003860239f6ac3d11b8fa3ff7939ae">GameLog::CheckAchievement</a></div><div class="ttdeci">void CheckAchievement(const std::string &amp;achievementName)</div><div class="ttdef"><b>Definition</b> GameLog.cpp:15</div></div>
+<div class="ttc" id="aclass_game_log_html_a33c603fa4a357f992f8d1cdfc7823632"><div class="ttname"><a href="class_game_log.html#a33c603fa4a357f992f8d1cdfc7823632">GameLog::PrintLogs</a></div><div class="ttdeci">void PrintLogs()</div><div class="ttdef"><b>Definition</b> GameLog.cpp:44</div></div>
+<div class="ttc" id="aclass_game_log_html_a4762226457c7641a86d1a8df16623b96"><div class="ttname"><a href="class_game_log.html#a4762226457c7641a86d1a8df16623b96">GameLog::AddLog</a></div><div class="ttdeci">void AddLog(const std::string &amp;logEntry)</div><div class="ttdef"><b>Definition</b> GameLog.cpp:23</div></div>
+<div class="ttc" id="aclass_game_log_html_a4aa4ce6d027e792565efb7fadf499b80"><div class="ttname"><a href="class_game_log.html#a4aa4ce6d027e792565efb7fadf499b80">GameLog::TakeDamageAchievement</a></div><div class="ttdeci">void TakeDamageAchievement(int amount)</div><div class="ttdef"><b>Definition</b> GameLog.cpp:355</div></div>
+<div class="ttc" id="aclass_game_log_html_a4c91b78aba2dba0d70a445f869c22811"><div class="ttname"><a href="class_game_log.html#a4c91b78aba2dba0d70a445f869c22811">GameLog::AttackDamageAchievement</a></div><div class="ttdeci">void AttackDamageAchievement(int amount)</div><div class="ttdef"><b>Definition</b> GameLog.cpp:366</div></div>
+<div class="ttc" id="aclass_game_log_html_a56a54fbb35551076bf7a7fc51cdfd93c"><div class="ttname"><a href="class_game_log.html#a56a54fbb35551076bf7a7fc51cdfd93c">GameLog::PrintStatistics</a></div><div class="ttdeci">void PrintStatistics()</div><div class="ttdef"><b>Definition</b> GameLog.cpp:54</div></div>
+<div class="ttc" id="aclass_game_log_html_a6bc4bbc617cf2ac19198cb64a14055b5"><div class="ttname"><a href="class_game_log.html#a6bc4bbc617cf2ac19198cb64a14055b5">GameLog::PrintAchievement</a></div><div class="ttdeci">void PrintAchievement()</div><div class="ttdef"><b>Definition</b> GameLog.cpp:176</div></div>
+<div class="ttc" id="aclass_game_log_html_a6de641379c1e323be9eb8daa6a55ebb9"><div class="ttname"><a href="class_game_log.html#a6de641379c1e323be9eb8daa6a55ebb9">GameLog::UpdateStat</a></div><div class="ttdeci">void UpdateStat(const std::string &amp;statName, int value)</div><div class="ttdef"><b>Definition</b> GameLog.cpp:34</div></div>
+<div class="ttc" id="aclass_game_log_html_a8884d5c301ca0454a4c733b088b4d2a3"><div class="ttname"><a href="class_game_log.html#a8884d5c301ca0454a4c733b088b4d2a3">GameLog::GoldAchievement</a></div><div class="ttdeci">void GoldAchievement(int amount)</div><div class="ttdef"><b>Definition</b> GameLog.cpp:331</div></div>
+<div class="ttc" id="aclass_game_log_html_aab0ee936e8cfcb7247ae7d4241a49b54"><div class="ttname"><a href="class_game_log.html#aab0ee936e8cfcb7247ae7d4241a49b54">GameLog::EquipmentAchievement</a></div><div class="ttdeci">void EquipmentAchievement(const std::string &amp;equipmentName, int level, int result)</div><div class="ttdef"><b>Definition</b> GameLog.cpp:386</div></div>
+<div class="ttc" id="aclass_game_log_html_ab774dd34c5ee4427f0bd22d2cabf2d39"><div class="ttname"><a href="class_game_log.html#ab774dd34c5ee4427f0bd22d2cabf2d39">GameLog::PrintAndLog</a></div><div class="ttdeci">void PrintAndLog(const std::string &amp;msg)</div><div class="ttdef"><b>Definition</b> GameLog.cpp:28</div></div>
+<div class="ttc" id="aclass_game_log_html_abcf19ce535fe427e8a946e0051328214"><div class="ttname"><a href="class_game_log.html#abcf19ce535fe427e8a946e0051328214">GameLog::KillAchievement</a></div><div class="ttdeci">void KillAchievement(const std::string &amp;monsterName)</div><div class="ttdef"><b>Definition</b> GameLog.cpp:296</div></div>
+<div class="ttc" id="aclass_game_log_html_ad85cc27d2558e38e90580b974e7ec911"><div class="ttname"><a href="class_game_log.html#ad85cc27d2558e38e90580b974e7ec911">GameLog::LevelAchievement</a></div><div class="ttdeci">void LevelAchievement(int level)</div><div class="ttdef"><b>Definition</b> GameLog.cpp:377</div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="dir_10eea775597051a8655bf2aefe6e09d6.html">CH2Project</a></li><li class="navelem"><a href="_game_log_8h.html">GameLog.h</a></li>
+    <li class="footer">다음에 의해 생성됨 :  <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.14.0 </li>
+  </ul>
+</div>
+</body>
+</html>

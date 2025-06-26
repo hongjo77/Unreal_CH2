@@ -10,17 +10,26 @@ HealthPotion::HealthPotion() : Item("Health Potion", 0) {}
 
 void HealthPotion::Use(Characters& target)
 {
-	std::stringstream oss;
+    //아이템 수량이 음수 값일 때 발생하는 예외 처리문
+    try
+    {
+        if(Amount < 0)
+        {
+            throw std::invalid_argument("아이템 수량은 음수일 수 없습니다.");
+        }
+    }
+    catch(const std::invalid_argument& e)
+    {
+        std::cerr << RED << "예외 발생: " << e.what() << RESET << endl;
+    }
     // 아이템을 소지하지 않고 있을 때 사용하지 않도록 조건문 추가
     if(Amount == 0)
     {
-        //std::cout << target.GetName() << "이(가) " << Name << "을 소지하지 않고 있습니다." << endl;
         return;
     }
     // 현재 체력이 최대 체력일 때 아이템을 사용하지 않도록 조건문 추가
     if(target.GetHealth() == target.GetMaxHealth())
     {
-        //std::cout << target.GetName() << "(은)는 이미 최대 체력입니다." << endl;
         return;
     }
     // 최대 체력 비례 20%의 체력 회복
@@ -30,6 +39,7 @@ void HealthPotion::Use(Characters& target)
     {
         newHealth = target.GetMaxHealth();
     }
+    std::stringstream oss;
     oss << target.GetName() << "이(가) " << Name << "을 사용하여 20%의 체력을 회복하였습니다! "
         << "(" << target.GetName() << " 체력: " << RED << target.GetHealth() << RESET << " → " << GREEN << newHealth << RESET << ")"
         << " " << GREEN << newHealth - target.GetHealth() << RESET << "회복됨!" << endl;

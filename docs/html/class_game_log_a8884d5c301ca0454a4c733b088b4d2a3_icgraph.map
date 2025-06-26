@@ -1,0 +1,13 @@
+<map id="GameLog::GoldAchievement" name="GameLog::GoldAchievement">
+<area shape="rect" id="Node000001" title=" " alt="" coords="490,56,679,83"/>
+<area shape="rect" id="Node000002" href="$class_shop.html#a6dc86a785aec3b4e6c6c2ad719ff1f94" title=" " alt="" coords="316,5,425,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="510,54,425,34,426,29,511,49"/>
+<area shape="rect" id="Node000003" href="$class_shop.html#a7f08ff6cbf0296fd367607ccd033e1a2" title=" " alt="" coords="299,56,442,83"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="475,72,443,72,443,67,475,67"/>
+<area shape="rect" id="Node000004" href="$class_monster.html#a9c6a5aad86d230562434e062c932db2f" title=" " alt="" coords="306,107,435,133"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="511,89,431,109,429,103,510,84"/>
+<area shape="rect" id="Node000005" href="$class_game_manager.html#a49b13f02f36be41415bd9dc60c55c2a1" title=" " alt="" coords="103,107,251,133"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="291,123,252,123,252,117,291,117"/>
+<area shape="rect" id="Node000006" href="$_main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,107,55,133"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="87,123,55,123,55,117,87,117"/>
+</map>

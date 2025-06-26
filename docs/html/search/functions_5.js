@@ -1,4 +1,26 @@
 var searchData=
 [
-  ['healthpotion_0',['HealthPotion',['../class_health_potion.html#a99e942956f7f1e07dd13c46daae08713',1,'HealthPotion']]]
+  ['generatebossmonster_0',['GenerateBossMonster',['../class_game_manager.html#af84d568da0e6765df5d5d4ee600df6cc',1,'GameManager']]],
+  ['generatemonster_1',['GenerateMonster',['../class_game_manager.html#a0164524342dd9edfe6eb23067dba84c5',1,'GameManager']]],
+  ['getamount_2',['GetAmount',['../class_item.html#a17188dc53e7d6858d59017daf5c9d387',1,'Item']]],
+  ['getattack_3',['GetAttack',['../class_characters.html#ae5bceda9eccca6be00f4eb70adbae181',1,'Characters::GetAttack()'],['../class_monster.html#a794f6da1ba6594041441a44d1b28fa26',1,'Monster::GetAttack()']]],
+  ['getattacktype_4',['GetAttackType',['../class_characters.html#a56bcab7acde845f89b6f3637d8750bd2',1,'Characters']]],
+  ['getbaseattack_5',['GetBaseAttack',['../class_characters.html#a3699f13806d9fbe37c88638b9ca39e24',1,'Characters']]],
+  ['getcurrentmana_6',['GetCurrentMana',['../class_characters.html#af8b08b0b49de4154e8b0a7344bb8e853',1,'Characters']]],
+  ['getenlevel_7',['GetEnLevel',['../class_equipment.html#a250453d8c59f8a21f58d6ae08f1b7203',1,'Equipment']]],
+  ['getequipments_8',['GetEquipments',['../class_characters.html#a26b98563600d598d12e1e3a0887e845c',1,'Characters']]],
+  ['getexperience_9',['GetExperience',['../class_characters.html#ad9da8f9b3727fc62478af2142000b000',1,'Characters']]],
+  ['getgold_10',['GetGold',['../class_characters.html#ac7cf4e011a1f83f4fd2dd6cc27d2fc7e',1,'Characters']]],
+  ['gethealth_11',['GetHealth',['../class_characters.html#a1f6b79ef33c4eccdf5165b19562d4258',1,'Characters::GetHealth()'],['../class_monster.html#a2083a208cf409f4d35e1fe34e09d8e42',1,'Monster::GetHealth()']]],
+  ['getinstance_12',['GetInstance',['../class_characters.html#a2382d1339fdf73ab8dd1d85b777b92b9',1,'Characters::GetInstance()'],['../class_game_log.html#a122d5e3170dca111d737bf9633e65fc4',1,'GameLog::GetInstance()']]],
+  ['getinventory_13',['GetInventory',['../class_characters.html#aa6fb49a51caa77938c62e05792fcff17',1,'Characters']]],
+  ['getlevel_14',['GetLevel',['../class_characters.html#adcc06774bce828ee9259b44485aedbc2',1,'Characters']]],
+  ['getmaxhealth_15',['GetMaxHealth',['../class_characters.html#ab81aaa0098361cf070a2395618d30eab',1,'Characters']]],
+  ['getmaxmana_16',['GetMaxMana',['../class_characters.html#a3e60b88a23fb0adcd31d04a01f24f0f6',1,'Characters']]],
+  ['getname_17',['GetName',['../class_characters.html#a884e4c03002aacc3804adecf23292482',1,'Characters::GetName()'],['../class_equipment.html#a69e6ac5ac14639daf10116c291e3fe78',1,'Equipment::GetName()'],['../class_item.html#a6de955f0399b5102dc03a3ff40209df5',1,'Item::GetName()'],['../class_monster.html#a7071b2d3fbf06db48888cf0792aff358',1,'Monster::GetName()']]],
+  ['getstat_18',['GetStat',['../class_equipment.html#a025eda1cd2c95ccf9fd6fa1c3dc8dfe0',1,'Equipment']]],
+  ['gettotalarmorstat_19',['GetTotalArmorStat',['../class_characters.html#a9acbf492e346aa9e87d073f261c7e835',1,'Characters']]],
+  ['goblin_20',['Goblin',['../class_goblin.html#a9e93cac750755dc82dbdce99023b5db0',1,'Goblin']]],
+  ['goldachievement_21',['GoldAchievement',['../class_game_log.html#a8884d5c301ca0454a4c733b088b4d2a3',1,'GameLog']]],
+  ['goldengoblin_22',['GoldenGoblin',['../class_golden_goblin.html#a50cb98852870f97bd9eb29ff84c462d8',1,'GoldenGoblin']]]
 ];

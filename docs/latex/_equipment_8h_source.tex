@@ -1,0 +1,30 @@
+\doxysection{Equipment.\+h}
+\hypertarget{_equipment_8h_source}{}\label{_equipment_8h_source}\index{Equipment.h@{Equipment.h}}
+\mbox{\hyperlink{_equipment_8h}{이 파일의 문서화 페이지로 가기}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ <string>}\ }
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_equipment_a5b60c4bd35bb66c22cb237d4a374b7b6}{Equipment}}}
+\DoxyCodeLine{00005\ \{}
+\DoxyCodeLine{00006\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00007\ \ \ \ \ \textcolor{comment}{//장비명}}
+\DoxyCodeLine{00008\ \ \ \ \ std::string\ \mbox{\hyperlink{class_equipment_a6c826da9e5aa40efc53bce182c177892}{Name}};}
+\DoxyCodeLine{00009\ \ \ \ \ \textcolor{comment}{//강화수치}}
+\DoxyCodeLine{00010\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_equipment_a38d0e174dc04f3ea6d99a186fbaa9a21}{EnhancementLevel}};}
+\DoxyCodeLine{00011\ \ \ \ \ \textcolor{comment}{//장비스텟}}
+\DoxyCodeLine{00012\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_equipment_ad6898af497494d11675f57155792a848}{Stat}};}
+\DoxyCodeLine{00013\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00014\ \ \ \ \ \textcolor{comment}{//장비\ 생성자}}
+\DoxyCodeLine{00015\ \ \ \ \ \mbox{\hyperlink{class_equipment_a5b60c4bd35bb66c22cb237d4a374b7b6}{Equipment}}(\textcolor{keyword}{const}\ std::string\&\ name,\ \textcolor{keywordtype}{int}\ enLevel,\ \textcolor{keywordtype}{int}\ stat)\ :\ \mbox{\hyperlink{class_equipment_a6c826da9e5aa40efc53bce182c177892}{Name}}(name),\ \mbox{\hyperlink{class_equipment_a38d0e174dc04f3ea6d99a186fbaa9a21}{EnhancementLevel}}(enLevel),\ \mbox{\hyperlink{class_equipment_ad6898af497494d11675f57155792a848}{Stat}}(stat)\ \{\}\ }
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{comment}{//장비\ 소멸자}}
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_equipment_a7547b5114f15bb1bdc4ddc1c14da3c8d}{\string~Equipment}}()\ \{\}}
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{comment}{//Getter\ \&\ Setter}}
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keyword}{virtual}\ std::string\ \mbox{\hyperlink{class_equipment_a69e6ac5ac14639daf10116c291e3fe78}{GetName}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_equipment_a6c826da9e5aa40efc53bce182c177892}{Name}};\ \}}
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_equipment_a8befab60e65ab1bba6d0b25214addf4e}{SetEnLevel}}(\textcolor{keywordtype}{int}\ newEnLevel)\ \{\ \mbox{\hyperlink{class_equipment_a38d0e174dc04f3ea6d99a186fbaa9a21}{EnhancementLevel}}\ =\ newEnLevel;\ \}}
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_equipment_a250453d8c59f8a21f58d6ae08f1b7203}{GetEnLevel}}()\ \{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_equipment_a38d0e174dc04f3ea6d99a186fbaa9a21}{EnhancementLevel}};\ \}}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_equipment_ac941d06e95728d27819da0b82e9cc69f}{SetStat}}(\textcolor{keywordtype}{int}\ newStat)\ \{\ \mbox{\hyperlink{class_equipment_ad6898af497494d11675f57155792a848}{Stat}}\ =\ newStat;\ \}}
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_equipment_a025eda1cd2c95ccf9fd6fa1c3dc8dfe0}{GetStat}}()\ \{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_equipment_ad6898af497494d11675f57155792a848}{Stat}};\ \}}
+\DoxyCodeLine{00024\ \};}
+
+\end{DoxyCode}

@@ -108,18 +108,21 @@ Item에 대한 상속 다이어그램 : </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public 멤버 함수</h2></td></tr>
-<tr class="memitem:ac9fdd690ffb0ad0563fe4968de86a0a0" id="r_ac9fdd690ffb0ad0563fe4968de86a0a0"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac9fdd690ffb0ad0563fe4968de86a0a0">Item</a> (const std::string &amp;name)</td></tr>
+<tr class="memitem:a001d145e114150c020f084e8717b7585" id="r_a001d145e114150c020f084e8717b7585"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a001d145e114150c020f084e8717b7585">Item</a> (const std::string &amp;name, int amount)</td></tr>
 <tr class="memitem:a33cc9c0bc556b5a33a9d0d58d37c602b" id="r_a33cc9c0bc556b5a33a9d0d58d37c602b"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a33cc9c0bc556b5a33a9d0d58d37c602b">~Item</a> ()</td></tr>
-<tr class="memitem:a6de955f0399b5102dc03a3ff40209df5" id="r_a6de955f0399b5102dc03a3ff40209df5"><td class="memItemLeft" align="right" valign="top">virtual std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6de955f0399b5102dc03a3ff40209df5">GetName</a> () const</td></tr>
 <tr class="memitem:a282ccde42335eabde3f9bcdae54fcd33" id="r_a282ccde42335eabde3f9bcdae54fcd33"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a282ccde42335eabde3f9bcdae54fcd33">Use</a> (<a class="el" href="class_characters.html">Characters</a> &amp;target)=0</td></tr>
+<tr class="memitem:a6de955f0399b5102dc03a3ff40209df5" id="r_a6de955f0399b5102dc03a3ff40209df5"><td class="memItemLeft" align="right" valign="top">virtual std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6de955f0399b5102dc03a3ff40209df5">GetName</a> () const</td></tr>
+<tr class="memitem:a17188dc53e7d6858d59017daf5c9d387" id="r_a17188dc53e7d6858d59017daf5c9d387"><td class="memItemLeft" align="right" valign="top">virtual int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a17188dc53e7d6858d59017daf5c9d387">GetAmount</a> ()</td></tr>
+<tr class="memitem:a7cf0e1aeeaf79a63e4f0e1fe7e4a4b01" id="r_a7cf0e1aeeaf79a63e4f0e1fe7e4a4b01"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7cf0e1aeeaf79a63e4f0e1fe7e4a4b01">SetAmount</a> (int newAmount)</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pro-attribs" class="groupheader"><a id="pro-attribs" name="pro-attribs"></a>
 Protected 속성</h2></td></tr>
 <tr class="memitem:afa90f8cb5a40f53a8ff8433d7c8060c3" id="r_afa90f8cb5a40f53a8ff8433d7c8060c3"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afa90f8cb5a40f53a8ff8433d7c8060c3">Name</a></td></tr>
+<tr class="memitem:aad14be519566d88ed82b733cf011dba9" id="r_aad14be519566d88ed82b733cf011dba9"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aad14be519566d88ed82b733cf011dba9">Amount</a></td></tr>
 </table>
 <a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">생성자 &amp; 소멸자 문서화</h2>
-<a id="ac9fdd690ffb0ad0563fe4968de86a0a0" name="ac9fdd690ffb0ad0563fe4968de86a0a0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac9fdd690ffb0ad0563fe4968de86a0a0">&#9670;&#160;</a></span>Item()</h2>
+<a id="a001d145e114150c020f084e8717b7585" name="a001d145e114150c020f084e8717b7585"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a001d145e114150c020f084e8717b7585">&#9670;&#160;</a></span>Item()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -130,8 +133,12 @@ Protected 속성</h2></td></tr>
         <tr>
           <td class="memname">Item::Item </td>
           <td>(</td>
-          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>name</em></span></td><td>)</td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>name</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>amount</em></span>&#160;)</td>
         </tr>
       </table>
   </td>
@@ -143,8 +150,8 @@ Protected 속성</h2></td></tr>
 <div class="dynheader">
 이 함수를 호출하는 함수들에 대한 그래프입니다.:</div>
 <div class="dyncontent">
-<div class="center"><img src="class_item_ac9fdd690ffb0ad0563fe4968de86a0a0_icgraph.png" border="0" usemap="#aclass_item_ac9fdd690ffb0ad0563fe4968de86a0a0_icgraph" loading="lazy" alt=""/></div>
-<map name="aclass_item_ac9fdd690ffb0ad0563fe4968de86a0a0_icgraph" id="aclass_item_ac9fdd690ffb0ad0563fe4968de86a0a0_icgraph">
+<div class="center"><img src="class_item_a001d145e114150c020f084e8717b7585_icgraph.png" border="0" usemap="#aclass_item_a001d145e114150c020f084e8717b7585_icgraph" loading="lazy" alt=""/></div>
+<map name="aclass_item_a001d145e114150c020f084e8717b7585_icgraph" id="aclass_item_a001d145e114150c020f084e8717b7585_icgraph">
 <area shape="rect" title=" " alt="" coords="233,31,314,57"/>
 <area shape="rect" href="class_attack_boost.html#adf420422a6415b65e9eef4ff225da19f" title=" " alt="" coords="8,5,182,32"/>
 <area shape="poly" title=" " alt="" coords="217,39,182,34,183,28,217,33"/>
@@ -181,6 +188,31 @@ Protected 속성</h2></td></tr>
 </div>
 </div>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">멤버 함수 문서화</h2>
+<a id="a17188dc53e7d6858d59017daf5c9d387" name="a17188dc53e7d6858d59017daf5c9d387"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a17188dc53e7d6858d59017daf5c9d387">&#9670;&#160;</a></span>GetAmount()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual int Item::GetAmount </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="a6de955f0399b5102dc03a3ff40209df5" name="a6de955f0399b5102dc03a3ff40209df5"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a6de955f0399b5102dc03a3ff40209df5">&#9670;&#160;</a></span>GetName()</h2>
 
@@ -203,20 +235,31 @@ Protected 속성</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="dynheader">
-이 함수를 호출하는 함수들에 대한 그래프입니다.:</div>
-<div class="dyncontent">
-<div class="center"><img src="class_item_a6de955f0399b5102dc03a3ff40209df5_icgraph.png" border="0" usemap="#aclass_item_a6de955f0399b5102dc03a3ff40209df5_icgraph" loading="lazy" alt=""/></div>
-<map name="aclass_item_a6de955f0399b5102dc03a3ff40209df5_icgraph" id="aclass_item_a6de955f0399b5102dc03a3ff40209df5_icgraph">
-<area shape="rect" title=" " alt="" coords="299,31,410,57"/>
-<area shape="rect" href="class_game_manager.html#a49b13f02f36be41415bd9dc60c55c2a1" title=" " alt="" coords="103,5,251,32"/>
-<area shape="poly" title=" " alt="" coords="283,37,251,32,252,27,284,31"/>
-<area shape="rect" href="class_shop.html#a6dc86a785aec3b4e6c6c2ad719ff1f94" title=" " alt="" coords="123,56,231,83"/>
-<area shape="poly" title=" " alt="" coords="284,57,231,64,231,59,283,51"/>
-<area shape="rect" href="_main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,5,55,32"/>
-<area shape="poly" title=" " alt="" coords="87,21,55,21,55,16,87,16"/>
-</map>
+
 </div>
+</div>
+<a id="a7cf0e1aeeaf79a63e4f0e1fe7e4a4b01" name="a7cf0e1aeeaf79a63e4f0e1fe7e4a4b01"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7cf0e1aeeaf79a63e4f0e1fe7e4a4b01">&#9670;&#160;</a></span>SetAmount()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void Item::SetAmount </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>newAmount</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
 
 </div>
 </div>
@@ -248,6 +291,28 @@ Protected 속성</h2></td></tr>
 </div>
 </div>
 <a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="groupheader">멤버 데이터 문서화</h2>
+<a id="aad14be519566d88ed82b733cf011dba9" name="aad14be519566d88ed82b733cf011dba9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aad14be519566d88ed82b733cf011dba9">&#9670;&#160;</a></span>Amount</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Item::Amount</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="afa90f8cb5a40f53a8ff8433d7c8060c3" name="afa90f8cb5a40f53a8ff8433d7c8060c3"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#afa90f8cb5a40f53a8ff8433d7c8060c3">&#9670;&#160;</a></span>Name</h2>
 

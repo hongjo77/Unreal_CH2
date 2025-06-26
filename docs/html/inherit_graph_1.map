@@ -1,3 +1,11 @@
 <map id="그래픽컬한 클래스 계통도" name="그래픽컬한 클래스 계통도">
-<area shape="rect" id="Node000000" href="$class_game_manager.html" title=" " alt="" coords="5,5,112,32"/>
+<area shape="rect" id="Node000000" href="$class_equipment.html" title=" " alt="" coords="5,81,89,108"/>
+<area shape="rect" id="Node000001" href="$class_chest.html" title=" " alt="" coords="143,5,199,32"/>
+<area shape="poly" id="edge1_Node000000_Node000001" title=" " alt="" coords="82,70,146,30,149,35,85,75"/>
+<area shape="rect" id="Node000002" href="$class_helmet.html" title=" " alt="" coords="139,56,202,83"/>
+<area shape="poly" id="edge2_Node000000_Node000002" title=" " alt="" coords="103,80,138,73,139,78,104,86"/>
+<area shape="rect" id="Node000003" href="$class_leg.html" title=" " alt="" coords="150,107,192,133"/>
+<area shape="poly" id="edge3_Node000000_Node000003" title=" " alt="" coords="104,104,150,113,149,118,103,109"/>
+<area shape="rect" id="Node000004" href="$class_weapon.html" title=" " alt="" coords="137,157,205,184"/>
+<area shape="poly" id="edge4_Node000000_Node000004" title=" " alt="" coords="85,114,149,155,146,159,82,119"/>
 </map>

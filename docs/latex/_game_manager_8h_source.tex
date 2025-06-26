@@ -7,20 +7,24 @@
 \DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_monster_8h}{Monster.h}}"{}}}
 \DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_boss_monster_8h}{BossMonster.h}}"{}}}
 \DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_shop_8h}{Shop.h}}"{}}}
-\DoxyCodeLine{00006\ }
-\DoxyCodeLine{00007\ \textcolor{keyword}{using\ namespace\ }std;}
-\DoxyCodeLine{00008\ }
-\DoxyCodeLine{00009\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_game_manager}{GameManager}}}
-\DoxyCodeLine{00010\ \{}
-\DoxyCodeLine{00011\ \textcolor{keyword}{private}:}
-\DoxyCodeLine{00012\ \ \ \ \ \mbox{\hyperlink{class_shop}{Shop}}\ shopInstance;}
-\DoxyCodeLine{00013\ }
-\DoxyCodeLine{00014\ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00015\ \ \ \ \ \mbox{\hyperlink{class_monster}{Monster}}*\ \mbox{\hyperlink{class_game_manager_a0164524342dd9edfe6eb23067dba84c5}{GenerateMonster}}(\textcolor{keywordtype}{int}\ level);}
-\DoxyCodeLine{00016\ \ \ \ \ \mbox{\hyperlink{class_boss_monster}{BossMonster}}*\ \mbox{\hyperlink{class_game_manager_af84d568da0e6765df5d5d4ee600df6cc}{GenerateBossMonster}}(\textcolor{keywordtype}{int}\ level);}
-\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_game_manager_a49b13f02f36be41415bd9dc60c55c2a1}{Battle}}(\mbox{\hyperlink{class_characters}{Characters}}\&\ player,\ \mbox{\hyperlink{class_monster}{Monster}}\&\ enemy);}
-\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_game_manager_acdaa8e27fbee5fdf701ee8461a361039}{VisitShop}}(\mbox{\hyperlink{class_characters}{Characters}}\&\ player);}
-\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_game_manager_ab917b9c4129c645f0076bb1081d2d33f}{DisplayInventory}}(\mbox{\hyperlink{class_characters}{Characters}}\&\ player);}
-\DoxyCodeLine{00020\ \};}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#define\ COLOR\_RESET\ "{}\(\backslash\)x1b[0m"{}}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#define\ COLOR\_RED\ \ \ \ \ "{}\(\backslash\)x1b[31m"{}}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#define\ COLOR\_GREEN\ \ \ "{}\(\backslash\)x1b[32m"{}}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{keyword}{using\ namespace\ }std;}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_game_manager}{GameManager}}}
+\DoxyCodeLine{00013\ \{}
+\DoxyCodeLine{00014\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00015\ \ \ \ \ \mbox{\hyperlink{class_shop}{Shop}}\ shopInstance;}
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{keywordtype}{int}\ BattleCount\ =\ 1;}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00019\ \ \ \ \ \mbox{\hyperlink{class_monster}{Monster}}*\ \mbox{\hyperlink{class_game_manager_a0164524342dd9edfe6eb23067dba84c5}{GenerateMonster}}(\textcolor{keywordtype}{int}\ level);}
+\DoxyCodeLine{00020\ \ \ \ \ \mbox{\hyperlink{class_boss_monster}{BossMonster}}*\ \mbox{\hyperlink{class_game_manager_af84d568da0e6765df5d5d4ee600df6cc}{GenerateBossMonster}}(\textcolor{keywordtype}{int}\ level);}
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_game_manager_a49b13f02f36be41415bd9dc60c55c2a1}{Battle}}(\mbox{\hyperlink{class_characters}{Characters}}\&\ player,\ \mbox{\hyperlink{class_monster}{Monster}}\&\ enemy);}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_game_manager_acdaa8e27fbee5fdf701ee8461a361039}{VisitShop}}(\mbox{\hyperlink{class_characters}{Characters}}\&\ player);}
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_game_manager_ab917b9c4129c645f0076bb1081d2d33f}{DisplayInventory}}(\mbox{\hyperlink{class_characters}{Characters}}\&\ player);}
+\DoxyCodeLine{00024\ \};}
 
 \end{DoxyCode}

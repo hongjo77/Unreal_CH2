@@ -2,13 +2,15 @@
 \hypertarget{_characters_8h}{}\label{_characters_8h}\index{Characters.h@{Characters.h}}
 {\ttfamily \#include $<$string$>$}\newline
 {\ttfamily \#include $<$vector$>$}\newline
-{\ttfamily \#include "{}Item.\+h"{}}\newline
+{\ttfamily \#include "{}Health\+Potion.\+h"{}}\newline
+{\ttfamily \#include "{}Attack\+Boost.\+h"{}}\newline
+{\ttfamily \#include "{}Equipment.\+h"{}}\newline
 Characters.\+h에 대한 include 의존 그래프
 \nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=199pt]{_characters_8h__incl}
+\includegraphics[width=350pt]{_characters_8h__incl}
 \end{center}
 \end{figure}
 이 그래프는 이 파일을 직/간접적으로 include 하는 파일들을 보여줍니다.\+:
@@ -24,3 +26,36 @@ Characters.\+h에 대한 include 의존 그래프
 \item 
 class \mbox{\hyperlink{class_characters}{Characters}}
 \end{DoxyCompactItemize}
+\doxysubsubsection*{열거형 타입}
+\begin{DoxyCompactItemize}
+\item 
+enum class \mbox{\hyperlink{_characters_8h_a904b2f9c8f3951116c343784c59d6afe}{Attack\+Type}} \{ \mbox{\hyperlink{_characters_8h_a904b2f9c8f3951116c343784c59d6afea960b44c579bc2f6818d2daaf9e4c16f0}{Normal}}
+, \mbox{\hyperlink{_characters_8h_a904b2f9c8f3951116c343784c59d6afea1a66e8793e837ada3a21c83b40672d82}{Fire\+Ball}}
+, \mbox{\hyperlink{_characters_8h_a904b2f9c8f3951116c343784c59d6afea861bb8830b30ae92120225676fe880bb}{Strike}}
+ \}
+\end{DoxyCompactItemize}
+
+
+\label{doc-enum-members}
+\Hypertarget{_characters_8h_doc-enum-members}
+\doxysubsection{열거형 타입 문서화}
+\Hypertarget{_characters_8h_a904b2f9c8f3951116c343784c59d6afe}\index{Characters.h@{Characters.h}!AttackType@{AttackType}}
+\index{AttackType@{AttackType}!Characters.h@{Characters.h}}
+\doxysubsubsection{\texorpdfstring{AttackType}{AttackType}}
+{\footnotesize\ttfamily \label{_characters_8h_a904b2f9c8f3951116c343784c59d6afe} 
+enum class \mbox{\hyperlink{_characters_8h_a904b2f9c8f3951116c343784c59d6afe}{Attack\+Type}}\hspace{0.3cm}{\ttfamily [strong]}}
+
+\begin{DoxyEnumFields}[2]{열거형 멤버}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Normal@{Normal}!Characters.h@{Characters.h}}\index{Characters.h@{Characters.h}!Normal@{Normal}}}\Hypertarget{_characters_8h_a904b2f9c8f3951116c343784c59d6afea960b44c579bc2f6818d2daaf9e4c16f0}\label{_characters_8h_a904b2f9c8f3951116c343784c59d6afea960b44c579bc2f6818d2daaf9e4c16f0} 
+Normal&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{FireBall@{FireBall}!Characters.h@{Characters.h}}\index{Characters.h@{Characters.h}!FireBall@{FireBall}}}\Hypertarget{_characters_8h_a904b2f9c8f3951116c343784c59d6afea1a66e8793e837ada3a21c83b40672d82}\label{_characters_8h_a904b2f9c8f3951116c343784c59d6afea1a66e8793e837ada3a21c83b40672d82} 
+Fire\+Ball&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Strike@{Strike}!Characters.h@{Characters.h}}\index{Characters.h@{Characters.h}!Strike@{Strike}}}\Hypertarget{_characters_8h_a904b2f9c8f3951116c343784c59d6afea861bb8830b30ae92120225676fe880bb}\label{_characters_8h_a904b2f9c8f3951116c343784c59d6afea861bb8830b30ae92120225676fe880bb} 
+Strike&\\
+\hline
+
+\end{DoxyEnumFields}
