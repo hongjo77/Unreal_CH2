@@ -130,7 +130,7 @@ Monster* GameManager::GenerateMonster(int level)
 ```
 </details>
 <details>
-	<summary>전투 중 아이템 사용이나 캐릭터 스킬 사용 등 자동 진행</summary>
+	<summary>전투와 아이템 사용 자동 진행</summary>
 
 ```c++
 // 1. 아이템 사용
@@ -328,8 +328,36 @@ if (player->GetLevel() >= 10)
 
 ```
 </details>
+
+
+
+## ➕ 추가 기능
+
+### ◼ 캐릭터 스킬 시스템
+
 <details>
-	<summary>----</summary>
+	<summary>캐릭터에 마나 스탯 추가</summary>
+
+```c++
+
+```
+</details>
+<details>
+	<summary>마나가 있을 시 스킬 2종류와 일반 공격 중 랜덤으로 시전</summary>
+
+```c++
+
+```
+</details>
+<details>
+	<summary>일반 공격 시 마나 회복</summary>
+
+```c++
+
+```
+</details>
+<details>
+	<summary>스킬 공격 시 마나 소모 후 강력한 공격</summary>
 
 ```c++
 
@@ -337,40 +365,106 @@ if (player->GetLevel() >= 10)
 </details>
 
 
-## ➕ 추가 기능
+### ◼ 특수 몬스터
 
-#### ◼ 캐릭터 스킬 시스템
+<details>
+	<summary>공격 시 플레이어 캐릭터의 골드 강탈</summary>
 
-- 캐릭터에 마나 스탯 추가
-- 마나가 있을 시 스킬 2종류와 일반 공격 중 랜덤으로 시전
-- 일반 공격 시 마나 회복
-- 스킬 공격 시 마나 소모 후 강력한 공격
+```c++
 
-#### ◼ 특수 몬스터
+```
+</details>
+<details>
+	<summary>처치 시 강탈당한 골드와 더 많은 골드 획득</summary>
 
-- 공격 시 플레이어 캐릭터의 골드 강탈
-- 처치 시 강탈당한 골드와 더 많은 골드 획득
-- 3턴 안에 못 잡을 시 도망
+```c++
+
+```
+</details>
+<details>
+	<summary>3턴 안에 못 잡을 시 도망</summary>
+
+```c++
+
+```
+</details>
+
 
 #### ◼ 보스 몬스터
 
-- 공격 시 낮은 확률로 강력한 공격(스킬) 시전
-- 공격 시 낮은 확률로 공격력 약화 or 방어도 약화 디버프 시전
-- 처치 시 게임 엔딩!!
+<details>
+	<summary>공격 시 낮은 확률로 강력한 공격(스킬) 시전</summary>
 
-#### ◼ 장비 시스템
+```c++
 
-- 무기 장비를 통해 공격력 상승
-- 방어구 장비를 통해 방어도 상승
-- 상점에서 장비를 강화하는 대장장이 기능 추가
-- 강화 성공은 확률이 존재하며 실패 시 강화 수치 유지 or 하락
+```
+</details>
+<details>
+	<summary>공격 시 낮은 확률로 공격력 약화 or 방어도 약화 디버프 시전</summary>
 
-#### ◼ 업적 시스템
+```c++
 
-- 플레이어는 주어진 조건을 만족하면 히든 업적 달성
-- 게임 오버 시 로그, 통계, 업적 확인 가능
+```
+</details>
+<details>
+	<summary>처치 시 게임 엔딩!!</summary>
 
-#### ◼ ASCII Art
+```c++
+
+```
+</details>
+
+
+### ◼ 장비 시스템
+
+<details>
+	<summary>무기 장비를 통해 공격력 상승</summary>
+
+```c++
+
+```
+</details>
+<details>
+	<summary>방어구 장비를 통해 방어도 상승</summary>
+
+```c++
+
+```
+</details>
+<details>
+	<summary>상점에서 장비를 강화하는 대장장이 기능 추가</summary>
+
+```c++
+
+```
+</details>
+<details>
+	<summary>강화 성공은 확률이 존재하며 실패 시 강화 수치 유지 or 하락</summary>
+
+```c++
+
+```
+</details>
+
+
+### ◼ 업적 시스템
+
+<details>
+	<summary>플레이어는 주어진 조건을 만족하면 히든 업적 달성</summary>
+
+```c++
+
+```
+</details>
+<details>
+	<summary>게임 오버 시 로그, 통계, 업적 확인 가능</summary>
+
+```c++
+
+```
+</details>
+
+### ◼ ASCII Art
 
 
 ## ⏰ 개발 기간
