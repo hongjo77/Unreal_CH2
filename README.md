@@ -8,8 +8,22 @@ C++ 콘솔창에서 진행되는 자동 턴제 텍스트 RPG입니다.
 
 #### ◼ 캐릭터 생성 및 관리
 
-- <details>
+<details>
     <summary>원하는 이름과 함께 플레이어 캐릭터 생성</summary>
+
+    cout << "캐릭터 이름을 입력하세요: ";
+		getline(cin, Name);
+
+		// 이름이 비었거나 맨 앞이 공백이면 다시 입력
+		if (Name.empty() || Name[0] == ' ') {
+			cout << RED << "이름은 공백으로 시작할 수 없습니다. 다시 입력해주세요." << RESET << endl;
+			continue;
+		}
+		break;
+	}
+
+    // 캐릭터 인스턴스 생성
+    Characters* player = Characters::GetInstance(Name);
 </details>
 - 캐릭터의 주요 스탯 표시
 - 레벨업 시 캐릭터의 체력, 공격력 증가
