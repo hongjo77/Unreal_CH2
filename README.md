@@ -73,30 +73,30 @@ C++ 콘솔창에서 진행되는 자동 턴제 RPG입니다.
 
 ```
 CH2Project
-| ┌Item (Item.h)
-| | ├AttackBoost (AttackBoost.h, AttackBoost.cpp)
-| | └HealthPotion (HealthPotion.h, HealthPotion.cpp)
+| ┌ Item (Item.h)
+| |  ├ AttackBoost (AttackBoost.h, AttackBoost.cpp)
+| |  └ HealthPotion (HealthPotion.h, HealthPotion.cpp)
 | |
-│ ├Monster (Monster.h, Monster.cpp)
-| | ├Bat (Bat.h, Bat.cpp)
-| | ├BossMonster (BossMonster.h, BossMonster.cpp)
-| | ├Goblin (Goblin.h, Goblin.cpp)
-| | ├GoldenGoblin (GoldenGoblin.h, GoldenGoblin.cpp)
-| | └Slime (Slime.h, Slime.cpp)
+│ ├ Monster (Monster.h, Monster.cpp)
+| |  ├ Bat (Bat.h, Bat.cpp)
+| |  ├ BossMonster (BossMonster.h, BossMonster.cpp)
+| |  ├ Goblin (Goblin.h, Goblin.cpp)
+| |  ├ GoldenGoblin (GoldenGoblin.h, GoldenGoblin.cpp)
+| |  └ Slime (Slime.h, Slime.cpp)
 | |
-| ├Characters (Characters.h, Characters.cpp)
-| ├GameLog (GameLog.h, GameLog.cpp)
-| ├GameManager (GameManager.h, GameManager.cpp)
-| ├Shop (Shop.h, Shop.cpp)
+| ├ Characters (Characters.h, Characters.cpp)
+| ├ GameLog (GameLog.h, GameLog.cpp)
+| ├ GameManager (GameManager.h, GameManager.cpp)
+| ├ Shop (Shop.h, Shop.cpp)
 | |
-│ ├Equipment (Equipment.h)
-| | ├Weapon (Weapon.h, Weapon.cpp)
-| | ├Helmet (Helmet.h, Helmet.cpp)
-| | ├Chest (Chest.h, Chest.cpp)
-| | └Leg (Leg.h, Leg.cpp)
+│ ├ Equipment (Equipment.h)
+| | ├ Weapon (Weapon.h, Weapon.cpp)
+| | ├ Helmet (Helmet.h, Helmet.cpp)
+| | ├ Chest (Chest.h, Chest.cpp)
+| | └ Leg (Leg.h, Leg.cpp)
 | |
-│ ├Color (Color.h)
-│ └Main.cpp
+│ ├ Color (Color.h)
+│ └ Main.cpp
 │
 └CH2Project.sln
 ```
