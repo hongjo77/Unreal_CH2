@@ -49,6 +49,9 @@ void Characters::DisplayStatus() const
 <details>
 	<summary>레벨업 시 캐릭터의 체력, 공격력 증가</summary>
 
+![image](https://github.com/user-attachments/assets/2b16b62d-3eb9-4246-99f5-cc118f490972)
+![image](https://github.com/user-attachments/assets/93864d1a-1398-4728-85c1-d0faa3ba8cdc)
+
 ```c++
 void Characters::LevelUp()
 {
@@ -68,6 +71,8 @@ void Characters::LevelUp()
 </details>
 <details>
 	<summary>인벤토리로 아이템 저장</summary>
+
+![image](https://github.com/user-attachments/assets/4697e35c-da7c-4a96-bcc1-278015829a4c)
 
 ```c++
 Characters::Characters(const string& inName)
@@ -96,6 +101,8 @@ AttackBoost::AttackBoost() : Item("Attack Boost", 0) {}
 
 <details>
 	<summary>몬스터는 랜덤하게 출몰, 낮은 확률로 특수 몬스터 출몰</summary>
+
+![image](https://github.com/user-attachments/assets/ed042ea1-6a41-4107-89d3-4a5ec190a025)
 
 ```c++
 Monster* GameManager::GenerateMonster(int level) 
