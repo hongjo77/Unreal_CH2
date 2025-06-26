@@ -241,15 +241,102 @@ if (player->GetLevel() >= 10)
 <details>
 	<summary>골드를 사용해 원하는 아이템과 수량을 자유롭게 구매 가능</summary>
 
-```c++
 
+![image](https://github.com/user-attachments/assets/c76bc78d-aa61-4728-bcfa-d6ddcf30379a)
+![image](https://github.com/user-attachments/assets/9b449255-e09b-4ca1-a9ba-86ce64c92a5c)
+
+```c++
+void Shop::BuyItem(int index, Characters& player)
+{
+    // 인덱스 확인
+    if (index < 0 || index >= (int)AvailableItems.size())
+    {
+        cout << "잘못된 인덱스입니다." << endl;
+        return;
+    }
+
+    string name = AvailableItems[index]->GetName();
+    
+    cout << name << "을(를) 선택하셨습니다. 구매 개수 선택 (0: 취소) : ";
+    int count = 0;
+    cin >> count;
+    cin.ignore(numeric_limits<streamsize>::max(), '\n');
+
+    if (count == 0) {
+        cout << "아이템 구매를 취소하셨습니다.\n" << endl;
+        return;
+    }
+
+    // 힐포션 선택하면 10원 아니면 (Attack boost인경우) 15원
+    int price = (name == "Health Potion") ? 10 : 15;
+    if (player.GetGold() < price * count)
+    {
+        cout << "골드가 부족합니다.\n" << endl;
+        return;
+    }
+    
+    auto& inv = player.GetInventory();
+    inv[index]->SetAmount(inv[index]->GetAmount() + count);
+
+    player.SetGold(player.GetGold() - (price * count));
+    cout << inv[index]->GetName() << "을(를) "<< count << "개 구매했습니다!\n" << endl;
+    GameLog::GetInstance()->GoldAchievement(-price);
+    
+}
 ```
 </details>
 <details>
 	<summary>인벤토리에 저장된 아이템을 수량을 정해서 판매 가능</summary>
 
-```c++
+![image](https://github.com/user-attachments/assets/f4ce0329-3f63-4f48-a3ad-c272fe58d028)
+![image](https://github.com/user-attachments/assets/2784c650-b2bd-42cf-8ef0-d93fd3e63515)
 
+```c++
+void Shop::SellItem(int index, Characters& player)
+{
+    auto& inv = player.GetInventory();
+    // 인덱스 확인
+    if (index < 0 || index >= (int)inv.size())
+    {
+        cout << "잘못된 인덱스입니다." << endl;
+        return;
+    }
+    string name = inv[index]->GetName();
+    cout << name << "을(를) 선택하셨습니다. (현재 소지 개수 : " << inv[index]->GetAmount() << ")" << endl;
+    if (inv[index]->GetAmount() <= 0) {
+        cout << "판매 할 수 있는 수량이 없습니다.\n" << endl;
+        return;
+    }
+
+    while (true) {
+
+        cout << "판매 개수 선택(0: 취소) : ";
+        int count = 0;
+        cin >> count;
+        cin.ignore(numeric_limits<streamsize>::max(), '\n');
+
+        if (count == 0) {
+            cout << "아이템 판매를 취소하셨습니다.\n" << endl;
+            return;
+        }
+
+        // 힐포션 선택하면 10원 아니면 (Attack boost인경우) 15원
+        int price = (name == "Health Potion") ? 10 : 15;
+        // 원래 가격의 60%만 지급
+        int sellPrice = static_cast<int>(price * 0.6);
+
+        if (inv[index]->GetAmount() < count) {
+            cout << "판매 가능한 개수를 넘었습니다.\n" << endl;
+            continue;
+        }
+
+        player.SetGold(player.GetGold() + (sellPrice * count));
+        cout << inv[index]->GetName() << "을(를) " << count << "개 판매했습니다. " << sellPrice * count << " 골드를 받았습니다.\n" << endl;
+
+        inv[index]->SetAmount(inv[index]->GetAmount() - count);
+        break;
+    }
+}
 ```
 </details>
 
@@ -382,22 +469,99 @@ oss.clear();
 <details>
 	<summary>공격 시 플레이어 캐릭터의 골드 강탈</summary>
 
-```c++
+![image](https://github.com/user-attachments/assets/97b4424e-23c1-4ccf-9738-49744534fdaa)
 
+```c++
+void GoldenGoblin::AttackPlayer(Characters& player) 
+{
+	int prevPlayerHealth = player.GetHealth();
+	int ArmorSubAttack = 0;
+	if (player.GetTotalArmorStat() - Attack > 0) {
+		ArmorSubAttack = 0;
+	}
+	else {
+		ArmorSubAttack = player.GetTotalArmorStat() - Attack;
+	}
+	int newHealth = prevPlayerHealth + ArmorSubAttack;
+	int prevGold = player.GetGold();
+	if (prevGold > 0) 
+	{
+		int newGold = prevGold - GoldAttack;
+		StolenMoney += GoldAttack;
+		if (newGold < 0) { newGold = 0; }
+		player.SetGold(newGold);
+	}
+
+	if (newHealth < 0) { newHealth = 0; }
+	player.SetHealth(newHealth);
+	cout << Name << "이(가) " << player.GetName() << "를 공격합니다! "
+		<< player.GetName() << " 체력: " << prevPlayerHealth << " → " << player.GetHealth();
+	if (prevGold > 0) 
+	{
+		cout << " 골드: " << prevGold << " -> " << player.GetGold() << endl;
+	}
+	else 
+	{
+		cout << " 골드: "<< player.GetGold() << endl;
+	}
+	cout << endl;
+	// 로그 추가
+	GameLog::GetInstance()->TakeDamageAchievement(-ArmorSubAttack);
+}
 ```
 </details>
 <details>
 	<summary>처치 시 강탈당한 골드와 더 많은 골드 획득</summary>
 
-```c++
+![image](https://github.com/user-attachments/assets/73150ca5-10a4-45d5-8fa7-4ed1b3af75b0)
 
+```c++
+void GoldenGoblin::OnDeath(Characters& player) 
+{
+	cout << endl;
+	cout << Name << " 처치!" << endl;
+
+	// 적을 물리쳤을 때 얻는 골드 (훔친 돈 포함)
+	int goldReward = (100 + rand() % 100) + StolenMoney;
+	// 플레이어 경험치 + 50 exp
+	player.SetExperience(player.GetExperience() + 50);
+	// 플레이어 골드 + 100~200 골드 + 훔친 돈
+	player.SetGold(player.GetGold() + goldReward);
+	cout << player.GetName() << "가 50 EXP와 " << goldReward << " 골드를 획득했습니다. 현재 EXP: "
+		<< player.GetExperience() << "/100, 골드: " << player.GetGold() << endl;
+
+	// 30% 확률로 아이템 드랍
+	int dropChance = rand() % 100;
+	if (dropChance < 30)
+	{
+		int index = DropItem();
+		auto& playerInventory = player.GetInventory();
+		playerInventory[index]->SetAmount(playerInventory[index]->GetAmount() + 1);
+		cout << player.GetName() << "이(가) " << playerInventory[index]->GetName() << "을(를) 1개 획득했습니다!" << endl;
+	}
+	// 로그 추가
+	GameLog::GetInstance()->GoldAchievement(goldReward);
+}
 ```
 </details>
 <details>
 	<summary>3턴 안에 못 잡을 시 도망</summary>
 
-```c++
+![image](https://github.com/user-attachments/assets/7b9b8b98-0330-4a4d-be3e-db6e6dbd4fbd)
 
+```c++
+if(enemy.IsGoldenGoblin() && BattleCount >= 4)
+{
+	oss.str("");
+	oss.clear();
+    oss << enemy.GetName() << "이(가) 전투에서 도망쳤습니다!" << endl;
+	GameLog::GetInstance()->PrintAndLog(oss.str());
+    enemy.TakeDamage(enemy.GetHealth()); //체력 0으로 만들어 죽은 상태로 처리
+
+    //턴 초기화
+    BattleCount = 1;
+    break;
+}
 ```
 </details>
 
@@ -407,7 +571,43 @@ oss.clear();
 <details>
 	<summary>공격 시 낮은 확률로 강력한 공격(스킬) 시전</summary>
 
+
+![image](https://github.com/user-attachments/assets/88f7045d-1a34-498c-a8e9-7b76b21fcd55)
+
 ```c++
+//30% 확률로 스킬 공격
+int skillChance = chanceDistribution(rng);
+if (skillChance < 30)
+{
+	cout << Name << "이(가) 강력한 기술로 " << player.GetName() << "를 공격합니다! ";
+        IsSkill = true;
+        if (player.GetTotalArmorStat() - SkillAttack > 0) {
+            ArmorSubAttack = 0;
+        }
+        else {
+            ArmorSubAttack = player.GetTotalArmorStat() - SkillAttack;
+        }
+        newHealth = prevPlayerHealth + ArmorSubAttack;
+}
+else
+{
+        cout << Name << "이(가) " << player.GetName() << "를 공격합니다! ";
+        if (player.GetTotalArmorStat() - Attack > 0) {
+            ArmorSubAttack = 0;
+        }
+        else {
+            ArmorSubAttack = player.GetTotalArmorStat() - Attack;
+        }
+        newHealth = prevPlayerHealth + ArmorSubAttack;
+}
+
+if (newHealth < 0)
+{
+        newHealth = 0;
+}
+player.SetHealth(newHealth);
+
+cout<< player.GetName() << " 체력: " << prevPlayerHealth << " → " << player.GetHealth() << endl;
 
 ```
 </details>
@@ -415,7 +615,35 @@ oss.clear();
 	<summary>공격 시 낮은 확률로 공격력 약화 or 방어도 약화 디버프 시전</summary>
 
 ```c++
+// 일반 공격 시 각각 20% 확률로 공격력 감소, 방어력 감소 디버프
+if (!IsSkill)
+{
+ 	int debuffChance = chanceDistribution(rng);
+        if (debuffChance >= 0 && debuffChance < 20)
+        {
+            int prevPlayerAttack = player.GetBaseAttack();
+            int DroppedPlayerAttack = static_cast<int>(player.GetBaseAttack() * 0.8);
+            player.SetAttack(DroppedPlayerAttack);
 
+            cout << player.GetName() << "이(가) 공격력 감소 디버프에 걸렸습니다! "
+                << player.GetName() << " 공격력: " << prevPlayerAttack << " → " << player.GetBaseAttack() << endl;
+        }
+        else if(debuffChance >=20 && debuffChance < 40)
+        {
+            int prevPlayerArmorStat = player.GetTotalArmorStat();
+            auto EquipList = player.GetEquipments();
+            for (auto& equip : EquipList) {
+                if (equip->GetStat() > 0) {
+                    equip->SetStat(equip->GetStat() - 5);
+                }
+                else {
+                    equip->SetStat(0);
+                }
+            }
+            cout << player.GetName() << "이(가) 방어력 감소 디버프에 걸렸습니다! "
+                << player.GetName() << "방어력: " << prevPlayerArmorStat << " → " << player.GetTotalArmorStat() << endl;
+        }
+}
 ```
 </details>
 <details>
