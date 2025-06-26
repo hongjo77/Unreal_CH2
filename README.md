@@ -54,6 +54,44 @@ C++ 콘솔창에서 진행되는 자동 턴제 RPG입니다.
 
 - 25.06.20 ~ 25.06.26
 
+## 📚 자료 및 문서
+
+- [기능명세서 페이지](https://teamsparta.notion.site/2182dc3ef51480f59a0ae5fb0ad2cc15?v=2182dc3ef51480d39847000cb7fca957)
+
+- [클래스 목록 페이지](https://hongjo77.github.io/Unreal_CH2/html/annotated.html)
+
+### 📁 폴더구조
+
+```
+CH2Project
+| ┌Item (Item.h)
+| | ├AttackBoost (AttackBoost.h, AttackBoost.cpp)
+| | └HealthPotion (HealthPotion.h, HealthPotion.cpp)
+| |
+│ ├Monster (Monster.h, Monster.cpp)
+| | ├Bat (Bat.h, Bat.cpp)
+| | ├BossMonster (BossMonster.h, BossMonster.cpp)
+| | ├Goblin (Goblin.h, Goblin.cpp)
+| | ├GoldenGoblin (GoldenGoblin.h, GoldenGoblin.cpp)
+| | └Slime (Slime.h, Slime.cpp)
+| |
+| ├Characters (Characters.h, Characters.cpp)
+| ├GameLog (GameLog.h, GameLog.cpp)
+| ├GameManager (GameManager.h, GameManager.cpp)
+| ├Shop (Shop.h, Shop.cpp)
+| |
+│ ├Equipment (Equipment.h)
+| | ├Weapon (Weapon.h, Weapon.cpp)
+| | ├Helmet (Helmet.h, Helmet.cpp)
+| | ├Chest (Chest.h, Chest.cpp)
+| | └Leg (Leg.h, Leg.cpp)
+| |
+│ ├Color (Color.h)
+│ └Main.cpp
+│
+└CH2Project.sln
+```
+
 ## 🧑‍🤝‍🧑 멤버 구성
 
 | 이름   | 역할                                                            | Github 주소                                             |
@@ -71,7 +109,6 @@ C++ 콘솔창에서 진행되는 자동 턴제 RPG입니다.
 
 <img src="https://img.shields.io/badge/IDE-Visual_Studio-5C2D91?style=for-the-badge&logo=visualstudio&logoColor=white" alt="Visual Studio Badge">
 
-## 📚 참고 자료 및 문서
+## 🔗 관련 링크
 
-- [프로젝트 노션 페이지](https://teamsparta.notion.site/2182dc3ef51480f59a0ae5fb0ad2cc15?v=2182dc3ef51480d39847000cb7fca957)
-- [클래스 문서 (Doxygen)](https://hongjo77.github.io/Unreal_CH2/html/annotated.html)
+- [팀 노션](https://teamsparta.notion.site/5-1ff2dc3ef5148096b38efc1cbaf5c14d)
