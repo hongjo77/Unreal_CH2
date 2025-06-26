@@ -11,10 +11,21 @@ AttackBoost::AttackBoost() : Item("Attack Boost", 0) {}
 
 void AttackBoost::Use(Characters& target) 
 {
+    //아이템 수량이 음수 값일 때 발생하는 예외 처리문
+    try
+    {
+        if(Amount < 0)
+        {
+            throw std::invalid_argument("아이템 수량은 음수일 수 없습니다.");
+        }
+    }
+    catch(const std::invalid_argument& e)
+    {
+        std::cerr << RED << "예외 발생: " << e.what() << RESET << endl;
+    }
     // 아이템을 소지하지 않고 있을 때 사용하지 않도록 조건문 추가
     if(Amount == 0)
     {
-        //std::cout << target.GetName() << "(이)가 " << Name << "을 소지하지 않고 있습니다." << endl;
         return;
     }
     // 공격력 랜덤 증가 10 ~ 50
