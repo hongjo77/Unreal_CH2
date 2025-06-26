@@ -10,7 +10,7 @@ C++ 콘솔창에서 진행되는 자동 턴제 텍스트 RPG입니다.
 
 <details>
     <summary>원하는 이름과 함께 플레이어 캐릭터 생성</summary>
-
+```c
     cout << "캐릭터 이름을 입력하세요: ";
 		getline(cin, Name);
 
@@ -24,6 +24,7 @@ C++ 콘솔창에서 진행되는 자동 턴제 텍스트 RPG입니다.
 
     // 캐릭터 인스턴스 생성
     Characters* player = Characters::GetInstance(Name);
+```
 </details>
 - 캐릭터의 주요 스탯 표시
 - 레벨업 시 캐릭터의 체력, 공격력 증가
