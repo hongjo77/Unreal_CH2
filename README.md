@@ -75,11 +75,13 @@ C++ 콘솔창에서 진행되는 자동 턴제 텍스트 RPG입니다.
 
 - [클래스 목록 페이지](https://hongjo77.github.io/Unreal_CH2/html/annotated.html)
 
-- [메인 흐름도](./docs/Unreal_CH2_5조_MainFlowChart.drawio.pdf)
+- [메인 흐름도](https://file.notion.so/f/f/83c75a39-3aba-4ba4-a792-7aefe4b07895/c01d560e-5078-4b20-883b-62fe64cc7eec/MainFlowChart.drawio.pdf?table=block&id=21e2dc3e-f514-805d-becd-ddf9fc6cb2ad&spaceId=83c75a39-3aba-4ba4-a792-7aefe4b07895&expirationTimestamp=1750968000000&signature=-Xe-VazbqJy7mFFNdMAts2rFEJPSLFC9DhpBrHrnbtY&downloadName=MainFlowChart.drawio.pdf)
 
-- [전투 흐름도](./docs/Unreal_CH2_5조_BattleFlowChart.drawio.pdf)
+- [전투 흐름도](https://file.notion.so/f/f/83c75a39-3aba-4ba4-a792-7aefe4b07895/de475ea7-f644-4502-9fa9-4a2e73b5f273/BattleFlowChart.drawio.pdf?table=block&id=21e2dc3e-f514-80e4-9799-f30a08ceb13b&spaceId=83c75a39-3aba-4ba4-a792-7aefe4b07895&expirationTimestamp=1750968000000&signature=h5RzPkQ7QKNxIJ7esQcGW_qsnmdatTXRWtiy6tiF1y4&downloadName=BattleFlowChart.drawio.pdf)
 
-- [상점 흐름도](./docs/Unreal_CH2_5조_ShopFlowChart.drawio.pdf)
+- [상점 흐름도](https://file.notion.so/f/f/83c75a39-3aba-4ba4-a792-7aefe4b07895/87efea06-4ec5-451e-bca0-c53c80f763fb/ShopFlowChart.drawio.pdf?table=block&id=21e2dc3e-f514-80a1-a897-deee0c912420&spaceId=83c75a39-3aba-4ba4-a792-7aefe4b07895&expirationTimestamp=1750968000000&signature=PlCF2AybWRIOA0F1oD_TovDOaY2HPgNX2VxgTv8QzNk&downloadName=ShopFlowChart.drawio.pdf)
+
+- [클래스 다이어그램](https://file.notion.so/f/f/83c75a39-3aba-4ba4-a792-7aefe4b07895/ba0cca75-e6ed-458d-8718-0f922a13ba13/Unreal_CH2_5%EC%A1%B0_%EB%8B%A4%EC%9D%B4%EC%96%B4%EA%B7%B8%EB%9E%A8.pdf?table=block&id=21e2dc3e-f514-8072-a1d8-d19099b36a1e&spaceId=83c75a39-3aba-4ba4-a792-7aefe4b07895&expirationTimestamp=1750968000000&signature=Zxfd_onK7p0zVPCS9KNik8BsHl8VoBCbdKvVHVr7pcg&downloadName=Unreal_CH2_5%EC%A1%B0_%EB%8B%A4%EC%9D%B4%EC%96%B4%EA%B7%B8%EB%9E%A8.pdf)
 
 ## 📁 폴더 구조
 
