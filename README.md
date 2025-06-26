@@ -98,7 +98,7 @@ CH2Project
 │ ├ Color (Color.h)
 │ └ Main.cpp
 │
-└CH2Project.sln
+└ CH2Project.sln
 ```
 
 ## 🧑‍🤝‍🧑 멤버 구성
