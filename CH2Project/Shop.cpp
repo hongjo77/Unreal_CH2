@@ -7,6 +7,7 @@
 #include <iostream>
 #include <Windows.h>
 #include <cstdlib>
+#include <sstream>
 
 HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
 
@@ -49,6 +50,7 @@ void Shop::DisplayItems() const
 // 아이템 구매
 void Shop::BuyItem(int index, Characters& player)
 {
+	std::stringstream oss;
     // 인덱스 확인
     if (index < 0 || index >= (int)AvailableItems.size())
     {
@@ -87,14 +89,16 @@ void Shop::BuyItem(int index, Characters& player)
     inv[index]->SetAmount(inv[index]->GetAmount() + count);
 
     player.SetGold(player.GetGold() - (price * count));
-    cout << inv[index]->GetName() << "을(를) "<< count << "개 구매했습니다!\n" << endl;
-    GameLog::GetInstance()->GoldAchievement(- (price * count));
+    oss << inv[index]->GetName() << "을(를) "<< count << "개 구매했습니다!\n" << endl;
+    GameLog::GetInstance()->PrintAndLog(oss.str());
+	GameLog::GetInstance()->GoldAchievement(- (price * count));
     
 }
 
 // 아이템 판매
 void Shop::SellItem(int index, Characters& player)
 {
+	std::stringstream oss;
     auto& inv = player.GetInventory();
     // 인덱스 확인
     if (index < 0 || index >= (int)inv.size())
@@ -140,7 +144,10 @@ void Shop::SellItem(int index, Characters& player)
         }
 
         player.SetGold(player.GetGold() + (sellPrice * count));
-        cout << inv[index]->GetName() << "을(를) " << count << "개 판매했습니다. " << sellPrice * count << " 골드를 받았습니다.\n" << endl;
+        oss.str("");
+		oss.clear();
+		oss << inv[index]->GetName() << "을(를) " << count << "개 판매했습니다. " << sellPrice * count << " 골드를 받았습니다.\n" << endl;
+		GameLog::GetInstance()->PrintAndLog(oss.str());
 
         inv[index]->SetAmount(inv[index]->GetAmount() - count);
         break;
@@ -290,7 +297,7 @@ void Shop::EquipEnhance(Characters& player) {
                 1
             );
 
-            if (0 == rand() % 5) {
+            if (0 == rand() % 5 && EquipList[equipIdx - 1]->GetEnLevel() != 0) {
                 cout << RED << "강화에 실패하여 강화 레벨이 하락하였습니다. \n" << RESET << endl;
                 EquipList[equipIdx - 1]->SetEnLevel(EnLevel - 1);
                 EquipList[equipIdx - 1]->SetStat(Stat - 5);

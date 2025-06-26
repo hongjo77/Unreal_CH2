@@ -25,6 +25,12 @@ void GameLog::AddLog(const std::string& logEntry)
     logs.push_back(logEntry);
 }
 
+void GameLog::PrintAndLog(const std::string& msg)
+{
+    std::cout << msg;
+	AddLog(msg);
+}
+
 void GameLog::UpdateStat(const std::string& statName, int value)
 {
     statistics[statName] += value;
@@ -48,27 +54,249 @@ void GameLog::PrintLogs()
 void GameLog::PrintStatistics()
 {
     system("cls");
-    std::cout << GREEN << "=== 통계 ===" << RESET << std::endl;
+
+    const int boxWidth = 44; // 박스의 고정 너비
+    std::vector<std::pair<std::string, int>> statList;
     for (const auto& stat : statistics)
     {
-        std::cout << stat.first << ": " << stat.second << std::endl;
+        statList.push_back(stat);
     }
+
+    // 박스 상단
+    std::cout << GREEN << "┌";
+    for (int i = 0; i < boxWidth; i++)
+    {
+        std::cout << "─";
+    }
+    std::cout << "┐" << RESET << std::endl;
+
+    // 타이틀
+    std::string title = "★ 통계 ★";
+    int title_display_len = 0;
+    for (size_t i = 0; i < title.size(); )
+    {
+        unsigned char c = title[i];
+        if ((c & 0x80) == 0)
+        {
+            ++title_display_len;
+            i++;
+        }
+        else if ((c & 0xE0) == 0xC0)
+        {
+            ++title_display_len;
+            i += 2;
+        }
+        else if ((c & 0xF0) == 0xE0)
+        {
+            title_display_len += 2;
+            i += 3;
+        }
+        else if ((c & 0xF8) == 0xF0)
+        {
+            ++title_display_len;
+            i += 4;
+        }
+        else
+        {
+            i++;
+        }
+    }
+    int leftPad = (boxWidth - title_display_len) / 2;
+    int rightPad = boxWidth - title_display_len - leftPad;
+    std::cout << GREEN << "│" << RESET
+              << std::string(leftPad, ' ') << title << std::string(rightPad, ' ')
+              << GREEN << "│" << RESET << std::endl;
+
+    // 중간 구분선
+    std::cout << GREEN << "├";
+    for (int i = 0; i < boxWidth; i++)
+    {
+        std::cout << "─";
+    }
+    std::cout << "┤" << RESET << std::endl;
+
+    // 통계 내용
+    if (statList.empty())
+    {
+        std::string emptyMsg = "기록된 통계가 없습니다";
+        int pad = boxWidth - emptyMsg.length();
+        std::cout << GREEN << "│" << RESET << " " << YELLOW << emptyMsg << RESET << std::string(pad - 1, ' ') << GREEN << "│" << RESET << std::endl;
+    }
+    else
+    {
+        for (const auto& stat : statList)
+        {
+            std::string statMsg = stat.first + ": " + std::to_string(stat.second);
+
+            // 출력 너비 계산 (한글 2칸, 영문/숫자/기호 1칸)
+            int display_len = 0;
+            for (size_t i = 0; i < statMsg.size(); )
+            {
+                unsigned char c = statMsg[i];
+                if ((c & 0x80) == 0)
+                {
+                    ++display_len;
+                    i++;
+                }
+                else if ((c & 0xE0) == 0xC0)
+                {
+                    ++display_len;
+                    i += 2;
+                }
+                else if ((c & 0xF0) == 0xE0)
+                {
+                    display_len += 2;
+                    i += 3;
+                }
+                else if ((c & 0xF8) == 0xF0)
+                {
+                    ++display_len;
+                    i += 4;
+                }
+                else
+                {
+                    i++;
+                }
+            }
+            int pad = boxWidth - 2 - display_len;
+            std::cout << GREEN << "│" << RESET << " " << YELLOW << stat.first << RESET << ": " << stat.second
+                      << std::string(pad, ' ') << GREEN << " │" << RESET << std::endl;
+        }
+    }
+
+    // 박스 하단
+    std::cout << GREEN << "└";
+    for (int i = 0; i < boxWidth; i++)
+    {
+        std::cout << "─";
+    }
+    std::cout << "┘" << RESET << std::endl;
 }
 
 void GameLog::PrintAchievement()
 {
 	system("cls");
-    std::cout << GREEN << "=== 업적 목록 ===" << RESET << std::endl;
+
+    const int boxWidth = 44; // 박스의 고정 너비
+    std::vector<std::string> achList;
     for (const auto& ach : achievements)
     {
-        std::cout << YELLOW <<  "[*** 업적 달성 ***] : " << ach.first << RESET << std::endl;
+        achList.push_back("[업적 달성] : " + ach.first);
     }
+
+    // 박스 상단
+    std::cout << GREEN << "┌";
+    for (int i = 0; i < boxWidth; i++)
+    {
+        std::cout << "─";
+    }
+    std::cout << "┐" << RESET << std::endl;
+
+    // 타이틀
+    std::string title = "★ 업적 목록 ★";
+    int title_display_len = 0;
+    for (size_t i = 0; i < title.size(); )
+    {
+        unsigned char c = title[i];
+        if ((c & 0x80) == 0)
+        {
+            ++title_display_len;
+            i++;
+        }
+        else if ((c & 0xE0) == 0xC0)
+        {
+            ++title_display_len;
+            i += 2;
+        }
+        else if ((c & 0xF0) == 0xE0)
+        {
+            title_display_len += 2;
+            i += 3;
+        }
+        else if ((c & 0xF8) == 0xF0)
+        {
+            ++title_display_len;
+            i += 4;
+        }
+        else
+        {
+            i++;
+        }
+    }
+    int leftPad = (boxWidth - title_display_len) / 2;
+    int rightPad = boxWidth - title_display_len - leftPad;
+    std::cout << GREEN << "│" << RESET
+              << std::string(leftPad, ' ') << title << std::string(rightPad, ' ')
+              << GREEN << "│" << RESET << std::endl;
+
+    // 중간 구분선
+    std::cout << GREEN << "├";
+    for (int i = 0; i < boxWidth; i++)
+    {
+        std::cout << "─";
+    }
+    std::cout << "┤" << RESET << std::endl;
+
+    // 업적 내용
+    if (achList.empty())
+    {
+        std::string emptyMsg = "달성한 업적이 없습니다";
+        int pad = boxWidth - emptyMsg.length();
+        std::cout << GREEN << "│" << RESET << " " << YELLOW << emptyMsg << RESET << std::string(pad - 1, ' ') << GREEN << "│" << RESET << std::endl;
+    }
+    else
+    {
+        for (const auto& msg : achList)
+        {
+            // 출력 너비 계산 (한글 2칸, 영문/숫자/기호 1칸)
+            int display_len = 0;
+            for (size_t i = 0; i < msg.size(); )
+            {
+                unsigned char c = msg[i];
+                if ((c & 0x80) == 0)
+                {
+                    ++display_len;
+                    i++;
+                }
+                else if ((c & 0xE0) == 0xC0)
+                {
+                    ++display_len;
+                    i += 2;
+                }
+                else if ((c & 0xF0) == 0xE0)
+                {
+                    display_len += 2;
+                    i += 3;
+                }
+                else if ((c & 0xF8) == 0xF0)
+                {
+                    ++display_len;
+                    i += 4;
+                }
+                else
+                {
+                    i++;
+                }
+            }
+            int pad = boxWidth - 2 - display_len;
+            std::cout << GREEN << "│" << RESET << " " << YELLOW << msg << RESET
+                      << std::string(pad, ' ') << GREEN << " │" << RESET << std::endl;
+        }
+    }
+
+    // 박스 하단
+    std::cout << GREEN << "└";
+    for (int i = 0; i < boxWidth; i++)
+    {
+        std::cout << "─";
+    }
+    std::cout << "┘" << RESET << std::endl;
 }
 
 void GameLog::KillAchievement(const std::string& monsterName)
 {
     statistics[monsterName + "_killed"]++;
-    logs.push_back("Player killed a " + monsterName + ".");
+    //logs.push_back("Player killed a " + monsterName + ".");
 
     if (monsterName == "Goblin" && statistics["Goblin_killed"] == 5)
     {
@@ -77,18 +305,18 @@ void GameLog::KillAchievement(const std::string& monsterName)
             CheckAchievement("고블린 5마리 처치");
         }
     }
-	if (monsterName == "Orc" && statistics["Orc_killed"] == 5)
+	if (monsterName == "Bat" && statistics["Bat_killed"] == 5)
     {
-        if (!IsAchieved("오크 5마리 처치"))
+        if (!IsAchieved("박쥐 5마리 처치"))
         {
-            CheckAchievement("오크 5마리 처치");
+            CheckAchievement("박쥐 5마리 처치");
         }
     }
-	if (monsterName == "Troll" && statistics["Troll_killed"] == 5)
+	if (monsterName == "Slime" && statistics["Slime_killed"] == 5)
     {
-        if (!IsAchieved("트롤 5마리 처치"))
+        if (!IsAchieved("슬라임 5마리 처치"))
         {
-            CheckAchievement("트롤 5마리 처치");
+            CheckAchievement("슬라임 5마리 처치");
         }
     }
 	if (monsterName == "Golden Goblin" && statistics["Golden Goblin_killed"] == 5)
@@ -105,7 +333,7 @@ void GameLog::GoldAchievement(int amount)
     if (amount > 0)
     {
         statistics["Gold_Gained"] += amount;
-        logs.push_back(std::string(YELLOW) + "플레이어가 " + std::to_string(amount) + "골드를 획득했습니다." + RESET);
+        //logs.push_back(std::string(YELLOW) + "플레이어가 " + std::to_string(amount) + "골드를 획득했습니다." + RESET);
 
         if (statistics["Gold_Gained"] >= 500 && !IsAchieved("500 골드 획득"))
         {
@@ -127,7 +355,7 @@ void GameLog::GoldAchievement(int amount)
 void GameLog::TakeDamageAchievement(int amount)
 {
     statistics["Damage_Taken"] += amount;
-    logs.push_back("Player took " + std::to_string(amount) + " damage.");
+    //logs.push_back("Player took " + std::to_string(amount) + " damage.");
 
     if (statistics["Damage_Taken"] >= 1000 && !IsAchieved("받은 데미지 1000 누적"))
     {
@@ -138,7 +366,7 @@ void GameLog::TakeDamageAchievement(int amount)
 void GameLog::AttackDamageAchievement(int amount)
 {
     statistics["Damage_Attack"] += amount;
-    logs.push_back("Player attack " + std::to_string(amount) + " damage.");
+    //logs.push_back("Player attack " + std::to_string(amount) + " damage.");
 
     if (statistics["Damage_Attack"] >= 1000 && !IsAchieved("준 데미지 1000 누적"))
     {
@@ -148,7 +376,7 @@ void GameLog::AttackDamageAchievement(int amount)
 
 void GameLog::LevelAchievement(int level)
 {
-    logs.push_back(std::string(BLUE)+ std::to_string(level)+"레벨 달성!" + RESET);
+    logs.push_back(std::string(GREEN)+ std::to_string(level)+"레벨 달성!" + RESET);
     if (level >= 10 && !IsAchieved("레벨 10 달성"))
     {
         CheckAchievement("레벨 10 달성");

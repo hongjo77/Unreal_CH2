@@ -19,6 +19,7 @@ public:
 
     void CheckAchievement(const std::string& achievementName);
     void AddLog(const std::string& logEntry);
+	void PrintAndLog(const std::string& msg);
     void UpdateStat(const std::string& statName, int value);
     bool IsAchieved(const std::string& achievementName);
     void PrintLogs();
