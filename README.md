@@ -132,6 +132,8 @@ Monster* GameManager::GenerateMonster(int level)
 <details>
 	<summary>전투와 아이템 사용 자동 진행</summary>
 
+![image](https://github.com/user-attachments/assets/b929222d-3a07-4abf-b5c2-188b5d5c6f72)
+
 ```c++
 // 1. 아이템 사용
 if (!player.GetInventory().empty())
@@ -147,6 +149,147 @@ if (!player.GetInventory().empty())
 	}
 }
 ```
+</details>
+<details>
+	<summary>전투 승리 시 고정적인 경험치 획득과 유동적인 골드 획득</summary>
+
+![image](https://github.com/user-attachments/assets/ee7ee9a2-451b-403d-afe3-2c263842346f)
+
+```c++
+void Monster::OnDeath(Characters& player) {
+    cout << endl;
+    cout << Name << " 처치!" << endl;
+
+    // 적을 물리쳤을 때 얻는 골드
+    int goldReward = 10 + rand() % 11;
+    // 플레이어 경험치 + 50 exp
+    player.SetExperience(player.GetExperience() + 50);
+    // 플레이어 골드 + 10~20 골드
+    player.SetGold(player.GetGold() + goldReward);
+    cout << player.GetName() << "가 50 EXP와 " << goldReward << " 골드를 획득했습니다. 현재 EXP: " 
+        << player.GetExperience() << "/100, 골드: " << player.GetGold() << endl;
+.
+.
+.
+}
+```
+</details>
+<details>
+	<summary>몬스터 처치 시 낮은 확률로 아이템을 드랍</summary>
+
+![image](https://github.com/user-attachments/assets/b73faf26-8113-448d-ab23-58890e9bd659)
+
+```c++
+void Monster::OnDeath(Characters& player) {
+.
+.
+.
+// 30% 확률로 아이템 드랍
+    int dropChance = rand() % 100;
+    if (dropChance < 30)
+    {
+        int index = DropItem();
+        auto& playerInventory = player.GetInventory();
+        playerInventory[index]->SetAmount(playerInventory[index]->GetAmount() + 1);
+        cout << player.GetName() << "이(가) " << playerInventory[index]->GetName() << "을(를) 1개 획득했습니다!" << endl;
+    }
+}
+```
+```c++
+// 몬스터가 아이템을 드랍
+int Monster::DropItem() 
+{
+    int itemType = rand() % 2;
+    if (itemType == 0)
+    {
+        cout << Name << "이(가) Health Potion을(를) 드랍했습니다!" << endl;
+    }
+    else
+    {
+        cout << Name << "이(가) Attack Boost을(를) 드랍했습니다!" << endl;
+    }
+    return itemType;
+}
+```
+</details>
+<details>
+	<summary>10레벨 달성 시 보스 몬스터 출몰</summary>
+
+![image](https://github.com/user-attachments/assets/994188b6-d06c-4d07-8533-94727d4cf15d)
+
+```c++
+// 10레벨이면 보스전 입장
+if (player->GetLevel() >= 10)
+{
+	GameLog::GetInstance()->AddLog(std::string(BLUE)+"보스층"+RESET);
+        system("cls");
+        player->DisplayStatus();
+        cout << endl;
+
+        // 보스 생성
+        BossMonster* boss = manager.GenerateBossMonster(player->GetLevel());
+        // 보스 전투
+        manager.Battle(*player, *boss);
+        delete boss;
+}
+```
+</details>
+
+
+### ◼ 상점 시스템
+
+<details>
+	<summary>골드를 사용해 원하는 아이템과 수량을 자유롭게 구매 가능</summary>
+
+```c++
+
+```
+</details>
+<details>
+	<summary>인벤토리에 저장된 아이템을 수량을 정해서 판매 가능</summary>
+
+```c++
+
+```
+</details>
+
+
+
+## ➕ 추가 기능
+
+### ◼ 캐릭터 스킬 시스템
+
+<details>
+	<summary>캐릭터에 마나 스탯 추가</summary>
+
+```c++
+class Characters
+{
+private:
+    static Characters* Instance;
+    string Name;
+    int Level;
+    int Health;
+    int MaxHealth;
+    int Attack;
+    int Experience;
+    int Gold;
+    int MaxMana; //최대 마나 추가
+    int CurrentMana; //현재 마나 추가
+```
+</details>
+<details>
+	<summary>마나가 있을 시 스킬 2종류와 일반 공격 중 랜덤으로 시전</summary>
+
+</details>
+<details>
+	<summary>일반 공격 시 마나 회복</summary>
+
+</details>
+<details>
+	<summary>스킬 공격 시 마나 소모 후 강력한 공격</summary>
+
+![image](https://github.com/user-attachments/assets/0007f663-dd05-46c8-8251-03678acdacdb)
 
 ```c++
 int Characters::RandomAttack()
@@ -230,137 +373,6 @@ else
 }
 oss.str("");
 oss.clear();
-```
-</details>
-<details>
-	<summary>전투 승리 시 고정적인 경험치 획득과 유동적인 골드 획득</summary>
-
-```c++
-void Monster::OnDeath(Characters& player) {
-    cout << endl;
-    cout << Name << " 처치!" << endl;
-
-    // 적을 물리쳤을 때 얻는 골드
-    int goldReward = 10 + rand() % 11;
-    // 플레이어 경험치 + 50 exp
-    player.SetExperience(player.GetExperience() + 50);
-    // 플레이어 골드 + 10~20 골드
-    player.SetGold(player.GetGold() + goldReward);
-    cout << player.GetName() << "가 50 EXP와 " << goldReward << " 골드를 획득했습니다. 현재 EXP: " 
-        << player.GetExperience() << "/100, 골드: " << player.GetGold() << endl;
-.
-.
-.
-}
-```
-</details>
-<details>
-	<summary>몬스터 처치 시 낮은 확률로 아이템을 드랍</summary>
-
-```c++
-void Monster::OnDeath(Characters& player) {
-.
-.
-.
-// 30% 확률로 아이템 드랍
-    int dropChance = rand() % 100;
-    if (dropChance < 30)
-    {
-        int index = DropItem();
-        auto& playerInventory = player.GetInventory();
-        playerInventory[index]->SetAmount(playerInventory[index]->GetAmount() + 1);
-        cout << player.GetName() << "이(가) " << playerInventory[index]->GetName() << "을(를) 1개 획득했습니다!" << endl;
-    }
-}
-```
-```c++
-// 몬스터가 아이템을 드랍
-int Monster::DropItem() 
-{
-    int itemType = rand() % 2;
-    if (itemType == 0)
-    {
-        cout << Name << "이(가) Health Potion을(를) 드랍했습니다!" << endl;
-    }
-    else
-    {
-        cout << Name << "이(가) Attack Boost을(를) 드랍했습니다!" << endl;
-    }
-    return itemType;
-}
-```
-</details>
-<details>
-	<summary>10레벨 달성 시 보스 몬스터 출몰</summary>
-
-```c++
-// 10레벨이면 보스전 입장
-if (player->GetLevel() >= 10)
-{
-	GameLog::GetInstance()->AddLog(std::string(BLUE)+"보스층"+RESET);
-        system("cls");
-        player->DisplayStatus();
-        cout << endl;
-
-        // 보스 생성
-        BossMonster* boss = manager.GenerateBossMonster(player->GetLevel());
-        // 보스 전투
-        manager.Battle(*player, *boss);
-        delete boss;
-}
-```
-</details>
-
-
-### ◼ 상점 시스템
-
-<details>
-	<summary>골드를 사용해 원하는 아이템과 수량을 자유롭게 구매 가능</summary>
-
-```c++
-
-```
-</details>
-<details>
-	<summary>인벤토리에 저장된 아이템을 수량을 정해서 판매 가능</summary>
-
-```c++
-
-```
-</details>
-
-
-
-## ➕ 추가 기능
-
-### ◼ 캐릭터 스킬 시스템
-
-<details>
-	<summary>캐릭터에 마나 스탯 추가</summary>
-
-```c++
-
-```
-</details>
-<details>
-	<summary>마나가 있을 시 스킬 2종류와 일반 공격 중 랜덤으로 시전</summary>
-
-```c++
-
-```
-</details>
-<details>
-	<summary>일반 공격 시 마나 회복</summary>
-
-```c++
-
-```
-</details>
-<details>
-	<summary>스킬 공격 시 마나 소모 후 강력한 공격</summary>
-
-```c++
-
 ```
 </details>
 
