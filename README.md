@@ -733,6 +733,7 @@ else if (menu == 3)
 	<summary>강화 성공은 확률이 존재하며 실패 시 강화 수치 유지 or 하락</summary>
 
 ![image](https://github.com/user-attachments/assets/215c4689-289a-47fd-a940-76f6f60947ee)
+
 ![image](https://github.com/user-attachments/assets/0ce863a2-4016-4c5e-b2a1-e14c78fe300b)
 ![image](https://github.com/user-attachments/assets/b44ae707-28e4-4646-ad26-15cc6df4b0b2)
 ![image](https://github.com/user-attachments/assets/bd20e588-e944-49e3-a866-929cdf96fea0)
