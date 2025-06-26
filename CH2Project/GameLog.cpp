@@ -1,4 +1,4 @@
-#include "GameLog.h"
+﻿#include "GameLog.h"
 #include "Color.h"
 
 GameLog* GameLog::instance = nullptr;
@@ -71,7 +71,7 @@ void GameLog::PrintStatistics()
     std::cout << "┐" << RESET << std::endl;
 
     // 타이틀
-    std::string title = "★ 통계 ★";
+    std::string title = "= 통계 =";
     int title_display_len = 0;
     for (size_t i = 0; i < title.size(); )
     {
@@ -193,7 +193,7 @@ void GameLog::PrintAchievement()
     std::cout << "┐" << RESET << std::endl;
 
     // 타이틀
-    std::string title = "★ 업적 목록 ★";
+    std::string title = "= 업적 목록 =";
     int title_display_len = 0;
     for (size_t i = 0; i < title.size(); )
     {
