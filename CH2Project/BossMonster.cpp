@@ -127,7 +127,7 @@ void BossMonster::AttackPlayer(Characters& player)
 			oss.str("");
 			oss.clear();
             oss << player.GetName() << "이(가) 방어력 감소 디버프에 걸렸습니다! "
-                << player.GetName() << "방어력: " << GREEN << prevPlayerArmorStat << RESET << " → " << RED << player.GetTotalArmorStat() << RESET << endl;
+                << player.GetName() << " 방어력: " << GREEN << prevPlayerArmorStat << RESET << " → " << RED << player.GetTotalArmorStat() << RESET << endl;
 			GameLog::GetInstance()->PrintAndLog(oss.str());
 		}
     }
