@@ -1296,6 +1296,10 @@ CH2Project
 | 최희윤 | Monster 인터페이스 및 하위 클래스 구성                          | [Chy-on](https://github.com/Chy-on)                     |
 | 홍사빈 | Item, Equipment 인터페이스 및 하위 클래스 구성                  | [dioon0000](https://github.com/dioon0000)               |
 
+## ✏ 성과 및 회고
+![회고](https://github.com/user-attachments/assets/a1dd35bb-784a-4f62-b194-241f43b66b89)
+
+
 ## ✔️ 기술 스택
 
 <img src="https://img.shields.io/badge/c++-00599C?style=for-the-badge&logo=c%2B%2B&logoColor=white"> <img src="https://img.shields.io/badge/git-F05032?style=for-the-badge&logo=git&logoColor=white"> <img src="https://img.shields.io/badge/github-181717?style=for-the-badge&logo=github&logoColor=white">
