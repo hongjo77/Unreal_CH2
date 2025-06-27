@@ -1220,6 +1220,10 @@ void GameLog::PrintAchievement()
 
 ## 📚 자료 및 문서
 
+<details>
+	<summary>- 메인 흐름도</summary>
+</details>
+
 - [메인 흐름도](https://file.notion.so/f/f/83c75a39-3aba-4ba4-a792-7aefe4b07895/c01d560e-5078-4b20-883b-62fe64cc7eec/MainFlowChart.drawio.pdf?table=block&id=21e2dc3e-f514-805d-becd-ddf9fc6cb2ad&spaceId=83c75a39-3aba-4ba4-a792-7aefe4b07895&expirationTimestamp=1750968000000&signature=-Xe-VazbqJy7mFFNdMAts2rFEJPSLFC9DhpBrHrnbtY&downloadName=MainFlowChart.drawio.pdf)
 
 - [전투 흐름도](https://file.notion.so/f/f/83c75a39-3aba-4ba4-a792-7aefe4b07895/de475ea7-f644-4502-9fa9-4a2e73b5f273/BattleFlowChart.drawio.pdf?table=block&id=21e2dc3e-f514-80e4-9799-f30a08ceb13b&spaceId=83c75a39-3aba-4ba4-a792-7aefe4b07895&expirationTimestamp=1750968000000&signature=h5RzPkQ7QKNxIJ7esQcGW_qsnmdatTXRWtiy6tiF1y4&downloadName=BattleFlowChart.drawio.pdf)
