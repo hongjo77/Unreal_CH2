@@ -1220,9 +1220,12 @@ void GameLog::PrintAchievement()
 
 ## 📚 자료 및 문서
 
-	<details>
-		<summary>- 메인 흐름도</summary>
-	</details>
+<details>
+	<summary>메인 흐름도</summary>
+
+ ![메인 순서도](https://github.com/user-attachments/assets/a53c349b-33f4-4a9c-81be-8e558b8d9b33)
+
+</details>
 
 - [메인 흐름도](https://file.notion.so/f/f/83c75a39-3aba-4ba4-a792-7aefe4b07895/c01d560e-5078-4b20-883b-62fe64cc7eec/MainFlowChart.drawio.pdf?table=block&id=21e2dc3e-f514-805d-becd-ddf9fc6cb2ad&spaceId=83c75a39-3aba-4ba4-a792-7aefe4b07895&expirationTimestamp=1750968000000&signature=-Xe-VazbqJy7mFFNdMAts2rFEJPSLFC9DhpBrHrnbtY&downloadName=MainFlowChart.drawio.pdf)
 
