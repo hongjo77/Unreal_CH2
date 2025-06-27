@@ -903,15 +903,305 @@ void Shop::EquipEnhance(Characters& player) {
 <details>
 	<summary>플레이어는 주어진 조건을 만족하면 히든 업적 달성</summary>
 
-```c++
+![image](https://github.com/user-attachments/assets/4398cd16-ac17-4d35-ad22-00cfaa3e8289)
 
+```c++
+void GameLog::KillAchievement(const std::string& monsterName)
+{
+    statistics[monsterName + "_killed"]++;
+
+    if (monsterName == "Goblin" && statistics["Goblin_killed"] == 5)
+    {
+        if (!IsAchieved("고블린 5마리 처치"))
+        {
+            CheckAchievement("고블린 5마리 처치");
+        }
+    }
+	if (monsterName == "Bat" && statistics["Bat_killed"] == 5)
+    {
+        if (!IsAchieved("박쥐 5마리 처치"))
+        {
+            CheckAchievement("박쥐 5마리 처치");
+        }
+    }
+	if (monsterName == "Slime" && statistics["Slime_killed"] == 5)
+    {
+        if (!IsAchieved("슬라임 5마리 처치"))
+        {
+            CheckAchievement("슬라임 5마리 처치");
+        }
+    }
+	if (monsterName == "Golden Goblin" && statistics["Golden Goblin_killed"] == 5)
+    {
+        if (!IsAchieved("황금 고블린 5마리 처치"))
+        {
+            CheckAchievement("황금 고블린 5마리 처치");
+        }
+    }
+}
+
+void GameLog::GoldAchievement(int amount)
+{
+    if (amount > 0)
+    {
+        statistics["Gold_Gained"] += amount;
+
+        if (statistics["Gold_Gained"] >= 500 && !IsAchieved("500 골드 획득"))
+        {
+            CheckAchievement("500 골드 획득");
+        }
+    }
+    else if (amount < 0)
+    {
+        statistics["Gold_Spent"] += -amount;
+        logs.push_back(std::string(YELLOW) +"플레이어가 " + std::to_string(-amount) + "골드를 사용했습니다."+ RESET);
+
+        if (statistics["Gold_Spent"] >= 500 && !IsAchieved("500 골드 사용"))
+        {
+            CheckAchievement("500 골드 사용");
+        }
+    }
+}
+
+void GameLog::TakeDamageAchievement(int amount)
+{
+    statistics["Damage_Taken"] += amount;
+
+    if (statistics["Damage_Taken"] >= 1000 && !IsAchieved("받은 데미지 1000 누적"))
+    {
+        CheckAchievement("받은 데미지 1000 누적");
+    }
+}
+
+void GameLog::AttackDamageAchievement(int amount)
+{
+    statistics["Damage_Attack"] += amount;
+
+    if (statistics["Damage_Attack"] >= 1000 && !IsAchieved("준 데미지 1000 누적"))
+    {
+        CheckAchievement("준 데미지 1000 누적");
+    }
+}
+
+void GameLog::LevelAchievement(int level)
+{
+    logs.push_back(std::string(GREEN)+ std::to_string(level)+"레벨 달성!" + RESET);
+    if (level >= 10 && !IsAchieved("레벨 10 달성"))
+    {
+        CheckAchievement("레벨 10 달성");
+    }
+}
+
+void GameLog::EquipmentAchievement(const std::string& equipmentName, int level, int result)
+{
+    statistics[equipmentName + "_level"]=level;
+
+	if(result==0)
+	{
+		logs.push_back(std::string(GREEN)+equipmentName + " 강화에 성공하셨습니다!"+ RESET);
+		statistics["upgrade success"]++;
+	}
+	else if(result==1)
+	{
+		logs.push_back(std::string(RED)+equipmentName + " 강화에 실패하셨습니다"+ RESET);
+		statistics["upgrade fail"]++;
+	}
+	else
+	{
+		logs.push_back(std::string(RED)+equipmentName + " downgrade."+ RESET);
+		statistics["downgrade"]++;
+	}
+    
+
+    if (statistics[equipmentName + "_level"] >= 5 && !IsAchieved(equipmentName+"_5강"))
+    {
+        CheckAchievement(equipmentName+"_5강");
+    }
+	if (statistics["upgrade success"] >= 10 && !IsAchieved("강화 성공 10번 달성"))
+    {
+        CheckAchievement("강화 성공 10번 달성");
+    }
+	else if (statistics["upgrade fail"] >= 10 && !IsAchieved("강화 실패 10번 달성"))
+    {
+        CheckAchievement("강화 실패 10번 달성");
+    }
+	if (statistics["downgrade"] >= 10 && !IsAchieved("강화 하락 10번 달성"))
+    {
+        CheckAchievement("강화 하락 10번 달성");
+    }
+}
 ```
 </details>
 <details>
 	<summary>게임 오버 시 로그, 통계, 업적 확인 가능</summary>
 
-```c++
+![image](https://github.com/user-attachments/assets/121d9067-4719-4448-a827-475e467762da)
 
+![image](https://github.com/user-attachments/assets/8799f127-13a3-4534-a45e-64dbc43ecbdc)
+![image](https://github.com/user-attachments/assets/3ba97ad4-9109-4fbb-a87f-e27ed12f482b)
+![image](https://github.com/user-attachments/assets/fd270c34-25de-4ae0-b7c4-c74cc375e397)
+
+```c++
+while (true)
+{
+    cout << "1. 로그 출력 2. 통계 출력 3. 업적 출력 0. 게임 종료" << endl;
+    cout << "선택: ";
+    int logChoice = 0;
+    cin >> logChoice;
+    if (cin.fail())
+	{
+        cin.clear();
+        cin.ignore(numeric_limits<streamsize>::max(), '\n');
+        system("cls");
+		cout << RED << "잘못된 입력입니다." << RESET << endl;
+		continue;
+    }
+
+    if (logChoice == 1)
+    {
+        GameLog::GetInstance()->PrintLogs();
+    }
+    else if (logChoice == 2)
+    {
+        GameLog::GetInstance()->PrintStatistics();
+    }
+	else if (logChoice == 3)
+    {
+        GameLog::GetInstance()->PrintAchievement();
+    }
+    else if (logChoice == 0)
+    {
+        break;
+    }
+    else
+    {
+        cout << RED << "잘못된 입력입니다." << RESET << endl;
+    }
+}
+```
+```c++
+void GameLog::PrintLogs()
+{
+    system("cls");
+    std::cout << GREEN << "=== 게임 로그 ===" << RESET << std::endl;
+    for (const auto& log : logs)
+    {
+        std::cout << log << std::endl;
+    }
+}
+```
+```c++
+void GameLog::PrintStatistics()
+{
+	.
+	.
+	// 통계 내용
+	if (statList.empty())
+	{
+	    std::string emptyMsg = "기록된 통계가 없습니다";
+	    int pad = boxWidth - emptyMsg.length();
+	    std::cout << GREEN << "│" << RESET << " " << YELLOW << emptyMsg << RESET << std::string(pad - 1, ' ') << GREEN << "│" << RESET << std::endl;
+	}
+	else
+	{
+	    for (const auto& stat : statList)
+	    {
+	        std::string statMsg = stat.first + ": " + std::to_string(stat.second);
+	
+	        // 출력 너비 계산 (한글 2칸, 영문/숫자/기호 1칸)
+	        int display_len = 0;
+	        for (size_t i = 0; i < statMsg.size(); )
+	        {
+	            unsigned char c = statMsg[i];
+	            if ((c & 0x80) == 0)
+	            {
+	                ++display_len;
+	                i++;
+	            }
+	            else if ((c & 0xE0) == 0xC0)
+	            {
+	                ++display_len;
+	                i += 2;
+	            }
+	            else if ((c & 0xF0) == 0xE0)
+	            {
+	                display_len += 2;
+	                i += 3;
+	            }
+	            else if ((c & 0xF8) == 0xF0)
+	            {
+	                ++display_len;
+	                i += 4;
+	            }
+	            else
+	            {
+	                i++;
+	            }
+	        }
+	        int pad = boxWidth - 2 - display_len;
+	        std::cout << GREEN << "│" << RESET << " " << YELLOW << stat.first << RESET << ": " << stat.second
+	                  << std::string(pad, ' ') << GREEN << " │" << RESET << std::endl;
+	    }
+	}
+	.
+	.
+	.
+}
+```
+```c++
+void GameLog::PrintAchievement()
+{
+	.
+	.
+	// 업적 내용
+	if (achList.empty())
+	{
+	    std::string emptyMsg = "달성한 업적이 없습니다";
+	    int pad = boxWidth - emptyMsg.length();
+	    std::cout << GREEN << "│" << RESET << " " << YELLOW << emptyMsg << RESET << std::string(pad - 1, ' ') << GREEN << "│" << RESET << std::endl;
+	}
+	else
+	{
+	    for (const auto& msg : achList)
+	    {
+	        // 출력 너비 계산 (한글 2칸, 영문/숫자/기호 1칸)
+	        int display_len = 0;
+	        for (size_t i = 0; i < msg.size(); )
+	        {
+	            unsigned char c = msg[i];
+	            if ((c & 0x80) == 0)
+	            {
+	                ++display_len;
+	                i++;
+	            }
+	            else if ((c & 0xE0) == 0xC0)
+	            {
+	                ++display_len;
+	                i += 2;
+	            }
+	            else if ((c & 0xF0) == 0xE0)
+	            {
+	                display_len += 2;
+	                i += 3;
+	            }
+	            else if ((c & 0xF8) == 0xF0)
+	            {
+	                ++display_len;
+	                i += 4;
+	            }
+	            else
+	            {
+	                i++;
+	            }
+	        }
+	        int pad = boxWidth - 2 - display_len;
+	        std::cout << GREEN << "│" << RESET << " " << YELLOW << msg << RESET
+	                  << std::string(pad, ' ') << GREEN << " │" << RESET << std::endl;
+	    }
+	}
+	.
+	.
+}
 ```
 </details>
 
