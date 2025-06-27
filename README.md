@@ -651,13 +651,6 @@ if (!IsSkill)
 }
 ```
 </details>
-<details>
-	<summary>처치 시 게임 엔딩!!</summary>
-
-```c++
-
-```
-</details>
 
 
 ### ◼ 장비 시스템
