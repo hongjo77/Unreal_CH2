@@ -1241,9 +1241,9 @@ void GameLog::PrintAchievement()
 
 </details>
 
-▶ [클래스 다이어그램](https://file.notion.so/f/f/83c75a39-3aba-4ba4-a792-7aefe4b07895/ba0cca75-e6ed-458d-8718-0f922a13ba13/Unreal_CH2_5%EC%A1%B0_%EB%8B%A4%EC%9D%B4%EC%96%B4%EA%B7%B8%EB%9E%A8.pdf?table=block&id=21e2dc3e-f514-8072-a1d8-d19099b36a1e&spaceId=83c75a39-3aba-4ba4-a792-7aefe4b07895&expirationTimestamp=1750968000000&signature=Zxfd_onK7p0zVPCS9KNik8BsHl8VoBCbdKvVHVr7pcg&downloadName=Unreal_CH2_5%EC%A1%B0_%EB%8B%A4%EC%9D%B4%EC%96%B4%EA%B7%B8%EB%9E%A8.pdf)
+▶ 클래스 다이어그램(https://excalidraw.com/#room=2faffbf9ea1cde5e514c,oKny1C75LTMeohlZq5IQyQ)
   
-▶ [기능명세서 페이지](https://teamsparta.notion.site/2182dc3ef51480f59a0ae5fb0ad2cc15?v=2182dc3ef51480d39847000cb7fca957)
+▶ 기능명세서 페이지(https://teamsparta.notion.site/2182dc3ef51480f59a0ae5fb0ad2cc15?v=2182dc3ef51480d39847000cb7fca957)
 
 - [클래스 목록 페이지](https://hongjo77.github.io/Unreal_CH2/html/annotated.html)
 
