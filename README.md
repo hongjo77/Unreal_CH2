@@ -566,7 +566,7 @@ if(enemy.IsGoldenGoblin() && BattleCount >= 4)
 </details>
 
 
-#### ◼ 보스 몬스터
+### ◼ 보스 몬스터
 
 <details>
 	<summary>공격 시 낮은 확률로 강력한 공격(스킬) 시전</summary>
